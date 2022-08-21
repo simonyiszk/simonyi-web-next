@@ -1,0 +1,18 @@
+title: React + TypeScript ⚛️
+order: 400
+sessions:
+  - startDate: 2022-03-30
+    startTime: '18:00'
+    endTime: '20:00'
+    place: QBF11
+  - startDate: 2022-04-06
+    startTime: '18:00'
+    endTime: '20:00'
+    place: QBF11
+lecturer: Berente Bálint
+active: true
+description: >
+  HTML, CSS és TypeScript tudásunk felhasználásával megismerkedünk a népszerű ReactJS keretrendszerrel,
+  amellyel gyorsan, átláthatóan és stabilan leszünk képesek webalkalmazások fejleszteni. Elkészítjük a NodeJS
+  tanfolyamról ismert ticket management rendszer felületét, miközben megismerkedünk számos hasznos könyvtárral,
+  praktikával és tudással.
