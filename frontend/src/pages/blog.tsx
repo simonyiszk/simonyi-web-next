@@ -1,31 +1,27 @@
 import { Box, Grid, Heading, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Link } from 'gatsby'
 
-import { BlogPreviewCard } from '~components/blog-components/BlogPreviewCard'
-import { Container } from '~components/Container'
-import { Header } from '~components/Header'
-import { SEO } from '~components/SEO'
-import { BlogPostsProps } from '~types/page-props/blogPosts.props'
-import { IndexLayout } from '../layouts'
+import { BlogPreviewCard } from '~components/blog/BlogPreviewCard'
+import { SContainer } from '~components/_common/SContainer'
+import { SEO } from '~components/_common/SEO'
+import { SHero } from '~components/_common/SHero'
+import { SLayout } from '~components/_common/SLayout'
 
-const Blog = ({ data }: BlogPostsProps) => (
-  <>
-    <SEO title="Blog" />
-    <IndexLayout
-      background={`${useBreakpointValue({
-        base: '',
-        sm: 'url(/background/top-left.svg) left top no-repeat, '
-      })}url(/background/top-right.svg) right top no-repeat`}
-    >
-      <Box>
-        <Header>
-          <Container>
-            <Heading as="h1">Legújabb posztjaink</Heading>
-          </Container>
-        </Header>
-        <Container>
+const Blog = () => {
+  const articles: any[] = []
+
+  return (
+    <>
+      <SEO title="Blog" />
+      <SLayout>
+        <SHero>
+          <SContainer>
+            <Heading as="h1">Legújabb bejegyzések</Heading>
+          </SContainer>
+        </SHero>
+        <SContainer>
           <Grid templateColumns={`repeat(${useBreakpointValue({ base: 1, md: 2 })}, 1fr)`} gap={{ base: 24, sm: 10 }}>
-            {data.allMarkdownRemark.nodes.map((post) => (
+            {articles.map((post) => (
               <BlogPreviewCard key={post.fields.slug} post={post} />
             ))}
           </Grid>
@@ -34,10 +30,10 @@ const Blog = ({ data }: BlogPostsProps) => (
               Még több...
             </Text>
           </Box>
-        </Container>
-      </Box>
-    </IndexLayout>
-  </>
-)
+        </SContainer>
+      </SLayout>
+    </>
+  )
+}
 
 export default Blog

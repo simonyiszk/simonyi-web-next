@@ -20,12 +20,8 @@ export const NAV_ITEMS: Array<NavItem> = [
     href: '/about'
   },
   {
-    label: 'Csapatunk',
-    href: '/members'
-  },
-  {
-    label: 'Projektjeink',
-    href: '/projects'
+    label: 'Vízió',
+    href: '/vision'
   },
   {
     label: 'Tanfolyam',

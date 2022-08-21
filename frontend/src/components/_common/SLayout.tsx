@@ -8,10 +8,10 @@ type Props = {
   background?: string
 } & HasChildren
 
-export const IndexLayout = ({ background, children }: Props) => (
+export const SLayout = ({ background, children }: Props) => (
   <Flex direction="column" minHeight="100vh">
     <Navbar />
-    <Box background={background} flex={1} pb={20}>
+    <Box background={background} flex={1} pb={24}>
       {children}
     </Box>
     <Footer />

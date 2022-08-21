@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.0.5",
-    "fs-extra": "^10.0.0",
+    "@strapi/plugin-graphql": "^4.3.4",
+    "fs-extra": "^10.1.0",
     "lodash.set": "^4.3.2",
-    "mime-types": "^2.1.27",
+    "mime-types": "^2.1.35",
     "@strapi/strapi": "4.3.4",
     "@strapi/plugin-users-permissions": "4.3.4",
     "@strapi/plugin-i18n": "4.3.4",
-    "pg": "8.6.0"
+    "pg": "8.7.3"
   },
   "name": "simonyi-web-back",
   "private": true,

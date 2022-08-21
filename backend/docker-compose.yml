@@ -1,18 +1,18 @@
 version: "3"
 
 services:
-  backend:
-    image: strapi/strapi
+  web:
+    build: .
+    restart: always
     depends_on:
       - db
-    restart: always
     env_file: .env
     networks:
       - strapi-app-network
     volumes:
       - strapiapp:/srv/app
     ports:
-      - "1337:1337"
+      - 1337:1337
 
   db:
     image: postgres:13

@@ -124,21 +124,11 @@ export default {
       }
     },
 
+    /** Transformer: remark */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-table-of-contents`,
-            options: {
-              exclude: 'Tartalomjegyzék',
-              tight: true,
-              ordered: true,
-              fromHeading: 1,
-              toHeading: 6,
-              className: 'md-toc'
-            }
-          },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {

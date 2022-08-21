@@ -1,29 +1,27 @@
-import { Box, Button, Container, Flex, Heading } from '@chakra-ui/react'
+import { Button, Container, Flex, Heading } from '@chakra-ui/react'
 import { Link } from 'gatsby'
-import { IndexLayout } from 'layouts'
-import { Header } from '~components/Header'
-import { SEO } from '~components/SEO'
+import { SEO } from '~components/_common/SEO'
+import { SHero } from '~components/_common/SHero'
+import { SLayout } from '~components/_common/SLayout'
 
 const NotFoundPage = () => (
   <>
     <SEO title="404" robots="nofollow, noindex" />
-    <IndexLayout>
-      <Box>
-        <Header>
-          <Container>
-            <Heading as="h1">Az oldal nem található.</Heading>
-          </Container>
-        </Header>
+    <SLayout>
+      <SHero>
         <Container>
-          <Flex justifyContent="space-between">
-            A keresett elérési útvonalon tartalom nem található.{' '}
-            <Button as={Link} colorScheme="brand" variant="outline" to="/">
-              Vissza
-            </Button>
-          </Flex>
+          <Heading as="h1">Az oldal nem található.</Heading>
         </Container>
-      </Box>
-    </IndexLayout>
+      </SHero>
+      <Container>
+        <Flex justifyContent="space-between">
+          A keresett elérési útvonalon tartalom nem található.{' '}
+          <Button as={Link} colorScheme="brand" variant="outline" to="/">
+            Vissza
+          </Button>
+        </Flex>
+      </Container>
+    </SLayout>
   </>
 )
 

@@ -4,12 +4,12 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 
 import { FaGithub, FaHome } from 'react-icons/fa'
-import { ScrollButton } from '~components/blog-components/ScrollButton'
-import { Container } from '~components/Container'
+import { ScrollButton } from '~components/blog/ScrollButton'
 import { SEO } from '~components/SEO'
+import { SContainer } from '~components/_common/SContainer'
 import { ProjectProps } from '~types/project.props'
 import { getIcon } from '~utils/commonFunctions'
-import { IndexLayout } from '../layouts'
+import { IndexLayout } from '../components/_common/SLayout'
 
 type Props = {
   data: {
@@ -38,7 +38,7 @@ const ProjectTemplate = ({ data }: Props) => {
       >
         <Box>
           <Box pt={featuredImage ? 2 : 16}>
-            <Container>
+            <SContainer>
               {featuredImage ? (
                 <GatsbyImage image={featuredImage} alt="Project" />
               ) : (
@@ -95,9 +95,9 @@ const ProjectTemplate = ({ data }: Props) => {
                   </Box>
                 </Flex>
               </Box>
-            </Container>
+            </SContainer>
           </Box>
-          <Container>
+          <SContainer>
             <Box py={8}>
               <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
             </Box>
@@ -113,7 +113,7 @@ const ProjectTemplate = ({ data }: Props) => {
             >
               <Button colorScheme="orange">Vissza a tetejére</Button>
             </Box>
-          </Container>
+          </SContainer>
         </Box>
         <ScrollButton />
       </IndexLayout>
