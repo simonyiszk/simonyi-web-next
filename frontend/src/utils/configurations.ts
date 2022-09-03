@@ -8,5 +8,6 @@ export const environment = {
     publicEmail: 'info@simonyi.bme.hu',
     linkedinUrl: 'https://www.linkedin.com/company/simonyi',
     konfUrl: 'https://konferencia.simonyi.bme.hu/'
-  }
+  },
+  backendUrl: process.env.GATSBY_BACKEND_URL || 'http://localhost:3000/'
 }

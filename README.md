@@ -23,11 +23,16 @@ UI design provided by [schdesign](https://schdesign.hu/) and coded by [Kir-Dev](
 
 ### Backend (folder `backend`)
 
+Backend is used for admin settings, like
+
+- frontpage informations
+- putting a blogpost as important news etc.
+- who can be admin of the site
+
 Tech Stack:
 
-- Strapi v4
-  - created via Create Strapi App script
-- Postgres v13
+- NestJS
+- MongoDB with mongoose *(sorry)*
 - TypeScript v4
 - Docker with docker-compose
 

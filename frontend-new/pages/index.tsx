@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import type { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 import type { Repository } from '../types/github'
 
 export async function getStaticProps() {
@@ -7,14 +7,12 @@ export async function getStaticProps() {
   const data: Repository = await res.json()
   return {
     props: {
-      stars: data.stargazers_count,
-    },
+      stars: data.stargazers_count
+    }
   }
 }
 
-export default function IndexPage({
-  stars,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function IndexPage({ stars }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <p>Next.js has {stars} ⭐️</p>

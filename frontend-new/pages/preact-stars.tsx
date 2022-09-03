@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import type { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 import type { Repository } from '../types/github'
 
 export async function getStaticProps() {
@@ -7,14 +7,12 @@ export async function getStaticProps() {
   const json: Repository = await res.json()
   return {
     props: {
-      stars: json.stargazers_count,
-    },
+      stars: json.stargazers_count
+    }
   }
 }
 
-export default function PreactStarsPage({
-  stars,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function PreactStarsPage({ stars }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <p>Preact has {stars} ⭐</p>

@@ -1,4 +1,4 @@
-# simonyi-web-frontend
+# simonyi-web-front
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=simonyi-web-frontend-kir-dev&style=for-the-badge)
 
@@ -19,7 +19,7 @@ yarn install
 yarn start
 ```
 
-The local blog webpack app should be available on http://localhost:8000/ and the GraphiQL site (where you can try out fetching data from the content sources) at http://localhost:8000/\_\_\_graphql.
+The local blog webpack app should be available on http://localhost:8000/ and the GraphiQL site (where you can try out fetching data from the content sources, like articles) at http://localhost:8000/\_\_\_graphql.
 
 ## License
 

@@ -10410,16 +10410,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-table-of-contents@npm:2.0.0":
-  version: 2.0.0
-  resolution: "gatsby-remark-table-of-contents@npm:2.0.0"
-  dependencies:
-    js-yaml: ^3.14.1
-    mdast-util-toc: ^5.1.0
-  checksum: 2e02c8542954df9f4869ff7b9ed639d989b6c3d604f6baeed0155fb462e5e400012546fb4292e4930ebfd6ee7cbe6554e88c8ed25cd1aebbb279e73494409245
-  languageName: node
-  linkType: hard
-
 "gatsby-script@npm:^1.6.0":
   version: 1.6.0
   resolution: "gatsby-script@npm:1.6.0"
@@ -17529,7 +17519,6 @@ __metadata:
     gatsby-remark-classes: 1.0.2
     gatsby-remark-external-links: 0.0.4
     gatsby-remark-images: 6.21.0
-    gatsby-remark-table-of-contents: 2.0.0
     gatsby-source-filesystem: 4.21.1
     gatsby-source-strapi: 2.0.0
     gatsby-transformer-remark: 5.21.0
