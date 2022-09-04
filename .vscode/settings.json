@@ -8,13 +8,16 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "search.exclude": {
-    "public/**": true,
-    "node_modules/**": true
+    "**/dist/**": true,
+    "**/node_modules/**": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
     "source.formatDocument": true,
     "source.fixAll.eslint": true
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 }

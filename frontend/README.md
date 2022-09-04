@@ -1,29 +1,30 @@
-# simonyi-web-front
+# Data fetch example
 
-![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=simonyi-web-frontend-kir-dev&style=for-the-badge)
+Next.js was conceived to make it easy to create universal apps. That's why fetching data
+on the server and the client when necessary is so easy with Next.js.
 
-## Development
+By using `getStaticProps` Next.js will fetch data at build time from a page, and pre-render the page to static assets.
 
-Install:
+## Deploy your own
 
-- [Node.js](https://nodejs.org/en/)
-- [Yarn v3](https://yarnpkg.com/getting-started/install)
-- Gatsby CLI by running `npm i -g gatsby-cli`
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/data-fetch)
 
-Copy `.env.development.example` file and name it as `.env.development`, fill in the needed strapi environment variables. Start up the strapi backend from the `../backend` folder (see README).
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/data-fetch&project-name=data-fetch&repository-name=data-fetch)
 
-Starting up frontend:
+## How to use
 
-```sh
-yarn install
-yarn start
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+
+```bash
+npx create-next-app --example data-fetch data-fetch-app
 ```
 
-The local blog webpack app should be available on http://localhost:8000/ and the GraphiQL site (where you can try out fetching data from the content sources, like articles) at http://localhost:8000/\_\_\_graphql.
+```bash
+yarn create next-app --example data-fetch data-fetch-app
+```
 
-## License
+```bash
+pnpm create next-app --example data-fetch data-fetch-app
+```
 
-- Default post featured image by Clément Hélardot on Unsplash: https://unsplash.com/photos/95YRwf6CNw8
-- Background svgs clipped together from [undraw.co](https://undraw.co/) images by Katerina Limpitsouni
-
-All directories and files are MIT Licensed.
+Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).

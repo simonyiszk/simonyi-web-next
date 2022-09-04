@@ -1,0 +1,3 @@
+export enum LocalStorageKeys {
+  REMARK_LATEST_NOTIFICATIONS = 'REMARK_LATEST_NOTIFICATIONS'
+}
