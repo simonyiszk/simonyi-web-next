@@ -6,7 +6,7 @@
     {
       "label": "Install Yarn packages",
       "type": "shell",
-      "command": "yarn --cwd admin-backend install && yarn --cwd admin-frontend install && yarn --cwd frontend install",
+      "command": "yarn install",
       "group": "none",
       "presentation": {
         "reveal": "always",

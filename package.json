@@ -1,0 +1,13 @@
+{
+  "name": "simonyi-web-next",
+  "description": "The next generation of the blog of Simonyi Károly College for Advanced Studies.",
+  "version": "1.0.0",
+  "author": "kir-dev",
+  "private": true,
+  "license": "UNLICENSED",
+  "workspaces": [
+    "admin-backend",
+    "admin-frontend",
+    "frontend"
+  ]
+}

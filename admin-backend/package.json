@@ -1,7 +1,7 @@
 {
-  "name": "simonyi-admin-backend",
-  "version": "0.0.1",
-  "description": "",
+  "name": "admin-backend",
+  "description": "-",
+  "version": "1.0.0",
   "author": "kir-dev",
   "private": true,
   "license": "UNLICENSED",
