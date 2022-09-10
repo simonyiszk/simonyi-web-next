@@ -1,5 +1,8 @@
 import { createIcon } from '@chakra-ui/react'
 
+/**
+ * Figma [link](https://www.figma.com/file/JOHGaqs67K52ZSj32xF8Bd/Weboldal?node-id=11%3A44) to component
+ */
 const LinkedInIcon = createIcon({
   displayName: 'LinkedInIcon',
   viewBox: '0 0 24 24',
