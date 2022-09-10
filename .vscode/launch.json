@@ -1,0 +1,32 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch admin-backend",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}/admin-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:dev"]
+    },
+    {
+      "name": "Launch admin-frontend",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}/admin-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start"]
+    },
+    {
+      "name": "Launch frontend",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"]
+    }
+  ]
+}
