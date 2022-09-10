@@ -8,4 +8,21 @@ import { LinkedInIcon } from './LinkedIn'
 import { PhoneIcon } from './Phone'
 import { YouTubeIcon } from './YouTube'
 
-export { ChevronIcon, EmailIcon, FacebookIcon, GlobeIcon, IncreaseIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon }
+import { BMEIcon } from './BME'
+import { SchonherzIcon } from './Schonherz'
+import { VIKIcon } from './VIK'
+
+export {
+  ChevronIcon,
+  EmailIcon,
+  FacebookIcon,
+  GlobeIcon,
+  IncreaseIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  PhoneIcon,
+  YouTubeIcon,
+  BMEIcon,
+  SchonherzIcon,
+  VIKIcon
+}
