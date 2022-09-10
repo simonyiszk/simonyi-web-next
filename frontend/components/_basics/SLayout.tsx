@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react'
 import { HasChildren } from '../../types/HasChildren'
-import { Footer } from '../_footer/Footer'
+import { Footer } from '../footer'
 import { Navbar } from '../_navigation/Navbar'
 
 type Props = {
