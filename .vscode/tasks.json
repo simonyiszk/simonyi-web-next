@@ -1,0 +1,30 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Yarn packages",
+      "type": "shell",
+      "command": "yarn install",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Remove node_modules",
+      "type": "shell",
+      "command": "rm -rf node_modules ./**/node_modules",
+      "windows": {
+        "command": "Remove-Item -Recurse -Force node_modules, admin-backend\\node_modules, admin-frontend\\node_modules, frontend\\node_modules"
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
