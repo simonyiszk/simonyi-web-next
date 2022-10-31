@@ -1,8 +1,10 @@
 {
-  "name": "simonyi-web-frontend",
+  "name": "frontend",
   "description": "The blog site of the Simonyi Károly College for Advanced Studies.",
+  "version": "1.0.0",
   "author": "kir-dev",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next",
     "build": "next build",
