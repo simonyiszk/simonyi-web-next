@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import type { InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
-import { RootContainer } from '../components/layouts'
+import { RootContainer } from '../layouts'
 import type { Repository } from '../types/github'
 
 export default function IndexPage({ stars }: InferGetStaticPropsType<typeof getStaticProps>) {

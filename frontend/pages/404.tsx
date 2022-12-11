@@ -1,6 +1,6 @@
 import { Button, Flex, Heading, Link } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
-import { RootContainer } from '../components/layouts'
+import { RootContainer } from '../layouts'
 
 const NotFoundPage = () => (
   <>
