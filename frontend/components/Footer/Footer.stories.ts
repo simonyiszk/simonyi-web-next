@@ -15,4 +15,4 @@ export default meta
 
 type Story = StoryObj<typeof Footer>
 
-export const Primary: Story = {}
+export const Desktop: Story = {}
