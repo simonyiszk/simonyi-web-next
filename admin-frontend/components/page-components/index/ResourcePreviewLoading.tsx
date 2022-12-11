@@ -1,11 +1,19 @@
-import { Box, Heading, HStack, Skeleton, SkeletonText, Spacer, useBreakpointValue, VStack } from '@chakra-ui/react'
-import { VoteButtonsLoading } from '../../../../components/voting/VoteButtonsLoading'
+import {
+  Box,
+  Heading,
+  HStack,
+  Skeleton,
+  SkeletonText,
+  Spacer,
+  useBreakpointValue,
+  VStack,
+} from "@chakra-ui/react";
 
 type Props = {
-  hasImage: boolean
-}
+  hasImage: boolean;
+};
 
-export const PostPreviewLoading = ({ hasImage }: Props) => {
+export const ResourcePreviewLoading = ({ hasImage }: Props) => {
   return (
     <Box as="article" p={4} borderRadius="md" borderWidth="1px">
       {useBreakpointValue({
@@ -19,7 +27,6 @@ export const PostPreviewLoading = ({ hasImage }: Props) => {
               {hasImage && <Skeleton height="4rem" width="6rem" />}
             </HStack>
             <HStack>
-              <VoteButtonsLoading />
               <Spacer />
               <VStack alignItems="end" spacing={1}>
                 <Skeleton height="1rem" width="5rem" />
@@ -30,9 +37,7 @@ export const PostPreviewLoading = ({ hasImage }: Props) => {
         ),
         md: (
           <HStack spacing={6} alignItems="start">
-            <VStack spacing={2}>
-              <VoteButtonsLoading />
-            </VStack>
+            <VStack spacing={2}></VStack>
             <HStack flex={1} spacing={3} alignItems="start">
               <Box flex={1}>
                 <Skeleton height="1rem" width="50%" mb={1} />
@@ -43,13 +48,16 @@ export const PostPreviewLoading = ({ hasImage }: Props) => {
               </Box>
               {hasImage && (
                 <Box>
-                  <Skeleton height={{ md: '8rem', lg: '10rem' }} width={{ md: '12rem', lg: '14rem' }} />
+                  <Skeleton
+                    height={{ md: "8rem", lg: "10rem" }}
+                    width={{ md: "12rem", lg: "14rem" }}
+                  />
                 </Box>
               )}
             </HStack>
           </HStack>
-        )
+        ),
       })}
     </Box>
-  )
-}
+  );
+};

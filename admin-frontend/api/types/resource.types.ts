@@ -1,10 +1,12 @@
+import { UserView } from "./user.types";
+
 export interface ResourceModel {
   subClass: string;
   createdAt: number; // unix
   publisherId: string;
   public: boolean;
 
-  title?: string;
+  title: string;
   rawMarkdownFull?: string;
   rawMarkdownLead?: string;
   imageUrl?: string;
@@ -12,6 +14,7 @@ export interface ResourceModel {
 
 export interface ResourceView extends ResourceModel {
   id: string;
+  publisher: UserView;
 }
 
 export interface UpdateResourceView {

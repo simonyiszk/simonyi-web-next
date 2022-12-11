@@ -9,5 +9,12 @@
     "admin-backend",
     "admin-frontend",
     "frontend"
-  ]
+  ],
+  "scripts": {
+    "admin-frontend:dev": "cd admin-frontend && yarn start && cd ..",
+    "admin-backend:build": "cd admin-backend && yarn start:dev && cd ..",
+    "frontend:dev": "cd frontend && yarn start && cd ..",
+    "admin:dev": "cd admin-backend && yarn start:dev & cd ../admin-frontend && yarn start",
+    "all:dev": "yarn admin:dev & yarn frontend:dev"
+  }
 }

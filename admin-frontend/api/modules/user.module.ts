@@ -1,7 +1,17 @@
 import axios from "axios";
 import { UpdateUserView, UserView } from "../types/user.types";
 
-class UserModule {
+export class UserModule {
+  private static instance: UserModule;
+  private constructor() {}
+
+  public static getInstance() {
+    if (!UserModule.instance) {
+      UserModule.instance = new UserModule();
+    }
+    return UserModule.instance;
+  }
+
   async fetchCurrentUser() {
     const response = await axios.get<UserView>(`profile`);
     return response.data;
@@ -15,5 +25,3 @@ class UserModule {
     return axios.post<{ user: UserView; jwt: string }>(`login`, { credential });
   }
 }
-
-export const userModule = new UserModule();

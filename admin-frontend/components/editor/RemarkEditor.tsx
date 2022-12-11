@@ -95,6 +95,7 @@ export const RemarkEditor = ({
           <Box maxHeight={previewHeight} overflowY="scroll">
             <ReactMarkdown
               components={RemarkUIRenderer()}
+              // eslint-disable-next-line react/no-children-prop
               children={watch(formDetails.id)}
               skipHtml
             />

@@ -1,10 +1,10 @@
-import { Flex, Skeleton, VStack } from '@chakra-ui/react'
+import { Flex, Skeleton, VStack } from "@chakra-ui/react";
 
 type Props = {
-  textAreaHeight?: string | number
-}
+  textAreaHeight?: string | number;
+};
 
-export const RemarkEditorLoading = ({ textAreaHeight = '22rem' }: Props) => {
+export const RemarkEditorLoading = ({ textAreaHeight = "22rem" }: Props) => {
   return (
     <VStack width="full" align="stretch">
       <Skeleton width="10rem" height="2rem" />
@@ -14,5 +14,5 @@ export const RemarkEditorLoading = ({ textAreaHeight = '22rem' }: Props) => {
         <Skeleton width="10rem" height="2rem" />
       </Flex>
     </VStack>
-  )
-}
+  );
+};
