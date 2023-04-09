@@ -33,7 +33,7 @@ function Greeting() {
         filter="blur(10px)"
         display="flex"
       >
-        <Image src="/images/hero/default.png" alt="Hero image" fill priority />
+        <Image src="/images/hero/default.png" alt="Hero image" fill priority style={{ objectFit: 'cover' }} />
       </Box>
       <Box
         display="flex"
