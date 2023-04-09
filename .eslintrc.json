@@ -18,14 +18,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "import",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react", "import", "@typescript-eslint", "prettier"],
   "rules": {
     "import/prefer-default-export": 0,
+    "react/react-in-jsx-scope": 0,
     "prettier/prettier": ["error"],
     "import/order": ["error", { "groups": ["external", "builtin", "internal", "sibling", "parent", "index"] }]
   },
