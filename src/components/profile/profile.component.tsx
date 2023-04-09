@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Image, Link, Text } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Box, Link, Text } from '@chakra-ui/react';
 import { SocialIcon } from '../icons';
 import type { ProfileType } from '../../types';
 
@@ -16,19 +17,20 @@ function Profile({ name, title, profilePicture, socials }: ProfileType) {
       maxWidth="300px"
       width="100%"
     >
-      <Box width="100%" height="100%" maxWidth="200px" maxHeight="200px">
+      <Box width="100%" height="200px" maxWidth="200px" position="relative">
         <Image
           src={profilePicture.url}
           alt={profilePicture.alt}
-          objectFit="contain"
-          width="100%"
-          height="100%"
-          lineHeight="200px"
-          textAlign="center"
-          borderRadius="50%"
-          borderStyle="solid"
-          borderWidth={2}
-          borderColor="simonyi_zold"
+          fill
+          style={{
+            objectFit: 'cover',
+            lineHeight: '200px',
+            textAlign: 'center',
+            borderRadius: '50%',
+            borderStyle: 'solid',
+            borderWidth: 2,
+            borderColor: 'var(--chakra-colors-simonyi_zold)'
+          }}
         />
       </Box>
 

@@ -73,18 +73,20 @@ function HomeFooter() {
         </Box>
       </Box>
       <Box display="flex" gap={8} flexWrap="wrap" alignItems="center" flexDirection={{ base: 'column', md: 'row' }}>
-        <Link href="http://www.bme.hu/" target="_blank">
-          <Image src="/images/bme/bme.png" alt="Logo of BME" height={60} width={225} />
+        <Link href="http://www.bme.hu/" target="_blank" height="60px" width="225px" position="relative">
+          <Image src="/images/bme/bme.png" alt="Logo of BME" fill />
         </Link>
-        <Link href="http://www.vik.bme.hu/" target="_blank">
-          <Image src="/images/bme/vik.png" alt="Logo of BME" height={60} width={60} />
+        <Link href="http://www.vik.bme.hu/" target="_blank" height="60px" width="60px" position="relative">
+          <Image src="/images/bme/vik.png" alt="Logo of BME VIK" fill />
         </Link>
-        <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '225px' }}>
-          <Image src="/images/bme/schonherz.png" alt="Logo of BME" height={60} width={192} />
+        <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '225px' }} position="relative">
+          <Box height="60px" width="192px">
+            <Image src="/images/bme/schonherz.png" alt="Logo of Schonherz" fill />
+          </Box>
         </Link>
       </Box>
-      <Link href="https://github.com/simonyiszk/simonyi-web-gatsby">
-        <Text align="center">github.com/simonyiszk/simonyi-web-gatsby</Text>
+      <Link href="https://github.com/simonyiszk/simonyi-web-next">
+        <Text align="center">github.com/simonyiszk/simonyi-web-next</Text>
       </Link>
     </Box>
   );
