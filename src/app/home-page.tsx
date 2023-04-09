@@ -1,8 +1,5 @@
 'use client';
 
-import { ChevronIcon, HomeHeader, Profile, SimonyiFullLightIcon, StudentGroup } from '~/components';
-import { images } from '~/utils';
-import type { AboutType, ProfileType, StudentGroupType } from '~/types';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Box, Button, Link, Text } from '@chakra-ui/react';
@@ -14,6 +11,9 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Video from 'yet-another-react-lightbox/plugins/video';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import { ChevronIcon, HomeHeader, Profile, SimonyiFullLightIcon, StudentGroup } from '~/components';
+import type { AboutType, ProfileType, StudentGroupType } from '~/types';
+import { images } from '~/utils';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
