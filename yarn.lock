@@ -1451,6 +1451,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/archivo@npm:4.5.11":
+  version: 4.5.11
+  resolution: "@fontsource/archivo@npm:4.5.11"
+  checksum: 69f084a50ca318fcf4d75c9b3bd140441d00f90d2bd87a2398bf545dfa855943670cda82594da0eb92a473b079332bbdf81f88b34e394f5fda12c4619c564ae9
+  languageName: node
+  linkType: hard
+
+"@fontsource/space-grotesk@npm:4.5.13":
+  version: 4.5.13
+  resolution: "@fontsource/space-grotesk@npm:4.5.13"
+  checksum: 31849bd930d082ce5fc5e5e71483701e5f0491f2b842f3afb5a486b81d102220791e51a6355b6b7b52483a48174c45d0610d0d794ef0585d4570351560f6bc74
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -3734,7 +3748,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-arguments@npm:^1.1.1":
+"is-arguments@npm:^1.0.4, is-arguments@npm:^1.1.1":
   version: 1.1.1
   resolution: "is-arguments@npm:1.1.1"
   dependencies:
@@ -3838,6 +3852,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-generator-function@npm:^1.0.7":
+  version: 1.0.10
+  resolution: "is-generator-function@npm:1.0.10"
+  dependencies:
+    has-tostringtag: ^1.0.0
+  checksum: d54644e7dbaccef15ceb1e5d91d680eb5068c9ee9f9eb0a9e04173eb5542c9b51b5ab52c5537f5703e48d5fddfd376817c1ca07a84a407b7115b769d4bdde72b
+  languageName: node
+  linkType: hard
+
 "is-glob@npm:^4.0.0, is-glob@npm:^4.0.1, is-glob@npm:^4.0.3, is-glob@npm:~4.0.1":
   version: 4.0.3
   resolution: "is-glob@npm:4.0.3"
@@ -3935,7 +3958,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-typed-array@npm:^1.1.10, is-typed-array@npm:^1.1.9":
+"is-typed-array@npm:^1.1.10, is-typed-array@npm:^1.1.3, is-typed-array@npm:^1.1.9":
   version: 1.1.10
   resolution: "is-typed-array@npm:1.1.10"
   dependencies:
@@ -5259,6 +5282,8 @@ __metadata:
     "@chakra-ui/react": 2.5.5
     "@emotion/react": 11.10.6
     "@emotion/styled": 11.10.6
+    "@fontsource/archivo": 4.5.11
+    "@fontsource/space-grotesk": 4.5.13
     "@types/node": 18.15.11
     "@types/react": 18.0.33
     "@types/react-dom": 18.0.11
@@ -5281,6 +5306,7 @@ __metadata:
     react-dom: 18.2.0
     tailwindcss: 3.3.1
     typescript: 5.0.4
+    util: 0.12.5
     yet-another-react-lightbox: 3.4.0
   languageName: unknown
   linkType: soft
@@ -5845,6 +5871,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"util@npm:0.12.5":
+  version: 0.12.5
+  resolution: "util@npm:0.12.5"
+  dependencies:
+    inherits: ^2.0.3
+    is-arguments: ^1.0.4
+    is-generator-function: ^1.0.7
+    is-typed-array: ^1.1.3
+    which-typed-array: ^1.1.2
+  checksum: 705e51f0de5b446f4edec10739752ac25856541e0254ea1e7e45e5b9f9b0cb105bc4bd415736a6210edc68245a7f903bf085ffb08dd7deb8a0e847f60538a38a
+  languageName: node
+  linkType: hard
+
 "which-boxed-primitive@npm:^1.0.2":
   version: 1.0.2
   resolution: "which-boxed-primitive@npm:1.0.2"
@@ -5870,7 +5909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which-typed-array@npm:^1.1.9":
+"which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
   version: 1.1.9
   resolution: "which-typed-array@npm:1.1.9"
   dependencies:
