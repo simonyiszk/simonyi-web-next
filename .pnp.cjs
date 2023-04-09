@@ -54,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:18.2.0"],\
             ["tailwindcss", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:3.3.1"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"],\
+            ["util", "npm:0.12.5"],\
             ["yet-another-react-lightbox", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:3.4.0"]\
           ],\
           "linkType": "SOFT"\
@@ -5663,6 +5664,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["is-generator-function", [\
+        ["npm:1.0.10", {\
+          "packageLocation": "./.yarn/cache/is-generator-function-npm-1.0.10-1d0f3809ef-d54644e7db.zip/node_modules/is-generator-function/",\
+          "packageDependencies": [\
+            ["is-generator-function", "npm:1.0.10"],\
+            ["has-tostringtag", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["is-glob", [\
         ["npm:4.0.3", {\
           "packageLocation": "./.yarn/cache/is-glob-npm-4.0.3-cb87bf1bdb-d381c1319f.zip/node_modules/is-glob/",\
@@ -7347,6 +7358,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:18.2.0"],\
             ["tailwindcss", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:3.3.1"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"],\
+            ["util", "npm:0.12.5"],\
             ["yet-another-react-lightbox", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:3.4.0"]\
           ],\
           "linkType": "SOFT"\
@@ -8021,6 +8033,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/react",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["util", [\
+        ["npm:0.12.5", {\
+          "packageLocation": "./.yarn/cache/util-npm-0.12.5-3668276f26-705e51f0de.zip/node_modules/util/",\
+          "packageDependencies": [\
+            ["util", "npm:0.12.5"],\
+            ["inherits", "npm:2.0.4"],\
+            ["is-arguments", "npm:1.1.1"],\
+            ["is-generator-function", "npm:1.0.10"],\
+            ["is-typed-array", "npm:1.1.10"],\
+            ["which-typed-array", "npm:1.1.9"]\
           ],\
           "linkType": "HARD"\
         }]\

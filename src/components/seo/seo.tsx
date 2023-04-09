@@ -1,5 +1,4 @@
 import { format } from 'util';
-import React from 'react';
 
 function SEO({
   themeColor,
