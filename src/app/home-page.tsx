@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
+import { Box, Button, Link, Text } from '@chakra-ui/react';
 import { default as Lightbox } from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
@@ -9,13 +11,11 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Video from 'yet-another-react-lightbox/plugins/video';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import { ChevronIcon, HomeHeader, Profile, SimonyiFullLightIcon, StudentGroup } from '~/components';
+import type { AboutType, ProfileType, StudentGroupType } from '~/types';
+import { images } from '~/utils';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import { ChevronIcon, HomeHeader, Profile, SimonyiFullLightIcon, StudentGroup } from '@/components';
-import { Box, Button, Link, Text } from '@chakra-ui/react';
-import { useState } from 'react';
-import { images } from '@/utils';
-import type { AboutType, ProfileType, StudentGroupType } from '@/types';
 
 function Greeting() {
   return (
@@ -33,7 +33,7 @@ function Greeting() {
         filter="blur(10px)"
         display="flex"
       >
-        <Image src="/images/hero/default.png" alt="Hero image" fill priority />
+        <Image src="/images/hero/default.png" alt="Hero image" fill priority style={{ objectFit: 'cover' }} />
       </Box>
       <Box
         display="flex"
@@ -114,7 +114,7 @@ function ImageBrowser({ imagesData }: { imagesData: typeof images }) {
           _hover={{ cursor: 'pointer' }}
           position={'relative'}
         >
-          <Image src={image.url} alt={image.alt} fill sizes="100%" />
+          <Image src={image.url} alt={image.alt} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </Box>
       ))}
       <Lightbox

@@ -1,7 +1,7 @@
 'use client';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { HomeFooter } from '@/components';
+import { HomeFooter } from '~/components';
 
 const config = {
   useSystemColorMode: false,

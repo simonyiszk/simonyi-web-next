@@ -20,6 +20,8 @@
     "@chakra-ui/react": "2.5.5",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
+    "@fontsource/archivo": "4.5.11",
+    "@fontsource/space-grotesk": "4.5.13",
     "framer-motion": "10.11.2",
     "next": "13.3.0",
     "react": "18.2.0",
@@ -45,7 +47,8 @@
     "postcss": "8.4.21",
     "prettier": "2.8.7",
     "tailwindcss": "3.3.1",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "util": "0.12.5"
   },
   "packageManager": "yarn@3.5.0"
 }

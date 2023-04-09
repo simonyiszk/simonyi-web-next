@@ -8,7 +8,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:import/typescript",
     "prettier"
   ],
@@ -23,7 +24,19 @@
     "import/prefer-default-export": 0,
     "react/react-in-jsx-scope": 0,
     "prettier/prettier": ["error"],
-    "import/order": ["error", { "groups": ["external", "builtin", "internal", "sibling", "parent", "index"] }]
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "~/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "groups": ["builtin", "external", "internal", "unknown", "parent", "sibling", "index", "object", "type"]
+      }
+    ]
   },
   "settings": {
     "react": {

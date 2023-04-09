@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Link, Text, Image, useBreakpointValue } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Box, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 import { ChevronIcon, SocialIcon } from '../icons';
 import type { StudentGroupType } from '../../types';
 
@@ -47,8 +48,8 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
         </Box>
         {(!isMobile || isOpen) && (
           <>
-            <Box height="100px">
-              <Image src={logo.url} alt={logo.alt} height="100%" maxWidth="250px" />
+            <Box height="100px" position="relative" width="100%" maxWidth="250px">
+              <Image src={logo.url} alt={logo.alt} fill />
             </Box>
             <Box>
               <Text>{description}</Text>

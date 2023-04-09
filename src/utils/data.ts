@@ -209,6 +209,10 @@ const groups: Array<StudentGroupType> = [
       {
         icon: 'facebook',
         link: { url: 'https://www.facebook.com/acstudiolive/', title: 'facebook.com/acstudiolive', text: '/acstudiolive' }
+      },
+      {
+        icon: 'instagram',
+        link: { url: 'https://www.instagram.com/ac_studio_n_live/', title: 'instagram.com/ac_studio_n_live', text: '@ac_studio_n_live' }
       }
     ]
   },
@@ -232,9 +236,8 @@ const groups: Array<StudentGroupType> = [
           text: '@budavari_schonherz_studio'
         }
       },
-      { icon: 'youtube', link: { url: 'https://youtube.com/bsstudi0/', title: 'youtube.com/bsstudi0', text: '/bsstudi0' } },
-
-      { icon: 'tiktok', link: { url: 'https://www.tiktok.com/@bsstudio_', title: 'tiktok.com/@bsstudio_', text: '/bsstudio_' } }
+      { icon: 'tiktok', link: { url: 'https://www.tiktok.com/@bsstudio_', title: 'tiktok.com/@bsstudio_', text: '@bsstudio_' } },
+      { icon: 'youtube', link: { url: 'https://youtube.com/bsstudi0/', title: 'youtube.com/bsstudi0', text: '@bsstudi0' } }
     ],
     isDense: true
   },
@@ -280,7 +283,8 @@ const groups: Array<StudentGroupType> = [
     socials: [
       { icon: 'website', link: { url: 'https://legokor.hu/', title: 'legokor.hu', text: 'https://legokor.hu/' } },
       { icon: 'email', link: { url: 'mailto:lego@sch.bme.hu', title: 'lego@sch.bme.hu', text: 'lego@sch.bme.hu' } },
-      { icon: 'facebook', link: { url: 'https://facebook.com/Legokor/', title: 'facebook.com/Legokor', text: '/Legokor' } }
+      { icon: 'facebook', link: { url: 'https://facebook.com/Legokor/', title: 'facebook.com/Legokor', text: '/Legokor' } },
+      { icon: 'instagram', link: { url: 'https://www.instagram.com/legokor/', title: 'instagram.com/legokor', text: '@legokor' } }
     ]
   },
   {
@@ -311,6 +315,10 @@ const groups: Array<StudentGroupType> = [
       {
         icon: 'instagram',
         link: { url: 'https://www.instagram.com/schdesign.hu/', title: 'instagram.com/schdesign.hu', text: '@schdesign.hu' }
+      },
+      {
+        icon: 'youtube',
+        link: { url: 'https://www.youtube.com/@schdesignbme', title: 'youtube.com/@schdesignbme', text: '@schdesignbme' }
       }
     ]
   },
