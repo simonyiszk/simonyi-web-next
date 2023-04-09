@@ -1,7 +1,7 @@
 'use client';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { HomeFooter } from '~/components';
+import { HomeFooter, SEO } from '~/components';
 
 const config = {
   useSystemColorMode: false,
@@ -76,7 +76,9 @@ const theme = extendTheme({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html data-theme="dark" lang="hu">
-      <head />
+      <head>
+        <SEO title="Főoldal" />
+      </head>
       <body>
         <CacheProvider>
           <ChakraProvider theme={theme}>
