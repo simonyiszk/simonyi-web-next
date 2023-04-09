@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import { Box, Link, Text } from '@chakra-ui/react';
 import { SocialIcon } from '../icons';

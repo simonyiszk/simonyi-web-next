@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, IconProps } from '@chakra-ui/react';
 import { EmailIcon, FacebookIcon, GitHubIcon, GlobeIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon } from '../icons';
 import { SocialIconType } from '../../types';
