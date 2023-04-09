@@ -7,6 +7,7 @@ async function getData() {
 }
 
 export default async function Page() {
-  const {} = await getData();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const result = await getData();
   return <HomePage aboutData={about} imagesData={images} presidencyData={profiles} studentGroupsData={groups} />;
 }
