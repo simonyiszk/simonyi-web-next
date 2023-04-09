@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, HStack, Link } from '@chakra-ui/react';
 import { SimonyiFullLightIcon } from '../icons';
 
