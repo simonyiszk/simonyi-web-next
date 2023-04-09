@@ -7,6 +7,7 @@
 # Ignore these directories
 .cache/
 .github/
+.next/
 .vscode/
 .yarn/
 public/
@@ -14,9 +15,6 @@ node_modules/
 
 # Don't ignore these files
 !.eslintrc.json
-!gatsby-browser.tsx
-!gatsby-config.ts
-!gatsby-node.ts
 !package.json
 !README.md
 !vercel.json
