@@ -16,6 +16,7 @@ import type { AboutType, ProfileType, StudentGroupType } from '~/types';
 import { images } from '~/utils';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
+import './yarl.css';
 
 function Greeting() {
   return (
@@ -84,6 +85,7 @@ function Greeting() {
 function ImageBrowser({ imagesData }: { imagesData: typeof images }) {
   const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [hideControls, setHideControls] = useState(false);
 
   const openLightbox = (index = 0) => {
     setIndex(index);
@@ -118,6 +120,8 @@ function ImageBrowser({ imagesData }: { imagesData: typeof images }) {
         </Box>
       ))}
       <Lightbox
+        on={{ click: () => setHideControls((state) => !state) }}
+        className={hideControls ? 'yarl__hide-controls' : undefined}
         open={isOpen}
         slides={imagesData.map((image) => {
           return {

@@ -1,0 +1,10 @@
+.yarl__hide-controls .yarl__navigation_prev,
+.yarl__hide-controls .yarl__navigation_next,
+.yarl__hide-controls .yarl__toolbar,
+.yarl__hide-controls .yarl__slide_captions_container {
+    visibility: hidden;
+}
+
+.yarl__hide-controls .yarl__thumbnails_container {
+  display: none;
+}
