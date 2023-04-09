@@ -1,0 +1,28 @@
+# Ignore everything
+*
+
+# Don't ignore files ending with slash = directories
+!*/
+
+# Ignore these directories
+.cache/
+.github/
+.vscode/
+.yarn/
+public/
+node_modules/
+
+# Don't ignore these files
+!.eslintrc.json
+!gatsby-browser.tsx
+!gatsby-config.ts
+!gatsby-node.ts
+!package.json
+!README.md
+!vercel.json
+
+# Don't ignore these files ending with extension
+!*.jsx
+!*.js
+!*.tsx
+!*.ts
