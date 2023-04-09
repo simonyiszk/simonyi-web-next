@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html data-theme="dark" lang="hu">
       <head>
-        <SEO title="Főoldal" />
+        <SEO title="Főoldal" siteUrl="https://simonyi-web-next.vercel.app" />
       </head>
       <body>
         <CacheProvider>
