@@ -114,7 +114,7 @@ function ImageBrowser({ imagesData }: { imagesData: typeof images }) {
           _hover={{ cursor: 'pointer' }}
           position={'relative'}
         >
-          <Image src={image.url} alt={image.alt} fill sizes="100%" />
+          <Image src={image.url} alt={image.alt} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </Box>
       ))}
       <Lightbox
