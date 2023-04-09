@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Image, Link, Text } from '@chakra-ui/react';
-import type { ProfileType } from '../../types';
 import { SocialIcon } from '../icons';
+import type { ProfileType } from '../../types';
 
 function Profile({ name, title, profilePicture, socials }: ProfileType) {
   return (

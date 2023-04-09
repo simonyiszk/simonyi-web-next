@@ -1,4 +1,4 @@
-import { about, groups, images, profiles } from '@/utils';
+import { about, groups, images, profiles } from '~/utils';
 import HomePage from './home-page';
 
 async function getData() {

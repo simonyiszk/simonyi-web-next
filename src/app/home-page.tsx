@@ -1,6 +1,11 @@
 'use client';
 
+import { ChevronIcon, HomeHeader, Profile, SimonyiFullLightIcon, StudentGroup } from '~/components';
+import { images } from '~/utils';
+import type { AboutType, ProfileType, StudentGroupType } from '~/types';
 import Image from 'next/image';
+import { useState } from 'react';
+import { Box, Button, Link, Text } from '@chakra-ui/react';
 import { default as Lightbox } from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
@@ -11,11 +16,6 @@ import Video from 'yet-another-react-lightbox/plugins/video';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import { ChevronIcon, HomeHeader, Profile, SimonyiFullLightIcon, StudentGroup } from '@/components';
-import { Box, Button, Link, Text } from '@chakra-ui/react';
-import { useState } from 'react';
-import { images } from '@/utils';
-import type { AboutType, ProfileType, StudentGroupType } from '@/types';
 
 function Greeting() {
   return (
