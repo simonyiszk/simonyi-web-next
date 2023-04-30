@@ -20,6 +20,7 @@ node_modules/
 !vercel.json
 
 # Don't ignore these files ending with extension
+!*.mdx
 !*.jsx
 !*.js
 !*.tsx
