@@ -20,6 +20,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: ({ children }) => <Text as="h6">{children}</Text>,
     p: ({ children }) => <Text as="p">{children}</Text>,
     a: ({ children }) => <Link color="simonyi_zold">{children}</Link>,
+    i: ({ children }) => <Text as="i">{children}</Text>,
+    b: ({ children }) => <Text as="b">{children}</Text>,
     ...components
   };
 }
