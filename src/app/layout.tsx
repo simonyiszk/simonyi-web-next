@@ -82,8 +82,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CacheProvider>
           <ChakraProvider theme={theme}>
-            <Box>{children}</Box>
-            <HomeFooter />
+            <Box display="flex" flexDirection="column" justifyContent="space-between" minHeight="100svh">
+              <Box>{children}</Box>
+              <HomeFooter />
+            </Box>
           </ChakraProvider>
         </CacheProvider>
       </body>
