@@ -79,8 +79,8 @@ function HomeFooter() {
         <Link href="http://www.vik.bme.hu/" target="_blank" height="60px" width="60px" position="relative">
           <Image src="/images/bme/vik.png" alt="Logo of BME VIK" fill />
         </Link>
-        <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '225px' }} position="relative">
-          <Box height="60px" width="192px">
+        <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '225px' }}>
+          <Box height="60px" width="192px" position="relative">
             <Image src="/images/bme/schonherz.png" alt="Logo of Schonherz" fill />
           </Box>
         </Link>

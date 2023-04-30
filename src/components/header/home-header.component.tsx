@@ -10,8 +10,8 @@ function HomeHeader() {
       <Link href="http://www.vik.bme.hu/" target="_blank" height="50px" width="50px" position="relative">
         <Image src="/images/bme/vik.png" alt="Logo of BME VIK" fill style={{ width: '100%' }} />
       </Link>
-      <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '188px' }} position="relative">
-        <Box height="50px" width="160px">
+      <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '188px' }}>
+        <Box height="50px" width="160px" position="relative">
           <Image src="/images/bme/schonherz.png" alt="Logo of Schonherz" fill />
         </Box>
       </Link>
