@@ -19,6 +19,7 @@ node_modules/
 !README.md
 !vercel.json
 !tailwind.config.js
+!postcss.config.js
 
 # Don't ignore these files ending with extension
 !*.mdx
