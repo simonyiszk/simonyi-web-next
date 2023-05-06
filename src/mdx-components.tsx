@@ -1,3 +1,4 @@
+import { Link } from './components';
 import type { MDXComponents } from 'mdx/types';
 
 // This file allows you to provide custom React components
@@ -47,9 +48,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </p>
     ),
     a: ({ children, ...props }) => (
-      <a className="font-body text-simonyi_zold" {...props}>
+      <Link className="font-body text-simonyi_zold" {...props}>
         {children}
-      </a>
+      </Link>
     ),
     i: ({ children, ...props }) => <i {...props}>{children}</i>,
     b: ({ children, ...props }) => <b {...props}>{children}</b>,
