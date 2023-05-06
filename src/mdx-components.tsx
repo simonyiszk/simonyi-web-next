@@ -11,20 +11,48 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
-    h1: ({ children }) => <h1 className="text-h1 font-heading">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-h2 font-heading">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-h3 font-heading">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-h4 font-heading">{children}</h4>,
-    h5: ({ children }) => <h5 className="font-heading">{children}</h5>,
-    h6: ({ children }) => <h6 className="font-heading">{children}</h6>,
-    p: ({ children }) => <p className="font-body">{children}</p>,
-    a: ({ children, href, title, target, rel }) => (
-      <a className="font-body text-simonyi_zold" href={href} title={title} target={target} rel={rel}>
+    h1: ({ children, ...props }) => (
+      <h1 className="text-h1 font-heading" {...props}>
+        {children}
+      </h1>
+    ),
+    h2: ({ children, ...props }) => (
+      <h2 className="text-h2 font-heading" {...props}>
+        {children}
+      </h2>
+    ),
+    h3: ({ children, ...props }) => (
+      <h3 className="text-h3 font-heading" {...props}>
+        {children}
+      </h3>
+    ),
+    h4: ({ children, ...props }) => (
+      <h4 className="text-h4 font-heading" {...props}>
+        {children}
+      </h4>
+    ),
+    h5: ({ children, ...props }) => (
+      <h5 className="font-heading" {...props}>
+        {children}
+      </h5>
+    ),
+    h6: ({ children, ...props }) => (
+      <h6 className="font-heading" {...props}>
+        {children}
+      </h6>
+    ),
+    p: ({ children, ...props }) => (
+      <p className="font-body" {...props}>
+        {children}
+      </p>
+    ),
+    a: ({ children, ...props }) => (
+      <a className="font-body text-simonyi_zold" {...props}>
         {children}
       </a>
     ),
-    i: ({ children }) => <i>{children}</i>,
-    b: ({ children }) => <b>{children}</b>,
+    i: ({ children, ...props }) => <i {...props}>{children}</i>,
+    b: ({ children, ...props }) => <b {...props}>{children}</b>,
     ...components
   };
 }
