@@ -19,10 +19,7 @@ function Profile({ name, title, profilePicture, socials }: ProfileType) {
       <div className="flex justify-center gap-7 mt-7 flex-wrap">
         {socials.map((social, index) => (
           <a href={social.link.url} title={social.link.title} target="_blank" key={index} rel="noreferrer">
-            <SocialIcon
-              iconName={social.icon}
-              props={{ className: 'w-6 h-6 leading-4 fill-white inline-block align-middle fill-simonyi_zold' }}
-            />
+            <SocialIcon iconName={social.icon} props={{ className: 'w-6 h-6 leading-4 inline-block align-middle fill-simonyi_zold' }} />
           </a>
         ))}
       </div>
