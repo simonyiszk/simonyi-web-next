@@ -13,37 +13,37 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // Allows customizing built-in components, e.g. to add styling.
     // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
     h1: ({ children, ...props }) => (
-      <h1 className="text-h1 font-heading" {...props}>
+      <h1 className="text-h1 font-heading mb-4" {...props}>
         {children}
       </h1>
     ),
     h2: ({ children, ...props }) => (
-      <h2 className="text-h2 font-heading" {...props}>
+      <h2 className="text-h2 font-heading mb-3" {...props}>
         {children}
       </h2>
     ),
     h3: ({ children, ...props }) => (
-      <h3 className="text-h3 font-heading" {...props}>
+      <h3 className="text-h3 font-heading mb-2" {...props}>
         {children}
       </h3>
     ),
     h4: ({ children, ...props }) => (
-      <h4 className="text-h4 font-heading" {...props}>
+      <h4 className="text-h4 font-heading mb-1" {...props}>
         {children}
       </h4>
     ),
     h5: ({ children, ...props }) => (
-      <h5 className="font-heading" {...props}>
+      <h5 className="font-heading mb-1" {...props}>
         {children}
       </h5>
     ),
     h6: ({ children, ...props }) => (
-      <h6 className="font-heading" {...props}>
+      <h6 className="font-heading mb-1" {...props}>
         {children}
       </h6>
     ),
     p: ({ children, ...props }) => (
-      <p className="font-body" {...props}>
+      <p className="font-body mb-4" {...props}>
         {children}
       </p>
     ),
