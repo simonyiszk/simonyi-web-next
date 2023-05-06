@@ -3,6 +3,6 @@ import HomeAbout from './home-about';
 import HomeGreeting from './home-greeting';
 import HomePresidency from './home-presidency';
 import HomeStudentGroups from './home-student-groups';
-import HomeSubsites from './home-subsites';
+import HomeSubpages from './home-subpages';
 
-export { HomeAbout, HomeAboutImageBrowser, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubsites };
+export { HomeAbout, HomeAboutImageBrowser, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages };
