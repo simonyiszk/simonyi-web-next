@@ -4,7 +4,7 @@ import HelloWorld from './demo.mdx';
 export default function Page() {
   return (
     <SubpageLayout>
-      <div>
+      <div className="rounded-md bg-darkmode_regular p-4">
         <HelloWorld />
       </div>
     </SubpageLayout>
