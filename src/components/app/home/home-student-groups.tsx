@@ -1,7 +1,7 @@
 import { StudentGroup } from '~/components';
 import { StudentGroupType } from '~/types';
 
-export default function StudentGroups({ groups }: { groups: Array<StudentGroupType> }) {
+export default function HomeStudentGroups({ groups }: { groups: Array<StudentGroupType> }) {
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
