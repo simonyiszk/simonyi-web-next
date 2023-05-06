@@ -1,6 +1,7 @@
 import { HomeFooter } from './footer';
 import { HomeHeader } from './header';
 import { Button } from './button';
+import { Link } from './link';
 import {
   ChevronIcon,
   ClockIcon,
@@ -45,5 +46,6 @@ export {
   StudentGroup,
   YouTubeIcon,
   TikTokIcon,
-  Button
+  Button,
+  Link
 };
