@@ -1,6 +1,5 @@
 import { about, groups, images, profiles } from '~/utils';
-import { HomeAbout, HomeGreeting, HomePresidency } from '~/components/app/home';
-import HomeStudentGroups from '~/components/app/home/home-student-groups';
+import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubsites } from '~/components/app/home';
 
 export default function Page() {
   return (
@@ -8,6 +7,7 @@ export default function Page() {
       <HomeGreeting />
       <div className="max-w-home mx-auto p-8 flex flex-col gap-[calc(80px+2rem)] pb-[calc(80px+2rem)]">
         <div />
+        <HomeSubsites />
         <HomeAbout about={about} images={images} />
         <HomeStudentGroups groups={groups} />
         <HomePresidency profiles={profiles} />
