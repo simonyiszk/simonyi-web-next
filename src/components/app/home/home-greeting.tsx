@@ -4,7 +4,7 @@ import { Button, ChevronIcon, HomeHeader, SimonyiFullLightIcon } from '~/compone
 export default function HomeGreeting() {
   return (
     <div className="min-h-screen">
-      <div className="z-[-1] absolute top-0 left-0 bg-black w-full max-w-full h-screen max-h-full blur-[10px] flex">
+      <div className="-z-10 absolute top-0 left-0 bg-black w-full max-w-full h-screen max-h-full blur-home flex">
         <Image src="/images/hero/default.png" alt="Hero image" fill priority style={{ objectFit: 'cover' }} />
       </div>
       <div className="flex flex-col min-h-screen justify-between items-center pb-[calc(80px+2rem)]">
