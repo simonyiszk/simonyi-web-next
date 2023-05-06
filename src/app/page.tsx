@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <HomeGreeting />
-      <div className="max-w-[1492px] mx-auto p-8 flex flex-col gap-[calc(80px+2rem)] pb-[calc(80px+2rem)]">
+      <div className="max-w-home mx-auto p-8 flex flex-col gap-[calc(80px+2rem)] pb-[calc(80px+2rem)]">
         <div />
         <HomeAbout about={about} images={images} />
         <HomeStudentGroups groups={groups} />

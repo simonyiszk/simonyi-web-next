@@ -77,6 +77,19 @@ module.exports = {
         lg: '70em',
         xl: '80em',
         '2xl': '96em'
+      },
+      maxWidth: {
+        home: '1492px'
+      },
+      minHeight: {
+        safe_screen: '100svh'
+      },
+      opacity: {
+        text: '0.92',
+        button: '0.16'
+      },
+      blur: {
+        home: '10px'
       }
     },
     darkMode: ['class', '[data-theme="dark"]']

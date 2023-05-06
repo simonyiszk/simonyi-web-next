@@ -4,7 +4,7 @@ import type { ProfileType } from '../../types';
 
 function Profile({ name, title, profilePicture, socials }: ProfileType) {
   return (
-    <div className="flex flex-col items-center bg-darkmode_regular rounded-[1rem] p-4 gap-4 max-w-[300px] w-full">
+    <div className="flex flex-col items-center bg-darkmode_regular rounded-2xl p-4 gap-4 max-w-[300px] w-full">
       <div className="w-full h-[200px] max-w-[200px] relative">
         <Image
           src={profilePicture.url}

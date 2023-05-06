@@ -3,7 +3,7 @@ import Image from 'next/image';
 function HomeFooter() {
   return (
     <div className="flex flex-col items-center bg-darkmode_regular gap-8 p-8">
-      <div className="flex flex-wrap flex-col sm:flex-row items-start max-w-[1492px] gap-16 pb-8 justify-evenly w-auto md:w-full">
+      <div className="flex flex-wrap flex-col sm:flex-row items-start max-w-home gap-16 pb-8 justify-evenly w-auto md:w-full">
         <div className="flex flex-col gap-1">
           <h2 className="pb-4 text-h2 font-heading">Elérhetőség</h2>
           <a

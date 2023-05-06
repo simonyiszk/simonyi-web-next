@@ -15,7 +15,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
   };
 
   return (
-    <div className="flex flex-col items-center justify-between rounded-[1rem] gap-8 p-5 bg-darkmode_regular max-w-full md:max-w-[45%] lg:max-w-[31%]">
+    <div className="flex flex-col items-center justify-between rounded-2xl gap-8 p-5 bg-darkmode_regular max-w-full md:max-w-[45%] lg:max-w-[31%]">
       <div className="w-full flex flex-col items-center gap-8">
         <div
           className="w-full flex flex-row items-center gap-8 justify-between hover:cursor-pointer md:hover:cursor-auto"
@@ -48,7 +48,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
             title={social.link.title}
             target="_blank"
             key={index}
-            className="bg-simonyi_zold px-[13px] py-[6px] rounded-[6px]"
+            className="bg-simonyi_zold px-[13px] py-[6px] rounded-md"
             rel="noreferrer"
           >
             <SocialIcon iconName={social.icon} props={{ className: 'w-4 h-4 leading-4 fill-white inline-block align-middle' }} />

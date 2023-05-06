@@ -27,7 +27,7 @@ export default function HomeAboutImageBrowser({ images }: { images: typeof image
   };
 
   return (
-    <div className="flex md:flex-wrap gap-[10px] overflow-x-scroll md:overflow-x-hidden -mx-[2rem] md:mx-0 justify-start md:justify-center lg:justify-end">
+    <div className="flex md:flex-wrap gap-[10px] overflow-x-scroll md:overflow-x-hidden -mx-8 md:mx-0 justify-start md:justify-center lg:justify-end">
       {images.slice(0, 9).map((image, index) => (
         <div
           key={index}
