@@ -1,94 +1,131 @@
-import React from 'react';
 import Image from 'next/image';
-import { Box, Link, Text } from '@chakra-ui/react';
 
 function HomeFooter() {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" bgColor="darkmode_regular" p={8} gap={8}>
-      <Box
-        width={{ base: 'auto', md: '100%' }}
-        maxWidth="1496px"
-        display="flex"
-        flexWrap="wrap"
-        flexDirection={{ base: 'column', msm: 'row' }}
-        alignItems={{ base: 'flex-start', md: 'flex-start' }}
-        pb={8}
-        gap={16}
-        justifyContent="space-evenly"
-      >
-        <Box display="flex" flexDirection="column" gap={1}>
-          <Text as="h2" pb={4}>
-            Elérhetőség
-          </Text>
-          <Link color="simonyi_zold" href="mailto:info@simonyi.bme.hu" title="info@simonyi.bme.hu" target="_blank">
+    <div className="flex flex-col items-center bg-darkmode_regular gap-8 p-8">
+      <div className="flex flex-wrap flex-col sm:flex-row items-start max-w-[1492px] gap-16 pb-8 justify-evenly w-auto md:w-full">
+        <div className="flex flex-col gap-1">
+          <h2 className="pb-4 text-h2 font-heading">Elérhetőség</h2>
+          <a
+            className="text-simonyi_zold font-body"
+            href="mailto:info@simonyi.bme.hu"
+            title="info@simonyi.bme.hu"
+            target="_blank"
+            rel="noreferrer"
+          >
             info@simonyi.bme.hu
-          </Link>
-          <Text mt={4}>
+          </a>
+          <p className="mt-4 font-body">
             1117 Budapest,
             <br />
             Irinyi József utca 42, 1320
-          </Text>
-        </Box>
-        <Box display="flex" flexDirection="column" gap={1}>
-          <Text as="h2" pb={4}>
-            Weboldalaink
-          </Text>
-          <Link color="simonyi_zold" href="https://konferencia.simonyi.bme.hu/" title="konferencia.simonyi.bme.hu" target="_blank">
+          </p>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h2 className="pb-4 text-h2 font-heading">Weboldalaink</h2>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://konferencia.simonyi.bme.hu/"
+            title="konferencia.simonyi.bme.hu"
+            target="_blank"
+            rel="noreferrer"
+          >
             Simonyi Konferencia
-          </Link>
-          <Link color="simonyi_zold" href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank">
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://tanfolyam.simonyi.bme.hu/"
+            title="tanfolyam.simonyi.bme.hu"
+            target="_blank"
+            rel="noreferrer"
+          >
             Simonyi tanfolyamok
-          </Link>
-          <Link color="simonyi_zold" href="https://termek.sch.bme.hu/" title="termek.sch.bme.hu" target="_blank">
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://termek.sch.bme.hu/"
+            title="termek.sch.bme.hu"
+            target="_blank"
+            rel="noreferrer"
+          >
             Terem- és eszközbérlés
-          </Link>
-          <Link
-            color="simonyi_zold"
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
             href="https://old.simonyi.bme.hu/ntp2021/ntp2021.pdf"
             title="Nemzeti Tehetség Program 2021"
             target="_blank"
+            rel="noreferrer"
           >
             NTP-SZKOLL-21-0078
-          </Link>
-        </Box>
-        <Box display="flex" flexDirection="column" gap={1}>
-          <Text as="h2" pb={4}>
-            Közösségi hálónk
-          </Text>
-          <Link color="simonyi_zold" href="https://www.facebook.com/simonyiszk" title="facebook.com/simonyiszk" target="_blank">
+          </a>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h2 className="pb-4 text-h2 font-heading">Közösségi hálónk</h2>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://www.facebook.com/simonyiszk"
+            title="facebook.com/simonyiszk"
+            target="_blank"
+            rel="noreferrer"
+          >
             Facebook oldal
-          </Link>
-          <Link color="simonyi_zold" href="https://www.instagram.com/simonyiszk/" title="instagram.com/simonyiszk" target="_blank">
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://www.instagram.com/simonyiszk/"
+            title="instagram.com/simonyiszk"
+            target="_blank"
+            rel="noreferrer"
+          >
             Instagram profil
-          </Link>
-          <Link color="simonyi_zold" href="https://www.youtube.com/@SimonyiSzakkoli" title="youtube.com/@SimonyiSzakkoli" target="_blank">
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://www.youtube.com/@SimonyiSzakkoli"
+            title="youtube.com/@SimonyiSzakkoli"
+            target="_blank"
+            rel="noreferrer"
+          >
             YouTube csatorna
-          </Link>
-          <Link color="simonyi_zold" href="https://www.linkedin.com/company/simonyi/" title="linkedin.com/company/simonyi" target="_blank">
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://www.linkedin.com/company/simonyi/"
+            title="linkedin.com/company/simonyi"
+            target="_blank"
+            rel="noreferrer"
+          >
             LinkedIn profil
-          </Link>
-          <Link color="simonyi_zold" href="https://github.com/simonyiszk" title="github.com/simonyiszk" target="_blank">
+          </a>
+          <a
+            className="text-simonyi_zold font-body"
+            href="https://github.com/simonyiszk"
+            title="github.com/simonyiszk"
+            target="_blank"
+            rel="noreferrer"
+          >
             GitHub profil
-          </Link>
-        </Box>
-      </Box>
-      <Box display="flex" gap={8} flexWrap="wrap" alignItems="center" flexDirection={{ base: 'column', md: 'row' }}>
-        <Link href="http://www.bme.hu/" target="_blank" height="60px" width="225px" position="relative">
+          </a>
+        </div>
+      </div>
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-8">
+        <a className="h-[60px] w-[225px] relative" href="http://www.bme.hu/" target="_blank" rel="noreferrer">
           <Image src="/images/bme/bme.png" alt="Logo of BME" fill />
-        </Link>
-        <Link href="http://www.vik.bme.hu/" target="_blank" height="60px" width="60px" position="relative">
+        </a>
+        <a className="h-[60px] w-[60px] relative" href="http://www.vik.bme.hu/" target="_blank" rel="noreferrer">
           <Image src="/images/bme/vik.png" alt="Logo of BME VIK" fill />
-        </Link>
-        <Link href="https://svie.hu/" target="_blank" width={{ base: 'auto', md: '225px' }}>
-          <Box height="60px" width="192px" position="relative">
+        </a>
+        <a className="w-auto md:w-[225px]" href="https://svie.hu/" target="_blank" rel="noreferrer">
+          <div className="h-[60px] w-[192px] relative">
             <Image src="/images/bme/schonherz.png" alt="Logo of Schonherz" fill />
-          </Box>
-        </Link>
-      </Box>
-      <Link href="https://github.com/simonyiszk/simonyi-web-next">
-        <Text align="center">github.com/simonyiszk/simonyi-web-next</Text>
-      </Link>
-    </Box>
+          </div>
+        </a>
+      </div>
+      <a href="https://github.com/simonyiszk/simonyi-web-next">
+        <p className="text-center font-body">github.com/simonyiszk/simonyi-web-next</p>
+      </a>
+    </div>
   );
 }
 
