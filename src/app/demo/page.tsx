@@ -1,9 +1,12 @@
+import { SubpageLayout } from '~/components';
 import HelloWorld from './demo.mdx';
 
 export default function Page() {
   return (
-    <div>
-      <HelloWorld />
-    </div>
+    <SubpageLayout>
+      <div>
+        <HelloWorld />
+      </div>
+    </SubpageLayout>
   );
 }

@@ -1,5 +1,5 @@
 import './globals.css';
-import { HomeFooter, SEO } from '~/components';
+import { SEO } from '~/components';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,10 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SEO title="Főoldal" siteUrl="https://simonyi.bme.hu" />
       </head>
       <body className="bg-dark text-white text-opacity-text">
-        <div className="flex flex-col justify-between min-h-safe_screen">
-          <div>{children}</div>
-          <HomeFooter />
-        </div>
+        <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
       </body>
     </html>
   );
