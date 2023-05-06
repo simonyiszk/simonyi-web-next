@@ -1,5 +1,6 @@
 import { about, groups, images, profiles } from '~/utils';
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubsites } from '~/components/app/home';
+import { HomeFooter } from '~/components';
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
         <HomeStudentGroups groups={groups} />
         <HomePresidency profiles={profiles} />
       </div>
+      <HomeFooter />
     </>
   );
 }

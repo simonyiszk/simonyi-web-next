@@ -12,7 +12,7 @@ export default function HomeSubsites() {
         <Link href="/about">
           <Button>Rólunk</Button>
         </Link>
-        <Link href="/showcase">
+        <Link href="/success-stories">
           <Button>Büszkeségeink</Button>
         </Link>
       </div>
