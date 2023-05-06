@@ -17,8 +17,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h4: ({ children }) => <h4 className="text-h4 font-heading">{children}</h4>,
     h5: ({ children }) => <h5 className="font-heading">{children}</h5>,
     h6: ({ children }) => <h6 className="font-heading">{children}</h6>,
-    p: ({ children }) => <p className="text-text font-body">{children}</p>,
-    a: ({ children }) => <a className="text-link font-body text-simonyi_zold">{children}</a>,
+    p: ({ children }) => <p className="font-body">{children}</p>,
+    a: ({ children, href, title, target, rel }) => (
+      <a className="font-body text-simonyi_zold" href={href} title={title} target={target} rel={rel}>
+        {children}
+      </a>
+    ),
     i: ({ children }) => <i>{children}</i>,
     b: ({ children }) => <b>{children}</b>,
     ...components
