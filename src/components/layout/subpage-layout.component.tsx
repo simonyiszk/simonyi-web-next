@@ -1,0 +1,13 @@
+import { HomeFooter, SubpageHeader } from '..';
+
+function SubpageLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col justify-between min-h-safe_screen">
+      <SubpageHeader />
+      <div className="self-center p-4 max-w-home">{children}</div>
+      <HomeFooter />
+    </div>
+  );
+}
+
+export { SubpageLayout };
