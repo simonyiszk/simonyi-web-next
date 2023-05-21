@@ -71,7 +71,22 @@ export const mdxComponents: MDXComponents = {
       </img>
     </span>
   ),
-  pre: Code
+  pre: Code,
+  ol: ({ children, ...props }) => (
+    <ol className="list-decimal font-body ml-4 mb-4" {...props}>
+      {children}
+    </ol>
+  ),
+  ul: ({ children, ...props }) => (
+    <ul className="list-disc font-body ml-4 mb-4" {...props}>
+      {children}
+    </ul>
+  ),
+  li: ({ children, ...props }) => (
+    <li className="font-body ml-2" {...props}>
+      {children}
+    </li>
+  )
 };
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
