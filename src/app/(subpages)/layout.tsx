@@ -1,6 +1,6 @@
-import { HomeFooter, SubpageHeader } from '..';
+import { SubpageHeader, HomeFooter } from '~/components';
 
-function SubpageLayout({ children }: { children: React.ReactNode }) {
+export default function SubpageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col justify-between min-h-safe_screen gap-16">
       <SubpageHeader />
@@ -9,5 +9,3 @@ function SubpageLayout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
-export { SubpageLayout };
