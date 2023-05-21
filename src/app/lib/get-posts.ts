@@ -27,7 +27,6 @@ const getPosts = cache(async () => {
 
 async function getPost(slug: string) {
   const posts = await getPosts();
-  console.log(posts);
   return posts.find((post) => post?.slug === slug);
 }
 
