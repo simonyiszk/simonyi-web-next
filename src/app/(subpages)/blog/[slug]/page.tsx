@@ -1,8 +1,24 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getPost } from '~/app/lib/get-posts';
-
 import { mdxComponents } from '~/mdx-components';
+
+export async function generateMetadata({
+  params
+}: {
+  params: {
+    slug: string;
+  };
+}): Promise<Metadata> {
+  const post = await getPost(params.slug);
+
+  return {
+    title: post?.title,
+    description: post?.description,
+    authors: post?.author ? [{ name: post?.author }] : undefined
+  };
+}
 
 export default async function PostPage({
   params
