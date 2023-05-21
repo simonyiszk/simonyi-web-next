@@ -23,7 +23,8 @@ import {
 import { Profile } from './profile';
 import { SEO } from './seo';
 import { StudentGroup } from './student-group';
-import { SubpageLayout } from './layout';
+import { SubpageLayout, HomeLayout } from './layout';
+import { LightBox } from './lightbox';
 
 export {
   ChevronIcon,
@@ -50,5 +51,7 @@ export {
   Button,
   Link,
   SubpageHeader,
-  SubpageLayout
+  SubpageLayout,
+  HomeLayout,
+  LightBox
 };

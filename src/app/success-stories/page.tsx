@@ -1,4 +1,9 @@
+import { Metadata } from 'next';
 import { SubpageLayout } from '~/components';
+
+export const metadata: Metadata = {
+  title: 'Büszkeségeink'
+};
 
 export default function Page() {
   return (
