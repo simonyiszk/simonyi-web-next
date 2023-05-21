@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="rounded-md bg-darkmode_regular p-4 max-w-3xl">
+    <div>
       <HelloWorld />
     </div>
   );
