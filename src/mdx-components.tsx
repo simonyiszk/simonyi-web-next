@@ -54,6 +54,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     i: ({ children, ...props }) => <i {...props}>{children}</i>,
     b: ({ children, ...props }) => <b {...props}>{children}</b>,
+    img: ({ children, ...props }) => (
+      <span>
+        {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+        <img className="w-full h-auto" {...props}>
+          {children}
+        </img>
+      </span>
+    ),
+    /*
+    img: ({ children, ...props }) => (
+      <span className="relative">
+        <Image src={props.src || '/images/cover.png'} alt={props.alt || 'Default image alt text'} fill>
+          {children}
+        </Image>
+      </span>
+    ),
+    */
     ...components
   };
 }
