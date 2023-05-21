@@ -23,7 +23,6 @@ import {
 import { Profile } from './profile';
 import { SEO } from './seo';
 import { StudentGroup } from './student-group';
-import { SubpageLayout, HomeLayout } from './layout';
 import { LightBox } from './lightbox';
 
 export {
@@ -51,7 +50,5 @@ export {
   Button,
   Link,
   SubpageHeader,
-  SubpageLayout,
-  HomeLayout,
   LightBox
 };

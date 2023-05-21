@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import './globals.css';
-import { HomeLayout } from '~/components';
 
 export const metadata: Metadata = {
   title: {
@@ -39,8 +38,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <HomeLayout>
-      <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
-    </HomeLayout>
+    <html data-theme="dark" lang="hu">
+      <body className="bg-dark text-white text-opacity-text">
+        <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
+      </body>
+    </html>
   );
 }
