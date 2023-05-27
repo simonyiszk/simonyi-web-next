@@ -42,12 +42,7 @@ function HomeFooter() {
           <Link color="simonyi_zold" href="https://termek.sch.bme.hu/" title="termek.sch.bme.hu" target="_blank">
             Terem- és eszközbérlés
           </Link>
-          <Link
-            color="simonyi_zold"
-            href="https://old.simonyi.bme.hu/ntp2021/ntp2021.pdf"
-            title="Nemzeti Tehetség Program 2021"
-            target="_blank"
-          >
+          <Link color="simonyi_zold" href="https://simonyi.bme.hu/ntp2021" title="Nemzeti Tehetség Program 2021" target="_blank">
             NTP-SZKOLL-21-0078
           </Link>
         </Box>
