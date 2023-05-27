@@ -4,13 +4,13 @@
   },
   "redirects": [
     {
-      "source": "/ntp2020/:path*",
-      "destination": "https://old.simonyi.bme.hu/ntp2020/:path*",
+      "source": "/ntp2020",
+      "destination": "https://drive.google.com/drive/folders/1jWwyL4pQ-hrOpx5kygeUmbvfPx4EbLOI?usp=sharing",
       "permanent": true
     },
     {
-      "source": "/ntp2021/:path*",
-      "destination": "https://old.simonyi.bme.hu/ntp2021/:path*",
+      "source": "/ntp2021",
+      "destination": "https://drive.google.com/drive/folders/1sJCyQZgR-HhZQuak2u_qX3ff7l7Aqolf?usp=share_link",
       "permanent": true
     },
     {
