@@ -37,11 +37,18 @@ type StudentGroupType = {
   isDense?: boolean;
 };
 
-type BlogPostType = {
-  layout: 'blog';
-  date: string;
-  title: string;
-  lead: string;
+type PostType = {
+  slug: string;
+  body: string;
+  title?: string;
+  description?: string;
+  date?: Date;
+  author?: string;
+  authors?: string[];
+  published?: boolean;
+  tags?: string[];
+  previewImage?: string;
+  previewImageAlt?: string;
 };
 
-export type { AboutType, ImageType, ProfileType, StudentGroupType, SocialIconType, SocialType, BlogPostType };
+export type { AboutType, ImageType, ProfileType, StudentGroupType, SocialIconType, SocialType, PostType };
