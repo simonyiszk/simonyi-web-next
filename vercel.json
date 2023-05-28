@@ -1,0 +1,67 @@
+{
+  "github": {
+    "silent": true
+  },
+  "redirects": [
+    {
+      "source": "/ntp2020",
+      "destination": "https://drive.google.com/drive/folders/1jWwyL4pQ-hrOpx5kygeUmbvfPx4EbLOI?usp=sharing",
+      "permanent": true
+    },
+    {
+      "source": "/ntp2021",
+      "destination": "https://drive.google.com/drive/folders/1sJCyQZgR-HhZQuak2u_qX3ff7l7Aqolf?usp=share_link",
+      "permanent": true
+    },
+    {
+      "source": "/szakmaihet2020/:path*",
+      "destination": "https://old.simonyi.bme.hu/szakmaihet2020/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tanfolyam/:path*",
+      "destination": "https://tanfolyam.simonyi.bme.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/bss/:path*",
+      "destination": "https://bsstudio.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ac/:path*",
+      "destination": "https://acstudio.sch.bme.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ha5kfu/:path*",
+      "destination": "https://ha5kfu.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/kir-dev/:path*",
+      "destination": "https://kir-dev.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/lego/:path*",
+      "destination": "https://legokor.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/schdesign/:path*",
+      "destination": "https://schdesign.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/sem/:path*",
+      "destination": "https://sem.sch.bme.hu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/spot/:path*",
+      "destination": "https://spot.sch.bme.hu/:path*",
+      "permanent": true
+    }
+  ]
+}
