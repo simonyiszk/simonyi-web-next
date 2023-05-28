@@ -39,12 +39,16 @@ type StudentGroupType = {
 
 type PostType = {
   slug: string;
+  body: string;
   title?: string;
   description?: string;
   date?: Date;
   author?: string;
-  body: string;
+  authors?: string[];
   published?: boolean;
+  tags?: string[];
+  previewImage?: string;
+  previewImageAlt?: string;
 };
 
 export type { AboutType, ImageType, ProfileType, StudentGroupType, SocialIconType, SocialType, PostType };
