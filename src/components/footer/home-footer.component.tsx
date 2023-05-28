@@ -53,7 +53,7 @@ function HomeFooter() {
           </Link>
           <Link
             className="text-simonyi_zold font-body"
-            href="https://old.simonyi.bme.hu/ntp2021/ntp2021.pdf"
+            href="https://simonyi.bme.hu/ntp2021"
             title="Nemzeti Tehetség Program 2021"
             target="_blank"
             rel="noreferrer"
