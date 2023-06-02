@@ -8,7 +8,10 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {}
+  experimental: {},
+  images: {
+    domains: ['warp.sch.bme.hu']
+  }
 };
 
 module.exports = withMDX(nextConfig);
