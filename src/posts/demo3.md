@@ -3,6 +3,7 @@ slug: demo3
 title: Demo3 remote mdx file
 author: Simonyi
 date: 2023-05-23
+hidden: true
 ---
 
 # h1
