@@ -46,9 +46,14 @@ type PostType = {
   author?: string;
   authors?: string[];
   published?: boolean;
+  hidden?: boolean;
   tags?: string[];
   previewImage?: string;
   previewImageAlt?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
 };
 
 export type { AboutType, ImageType, ProfileType, StudentGroupType, SocialIconType, SocialType, PostType };
