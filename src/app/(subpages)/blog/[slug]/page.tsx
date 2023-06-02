@@ -12,12 +12,38 @@ export async function generateMetadata({
     slug: string;
   };
 }): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const post = await getPost(params.slug, true);
+
+  const title = post?.title;
+  const description = post?.description;
+  const authors = () => {
+    const author = post?.author ? { name: post.author } : undefined;
+    const authors = post?.authors ? post.authors.map((author) => ({ name: author })) : undefined;
+
+    return author ? (authors ? [author, ...authors] : [author]) : authors;
+  };
+  const ogImage = post?.ogImage
+    ? {
+        url: post.ogImage,
+        alt: post.ogImageAlt,
+        width: post.ogImageWidth,
+        height: post.ogImageHeight
+      }
+    : undefined;
+
+  const date = post?.date?.toDateString();
 
   return {
-    title: post?.title,
-    description: post?.description,
-    authors: post?.author ? [{ name: post?.author }] : undefined
+    title,
+    description,
+    authors: authors(),
+    openGraph: {
+      releaseDate: date,
+      images: ogImage ? [ogImage] : undefined
+    },
+    twitter: {
+      images: ogImage ? [ogImage] : undefined
+    }
   };
 }
 
@@ -28,7 +54,7 @@ export default async function PostPage({
     slug: string;
   };
 }) {
-  const post = await getPost(params.slug);
+  const post = await getPost(params.slug, true);
 
   if (!post) return notFound();
 
