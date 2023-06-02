@@ -5,6 +5,8 @@ author: Simonyi
 date: 2023-05-21
 previewImage: /images/lightbox/1.jpg
 ogImage: /images/lightbox/1.jpg
+published: true
+hidden: false
 ---
 
 # h1
