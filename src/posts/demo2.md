@@ -3,7 +3,10 @@ slug: demo2
 title: Demo2 remote mdx file
 author: Simonyi
 date: 2023-05-22
-published: false
+previewImage: /images/lightbox/1.jpg
+ogImage: /images/lightbox/1.jpg
+ogImageWidth: 2048
+ogImageHeight: 1365
 ---
 
 # h1
