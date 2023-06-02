@@ -5,6 +5,8 @@ author: Simonyi
 date: 2023-05-21
 previewImage: https://warp.sch.bme.hu/images/cover
 ogImage: https://warp.sch.bme.hu/images/cover
+ogImageWidth: 960
+ogImageHeight: 540
 published: true
 hidden: false
 ---
