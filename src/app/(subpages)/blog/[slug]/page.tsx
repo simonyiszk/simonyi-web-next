@@ -38,11 +38,16 @@ export async function generateMetadata({
     description,
     authors: authors(),
     openGraph: {
+      type: 'article',
       releaseDate: date,
-      images: ogImage ? [ogImage] : undefined
+      images: ogImage ? [ogImage] : undefined,
+      locale: 'hu-HU'
     },
     twitter: {
-      images: ogImage ? [ogImage] : undefined
+      card: 'summary_large_image',
+      images: ogImage ? [ogImage] : undefined,
+      site: 'simonyiszakkoli',
+      creator: 'simonyiszakkoli'
     }
   };
 }
