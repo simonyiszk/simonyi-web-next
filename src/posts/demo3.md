@@ -5,6 +5,8 @@ author: Simonyi
 date: 2023-05-23
 previewImage: /images/lightbox/1.jpg
 ogImage: /images/lightbox/1.jpg
+ogImageWidth: 2048
+ogImageHeight: 1365
 hidden: true
 ---
 
