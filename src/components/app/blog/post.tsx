@@ -4,7 +4,7 @@ import { PostType } from '~/types';
 
 function Post({ data }: { data: PostType }) {
   return (
-    <Link href={`/blog/${data.slug}`}>
+    <Link href={`/blog/${data.slug}`} className="hover:underline">
       <div className="grid grid-cols-[0_1fr] sm:grid-cols-[100px_1fr] grid-rows-2 bg-darkmode_regular rounded-md gap-4">
         <div className="row-span-2 relative">
           {data.previewImage ? (
