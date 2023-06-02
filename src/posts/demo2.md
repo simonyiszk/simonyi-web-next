@@ -8,7 +8,7 @@ ogImage: https://warp.sch.bme.hu/images/cover
 ogImageWidth: 960
 ogImageHeight: 540
 published: true
-hidden: false
+hidden: true
 ---
 
 # h1
