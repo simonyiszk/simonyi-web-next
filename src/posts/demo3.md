@@ -1,12 +1,14 @@
 ---
 slug: demo3
-title: Demo3 remote mdx file
+title: Demo3 title
 author: Simonyi
-date: 2023-05-23
-previewImage: /images/lightbox/1.jpg
-ogImage: /images/lightbox/1.jpg
-ogImageWidth: 2048
-ogImageHeight: 1365
+authors: a, b, c
+date: 2023-05-21
+previewImage: https://warp.sch.bme.hu/images/cover
+ogImage: https://warp.sch.bme.hu/images/cover
+ogImageWidth: 960
+ogImageHeight: 540
+published: true
 hidden: true
 ---
 

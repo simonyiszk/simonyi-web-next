@@ -65,7 +65,7 @@ export default async function PostPage({
   const { title, date, previewImage } = post;
 
   return (
-    <div className="rounded-md bg-darkmode_regular p-4 max-w-3xl">
+    <div className="flex-grow self-center m-4 rounded-md bg-darkmode_regular p-4 max-w-3xl">
       {previewImage && (
         <div className="rounded-t-md relative h-80 -mx-4 -mt-4 mb-8">
           <Image src={previewImage} alt={''} fill className="rounded-t-md object-cover" />
