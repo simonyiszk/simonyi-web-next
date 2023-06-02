@@ -3,6 +3,8 @@ slug: demo3
 title: Demo3 remote mdx file
 author: Simonyi
 date: 2023-05-23
+previewImage: /images/lightbox/1.jpg
+ogImage: /images/lightbox/1.jpg
 hidden: true
 ---
 
