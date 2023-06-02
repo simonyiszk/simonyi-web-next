@@ -3,8 +3,8 @@ slug: demo1
 title: Demo1 title
 author: Simonyi
 date: 2023-05-21
-previewImage: /images/lightbox/1.jpg
-ogImage: /images/lightbox/1.jpg
+previewImage: https://warp.sch.bme.hu/images/cover
+ogImage: https://warp.sch.bme.hu/images/cover
 published: true
 hidden: false
 ---
