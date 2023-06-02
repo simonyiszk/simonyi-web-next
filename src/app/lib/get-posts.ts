@@ -27,8 +27,6 @@ const loadPosts = cache(async () => {
           data.tags = data.tags.split(',').map((tag: string) => tag.trim());
         }
 
-        console.log(data);
-
         return { ...data, body: content } as PostType;
       })
   );
