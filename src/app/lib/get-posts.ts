@@ -19,6 +19,14 @@ const loadPosts = cache(async () => {
           return null;
         }
 
+        if (data.authors) {
+          data.authors = data?.authors?.split(',').map((author: string) => author.trim());
+        }
+
+        if (data.tags) {
+          data.tags = data?.tags?.split(',').map((tag: string) => tag.trim());
+        }
+
         return { ...data, body: content } as PostType;
       })
   );
