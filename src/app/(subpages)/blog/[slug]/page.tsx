@@ -73,7 +73,7 @@ export default async function PostPage({
       )}
       <div className="mb-8">
         {title && <h1 className="text-h1 text-5xl font-heading mb-4">{title}</h1>}
-        {date && <div className="font-body">{date.toLocaleDateString()}</div>}
+        {date && <div className="font-body">{date.toLocaleDateString('hu-HU')}</div>}
       </div>
       {/* @ts-expect-error RSC */}
       <MDXRemote
