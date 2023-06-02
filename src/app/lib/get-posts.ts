@@ -19,13 +19,15 @@ const loadPosts = cache(async () => {
           return null;
         }
 
-        if (data.authors) {
+        if (data.authors !== undefined && typeof data.authors === 'string') {
           data.authors = data.authors.split(',').map((author: string) => author.trim());
         }
 
-        if (data.tags) {
+        if (data.tags !== undefined && typeof data.tags === 'string') {
           data.tags = data.tags.split(',').map((tag: string) => tag.trim());
         }
+
+        console.log(data);
 
         return { ...data, body: content } as PostType;
       })
