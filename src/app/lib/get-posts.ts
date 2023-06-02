@@ -24,15 +24,16 @@ const loadPosts = cache(async () => {
   );
 });
 
-async function getPosts() {
+async function getPosts(includeHidden = false) {
   const posts = await loadPosts();
   return posts
     .filter((post): post is PostType => post !== null && post !== undefined)
+    .filter((post) => includeHidden || !post.hidden)
     .sort((a, b) => ((a?.date || 0) < (b?.date || 0) ? 1 : -1));
 }
 
-async function getPost(slug: string) {
-  const posts = await getPosts();
+async function getPost(slug: string, includeHidden = false) {
+  const posts = await getPosts(includeHidden);
   return posts.find((post) => post?.slug === slug);
 }
 

@@ -1,9 +1,11 @@
 ---
 slug: demo1
-title: Demo1 remote mdx file
+title: Demo1 title
+description: Demo1 description
 author: Simonyi
 date: 2023-05-21
 previewImage: /images/lightbox/1.jpg
+ogImage: /images/lightbox/1.jpg
 ---
 
 # h1
