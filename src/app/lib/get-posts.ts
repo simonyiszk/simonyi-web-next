@@ -20,11 +20,11 @@ const loadPosts = cache(async () => {
         }
 
         if (data.authors) {
-          data.authors = data?.authors?.split(',').map((author: string) => author.trim());
+          data.authors = data.authors.split(',').map((author: string) => author.trim());
         }
 
         if (data.tags) {
-          data.tags = data?.tags?.split(',').map((tag: string) => tag.trim());
+          data.tags = data.tags.split(',').map((tag: string) => tag.trim());
         }
 
         return { ...data, body: content } as PostType;
