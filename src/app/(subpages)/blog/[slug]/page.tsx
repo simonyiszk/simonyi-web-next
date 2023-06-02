@@ -38,7 +38,6 @@ export async function generateMetadata({
     description,
     authors: authors(),
     openGraph: {
-      type: 'article',
       releaseDate: date,
       images: ogImage ? [ogImage] : undefined,
       locale: 'hu-HU'
