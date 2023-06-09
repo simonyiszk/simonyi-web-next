@@ -1,28 +1,28 @@
-import { Icon, IconProps } from '@chakra-ui/react';
+import { SVGProps } from 'react';
 import { EmailIcon, FacebookIcon, GitHubIcon, GlobeIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon } from '../icons';
 import { SocialIconType } from '../../types';
 import { TikTokIcon } from './social';
 
-function SocialIcon({ iconName, props }: { iconName: string; props?: IconProps }) {
+function SocialIcon({ iconName, props }: { iconName: string; props?: SVGProps<SVGSVGElement> }) {
   switch (iconName.toLocaleLowerCase() as SocialIconType) {
     case 'email':
-      return <Icon as={EmailIcon} {...props} />;
+      return <EmailIcon {...props} />;
     case 'facebook':
-      return <Icon as={FacebookIcon} {...props} />;
+      return <FacebookIcon {...props} />;
     case 'github':
-      return <Icon as={GitHubIcon} {...props} />;
+      return <GitHubIcon {...props} />;
     case 'instagram':
-      return <Icon as={InstagramIcon} {...props} />;
+      return <InstagramIcon {...props} />;
     case 'linkedin':
-      return <Icon as={LinkedInIcon} {...props} />;
+      return <LinkedInIcon {...props} />;
     case 'phone':
-      return <Icon as={PhoneIcon} {...props} />;
+      return <PhoneIcon {...props} />;
     case 'youtube':
-      return <Icon as={YouTubeIcon} {...props} />;
+      return <YouTubeIcon {...props} />;
     case 'tiktok':
-      return <Icon as={TikTokIcon} {...props} />;
+      return <TikTokIcon {...props} />;
     default:
-      return <Icon as={GlobeIcon} {...props} />;
+      return <GlobeIcon {...props} />;
   }
 }
 

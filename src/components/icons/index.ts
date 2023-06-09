@@ -4,6 +4,7 @@ import { ChevronIcon } from './chevron-icon.component';
 import { IncreaseIcon } from './increase-icon.component';
 import { SocialIcon } from './social-icon.component';
 import { ClockIcon } from './clock-icon.component';
+import { HamburgerIcon } from './hamburger-icon.component';
 
 export {
   ChevronIcon,
@@ -21,5 +22,6 @@ export {
   SimonyiFullLightIcon,
   SimonyiLogoIcon,
   SocialIcon,
-  ClockIcon
+  ClockIcon,
+  HamburgerIcon
 };

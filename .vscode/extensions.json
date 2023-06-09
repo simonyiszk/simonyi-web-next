@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "rvest.vs-code-prettier-eslint",
-    "arcanis.vscode-zipfs"
+    "arcanis.vscode-zipfs",
+    "unifiedjs.vscode-mdx"
   ]
 }

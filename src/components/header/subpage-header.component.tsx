@@ -1,23 +1,58 @@
-import { Box, HStack, Link } from '@chakra-ui/react';
-import { SimonyiFullLightIcon } from '../icons';
+'use client';
+
+import { useState } from 'react';
+import { default as NextLink } from 'next/link';
+import { SimonyiLogoIcon, HamburgerIcon } from '../icons';
 
 function SubpageHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <Box
-      display="flex"
-      columnGap={16}
-      rowGap={8}
-      justifyContent="space-between"
-      alignItems="center"
-      flexWrap="wrap"
-      bgColor="darkmode_regular"
-      p={8}
-    >
-      <SimonyiFullLightIcon width="10em" height="100%" />
-      <HStack>
-        <Link href="/">Kezdőlap</Link>
-      </HStack>
-    </Box>
+    <>
+      <header className="hidden md:block w-full bg-darkmode_regular">
+        <div className="flex flex-col md:flex-row w-full max-w-home p-4 gap-x-8 gap-y-4 justify-start align-middle items-center m-auto">
+          <div className="w-8 h-8">
+            <SimonyiLogoIcon />
+          </div>
+          <NextLink href="/" className="hover:underline">
+            Főoldal
+          </NextLink>
+          <NextLink href="/blog" className="hover:underline">
+            Blog
+          </NextLink>
+        </div>
+      </header>
+      <header className="md:hidden w-full bg-darkmode_regular">
+        <div className="flex flex-row w-full p-4 gap-x-8 gap-y-4 justify-between align-middle items-center">
+          <div className="w-8 h-8">
+            <SimonyiLogoIcon />
+          </div>
+          <div className="w-6 h-4 cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <HamburgerIcon />
+          </div>
+        </div>
+        {isMenuOpen && (
+          <div className="flex flex-col p-4 gap-x-8 gap-y-4 ">
+            <div className="flex flex-col md:flex-row w-full max-w-home gap-x-8 gap-y-4 justify-start align-middle items-center m-auto">
+              <NextLink
+                href="/"
+                className="p-4 w-full text-center md:w-auto md:p-0 md:text-left hover:underline"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Főoldal
+              </NextLink>
+              <NextLink
+                href="/blog"
+                className="p-4 w-full text-center md:w-auto md:p-0 md:text-left hover:underline"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </NextLink>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 }
 

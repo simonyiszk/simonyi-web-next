@@ -1,5 +1,7 @@
 import { HomeFooter } from './footer';
 import { HomeHeader, SubpageHeader } from './header';
+import { Button } from './button';
+import { Link } from './link';
 import {
   ChevronIcon,
   ClockIcon,
@@ -21,6 +23,7 @@ import {
 import { Profile } from './profile';
 import { SEO } from './seo';
 import { StudentGroup } from './student-group';
+import { LightBox } from './lightbox';
 
 export {
   ChevronIcon,
@@ -44,5 +47,8 @@ export {
   StudentGroup,
   YouTubeIcon,
   TikTokIcon,
-  SubpageHeader
+  Button,
+  Link,
+  SubpageHeader,
+  LightBox
 };

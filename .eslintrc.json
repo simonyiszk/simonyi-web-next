@@ -8,12 +8,17 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
+    "plugin:import/recommended",
     "plugin:import/typescript",
-    "prettier"
+    "prettier",
+    "plugin:mdx/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["*.mdx", "*.md"],
+      "extends": "plugin:mdx/recommended"
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -45,6 +50,10 @@
     "import/resolver": {
       "typescript": true,
       "node": true
-    }
+    },
+    "mdx/code-blocks": true,
+    // optional, if you want to disable language mapper, set it to `false`
+    // if you want to override the default language mapper inside, you can provide your own
+    "mdx/language-mapper": {}
   }
 }

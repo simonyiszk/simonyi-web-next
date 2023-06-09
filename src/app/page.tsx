@@ -1,12 +1,19 @@
 import { about, groups, images, profiles } from '~/utils';
-import HomePage from './home-page';
-import '@fontsource/space-grotesk/300.css';
-import '@fontsource/space-grotesk/400.css';
-import '@fontsource/space-grotesk/700.css';
-import '@fontsource/archivo/300.css';
-import '@fontsource/archivo/400.css';
-import '@fontsource/archivo/700.css';
+import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages } from '~/components/app/home';
+import { HomeFooter } from '~/components';
 
 export default function Page() {
-  return <HomePage aboutData={about} imagesData={images} presidencyData={profiles} studentGroupsData={groups} />;
+  return (
+    <>
+      <HomeGreeting />
+      <div className="max-w-home mx-auto p-8 flex flex-col gap-[calc(80px+2rem)] pb-[calc(80px+2rem)]">
+        <div />
+        <HomeSubpages />
+        <HomeAbout about={about} images={images} />
+        <HomeStudentGroups groups={groups} />
+        <HomePresidency profiles={profiles} />
+      </div>
+      <HomeFooter />
+    </>
+  );
 }
