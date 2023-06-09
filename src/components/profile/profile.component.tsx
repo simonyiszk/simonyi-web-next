@@ -1,52 +1,29 @@
 import Image from 'next/image';
-import { Box, Link, Text } from '@chakra-ui/react';
 import { SocialIcon } from '../icons';
 import type { ProfileType } from '../../types';
 
 function Profile({ name, title, profilePicture, socials }: ProfileType) {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      bg="darkmode_regular"
-      borderRadius="1rem"
-      padding="1rem"
-      gap="1rem"
-      maxWidth="300px"
-      width="100%"
-    >
-      <Box width="100%" height="200px" maxWidth="200px" position="relative">
+    <div className="flex flex-col items-center bg-darkmode_regular rounded-2xl p-4 gap-4 max-w-[300px] w-full">
+      <div className="w-full h-[200px] max-w-[200px] relative">
         <Image
           src={profilePicture.url}
           alt={profilePicture.alt}
           fill
-          style={{
-            objectFit: 'cover',
-            lineHeight: '200px',
-            textAlign: 'center',
-            borderRadius: '50%',
-            borderStyle: 'solid',
-            borderWidth: 2,
-            borderColor: 'var(--chakra-colors-simonyi_zold)'
-          }}
+          className="border-simonyi_zold border-solid rounded-[50%] text-center object-cover leading-[200px] border-2"
         />
-      </Box>
+      </div>
 
-      <Text as="h2" align="center">
-        {name}
-      </Text>
-      <Text fontSize="1.25rem" fontWeight="regular" align="center">
-        {title}
-      </Text>
-      <Box display="flex" justifyContent="center" gap="1.75rem" mt="1.75rem" flexWrap="wrap">
+      <h2 className="text-center text-h2 font-heading">{name}</h2>
+      <p className="text-center text-text font-body leading-[30px]">{title}</p>
+      <div className="flex justify-center gap-7 mt-7 flex-wrap">
         {socials.map((social, index) => (
-          <Link href={social.link.url} title={social.link.title} target="_blank" key={index}>
-            <SocialIcon iconName={social.icon} props={{ boxSize: '1.5rem', fill: 'simonyi_zold' }} />
-          </Link>
+          <a href={social.link.url} title={social.link.title} target="_blank" key={index} rel="noreferrer">
+            <SocialIcon iconName={social.icon} props={{ className: 'w-6 h-6 leading-4 inline-block align-middle fill-simonyi_zold' }} />
+          </a>
         ))}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 
