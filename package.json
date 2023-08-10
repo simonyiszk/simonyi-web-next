@@ -11,8 +11,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "type-check": "tsc --noEmit",
     "lint": "next lint",
-    "lint:eslint": "eslint --max-warnings=0 .",
+    "lint:eslint": "eslint --max-warnings=0 . && yarn run type-check",
     "lint:prettier": "prettier --check .",
     "lint:prettier:debug": "prettier --check --debug-check ."
   },
