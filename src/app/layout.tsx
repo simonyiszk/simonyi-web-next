@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://simonyi.bme.hu'),
   title: {
     default: 'Simonyi Károly Szakkollégium',
     template: '%s - Simonyi Károly Szakkollégium',
