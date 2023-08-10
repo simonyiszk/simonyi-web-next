@@ -60,6 +60,15 @@ function HomeFooter() {
           >
             NTP-SZKOLL-21-0078
           </Link>
+          <Link
+            className="text-simonyi_zold font-body"
+            href="https://simonyi.bme.hu/ntp2022"
+            title="Nemzeti Tehetség Program 2022"
+            target="_blank"
+            rel="noreferrer"
+          >
+            NTP-SZKOLL-22-0081
+          </Link>
         </div>
         <div className="flex flex-col gap-1">
           <h2 className="pb-4 text-h2 font-heading">Közösségi hálónk</h2>
