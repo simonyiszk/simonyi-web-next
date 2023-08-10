@@ -28,20 +28,7 @@
   "rules": {
     "import/prefer-default-export": 0,
     "react/react-in-jsx-scope": 0,
-    "prettier/prettier": ["error"],
-    "import/order": [
-      "error",
-      {
-        "pathGroups": [
-          {
-            "pattern": "~/**",
-            "group": "internal",
-            "position": "after"
-          }
-        ],
-        "groups": ["builtin", "external", "internal", "unknown", "parent", "sibling", "index", "object", "type"]
-      }
-    ]
+    "prettier/prettier": ["error"]
   },
   "settings": {
     "react": {
