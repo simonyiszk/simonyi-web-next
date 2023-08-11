@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/loader", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:2.3.0"],\
             ["@mdx-js/react", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:2.3.0"],\
             ["@next/mdx", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:13.4.13"],\
+            ["@types/contentful-resolve-response", "npm:0.1.31"],\
             ["@types/mdx", "npm:2.0.6"],\
             ["@types/node", "npm:20.4.9"],\
             ["@types/react", "npm:18.2.20"],\
@@ -42,8 +43,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:9.3.5"],\
+            ["contentful", "npm:10.4.2"],\
             ["contentful-management", "npm:10.39.2"],\
+            ["contentful-resolve-response", "npm:1.7.0"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
             ["dotenv-cli", "npm:7.2.1"],\
@@ -970,6 +972,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/concat-stream", "npm:2.0.0"],\
             ["@types/node", "npm:20.4.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/contentful-resolve-response", [\
+        ["npm:0.1.31", {\
+          "packageLocation": "./.yarn/cache/@types-contentful-resolve-response-npm-0.1.31-1fe2faa9ff-a61e10fdaa.zip/node_modules/@types/contentful-resolve-response/",\
+          "packageDependencies": [\
+            ["@types/contentful-resolve-response", "npm:0.1.31"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9143,6 +9154,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/loader", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:2.3.0"],\
             ["@mdx-js/react", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:2.3.0"],\
             ["@next/mdx", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:13.4.13"],\
+            ["@types/contentful-resolve-response", "npm:0.1.31"],\
             ["@types/mdx", "npm:2.0.6"],\
             ["@types/node", "npm:20.4.9"],\
             ["@types/react", "npm:18.2.20"],\
@@ -9152,8 +9164,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:9.3.5"],\
+            ["contentful", "npm:10.4.2"],\
             ["contentful-management", "npm:10.39.2"],\
+            ["contentful-resolve-response", "npm:1.7.0"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
             ["dotenv-cli", "npm:7.2.1"],\
