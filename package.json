@@ -43,7 +43,7 @@
     "@typescript-eslint/parser": "6.3.0",
     "autoprefixer": "10.4.14",
     "cf-content-types-generator": "2.12.2",
-    "contentful": "10.4.2",
+    "contentful": "9.3.5",
     "contentful-management": "10.39.2",
     "cross-var": "1.1.0",
     "dotenv": "16.3.1",
