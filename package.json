@@ -35,6 +35,7 @@
     "yet-another-react-lightbox": "3.12.0"
   },
   "devDependencies": {
+    "@types/contentful-resolve-response": "0.1.31",
     "@types/mdx": "2.0.6",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
@@ -43,8 +44,9 @@
     "@typescript-eslint/parser": "6.3.0",
     "autoprefixer": "10.4.14",
     "cf-content-types-generator": "2.12.2",
-    "contentful": "9.3.5",
+    "contentful": "10.4.2",
     "contentful-management": "10.39.2",
+    "contentful-resolve-response": "1.7.0",
     "cross-var": "1.1.0",
     "dotenv": "16.3.1",
     "dotenv-cli": "7.2.1",
