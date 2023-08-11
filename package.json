@@ -16,9 +16,9 @@
     "lint:eslint": "eslint --max-warnings=0 . && yarn run type-check",
     "lint:prettier": "prettier --check .",
     "lint:prettier:debug": "prettier --check --debug-check .",
-    "contentful-export": "dotenv -e .env.local -- cross-var contentful space export --config src/contentful/export.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
-    "contentful-typegen:local": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
-    "contentful-typegen": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
+    "contentful:export": "dotenv -e .env.local -- cross-var contentful space export --config src/contentful/export.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
+    "contentful:typegen:local": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
+    "contentful:typegen": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
   },
   "dependencies": {
     "@fontsource/archivo": "5.0.8",
@@ -43,7 +43,7 @@
     "@typescript-eslint/parser": "6.3.0",
     "autoprefixer": "10.4.14",
     "cf-content-types-generator": "2.12.2",
-    "contentful": "10.0.0-beta-v10.8",
+    "contentful": "10.4.2",
     "contentful-management": "10.39.2",
     "cross-var": "1.1.0",
     "dotenv": "16.3.1",
