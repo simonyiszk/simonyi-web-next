@@ -2897,21 +2897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful@npm:10.4.2, contentful@npm:^10.1.0":
-  version: 10.4.2
-  resolution: "contentful@npm:10.4.2"
-  dependencies:
-    "@contentful/rich-text-types": ^16.0.2
-    axios: ^1.4.0
-    contentful-resolve-response: ^1.3.6
-    contentful-sdk-core: ^8.1.0
-    json-stringify-safe: ^5.0.1
-    type-fest: ^4.0.0
-  checksum: 8d12c139036e4aa69ce797362df014a06854cdf7d91534ecf18e89b1592df20984134d2a0c05521a54b762959aa81677d300fc46393db692312bfad05d2f5dad
-  languageName: node
-  linkType: hard
-
-"contentful@npm:^9.0.0":
+"contentful@npm:9.3.5, contentful@npm:^9.0.0":
   version: 9.3.5
   resolution: "contentful@npm:9.3.5"
   dependencies:
@@ -2922,6 +2908,20 @@ __metadata:
     fast-copy: ^2.1.7
     json-stringify-safe: ^5.0.1
   checksum: 85783f497e1091190aea4a631523a08e884f43ce6e88af42e895762ee77d6b7193206a9da023b2a2d4ed18ae57c142d7c2da837897a02f0bc1b4b9c374535504
+  languageName: node
+  linkType: hard
+
+"contentful@npm:^10.1.0":
+  version: 10.4.2
+  resolution: "contentful@npm:10.4.2"
+  dependencies:
+    "@contentful/rich-text-types": ^16.0.2
+    axios: ^1.4.0
+    contentful-resolve-response: ^1.3.6
+    contentful-sdk-core: ^8.1.0
+    json-stringify-safe: ^5.0.1
+    type-fest: ^4.0.0
+  checksum: 8d12c139036e4aa69ce797362df014a06854cdf7d91534ecf18e89b1592df20984134d2a0c05521a54b762959aa81677d300fc46393db692312bfad05d2f5dad
   languageName: node
   linkType: hard
 
@@ -7719,7 +7719,7 @@ __metadata:
     autoprefixer: 10.4.14
     bright: 0.8.4
     cf-content-types-generator: 2.12.2
-    contentful: 10.4.2
+    contentful: 9.3.5
     contentful-management: 10.39.2
     cross-var: 1.1.0
     dotenv: 16.3.1

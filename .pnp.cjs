@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:10.4.2"],\
+            ["contentful", "npm:9.3.5"],\
             ["contentful-management", "npm:10.39.2"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
@@ -9152,7 +9152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:10.4.2"],\
+            ["contentful", "npm:9.3.5"],\
             ["contentful-management", "npm:10.39.2"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
