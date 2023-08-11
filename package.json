@@ -15,7 +15,8 @@
     "lint": "next lint",
     "lint:eslint": "eslint --max-warnings=0 . && yarn run type-check",
     "lint:prettier": "prettier --check .",
-    "lint:prettier:debug": "prettier --check --debug-check ."
+    "lint:prettier:debug": "prettier --check --debug-check .",
+    "typegen": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
   },
   "dependencies": {
     "@fontsource/archivo": "5.0.8",
@@ -39,7 +40,12 @@
     "@typescript-eslint/eslint-plugin": "6.3.0",
     "@typescript-eslint/parser": "6.3.0",
     "autoprefixer": "10.4.14",
+    "cf-content-types-generator": "2.12.2",
+    "contentful": "10.4.2",
+    "contentful-management": "10.39.2",
+    "cross-var": "1.1.0",
     "dotenv": "16.3.1",
+    "dotenv-cli": "7.2.1",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
     "eslint-config-prettier": "9.0.0",
