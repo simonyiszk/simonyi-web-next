@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:10.0.0-beta-v10.32"],\
+            ["contentful", "npm:10.0.0-beta-v10.8"],\
             ["contentful-management", "npm:10.39.2"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
@@ -157,6 +157,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@contentful/rich-text-types", [\
+        ["npm:15.15.1", {\
+          "packageLocation": "./.yarn/cache/@contentful-rich-text-types-npm-15.15.1-13eb49558b-a8391e03a7.zip/node_modules/@contentful/rich-text-types/",\
+          "packageDependencies": [\
+            ["@contentful/rich-text-types", "npm:15.15.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:16.2.1", {\
           "packageLocation": "./.yarn/cache/@contentful-rich-text-types-npm-16.2.1-9cccdc204f-717a449f24.zip/node_modules/@contentful/rich-text-types/",\
           "packageDependencies": [\
@@ -3482,16 +3489,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["contentful", [\
-        ["npm:10.0.0-beta-v10.32", {\
-          "packageLocation": "./.yarn/cache/contentful-npm-10.0.0-beta-v10.32-8a82b55960-49957d0e87.zip/node_modules/contentful/",\
+        ["npm:10.0.0-beta-v10.8", {\
+          "packageLocation": "./.yarn/cache/contentful-npm-10.0.0-beta-v10.8-a2cd1515f1-8812b51e65.zip/node_modules/contentful/",\
           "packageDependencies": [\
-            ["contentful", "npm:10.0.0-beta-v10.32"],\
-            ["@contentful/rich-text-types", "npm:16.2.1"],\
+            ["contentful", "npm:10.0.0-beta-v10.8"],\
+            ["@contentful/rich-text-types", "npm:15.15.1"],\
             ["axios", "npm:0.26.1"],\
             ["contentful-resolve-response", "npm:1.7.0"],\
             ["contentful-sdk-core", "npm:7.1.0"],\
             ["json-stringify-safe", "npm:5.0.1"],\
-            ["type-fest", "npm:3.13.1"]\
+            ["type-fest", "npm:2.19.0"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -9582,7 +9589,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:10.0.0-beta-v10.32"],\
+            ["contentful", "npm:10.0.0-beta-v10.8"],\
             ["contentful-management", "npm:10.39.2"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
@@ -10411,10 +10418,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:3.13.1", {\
-          "packageLocation": "./.yarn/cache/type-fest-npm-3.13.1-4bd562882d-c06b0901d5.zip/node_modules/type-fest/",\
+        ["npm:2.19.0", {\
+          "packageLocation": "./.yarn/cache/type-fest-npm-2.19.0-918b953248-a4ef07ece2.zip/node_modules/type-fest/",\
           "packageDependencies": [\
-            ["type-fest", "npm:3.13.1"]\
+            ["type-fest", "npm:2.19.0"]\
           ],\
           "linkType": "HARD"\
         }],\
