@@ -75,7 +75,6 @@ export default async function PostPage({
         {title && <h1 className="text-h1 text-5xl font-heading mb-4">{title}</h1>}
         {date && <div className="font-body">{date.toLocaleDateString('hu-HU')}</div>}
       </div>
-      {/* @ts-expect-error RSC */}
       <MDXRemote
         source={post.body}
         options={{
@@ -85,7 +84,10 @@ export default async function PostPage({
             format: 'mdx'
           }
         }}
-        components={mdxComponents}
+        // TODO: update package when this type error is fixed, remove these comments
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        components={{ ...mdxComponents }}
       />
     </div>
   );
