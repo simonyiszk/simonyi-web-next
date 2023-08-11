@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:10.4.2"],\
+            ["contentful", "npm:10.0.0-beta-v10.32"],\
             ["contentful-management", "npm:10.39.2"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
@@ -1944,6 +1944,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["axios", [\
+        ["npm:0.26.1", {\
+          "packageLocation": "./.yarn/cache/axios-npm-0.26.1-a6641ce4e3-d9eb58ff4b.zip/node_modules/axios/",\
+          "packageDependencies": [\
+            ["axios", "npm:0.26.1"],\
+            ["follow-redirects", "virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.27.2", {\
           "packageLocation": "./.yarn/cache/axios-npm-0.27.2-dbe3a48aea-38cb754046.zip/node_modules/axios/",\
           "packageDependencies": [\
@@ -3474,6 +3482,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["contentful", [\
+        ["npm:10.0.0-beta-v10.32", {\
+          "packageLocation": "./.yarn/cache/contentful-npm-10.0.0-beta-v10.32-8a82b55960-49957d0e87.zip/node_modules/contentful/",\
+          "packageDependencies": [\
+            ["contentful", "npm:10.0.0-beta-v10.32"],\
+            ["@contentful/rich-text-types", "npm:16.2.1"],\
+            ["axios", "npm:0.26.1"],\
+            ["contentful-resolve-response", "npm:1.7.0"],\
+            ["contentful-sdk-core", "npm:7.1.0"],\
+            ["json-stringify-safe", "npm:5.0.1"],\
+            ["type-fest", "npm:3.13.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:10.4.2", {\
           "packageLocation": "./.yarn/cache/contentful-npm-10.4.2-36c678264d-8d12c13903.zip/node_modules/contentful/",\
           "packageDependencies": [\
@@ -9561,7 +9582,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:10.4.14"],\
             ["bright", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:0.8.4"],\
             ["cf-content-types-generator", "npm:2.12.2"],\
-            ["contentful", "npm:10.4.2"],\
+            ["contentful", "npm:10.0.0-beta-v10.32"],\
             ["contentful-management", "npm:10.39.2"],\
             ["cross-var", "npm:1.1.0"],\
             ["dotenv", "npm:16.3.1"],\
@@ -10387,6 +10408,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/type-fest-npm-0.21.3-5ff2a9c6fd-e6b32a3b38.zip/node_modules/type-fest/",\
           "packageDependencies": [\
             ["type-fest", "npm:0.21.3"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.13.1", {\
+          "packageLocation": "./.yarn/cache/type-fest-npm-3.13.1-4bd562882d-c06b0901d5.zip/node_modules/type-fest/",\
+          "packageDependencies": [\
+            ["type-fest", "npm:3.13.1"]\
           ],\
           "linkType": "HARD"\
         }],\
