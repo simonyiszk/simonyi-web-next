@@ -1,4 +1,2 @@
-import { HomeHeader } from './home-header.component';
-import { SubpageHeader } from './subpage-header.component';
-
-export { HomeHeader, SubpageHeader };
+export * from './home-header.component';
+export * from './subpage-header.component';

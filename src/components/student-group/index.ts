@@ -1,3 +1,1 @@
-import { StudentGroup } from './student-group.component';
-
-export { StudentGroup };
+export * from './student-group.component';

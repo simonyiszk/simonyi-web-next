@@ -1,3 +1,1 @@
-import { HomeFooter } from './home-footer.component';
-
-export { HomeFooter };
+export * from './home-footer.component';

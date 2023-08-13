@@ -1,3 +1,1 @@
-import { LightBox } from './lightbox.component';
-
-export { LightBox };
+export * from './lightbox.component';

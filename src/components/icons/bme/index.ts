@@ -1,3 +1,1 @@
-import { SimonyiFullDarkIcon, SimonyiFullLightIcon, SimonyiLogoIcon } from './simonyi-icon.component';
-
-export { SimonyiFullDarkIcon, SimonyiFullLightIcon, SimonyiLogoIcon };
+export * from './simonyi-icon.component';
