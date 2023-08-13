@@ -21,12 +21,16 @@
     "contentful:typegen": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "15.17.1",
+    "@contentful/rich-text-types": "16.2.1",
     "@fontsource/archivo": "5.0.8",
     "@fontsource/space-grotesk": "5.0.8",
     "@mdx-js/loader": "2.3.0",
     "@mdx-js/react": "2.3.0",
     "@next/mdx": "13.4.13",
     "bright": "0.8.4",
+    "contentful": "10.4.2",
+    "contentful-management": "10.39.2",
     "gray-matter": "4.0.3",
     "next": "13.4.13",
     "next-mdx-remote": "4.4.1",
@@ -35,9 +39,6 @@
     "yet-another-react-lightbox": "3.12.0"
   },
   "devDependencies": {
-    "@contentful/rich-text-react-renderer": "15.17.1",
-    "@contentful/rich-text-types": "16.2.1",
-    "@types/contentful-resolve-response": "0.1.31",
     "@types/mdx": "2.0.6",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
@@ -46,9 +47,6 @@
     "@typescript-eslint/parser": "6.3.0",
     "autoprefixer": "10.4.14",
     "cf-content-types-generator": "2.12.2",
-    "contentful": "10.4.2",
-    "contentful-management": "10.39.2",
-    "contentful-resolve-response": "1.7.0",
     "cross-var": "1.1.0",
     "dotenv": "16.3.1",
     "dotenv-cli": "7.2.1",
