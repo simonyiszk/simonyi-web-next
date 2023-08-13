@@ -1,11 +1,20 @@
 import { SubpageHeader, HomeFooter } from '~/components';
+import { getFooter } from '~/utils/contentful';
 
-export default function SubpageLayout({ children }: { children: React.ReactNode }) {
+async function getData() {
+  const footer = await getFooter();
+
+  return { footer };
+}
+
+export default async function SubpageLayout({ children }: { children: React.ReactNode }) {
+  const { footer } = await getData();
+
   return (
     <div className="flex flex-col min-h-safe_screen gap-16">
       <SubpageHeader />
       {children}
-      <HomeFooter />
+      <HomeFooter data={footer} />
     </div>
   );
 }
