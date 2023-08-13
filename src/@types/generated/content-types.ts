@@ -13,12 +13,10 @@ export function isTypeAbout<Modifiers extends ChainModifiers, Locales extends Lo
 }
 
 export interface TypeLightboxFields {
-    id: EntryFieldTypes.Symbol;
+    name: EntryFieldTypes.Symbol;
     photo: EntryFieldTypes.AssetLink;
-    title: EntryFieldTypes.Symbol;
-    description?: EntryFieldTypes.Symbol;
-    width?: EntryFieldTypes.Integer;
-    height?: EntryFieldTypes.Integer;
+    date?: EntryFieldTypes.Date;
+    location?: EntryFieldTypes.Location;
 }
 
 export type TypeLightboxSkeleton = EntrySkeletonType<TypeLightboxFields, "lightbox">;
@@ -67,6 +65,10 @@ export interface TypeProfileFields {
     title: EntryFieldTypes.Symbol;
     profilePicture: EntryFieldTypes.AssetLink;
     socials: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeSocialSkeleton>>;
+    priority: EntryFieldTypes.Symbol;
+    displayOnHome: EntryFieldTypes.Boolean;
+    from?: EntryFieldTypes.Date;
+    to?: EntryFieldTypes.Date;
 }
 
 export type TypeProfileSkeleton = EntrySkeletonType<TypeProfileFields, "profile">;
