@@ -43,19 +43,16 @@ export function isTypeLink<Modifiers extends ChainModifiers, Locales extends Loc
 
 export interface TypePostFields {
     slug: EntryFieldTypes.Symbol;
-    body: EntryFieldTypes.RichText;
     title?: EntryFieldTypes.Symbol;
-    description?: EntryFieldTypes.Text;
-    date?: EntryFieldTypes.Date;
-    author?: EntryFieldTypes.Symbol;
     authors?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+    date?: EntryFieldTypes.Date;
+    description?: EntryFieldTypes.Text;
+    body: EntryFieldTypes.RichText;
     published?: EntryFieldTypes.Boolean;
     hidden?: EntryFieldTypes.Boolean;
     tags?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     previewImage?: EntryFieldTypes.AssetLink;
     ogImage?: EntryFieldTypes.AssetLink;
-    ogImageWidth?: EntryFieldTypes.Integer;
-    ogImageHeight?: EntryFieldTypes.Integer;
 }
 
 export type TypePostSkeleton = EntrySkeletonType<TypePostFields, "post">;
