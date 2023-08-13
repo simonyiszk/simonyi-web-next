@@ -11,9 +11,9 @@ import Video from 'yet-another-react-lightbox/plugins/video';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import { images as imagesTemp } from '~/utils';
+import { LightboxImage } from '~/types';
 
-export default function HomeAboutImageBrowser({ images }: { images: typeof imagesTemp }) {
+export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImages: LightboxImage[] }) {
   const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,21 +28,21 @@ export default function HomeAboutImageBrowser({ images }: { images: typeof image
 
   return (
     <div className="flex md:flex-wrap gap-[10px] overflow-x-scroll md:overflow-x-hidden -mx-8 md:mx-0 justify-start md:justify-center lg:justify-end">
-      {images.slice(0, 9).map((image, index) => (
+      {lightboxImages.slice(0, 9).map((image, index) => (
         <div
           key={index}
           className="w-[177.05px] h-[100px] flex-shrink-0 bg-black hover:cursor-pointer relative"
           onClick={() => openLightbox(index)}
         >
-          <Image src={image.url} alt={image.alt} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <Image src={image.picture.url} alt={image.picture.alt} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
       ))}
       <Lightbox
         open={isOpen}
-        slides={images.map((image) => {
+        slides={lightboxImages.map((image) => {
           return {
-            src: image.url,
-            alt: image.alt,
+            src: image.picture.url,
+            alt: image.picture.alt,
             title: image.title,
             description: image.description,
             width: image.width,
