@@ -28,6 +28,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@contentful/rich-text-react-renderer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:15.17.1"],\
+            ["@contentful/rich-text-types", "npm:16.2.1"],\
             ["@fontsource/archivo", "npm:5.0.8"],\
             ["@fontsource/space-grotesk", "npm:5.0.8"],\
             ["@mdx-js/loader", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:2.3.0"],\
@@ -146,6 +148,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@colors-colors-npm-1.5.0-875af3a8b4-d64d5260be.zip/node_modules/@colors/colors/",\
           "packageDependencies": [\
             ["@colors/colors", "npm:1.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@contentful/rich-text-react-renderer", [\
+        ["npm:15.17.1", {\
+          "packageLocation": "./.yarn/cache/@contentful-rich-text-react-renderer-npm-15.17.1-0e84d949a4-79254fec51.zip/node_modules/@contentful/rich-text-react-renderer/",\
+          "packageDependencies": [\
+            ["@contentful/rich-text-react-renderer", "npm:15.17.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:15.17.1", {\
+          "packageLocation": "./.yarn/__virtual__/@contentful-rich-text-react-renderer-virtual-526e89c4c9/0/cache/@contentful-rich-text-react-renderer-npm-15.17.1-0e84d949a4-79254fec51.zip/node_modules/@contentful/rich-text-react-renderer/",\
+          "packageDependencies": [\
+            ["@contentful/rich-text-react-renderer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:15.17.1"],\
+            ["@contentful/rich-text-types", "npm:16.2.1"],\
+            ["@types/react", "npm:18.2.20"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9149,6 +9178,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["simonyi-web-next-13", "workspace:."],\
+            ["@contentful/rich-text-react-renderer", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:15.17.1"],\
+            ["@contentful/rich-text-types", "npm:16.2.1"],\
             ["@fontsource/archivo", "npm:5.0.8"],\
             ["@fontsource/space-grotesk", "npm:5.0.8"],\
             ["@mdx-js/loader", "virtual:495a5d747f508c9574b6365a80e0a4325f2f4168726d45a82a82596975cf21e85b17626d9a4bde1eb3d824ef1e1f69edb0907d22c542d61e45e0591798065b09#npm:2.3.0"],\
