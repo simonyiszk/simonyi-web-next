@@ -7,7 +7,7 @@ const nextConfig = {
     mdxRs: true
   },
   images: {
-    domains: ['warp.sch.bme.hu']
+    domains: ['warp.sch.bme.hu', 'images.ctfassets.net']
   }
 };
 
