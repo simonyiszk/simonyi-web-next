@@ -1,6 +1,6 @@
 import Image from 'next/image';
+import type { ProfileType } from '~/@types';
 import { SocialIcon } from '../icons';
-import type { ProfileType } from '../../types';
 
 function Profile({ name, title, profilePicture, socials }: ProfileType) {
   return (

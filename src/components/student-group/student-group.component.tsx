@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import type { StudentGroupType } from '~/@types';
 import { ChevronIcon, SocialIcon } from '../icons';
-import type { StudentGroupType } from '../../types';
 
 function StudentGroup({ name, logo, description, socials = [], isDense = false }: StudentGroupType & { isDense?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
