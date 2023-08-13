@@ -4,9 +4,10 @@ import {
   TypeProfileSkeleton,
   TypeStudentGroupSkeleton,
   TypePostSkeleton,
-  TypeAboutSkeleton
+  TypeAboutSkeleton,
+  TypeFooterSkeleton
 } from '~/@types/generated/content-types';
-import { AboutType, LightboxImage, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { AboutType, FooterDataType, LightboxImage, PostType, ProfileType, StudentGroupType } from '~/@types';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? 'ErrorNoSpaceID',
@@ -127,7 +128,7 @@ export async function getPosts(): Promise<PostType[]> {
   }));
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<PostType> {
   const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton, 'hu'>({
     content_type: 'post',
     'fields.slug[match]': slug
@@ -153,5 +154,42 @@ export async function getPostBySlug(slug: string) {
     ogImageAlt: post.fields.ogImage?.fields.description || '',
     ogImageWidth: post.fields.ogImage?.fields.file?.details?.image?.width || 960,
     ogImageHeight: post.fields.ogImage?.fields.file?.details?.image?.height || 540
-  }));
+  }))[0];
+}
+
+export async function getFooter(): Promise<FooterDataType> {
+  const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton, 'hu'>({
+    content_type: 'footer',
+    limit: 1
+  });
+
+  return footerEntries.items.map((footer) => ({
+    sections: [
+      {
+        title: footer.fields.section1Name,
+        links: footer.fields.section1Links.map((link) => ({
+          url: link?.fields.url || '',
+          title: link?.fields.title || '',
+          text: link?.fields.text || ''
+        })),
+        address: footer.fields.section1Address
+      },
+      {
+        title: footer.fields.section2Name,
+        links: footer.fields.section2Links.map((link) => ({
+          url: link?.fields.url || '',
+          title: link?.fields.title || '',
+          text: link?.fields.text || ''
+        }))
+      },
+      {
+        title: footer.fields.section3Name,
+        links: footer.fields.section3Links.map((link) => ({
+          url: link?.fields.url || '',
+          title: link?.fields.title || '',
+          text: link?.fields.text || ''
+        }))
+      }
+    ]
+  }))[0];
 }
