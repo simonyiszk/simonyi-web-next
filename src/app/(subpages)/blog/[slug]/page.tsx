@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { getPostBySlug } from '~/utils/contentful';
 import { contentfulDocumentToReactComponents } from '~/utils';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params
 }: {

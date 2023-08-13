@@ -1,6 +1,8 @@
 import { SubpageHeader, HomeFooter } from '~/components';
 import { getFooter } from '~/utils/contentful';
 
+export const dynamic = 'force-static';
+
 async function getData() {
   const footer = await getFooter();
 
