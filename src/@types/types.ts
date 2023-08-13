@@ -65,4 +65,23 @@ type PostType = {
   ogImageHeight?: number;
 };
 
-export type { AboutType, ImageType, LightboxImage, ProfileType, StudentGroupType, SocialIconType, SocialType, PostType };
+type FooterDataType = {
+  sections: {
+    title: string;
+    links: LinkType[];
+    address?: Document;
+  }[];
+};
+
+export type {
+  AboutType,
+  ImageType,
+  LightboxImage,
+  LinkType,
+  ProfileType,
+  StudentGroupType,
+  SocialIconType,
+  SocialType,
+  PostType,
+  FooterDataType
+};
