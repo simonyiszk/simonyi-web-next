@@ -12,6 +12,18 @@ export function isTypeAbout<Modifiers extends ChainModifiers, Locales extends Lo
     return entry.sys.contentType.sys.id === 'about'
 }
 
+export interface TypeFooterFields {
+    section1Name: EntryFieldTypes.Symbol;
+    section1Links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
+    section1Address: EntryFieldTypes.RichText;
+    section2Name: EntryFieldTypes.Symbol;
+    section2Links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
+    section3Name: EntryFieldTypes.Symbol;
+    section3Links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
+}
+
+export type TypeFooterSkeleton = EntrySkeletonType<TypeFooterFields, "footer">;
+
 export interface TypeLightboxFields {
     name: EntryFieldTypes.Symbol;
     photo: EntryFieldTypes.AssetLink;
