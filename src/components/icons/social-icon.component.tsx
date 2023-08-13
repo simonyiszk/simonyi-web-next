@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
+import { SocialIconType } from '~/@types';
 import { EmailIcon, FacebookIcon, GitHubIcon, GlobeIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon } from '../icons';
-import { SocialIconType } from '../../types';
 import { TikTokIcon } from './social';
 
 function SocialIcon({ iconName, props }: { iconName: string; props?: SVGProps<SVGSVGElement> }) {
