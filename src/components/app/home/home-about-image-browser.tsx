@@ -11,7 +11,7 @@ import Video from 'yet-another-react-lightbox/plugins/video';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import { LightboxImage } from '~/types';
+import { LightboxImage } from '~/@types';
 
 export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImages: LightboxImage[] }) {
   const [index, setIndex] = useState(0);
