@@ -1,4 +1,4 @@
-import { about, images, groups, profiles } from './data';
 import { isBrowser } from './functions';
+import { contentfulDocumentToReactComponents } from './contentful-renderer';
 
-export { about, images, groups, profiles, isBrowser };
+export { isBrowser, contentfulDocumentToReactComponents };

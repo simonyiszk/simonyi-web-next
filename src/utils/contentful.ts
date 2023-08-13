@@ -6,6 +6,7 @@ import {
   TypePostSkeleton,
   TypeAboutSkeleton
 } from '~/@types/generated/content-types';
+import { AboutType, LightboxImage, PostType, ProfileType, StudentGroupType } from '~/@types';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? 'ErrorNoSpaceID',
@@ -16,16 +17,16 @@ const client = createClient({
   host: process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? 'cdn.contentful.com' : 'preview.contentful.com'
 });
 
-export async function getAbout() {
-  const aboutEntry = await client.withoutUnresolvableLinks.getEntry<TypeAboutSkeleton, 'hu'>('about');
+export async function getAbout(): Promise<AboutType> {
+  const aboutEntry = await client.getEntries<TypeAboutSkeleton, 'hu'>({ content_type: 'about' });
 
   return {
-    title: aboutEntry.fields.title,
-    description: aboutEntry.fields.description
+    title: aboutEntry.items[0].fields.title,
+    description: aboutEntry.items[0].fields.description
   };
 }
 
-export async function getLightbox() {
+export async function getLightbox(): Promise<LightboxImage[]> {
   const lightboxEntries = await client.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton, 'hu'>({
     content_type: 'lightbox',
     include: 1
@@ -43,7 +44,7 @@ export async function getLightbox() {
   }));
 }
 
-export async function getStudentGroups() {
+export async function getStudentGroups(): Promise<StudentGroupType[]> {
   const studentGroupEntries = await client.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton, 'hu'>({
     content_type: 'studentGroup',
     include: 2
@@ -68,7 +69,7 @@ export async function getStudentGroups() {
   }));
 }
 
-export async function getProfiles() {
+export async function getProfiles(): Promise<ProfileType[]> {
   const profileEntries = await client.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton, 'hu'>({
     content_type: 'profile',
     include: 2
@@ -92,10 +93,59 @@ export async function getProfiles() {
   }));
 }
 
-export async function getPosts() {
-  const postEntries = await client.withoutLinkResolution.getEntries<TypePostSkeleton, 'hu'>({
+export async function getPosts(): Promise<PostType[]> {
+  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton, 'hu'>({
     content_type: 'post'
   });
 
-  return postEntries.items;
+  return postEntries.items.map((post) => ({
+    slug: post.fields.slug,
+    body: post.fields.body,
+    title: post.fields.title,
+    description: post.fields.description,
+    date: post.fields.date ? new Date(post.fields.date) : undefined,
+    authors: post.fields.authors,
+    published: post.fields.published,
+    hidden: post.fields.hidden,
+    tags: post.fields.tags,
+    previewImage: post.fields.previewImage?.fields.file?.url
+      ? 'https://' + post.fields.previewImage?.fields.file?.url
+      : 'https://warp.sch.bme.hu/images/cover',
+    previewImageAlt: post.fields.previewImage?.fields.description,
+    ogImage: post.fields.ogImage?.fields.file?.url
+      ? 'https://' + post.fields.ogImage?.fields.file?.url
+      : 'https://warp.sch.bme.hu/images/cover',
+    ogImageAlt: post.fields.ogImage?.fields.description || '',
+    ogImageWidth: post.fields.ogImage?.fields.file?.details?.image?.width || 960,
+    ogImageHeight: post.fields.ogImage?.fields.file?.details?.image?.height || 540
+  }));
+}
+
+export async function getPostBySlug(slug: string) {
+  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton, 'hu'>({
+    content_type: 'post',
+    'fields.slug[match]': slug
+  });
+
+  return postEntries.items.map((post) => ({
+    slug: post.fields.slug,
+    body: post.fields.body,
+    title: post.fields.title,
+    description: post.fields.description,
+    date: post.fields.date ? new Date(post.fields.date) : undefined,
+    authors: post.fields.authors,
+    published: post.fields.published,
+    hidden: post.fields.hidden,
+    tags: post.fields.tags,
+    previewImage: post.fields.previewImage?.fields.file?.url
+      ? 'https://' + post.fields.previewImage?.fields.file?.url
+      : 'https://warp.sch.bme.hu/images/cover',
+    previewImageAlt: post.fields.previewImage?.fields.description,
+    ogImage: post.fields.ogImage?.fields.file?.url
+      ? 'https://' + post.fields.ogImage?.fields.file?.url
+      : 'https://warp.sch.bme.hu/images/cover',
+    ogImageAlt: post.fields.ogImage?.fields.description || '',
+    ogImageWidth: post.fields.ogImage?.fields.file?.details?.image?.width || 960,
+    ogImageHeight: post.fields.ogImage?.fields.file?.details?.image?.height || 540
+  }));
 }
