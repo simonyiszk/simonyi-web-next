@@ -5,7 +5,12 @@
   "description": "simonyi-web-next-13",
   "author": "triszt4n, gergoradeczki",
   "keywords": [
-    "next", "react", "contentful", "typescript", "tailwind", "yarn"
+    "next",
+    "react",
+    "contentful",
+    "typescript",
+    "tailwind",
+    "yarn"
   ],
   "scripts": {
     "dev": "next dev",
@@ -16,9 +21,13 @@
     "lint:eslint": "eslint --max-warnings=0 . && yarn run type-check",
     "lint:prettier": "prettier --check .",
     "lint:prettier:debug": "prettier --check --debug-check .",
-    "contentful:export": "dotenv -e .env.local -- cross-var contentful space export --config src/contentful/export.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID%",
-    "contentful:typegen:local": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
-    "contentful:typegen": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
+    "contentful:dev:export": "dotenv -e .env.local -- cross-var contentful space export --content-file src/contentful/export-dev.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID% --environment-id %CONTENTFUL_ENVIRONMENT%",
+    "contentful:prod:export": "dotenv -e .env.prod -- cross-var contentful space export --content-file src/contentful/export-prod.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID% --environment-id %CONTENTFUL_ENVIRONMENT%",
+    "contentful:dev:import-prod": "dotenv -e .env.local -- cross-var contentful space import --content-file src/contentful/export-prod.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID% --environment-id %CONTENTFUL_ENVIRONMENT%",
+    "contentful:prod:import-dev": "dotenv -e .env.prod -- cross-var contentful space import --content-file src/contentful/export-dev.json --management-token %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% --space-id %CONTENTFUL_SPACE_ID% --environment-id %CONTENTFUL_ENVIRONMENT%",
+    "contentful:typegen-offline": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
+    "contentful:typegen-online": "dotenv -e .env.local -- cross-var cf-content-types-generator -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated",
+    "contentful:merge-dev-to-prod": ""
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "15.17.1",

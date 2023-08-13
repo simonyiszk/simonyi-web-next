@@ -19,7 +19,7 @@ const client = createClient({
 });
 
 export async function getAbout(): Promise<AboutType> {
-  const aboutEntry = await client.getEntries<TypeAboutSkeleton, 'hu'>({ content_type: 'about' });
+  const aboutEntry = await client.getEntries<TypeAboutSkeleton, 'hu'>({ content_type: 'about', limit: 1, order: ['-sys.createdAt'] });
 
   return {
     title: aboutEntry.items[0].fields.title,
@@ -30,7 +30,9 @@ export async function getAbout(): Promise<AboutType> {
 export async function getLightbox(): Promise<LightboxImage[]> {
   const lightboxEntries = await client.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton, 'hu'>({
     content_type: 'lightbox',
-    include: 1
+    include: 1,
+    order: ['-fields.date', 'fields.name', '-sys.createdAt'],
+    limit: 100
   });
 
   return lightboxEntries.items.map((lightbox) => ({
@@ -38,17 +40,18 @@ export async function getLightbox(): Promise<LightboxImage[]> {
       url: 'https:' + lightbox.fields.photo?.fields.file?.url || '',
       alt: lightbox.fields.photo?.fields.description || ''
     },
-    title: lightbox.fields.title,
-    description: lightbox.fields.description || '',
-    width: lightbox.fields.width || 0,
-    height: lightbox.fields.height || 0
+    title: lightbox.fields.photo?.fields.title || '',
+    description: lightbox.fields.photo?.fields.description || '',
+    width: lightbox.fields.photo?.fields.file?.details.image?.width || 0,
+    height: lightbox.fields.photo?.fields.file?.details.image?.height || 0
   }));
 }
 
 export async function getStudentGroups(): Promise<StudentGroupType[]> {
   const studentGroupEntries = await client.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton, 'hu'>({
     content_type: 'studentGroup',
-    include: 2
+    include: 2,
+    order: ['fields.name']
   });
 
   return studentGroupEntries.items.map((studentGroup) => ({
@@ -73,7 +76,9 @@ export async function getStudentGroups(): Promise<StudentGroupType[]> {
 export async function getProfiles(): Promise<ProfileType[]> {
   const profileEntries = await client.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton, 'hu'>({
     content_type: 'profile',
-    include: 2
+    include: 2,
+    limit: 4,
+    order: ['fields.priority', 'fields.name']
   });
 
   return profileEntries.items.map((profile) => ({
