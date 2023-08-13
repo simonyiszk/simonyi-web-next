@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { Post } from '~/components/app/blog/post';
 import { getPosts } from '~/utils/contentful';
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Blog'
