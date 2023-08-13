@@ -14,7 +14,8 @@ const client = createClient({
     (process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
       ? process.env.CONTENTFUL_ACCESS_TOKEN
       : process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN) ?? 'ErrorNoAccessToken',
-  host: process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? 'cdn.contentful.com' : 'preview.contentful.com'
+  host: process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? 'cdn.contentful.com' : 'preview.contentful.com',
+  environment: process.env.CONTENTFUL_ENVIRONMENT
 });
 
 export async function getAbout(): Promise<AboutType> {
