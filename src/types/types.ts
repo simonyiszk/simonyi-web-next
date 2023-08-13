@@ -2,13 +2,20 @@ type SocialIconType = 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin'
 
 type AboutType = {
   title: string;
-  text: string;
-  wikiUrl: string;
+  description: string;
 };
 
 type ImageType = {
   url: string;
   alt: string;
+};
+
+type LightboxImage = {
+  picture: ImageType;
+  title: string;
+  description: string;
+  width: number;
+  height: number;
 };
 
 type LinkType = {
@@ -56,4 +63,4 @@ type PostType = {
   ogImageHeight?: number;
 };
 
-export type { AboutType, ImageType, ProfileType, StudentGroupType, SocialIconType, SocialType, PostType };
+export type { AboutType, ImageType, LightboxImage, ProfileType, StudentGroupType, SocialIconType, SocialType, PostType };
