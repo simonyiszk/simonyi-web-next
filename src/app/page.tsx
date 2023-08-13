@@ -1,6 +1,6 @@
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages } from '~/components/app/home';
 import { HomeFooter } from '~/components';
-import { getAbout, getLightbox, getProfiles, getStudentGroups } from '~/utils/contentful';
+import { getAbout, getFooter, getLightbox, getProfiles, getStudentGroups } from '~/utils/contentful';
 
 export const dynamic = 'force-static';
 
@@ -9,12 +9,13 @@ async function getData() {
   const lightbox = await getLightbox();
   const groups = await getStudentGroups();
   const profiles = await getProfiles();
+  const footer = await getFooter();
 
-  return { about, lightbox, groups, profiles };
+  return { about, lightbox, groups, profiles, footer };
 }
 
 export default async function Page() {
-  const { about, lightbox, groups, profiles } = await getData();
+  const { about, lightbox, groups, profiles, footer } = await getData();
 
   return (
     <>
@@ -26,7 +27,7 @@ export default async function Page() {
         <HomeStudentGroups groups={groups} />
         <HomePresidency profiles={profiles} />
       </div>
-      <HomeFooter />
+      <HomeFooter data={footer} />
     </>
   );
 }
