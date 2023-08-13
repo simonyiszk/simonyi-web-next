@@ -35,6 +35,8 @@
     "yet-another-react-lightbox": "3.12.0"
   },
   "devDependencies": {
+    "@contentful/rich-text-react-renderer": "15.17.1",
+    "@contentful/rich-text-types": "16.2.1",
     "@types/contentful-resolve-response": "0.1.31",
     "@types/mdx": "2.0.6",
     "@types/node": "20.4.9",
