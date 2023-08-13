@@ -1,8 +1,10 @@
+import { Document } from '@contentful/rich-text-types';
+
 type SocialIconType = 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'phone' | 'youtube' | 'tiktok' | 'website';
 
 type AboutType = {
   title: string;
-  description: string;
+  description: Document;
 };
 
 type ImageType = {
@@ -46,7 +48,7 @@ type StudentGroupType = {
 
 type PostType = {
   slug: string;
-  body: string;
+  body: Document;
   title?: string;
   description?: string;
   date?: Date;
