@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
-import { getPost } from '~/app/lib/get-posts';
-import { mdxComponents } from '~/mdx-components';
+import { getPostBySlug } from '~/utils/contentful';
+import { contentfulDocumentToReactComponents } from '~/utils';
 
 export async function generateMetadata({
   params
@@ -12,15 +11,14 @@ export async function generateMetadata({
     slug: string;
   };
 }): Promise<Metadata> {
-  const post = await getPost(params.slug, true);
+  const post = (await getPostBySlug(params.slug))[0];
 
   const title = post?.title;
   const description = post?.description;
   const authors = () => {
-    const author = post?.author ? { name: post.author } : undefined;
     const authors = post?.authors ? post.authors.map((author) => ({ name: author })) : undefined;
 
-    return author ? (authors ? [author, ...authors] : [author]) : authors;
+    return authors;
   };
   const ogImage = post?.ogImage
     ? {
@@ -58,7 +56,7 @@ export default async function PostPage({
     slug: string;
   };
 }) {
-  const post = await getPost(params.slug, true);
+  const post = (await getPostBySlug(params.slug))[0];
 
   if (!post) return notFound();
 
@@ -75,20 +73,7 @@ export default async function PostPage({
         {title && <h1 className="text-h1 text-5xl font-heading mb-4">{title}</h1>}
         {date && <div className="font-body">{date.toLocaleDateString('hu-HU')}</div>}
       </div>
-      <MDXRemote
-        source={post.body}
-        options={{
-          mdxOptions: {
-            remarkPlugins: [],
-            rehypePlugins: [],
-            format: 'mdx'
-          }
-        }}
-        // TODO: update package when this type error is fixed, remove these comments
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        components={{ ...mdxComponents }}
-      />
+      {contentfulDocumentToReactComponents(post.body)}
     </div>
   );
 }
