@@ -1,3 +1,1 @@
-import { Profile } from './profile.component';
-
-export { Profile };
+export * from './profile.component';

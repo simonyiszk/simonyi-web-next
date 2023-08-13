@@ -1,4 +1,2 @@
-import { isBrowser } from './functions';
-import { contentfulDocumentToReactComponents } from './contentful-renderer';
-
-export { isBrowser, contentfulDocumentToReactComponents };
+export * from './functions';
+export * from './contentful-renderer';
