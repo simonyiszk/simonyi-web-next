@@ -3,7 +3,7 @@ import { Document, BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { cloneElement, Children, ReactNode, ReactElement } from 'react';
 import { Link } from '~/components';
 
-function CleanListItem({ children }: { children: ReactNode }) {
+function RemoveParagraph({ children }: { children: ReactNode }) {
   const processChild = (child: ReactNode): ReactNode => {
     if (typeof child === 'string') {
       return child;
@@ -39,12 +39,12 @@ export function contentfulDocumentToReactComponents(document: Document) {
       [BLOCKS.PARAGRAPH]: (node, children) => <p className="font-body mb-4">{children}</p>,
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className="list-decimal font-body ml-4 mb-4">
-          <CleanListItem>{children}</CleanListItem>
+          <RemoveParagraph>{children}</RemoveParagraph>
         </ol>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className="list-disc font-body ml-4 mb-4">
-          <CleanListItem>{children}</CleanListItem>
+          <RemoveParagraph>{children}</RemoveParagraph>
         </ul>
       ),
       [BLOCKS.LIST_ITEM]: (node, children) => <li className="font-body ml-2">{children}</li>,
@@ -79,6 +79,33 @@ export function contentfulDocumentToReactComponents(document: Document) {
           ></img>
         </p>
       ),
+      [BLOCKS.HR]: () => <hr className="my-4" />,
+      /* TABLE */
+      // TODO: Fix table not being responsive
+      [BLOCKS.TABLE]: (node, children) => (
+        <div className="overflow-x-auto my-4">
+          <table className="text-left min-w-full">
+            <tbody>{children}</tbody>
+          </table>
+        </div>
+      ),
+      [BLOCKS.TABLE_ROW]: (node, children) => (
+        <tr className="transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+          {children}
+        </tr>
+      ),
+      [BLOCKS.TABLE_HEADER_CELL]: (node, children) => (
+        <th className="border border-slate-600 px-6 py-4">
+          <RemoveParagraph>{children}</RemoveParagraph>
+        </th>
+      ),
+      [BLOCKS.TABLE_CELL]: (node, children) => (
+        <td className="border border-slate-600 px-6 py-4">
+          <RemoveParagraph>{children}</RemoveParagraph>
+        </td>
+      ),
+      /* TABLE */
+      [MARKS.CODE]: (node, children) => <code className="p-2">{children}</code>,
       [INLINES.HYPERLINK]: (node, children) => (
         <Link className="font-body text-simonyi_zold" href={`${node.data.uri}`}>
           {children}
