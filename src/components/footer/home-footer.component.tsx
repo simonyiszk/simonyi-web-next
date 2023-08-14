@@ -33,14 +33,14 @@ function HomeFooter({ data }: { data: FooterDataType }) {
       </div>
       <div className="flex flex-wrap flex-col md:flex-row items-center gap-8">
         <Link className="h-[60px] w-[225px] relative" href="http://www.bme.hu/" target="_blank" rel="noreferrer">
-          <Image src="/images/bme/bme.png" alt="Logo of BME" fill />
+          <Image src="/images/bme/bme.png" alt="Logo of BME" fill sizes="225px" />
         </Link>
         <Link className="h-[60px] w-[60px] relative" href="http://www.vik.bme.hu/" target="_blank" rel="noreferrer">
-          <Image src="/images/bme/vik.png" alt="Logo of BME VIK" fill />
+          <Image src="/images/bme/vik.png" alt="Logo of BME VIK" fill sizes="60px" />
         </Link>
         <Link className="w-auto md:w-[225px]" href="https://svie.hu/" target="_blank" rel="noreferrer">
           <div className="h-[60px] w-[192px] relative">
-            <Image src="/images/bme/schonherz.png" alt="Logo of Schonherz" fill />
+            <Image src="/images/bme/schonherz.png" alt="Logo of Schonherz" fill sizes="192px" />
           </div>
         </Link>
       </div>
