@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 import './globals.css';
-import { Suspense } from 'react';
-import { LoadingHome } from '~/components';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://simonyi.bme.hu'),
@@ -22,7 +20,7 @@ export const metadata: Metadata = {
         alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
       }
     ],
-    locale: 'hu_HU',
+    locale: 'hu',
     alternateLocale: 'en_US'
   },
   twitter: {
@@ -44,9 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html data-theme="dark" lang="hu" className="h-full">
       <body className="bg-dark text-white text-opacity-text">
-        <div className="flex flex-col justify-between min-h-safe_screen">
-          <Suspense fallback={<LoadingHome />}>{children}</Suspense>
-        </div>
+        <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
       </body>
     </html>
   );
