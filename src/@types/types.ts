@@ -81,3 +81,5 @@ export type {
   PostType,
   FooterDataType
 };
+
+export type Locales = 'hu' | 'en-US';
