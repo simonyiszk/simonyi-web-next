@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getPostBySlug } from '~/utils/contentful';
 import { contentfulDocumentToReactComponents } from '~/utils';
+import { Locales } from '~/@types';
 
 export const dynamic = 'force-static';
 
@@ -13,7 +14,9 @@ export async function generateMetadata({
     slug: string;
   };
 }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const locale: Locales = 'hu';
+
+  const post = await getPostBySlug(params.slug, locale);
 
   const title = post?.title;
   const description = post?.description;

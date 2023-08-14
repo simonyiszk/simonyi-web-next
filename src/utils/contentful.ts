@@ -180,7 +180,7 @@ export async function getPosts(locale: Locales = 'hu'): Promise<PostType[]> {
   }));
 }
 
-export async function getPostBySlug(locale: Locales = 'hu', slug: string): Promise<PostType | undefined> {
+export async function getPostBySlug(slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> {
   const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
     content_type: 'post',
     'fields.slug[match]': slug,
