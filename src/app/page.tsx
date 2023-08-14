@@ -1,15 +1,18 @@
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages } from '~/components/app/home';
 import { HomeFooter } from '~/components';
 import { getAbout, getFooter, getLightbox, getProfiles, getStudentGroups } from '~/utils/contentful';
+import { Locales } from '~/@types';
 
 export const dynamic = 'force-static';
 
 async function getData() {
-  const about = await getAbout();
-  const lightbox = await getLightbox();
-  const groups = await getStudentGroups();
-  const profiles = await getProfiles();
-  const footer = await getFooter();
+  const locale: Locales = 'hu';
+
+  const about = await getAbout(locale);
+  const lightbox = await getLightbox(locale);
+  const groups = await getStudentGroups(locale);
+  const profiles = await getProfiles(locale);
+  const footer = await getFooter(locale);
 
   return { about, lightbox, groups, profiles, footer };
 }

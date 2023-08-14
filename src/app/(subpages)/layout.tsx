@@ -1,10 +1,13 @@
+import { Locales } from '~/@types';
 import { SubpageHeader, HomeFooter } from '~/components';
 import { getFooter } from '~/utils/contentful';
 
 export const dynamic = 'force-static';
 
 async function getData() {
-  const footer = await getFooter();
+  const locale: Locales = 'hu';
+
+  const footer = await getFooter(locale);
 
   return { footer };
 }
