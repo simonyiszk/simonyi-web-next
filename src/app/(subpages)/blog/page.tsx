@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Locales } from '~/@types';
 import { Post } from '~/components/app/blog/post';
 import { getPosts } from '~/utils/contentful';
 
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
 };
 
 async function getData() {
-  const posts = await getPosts();
+  const locale: Locales = 'hu';
+
+  const posts = await getPosts(locale);
 
   return { posts };
 }

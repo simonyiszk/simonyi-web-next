@@ -7,7 +7,7 @@ import {
   TypeAboutSkeleton,
   TypeFooterSkeleton
 } from '~/@types/generated/content-types';
-import { AboutType, FooterDataType, LightboxImage, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { AboutType, FooterDataType, LightboxImage, Locales, PostType, ProfileType, StudentGroupType } from '~/@types';
 import { defaults } from '.';
 
 const client = createClient({
@@ -20,21 +20,33 @@ const client = createClient({
   environment: process.env.CONTENTFUL_ENVIRONMENT
 });
 
-export async function getAbout(): Promise<AboutType> {
-  const aboutEntries = await client.getEntries<TypeAboutSkeleton, 'hu'>({ content_type: 'about', limit: 1, order: ['-sys.createdAt'] });
+export async function getAbout(locale: Locales = 'hu'): Promise<AboutType> {
+  const aboutEntries = await client.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
+    content_type: 'about',
+    limit: 1,
+    order: ['-sys.createdAt'],
+    locale
+  });
+
+  if (aboutEntries.items.length === 0) {
+    return defaults.about;
+  }
+
+  const about = aboutEntries.items[0];
 
   return {
-    title: aboutEntries.items[0].fields.title,
-    description: aboutEntries.items[0].fields.description
+    title: about.fields.title,
+    description: about.fields.description
   };
 }
 
-export async function getLightbox(): Promise<LightboxImage[]> {
-  const lightboxEntries = await client.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton, 'hu'>({
+export async function getLightbox(locale: Locales = 'hu'): Promise<LightboxImage[]> {
+  const lightboxEntries = await client.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton>({
     content_type: 'lightbox',
     include: 1,
     order: ['-fields.date', 'fields.name', '-sys.createdAt'],
-    limit: 100
+    limit: 100,
+    locale
   });
 
   return lightboxEntries.items.map((lightbox) => ({
@@ -53,11 +65,12 @@ export async function getLightbox(): Promise<LightboxImage[]> {
   }));
 }
 
-export async function getStudentGroups(): Promise<StudentGroupType[]> {
-  const studentGroupEntries = await client.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton, 'hu'>({
+export async function getStudentGroups(locale: Locales = 'hu'): Promise<StudentGroupType[]> {
+  const studentGroupEntries = await client.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton>({
     content_type: 'studentGroup',
     include: 2,
-    order: ['fields.name']
+    order: ['fields.name'],
+    locale
   });
 
   return studentGroupEntries.items.map((studentGroup) => ({
@@ -89,12 +102,13 @@ export async function getStudentGroups(): Promise<StudentGroupType[]> {
   }));
 }
 
-export async function getProfiles(): Promise<ProfileType[]> {
-  const profileEntries = await client.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton, 'hu'>({
+export async function getProfiles(locale: Locales = 'hu'): Promise<ProfileType[]> {
+  const profileEntries = await client.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton>({
     content_type: 'profile',
     include: 2,
     limit: 4,
-    order: ['fields.priority', 'fields.name']
+    order: ['fields.priority', 'fields.name'],
+    locale
   });
 
   return profileEntries.items.map((profile) => ({
@@ -125,9 +139,10 @@ export async function getProfiles(): Promise<ProfileType[]> {
   }));
 }
 
-export async function getPosts(): Promise<PostType[]> {
-  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton, 'hu'>({
-    content_type: 'post'
+export async function getPosts(locale: Locales = 'hu'): Promise<PostType[]> {
+  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
+    content_type: 'post',
+    locale
   });
 
   return postEntries.items.map((post) => ({
@@ -165,11 +180,12 @@ export async function getPosts(): Promise<PostType[]> {
   }));
 }
 
-export async function getPostBySlug(slug: string): Promise<PostType | undefined> {
-  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton, 'hu'>({
+export async function getPostBySlug(locale: Locales = 'hu', slug: string): Promise<PostType | undefined> {
+  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
     content_type: 'post',
     'fields.slug[match]': slug,
-    limit: 1
+    limit: 1,
+    locale
   });
 
   if (postEntries.items.length === 0) {
@@ -211,11 +227,12 @@ export async function getPostBySlug(slug: string): Promise<PostType | undefined>
   }))[0];
 }
 
-export async function getFooter(): Promise<FooterDataType> {
-  const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton, 'hu'>({
+export async function getFooter(locale: Locales = 'hu'): Promise<FooterDataType> {
+  const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton>({
     content_type: 'footer',
     include: 2,
-    limit: 1
+    limit: 1,
+    locale
   });
 
   if (footerEntries.items.length === 0) {
