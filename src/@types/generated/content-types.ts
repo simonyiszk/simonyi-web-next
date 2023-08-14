@@ -1,6 +1,7 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
 export interface TypeAboutFields {
+    name: EntryFieldTypes.Symbol;
     title: EntryFieldTypes.Symbol;
     description: EntryFieldTypes.RichText;
 }
@@ -13,16 +14,29 @@ export function isTypeAbout<Modifiers extends ChainModifiers, Locales extends Lo
 }
 
 export interface TypeFooterFields {
-    section1Name: EntryFieldTypes.Symbol;
-    section1Links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
-    section1Address: EntryFieldTypes.RichText;
-    section2Name: EntryFieldTypes.Symbol;
-    section2Links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
-    section3Name: EntryFieldTypes.Symbol;
-    section3Links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
+    name: EntryFieldTypes.Symbol;
+    sections?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeFooterSectionSkeleton>>;
 }
 
 export type TypeFooterSkeleton = EntrySkeletonType<TypeFooterFields, "footer">;
+export type TypeFooter<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeFooterSkeleton, Modifiers, Locales>;
+
+export function isTypeFooter<Modifiers extends ChainModifiers, Locales extends LocaleCode>(entry: Entry<EntrySkeletonType, Modifiers, Locales>): entry is TypeFooter<Modifiers, Locales> {
+    return entry.sys.contentType.sys.id === 'footer'
+}
+
+export interface TypeFooterSectionFields {
+    title: EntryFieldTypes.Symbol;
+    address?: EntryFieldTypes.RichText;
+    links?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
+}
+
+export type TypeFooterSectionSkeleton = EntrySkeletonType<TypeFooterSectionFields, "footerSection">;
+export type TypeFooterSection<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeFooterSectionSkeleton, Modifiers, Locales>;
+
+export function isTypeFooterSection<Modifiers extends ChainModifiers, Locales extends LocaleCode>(entry: Entry<EntrySkeletonType, Modifiers, Locales>): entry is TypeFooterSection<Modifiers, Locales> {
+    return entry.sys.contentType.sys.id === 'footerSection'
+}
 
 export interface TypeLightboxFields {
     name: EntryFieldTypes.Symbol;
