@@ -34,7 +34,13 @@ export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImag
           className="w-[177.05px] h-[100px] flex-shrink-0 bg-black hover:cursor-pointer relative"
           onClick={() => openLightbox(index)}
         >
-          <Image src={image.picture.url} alt={image.picture.alt} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <Image
+            src={image.picture.url}
+            alt={image.picture.alt}
+            fill
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            sizes="177.05px"
+          />
         </div>
       ))}
       <Lightbox

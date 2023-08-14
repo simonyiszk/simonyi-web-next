@@ -11,6 +11,7 @@ function Profile({ name, title, profilePicture, socials }: ProfileType) {
           alt={profilePicture.alt}
           fill
           className="border-simonyi_zold border-solid rounded-[50%] text-center object-cover leading-[200px] border-2"
+          sizes="200px"
         />
       </div>
 
