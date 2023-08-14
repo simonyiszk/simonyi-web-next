@@ -13,7 +13,7 @@ function Section({ title, links, address }: { title: string; links: LinkType[]; 
           {link.title}
         </Link>
       ))}
-      {address && <div className="mt-4 font-body whitespace-pre">{address}</div>}
+      {address && <div className="mt-4 font-body whitespace-pre-wrap">{address}</div>}
     </div>
   );
 }
