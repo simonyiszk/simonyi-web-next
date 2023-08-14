@@ -22,7 +22,8 @@ export const metadata: Metadata = {
         alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
       }
     ],
-    locale: 'hu-HU'
+    locale: 'hu_HU',
+    alternateLocale: 'en_US'
   },
   twitter: {
     card: 'summary_large_image',

@@ -14,7 +14,7 @@ function Post({ data }: { data: PostType }) {
           )}
         </div>
         <p className={`${data.date ? 'pt-4' : 'py-4 row-span-2'} font-heading text-3xl`}>{data.title || data.slug}</p>
-        {data.date && <p className="font-body">{data.date.toLocaleDateString('hu-HU')}</p>}
+        {data.date && <p className="font-body">{data.date.toLocaleDateString('hu')}</p>}
       </div>
     </Link>
   );
