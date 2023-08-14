@@ -25,9 +25,9 @@ export async function generateMetadata({
   const ogImage = post?.ogImage
     ? {
         url: post.ogImage,
-        alt: post.ogImageAlt,
-        width: post.ogImageWidth,
-        height: post.ogImageHeight
+        alt: post.ogImage.alt,
+        width: post.ogImage.width,
+        height: post.ogImage.height
       }
     : undefined;
 
@@ -39,12 +39,12 @@ export async function generateMetadata({
     authors: authors(),
     openGraph: {
       releaseDate: date,
-      images: ogImage ? [ogImage] : undefined,
+      images: ogImage ? [ogImage.url] : undefined,
       locale: 'hu-HU'
     },
     twitter: {
       card: 'summary_large_image',
-      images: ogImage ? [ogImage] : undefined,
+      images: ogImage ? [ogImage.url] : undefined,
       site: 'simonyiszakkoli',
       creator: 'simonyiszakkoli'
     }
@@ -65,10 +65,10 @@ export default async function PostPage({
   const { title, date, previewImage } = post;
 
   return (
-    <div className="flex-grow self-center m-4 rounded-md bg-darkmode_regular p-4 max-w-3xl">
+    <div className="flex-grow self-center m-4 rounded-md bg-darkmode_regular p-4 max-w-3xl whitespace-pre-wrap">
       {previewImage && (
         <div className="rounded-t-md relative h-80 -mx-4 -mt-4 mb-8">
-          <Image src={previewImage} alt={''} fill className="rounded-t-md object-cover" />
+          <Image src={previewImage.url} alt={previewImage.alt} fill className="rounded-t-md object-cover" />
         </div>
       )}
       <div className="mb-8">

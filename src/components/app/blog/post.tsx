@@ -8,7 +8,7 @@ function Post({ data }: { data: PostType }) {
       <div className="grid grid-cols-[0_1fr] sm:grid-cols-[100px_1fr] grid-rows-2 bg-darkmode_regular rounded-md gap-4">
         <div className="row-span-2 relative">
           {data.previewImage ? (
-            <Image src={data.previewImage} alt={data.previewImageAlt || ''} fill className="rounded-l-md object-cover" />
+            <Image src={data.previewImage.url} alt={data.previewImage.alt} fill className="rounded-l-md object-cover" />
           ) : (
             <div className="rounded-l-md bg-darkmode_regular w-full h-full" />
           )}
