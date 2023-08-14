@@ -11,7 +11,7 @@ import {
 import { AboutType, FooterDataType, LightboxImage, Locales, PostType, ProfileType, StudentGroupType } from '~/@types';
 import { defaults } from '.';
 
-export const revalidate = 86400; // 24 hours
+export const revalidate = false; // only revalidate when redeployed
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? 'ErrorNoSpaceID',
