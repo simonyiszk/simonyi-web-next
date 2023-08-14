@@ -7,3 +7,4 @@ export * from './profile';
 export * from './seo';
 export * from './student-group';
 export * from './lightbox';
+export * from './loading';
