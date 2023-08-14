@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getPostBySlug } from '~/utils/contentful';
+import { getPostBySlug, getPostBySlugFromCache } from '~/utils/contentful';
 import { contentfulDocumentToReactComponents } from '~/utils';
 import { Locales } from '~/@types';
 
@@ -16,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale: Locales = 'hu';
 
-  const post = await getPostBySlug(params.slug, locale);
+  const post = await getPostBySlugFromCache(params.slug, locale);
 
   const title = post?.title;
   const description = post?.description;
