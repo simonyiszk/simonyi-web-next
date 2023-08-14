@@ -1,1 +1,2 @@
-export * from './home-footer.component';
+export * from './footer.component';
+export * from './footer-section.component';

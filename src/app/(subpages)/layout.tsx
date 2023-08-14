@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Locales } from '~/@types';
 import { SubpageHeader, HomeFooter, LoadingSubpages } from '~/components';
-import { getFooter } from '~/utils/contentful';
+import { getFooter } from '~/utils';
 
 export const dynamic = 'force-static';
 

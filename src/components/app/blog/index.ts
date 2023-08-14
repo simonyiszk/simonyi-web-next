@@ -1,2 +1,2 @@
-export * from './post';
-export * from './post-preview';
+export * from './blog-post';
+export * from './blog-post-preview';

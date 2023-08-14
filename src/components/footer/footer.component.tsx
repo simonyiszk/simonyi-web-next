@@ -1,29 +1,15 @@
 import Image from 'next/image';
-import { ReactNode } from 'react';
-import { FooterDataType, LinkType } from '~/@types';
+import { FooterDataType } from '~/@types';
 import { contentfulDocumentToReactComponents } from '~/utils';
-import { Link } from '../link';
-
-function Section({ title, links, address }: { title: string; links: LinkType[]; address?: ReactNode }) {
-  return (
-    <div className="flex flex-col gap-1">
-      <h2 className="pb-4 text-h2 font-heading">{title}</h2>
-      {links.map((link, index) => (
-        <Link key={index} className="text-simonyi_zold font-body" href={link.url} title={link.title} target="_blank" rel="noreferrer">
-          {link.title}
-        </Link>
-      ))}
-      {address && <div className="mt-4 font-body whitespace-pre-wrap">{address}</div>}
-    </div>
-  );
-}
+import { Link } from '..';
+import { FooterSection } from '.';
 
 function HomeFooter({ data }: { data: FooterDataType }) {
   return (
     <div className="flex flex-col items-center bg-darkmode_regular gap-8 p-8">
       <div className="flex flex-wrap flex-col sm:flex-row items-start max-w-home gap-16 pb-8 justify-evenly w-auto md:w-full">
         {data.sections.map((section, index) => (
-          <Section
+          <FooterSection
             key={index}
             title={section.title}
             links={section.links}

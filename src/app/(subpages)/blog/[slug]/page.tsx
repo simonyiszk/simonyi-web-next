@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getPostBySlugFromCache } from '~/utils/contentful';
+import { getPostBySlug, getPostBySlugFromCache } from '~/utils';
 import { Locales } from '~/@types';
-import { Post } from '~/components/app/blog';
+import { BlogPost } from '~/components';
 
 export const dynamic = 'force-static';
 
@@ -70,5 +70,5 @@ export default async function PostPage({
 
   if (!post) return notFound();
 
-  return <Post data={post} />;
+  return <BlogPost data={post} />;
 }
