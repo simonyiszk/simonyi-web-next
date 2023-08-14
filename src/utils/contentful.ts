@@ -8,6 +8,7 @@ import {
   TypeFooterSkeleton
 } from '~/@types/generated/content-types';
 import { AboutType, FooterDataType, LightboxImage, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { defaults } from '.';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? 'ErrorNoSpaceID',
@@ -48,16 +49,7 @@ export async function getLightbox(): Promise<LightboxImage[]> {
           title: lightbox.fields.photo.fields.title,
           description: lightbox.fields.photo.fields.description
         }
-      : {
-          picture: {
-            url: '',
-            alt: '',
-            width: 0,
-            height: 0
-          },
-          title: '',
-          description: ''
-        })
+      : defaults.lightboxImage)
   }));
 }
 
@@ -79,14 +71,7 @@ export async function getStudentGroups(): Promise<StudentGroupType[]> {
             height: studentGroup.fields.logo.fields.file.details.image.height
           }
         }
-      : {
-          logo: {
-            url: '',
-            alt: '',
-            width: 0,
-            height: 0
-          }
-        }),
+      : { logo: defaults.studentGroupLogo }),
     description: studentGroup.fields.description,
     socials: studentGroup.fields.socials.map((social) => ({
       ...(social && social.fields.link
@@ -98,14 +83,7 @@ export async function getStudentGroups(): Promise<StudentGroupType[]> {
               text: social.fields.link.fields.text
             }
           }
-        : {
-            icon: 'website',
-            link: {
-              url: '',
-              title: '',
-              text: ''
-            }
-          })
+        : defaults.social)
     })),
     isDense: studentGroup.fields.isDense
   }));
@@ -134,12 +112,7 @@ export async function getProfiles(): Promise<ProfileType[]> {
           }
         }
       : {
-          profilePicture: {
-            url: '',
-            alt: '',
-            width: 0,
-            height: 0
-          }
+          profilePicture: defaults.profilePicture
         }),
     socials: profile.fields.socials.map((social) => ({
       icon: social?.fields.icon || 'website',
@@ -187,12 +160,7 @@ export async function getPosts(): Promise<PostType[]> {
           }
         }
       : {
-          ogImage: {
-            url: 'https://warp.sch.bme.hu/images/cover',
-            alt: '',
-            width: 960,
-            height: 540
-          }
+          ogImage: defaults.ogImage
         })
   }));
 }
@@ -238,12 +206,7 @@ export async function getPostBySlug(slug: string): Promise<PostType | undefined>
           }
         }
       : {
-          ogImage: {
-            url: 'https://warp.sch.bme.hu/images/cover',
-            alt: '',
-            width: 960,
-            height: 540
-          }
+          ogImage: defaults.ogImage
         })
   }))[0];
 }
@@ -251,36 +214,37 @@ export async function getPostBySlug(slug: string): Promise<PostType | undefined>
 export async function getFooter(): Promise<FooterDataType> {
   const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton, 'hu'>({
     content_type: 'footer',
+    include: 2,
     limit: 1
   });
 
+  if (footerEntries.items.length === 0) {
+    return {
+      sections: []
+    };
+  }
+
   return footerEntries.items.map((footer) => ({
-    sections: [
-      {
-        title: footer.fields.section1Name,
-        links: footer.fields.section1Links.map((link) => ({
-          url: link?.fields.url || '',
-          title: link?.fields.title || '',
-          text: link?.fields.text || ''
-        })),
-        address: footer.fields.section1Address
-      },
-      {
-        title: footer.fields.section2Name,
-        links: footer.fields.section2Links.map((link) => ({
-          url: link?.fields.url || '',
-          title: link?.fields.title || '',
-          text: link?.fields.text || ''
-        }))
-      },
-      {
-        title: footer.fields.section3Name,
-        links: footer.fields.section3Links.map((link) => ({
-          url: link?.fields.url || '',
-          title: link?.fields.title || '',
-          text: link?.fields.text || ''
-        }))
-      }
-    ]
+    ...(footer.fields.sections
+      ? {
+          sections: footer.fields.sections.map((section) => ({
+            ...(section && section.fields.links
+              ? {
+                  title: section.fields.title,
+                  address: section.fields.address,
+                  links: section.fields.links.map((link) => ({
+                    ...(link
+                      ? {
+                          url: link.fields.url,
+                          title: link.fields.title,
+                          text: link.fields.text
+                        }
+                      : defaults.social.link)
+                  }))
+                }
+              : defaults.footerSection)
+          }))
+        }
+      : defaults.footer)
   }))[0];
 }
