@@ -13,13 +13,24 @@ import { defaults } from '.';
 
 export const revalidate = false; // only revalidate when redeployed
 
+const accessToken =
+  process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+    ? process.env.CONTENTFUL_ACCESS_TOKEN ?? 'Error no access token'
+    : process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview'
+    ? process.env.CONTENTFUL_ACCESS_TOKEN ?? 'Error no access token'
+    : process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN ?? 'Error no access token';
+
+const host =
+  process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+    ? 'cdn.contentful.com'
+    : process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview'
+    ? 'cdn.contentful.com'
+    : 'preview.contentful.com';
+
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID ?? 'ErrorNoSpaceID',
-  accessToken:
-    (process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-      ? process.env.CONTENTFUL_ACCESS_TOKEN
-      : process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN) ?? 'ErrorNoAccessToken',
-  host: process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? 'cdn.contentful.com' : 'preview.contentful.com',
+  space: process.env.CONTENTFUL_SPACE_ID ?? 'No space ID',
+  accessToken,
+  host,
   environment: process.env.CONTENTFUL_ENVIRONMENT
 });
 
