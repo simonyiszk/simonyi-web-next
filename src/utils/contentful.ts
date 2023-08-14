@@ -156,7 +156,6 @@ export const getPosts = cache(async (locale: Locales = 'hu'): Promise<PostType[]
     description: post.fields.description,
     date: post.fields.date ? new Date(post.fields.date) : undefined,
     authors: post.fields.authors,
-    published: post.fields.published,
     hidden: post.fields.hidden,
     tags: post.fields.tags,
     ...(post.fields.previewImage &&
@@ -203,7 +202,6 @@ export const getPostBySlug = cache(async (slug: string, locale: Locales = 'hu'):
     description: post.fields.description,
     date: post.fields.date ? new Date(post.fields.date) : undefined,
     authors: post.fields.authors,
-    published: post.fields.published,
     hidden: post.fields.hidden,
     tags: post.fields.tags,
     ...(post.fields.previewImage &&
