@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { getPostBySlug, getPostBySlugFromCache } from '~/utils/contentful';
-import { contentfulDocumentToReactComponents } from '~/utils';
 import { Locales } from '~/@types';
+import { Post } from '~/components/app/blog';
 
 export const dynamic = 'force-static';
 
@@ -55,6 +54,11 @@ export async function generateMetadata({
   };
 }
 
+async function getData({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug);
+  return { post };
+}
+
 export default async function PostPage({
   params
 }: {
@@ -62,24 +66,9 @@ export default async function PostPage({
     slug: string;
   };
 }) {
-  const post = await getPostBySlug(params.slug);
+  const { post } = await getData({ params });
 
   if (!post) return notFound();
 
-  const { title, date, previewImage } = post;
-
-  return (
-    <div className="flex-grow self-center m-4 rounded-md bg-darkmode_regular p-4 max-w-3xl whitespace-pre-wrap">
-      {previewImage && (
-        <div className="rounded-t-md relative h-80 -mx-4 -mt-4 mb-8">
-          <Image src={previewImage.url} alt={previewImage.alt} fill className="rounded-t-md object-cover" />
-        </div>
-      )}
-      <div className="mb-8">
-        {title && <h1 className="text-h1 text-5xl font-heading mb-4">{title}</h1>}
-        {date && <div className="font-body">{date.toLocaleDateString('hu')}</div>}
-      </div>
-      {contentfulDocumentToReactComponents(post.body)}
-    </div>
-  );
+  return <Post data={post} />;
 }
