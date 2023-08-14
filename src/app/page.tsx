@@ -1,6 +1,5 @@
-import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages } from '~/components/app/home';
-import { HomeFooter } from '~/components';
-import { getAbout, getFooter, getLightbox, getProfiles, getStudentGroups } from '~/utils/contentful';
+import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, HomeFooter } from '~/components';
+import { getAbout, getFooter, getLightbox, getProfiles, getStudentGroups } from '~/utils';
 import { Locales } from '~/@types';
 
 export const dynamic = 'force-static';

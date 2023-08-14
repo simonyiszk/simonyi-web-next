@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { PostType } from '~/@types';
 import { contentfulDocumentToReactComponents } from '~/utils';
 
-function Post({ data }: { data: PostType }) {
+function BlogPost({ data }: { data: PostType }) {
   const { title, date, previewImage, body } = data;
 
   return (
@@ -21,4 +21,4 @@ function Post({ data }: { data: PostType }) {
   );
 }
 
-export { Post };
+export { BlogPost };
