@@ -3,7 +3,7 @@ import { Locales } from '~/@types';
 import { BlogPostPreview } from '~/components';
 import { getPosts } from '~/utils';
 
-export const dynamic = 'auto';
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Blog'

@@ -4,7 +4,7 @@ import { getPostBySlug, getPostBySlugFromCache } from '~/utils';
 import { Locales } from '~/@types';
 import { BlogPost } from '~/components';
 
-export const dynamic = 'auto';
+export const dynamic = 'force-static';
 
 export async function generateMetadata({
   params
