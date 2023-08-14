@@ -145,6 +145,7 @@ export const getProfiles = cache(async (locale: Locales = 'hu'): Promise<Profile
 export const getPosts = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
   const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
     content_type: 'post',
+    order: ['-fields.date', '-sys.createdAt'],
     locale
   });
 
