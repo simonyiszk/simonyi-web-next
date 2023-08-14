@@ -54,7 +54,6 @@ type PostType = {
   date?: Date;
   author?: string;
   authors?: string[];
-  published?: boolean;
   hidden?: boolean;
   tags?: string[];
   previewImage?: ImageType;
