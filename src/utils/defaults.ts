@@ -1,4 +1,5 @@
-import { FooterDataType, ImageType, LightboxImage, SocialType } from '~/@types';
+import { BLOCKS } from '@contentful/rich-text-types';
+import { AboutType, FooterDataType, ImageType, LightboxImage, SocialType } from '~/@types';
 
 type Unpacked<T> = T extends (infer U)[] ? U : T;
 
@@ -10,6 +11,7 @@ export const defaults: {
   ogImage: ImageType;
   footer: FooterDataType;
   footerSection: Unpacked<FooterDataType['sections']>;
+  about: AboutType;
 } = {
   lightboxImage: {
     picture: {
@@ -53,5 +55,13 @@ export const defaults: {
   footerSection: {
     links: [],
     title: ''
+  },
+  about: {
+    title: '',
+    description: {
+      nodeType: BLOCKS.DOCUMENT,
+      content: [],
+      data: {}
+    }
   }
 };
