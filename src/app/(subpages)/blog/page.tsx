@@ -14,7 +14,7 @@ async function getData() {
 
   const posts = await getPosts(locale);
 
-  return { posts };
+  return { posts: posts.filter((post) => !post.hidden) };
 }
 
 export default async function Page() {
