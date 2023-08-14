@@ -10,14 +10,14 @@ type AboutType = {
 type ImageType = {
   url: string;
   alt: string;
+  width: number;
+  height: number;
 };
 
 type LightboxImage = {
   picture: ImageType;
-  title: string;
-  description: string;
-  width: number;
-  height: number;
+  title?: string;
+  description?: string;
 };
 
 type LinkType = {
@@ -57,12 +57,8 @@ type PostType = {
   published?: boolean;
   hidden?: boolean;
   tags?: string[];
-  previewImage?: string;
-  previewImageAlt?: string;
-  ogImage?: string;
-  ogImageAlt?: string;
-  ogImageWidth?: number;
-  ogImageHeight?: number;
+  previewImage?: ImageType;
+  ogImage?: ImageType;
 };
 
 type FooterDataType = {
