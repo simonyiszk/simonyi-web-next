@@ -4,7 +4,7 @@ import { getPostBySlug, getPostBySlugFromCache } from '~/utils';
 import { Locales } from '~/@types';
 import { BlogPost } from '~/components';
 
-export const dynamic = 'force-static';
+export const dynamic = 'auto';
 
 export async function generateMetadata({
   params
@@ -42,7 +42,7 @@ export async function generateMetadata({
     openGraph: {
       releaseDate: date,
       images: ogImage ? [ogImage.url] : undefined,
-      locale: 'hu_HU',
+      locale: 'hu',
       alternateLocale: ['en_US']
     },
     twitter: {
