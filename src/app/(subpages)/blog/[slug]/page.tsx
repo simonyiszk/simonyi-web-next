@@ -43,7 +43,8 @@ export async function generateMetadata({
     openGraph: {
       releaseDate: date,
       images: ogImage ? [ogImage.url] : undefined,
-      locale: 'hu-HU'
+      locale: 'hu_HU',
+      alternateLocale: ['en_US']
     },
     twitter: {
       card: 'summary_large_image',
@@ -76,7 +77,7 @@ export default async function PostPage({
       )}
       <div className="mb-8">
         {title && <h1 className="text-h1 text-5xl font-heading mb-4">{title}</h1>}
-        {date && <div className="font-body">{date.toLocaleDateString('hu-HU')}</div>}
+        {date && <div className="font-body">{date.toLocaleDateString('hu')}</div>}
       </div>
       {contentfulDocumentToReactComponents(post.body)}
     </div>
