@@ -230,6 +230,11 @@ export const getPostBySlug = cache(async (slug: string, locale: Locales = 'hu'):
   }))[0];
 });
 
+export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
+  const posts = await getPosts(locale);
+  return posts.find((post) => post.slug === slug);
+});
+
 export const getFooter = cache(async (locale: Locales = 'hu'): Promise<FooterDataType> => {
   const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton>({
     content_type: 'footer',
