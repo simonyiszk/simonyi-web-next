@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { Locales } from '~/@types';
-import { Post } from '~/components/app/blog/post';
+import { Post } from '~/components/app/blog';
 import { getPosts } from '~/utils/contentful';
 
 export const dynamic = 'force-static';
