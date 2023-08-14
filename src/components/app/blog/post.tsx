@@ -1,22 +1,23 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { PostType } from '~/@types';
+import { contentfulDocumentToReactComponents } from '~/utils';
 
 function Post({ data }: { data: PostType }) {
+  const { title, date, previewImage, body } = data;
+
   return (
-    <Link href={`/blog/${data.slug}`} className="hover:underline">
-      <div className="grid grid-cols-[0_1fr] sm:grid-cols-[100px_1fr] grid-rows-2 bg-darkmode_regular rounded-md gap-4">
-        <div className="row-span-2 relative">
-          {data.previewImage ? (
-            <Image src={data.previewImage.url} alt={data.previewImage.alt} fill className="rounded-l-md object-cover" />
-          ) : (
-            <div className="rounded-l-md bg-darkmode_regular w-full h-full" />
-          )}
+    <div className="flex-grow self-center m-4 rounded-md bg-darkmode_regular p-4 max-w-3xl whitespace-pre-wrap">
+      {previewImage && (
+        <div className="rounded-t-md relative h-80 -mx-4 -mt-4 mb-8">
+          <Image src={previewImage.url} alt={previewImage.alt} fill className="rounded-t-md object-cover" />
         </div>
-        <p className={`${data.date ? 'pt-4' : 'py-4 row-span-2'} font-heading text-3xl`}>{data.title || data.slug}</p>
-        {data.date && <p className="font-body">{data.date.toLocaleDateString('hu')}</p>}
+      )}
+      <div className="mb-8">
+        {title && <h1 className="text-h1 text-5xl font-heading mb-4">{title}</h1>}
+        {date && <div className="font-body">{date.toLocaleDateString('hu')}</div>}
       </div>
-    </Link>
+      {contentfulDocumentToReactComponents(body)}
+    </div>
   );
 }
 
