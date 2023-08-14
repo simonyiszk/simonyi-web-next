@@ -1,5 +1,6 @@
+import { Suspense } from 'react';
 import { Locales } from '~/@types';
-import { SubpageHeader, HomeFooter } from '~/components';
+import { SubpageHeader, HomeFooter, LoadingSubpages } from '~/components';
 import { getFooter } from '~/utils/contentful';
 
 export const dynamic = 'force-static';
@@ -18,7 +19,7 @@ export default async function SubpageLayout({ children }: { children: React.Reac
   return (
     <div className="flex flex-col justify-between min-h-safe_screen gap-16">
       <SubpageHeader />
-      {children}
+      <Suspense fallback={<LoadingSubpages />}>{children}</Suspense>
       <HomeFooter data={footer} />
     </div>
   );
