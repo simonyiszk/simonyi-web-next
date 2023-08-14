@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { createClient } from 'contentful';
 import {
   TypeLightboxSkeleton,
@@ -10,6 +11,8 @@ import {
 import { AboutType, FooterDataType, LightboxImage, Locales, PostType, ProfileType, StudentGroupType } from '~/@types';
 import { defaults } from '.';
 
+export const revalidate = 3600;
+
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? 'ErrorNoSpaceID',
   accessToken:
@@ -20,7 +23,7 @@ const client = createClient({
   environment: process.env.CONTENTFUL_ENVIRONMENT
 });
 
-export async function getAbout(locale: Locales = 'hu'): Promise<AboutType> {
+export const getAbout = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
   const aboutEntries = await client.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
     content_type: 'about',
     limit: 1,
@@ -38,9 +41,9 @@ export async function getAbout(locale: Locales = 'hu'): Promise<AboutType> {
     title: about.fields.title,
     description: about.fields.description
   };
-}
+});
 
-export async function getLightbox(locale: Locales = 'hu'): Promise<LightboxImage[]> {
+export const getLightbox = cache(async (locale: Locales = 'hu'): Promise<LightboxImage[]> => {
   const lightboxEntries = await client.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton>({
     content_type: 'lightbox',
     include: 1,
@@ -63,9 +66,9 @@ export async function getLightbox(locale: Locales = 'hu'): Promise<LightboxImage
         }
       : defaults.lightboxImage)
   }));
-}
+});
 
-export async function getStudentGroups(locale: Locales = 'hu'): Promise<StudentGroupType[]> {
+export const getStudentGroups = cache(async (locale: Locales = 'hu'): Promise<StudentGroupType[]> => {
   const studentGroupEntries = await client.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton>({
     content_type: 'studentGroup',
     include: 2,
@@ -100,9 +103,9 @@ export async function getStudentGroups(locale: Locales = 'hu'): Promise<StudentG
     })),
     isDense: studentGroup.fields.isDense
   }));
-}
+});
 
-export async function getProfiles(locale: Locales = 'hu'): Promise<ProfileType[]> {
+export const getProfiles = cache(async (locale: Locales = 'hu'): Promise<ProfileType[]> => {
   const profileEntries = await client.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton>({
     content_type: 'profile',
     include: 2,
@@ -137,9 +140,9 @@ export async function getProfiles(locale: Locales = 'hu'): Promise<ProfileType[]
       }
     }))
   }));
-}
+});
 
-export async function getPosts(locale: Locales = 'hu'): Promise<PostType[]> {
+export const getPosts = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
   const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
     content_type: 'post',
     locale
@@ -178,9 +181,9 @@ export async function getPosts(locale: Locales = 'hu'): Promise<PostType[]> {
           ogImage: defaults.ogImage
         })
   }));
-}
+});
 
-export async function getPostBySlug(slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> {
+export const getPostBySlug = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
   const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
     content_type: 'post',
     'fields.slug[match]': slug,
@@ -225,9 +228,9 @@ export async function getPostBySlug(slug: string, locale: Locales = 'hu'): Promi
           ogImage: defaults.ogImage
         })
   }))[0];
-}
+});
 
-export async function getFooter(locale: Locales = 'hu'): Promise<FooterDataType> {
+export const getFooter = cache(async (locale: Locales = 'hu'): Promise<FooterDataType> => {
   const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton>({
     content_type: 'footer',
     include: 2,
@@ -264,4 +267,4 @@ export async function getFooter(locale: Locales = 'hu'): Promise<FooterDataType>
         }
       : defaults.footer)
   }))[0];
-}
+});
