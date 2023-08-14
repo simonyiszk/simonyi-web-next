@@ -20,11 +20,11 @@ const client = createClient({
 });
 
 export async function getAbout(): Promise<AboutType> {
-  const aboutEntry = await client.getEntries<TypeAboutSkeleton, 'hu'>({ content_type: 'about', limit: 1, order: ['-sys.createdAt'] });
+  const aboutEntries = await client.getEntries<TypeAboutSkeleton, 'hu'>({ content_type: 'about', limit: 1, order: ['-sys.createdAt'] });
 
   return {
-    title: aboutEntry.items[0].fields.title,
-    description: aboutEntry.items[0].fields.description
+    title: aboutEntries.items[0].fields.title,
+    description: aboutEntries.items[0].fields.description
   };
 }
 
@@ -37,14 +37,27 @@ export async function getLightbox(): Promise<LightboxImage[]> {
   });
 
   return lightboxEntries.items.map((lightbox) => ({
-    picture: {
-      url: 'https:' + lightbox.fields.photo?.fields.file?.url || '',
-      alt: lightbox.fields.photo?.fields.description || ''
-    },
-    title: lightbox.fields.photo?.fields.title || '',
-    description: lightbox.fields.photo?.fields.description || '',
-    width: lightbox.fields.photo?.fields.file?.details.image?.width || 0,
-    height: lightbox.fields.photo?.fields.file?.details.image?.height || 0
+    ...(lightbox.fields.photo && lightbox.fields.photo.fields.file && lightbox.fields.photo.fields.file.details.image
+      ? {
+          picture: {
+            url: `https:${lightbox.fields.photo.fields.file.url}`,
+            alt: lightbox.fields.photo.fields.description || '',
+            width: lightbox.fields.photo.fields.file.details.image.width,
+            height: lightbox.fields.photo.fields.file.details.image.height
+          },
+          title: lightbox.fields.photo.fields.title,
+          description: lightbox.fields.photo.fields.description
+        }
+      : {
+          picture: {
+            url: '',
+            alt: '',
+            width: 0,
+            height: 0
+          },
+          title: '',
+          description: ''
+        })
   }));
 }
 
@@ -57,18 +70,42 @@ export async function getStudentGroups(): Promise<StudentGroupType[]> {
 
   return studentGroupEntries.items.map((studentGroup) => ({
     name: studentGroup.fields.name,
-    logo: {
-      url: 'https:' + studentGroup.fields.logo?.fields.file?.url || '',
-      alt: studentGroup.fields.logo?.fields.description || ''
-    },
+    ...(studentGroup.fields.logo && studentGroup.fields.logo.fields.file && studentGroup.fields.logo.fields.file.details.image
+      ? {
+          logo: {
+            url: `https:${studentGroup.fields.logo.fields.file.url}`,
+            alt: studentGroup.fields.logo.fields.description || '',
+            width: studentGroup.fields.logo.fields.file.details.image.width,
+            height: studentGroup.fields.logo.fields.file.details.image.height
+          }
+        }
+      : {
+          logo: {
+            url: '',
+            alt: '',
+            width: 0,
+            height: 0
+          }
+        }),
     description: studentGroup.fields.description,
     socials: studentGroup.fields.socials.map((social) => ({
-      icon: social?.fields.icon || 'website',
-      link: {
-        url: social?.fields.link?.fields.url || '',
-        title: social?.fields.link?.fields.title || '',
-        text: social?.fields.link?.fields.text || ''
-      }
+      ...(social && social.fields.link
+        ? {
+            icon: social.fields.icon,
+            link: {
+              url: social.fields.link.fields.url,
+              title: social.fields.link.fields.title,
+              text: social.fields.link.fields.text
+            }
+          }
+        : {
+            icon: 'website',
+            link: {
+              url: '',
+              title: '',
+              text: ''
+            }
+          })
     })),
     isDense: studentGroup.fields.isDense
   }));
@@ -85,10 +122,25 @@ export async function getProfiles(): Promise<ProfileType[]> {
   return profileEntries.items.map((profile) => ({
     name: profile.fields.name,
     title: profile.fields.title,
-    profilePicture: {
-      url: 'https:' + profile.fields.profilePicture?.fields.file?.url || '',
-      alt: profile.fields.profilePicture?.fields.description || ''
-    },
+    ...(profile.fields.profilePicture &&
+    profile.fields.profilePicture.fields.file &&
+    profile.fields.profilePicture.fields.file.details.image
+      ? {
+          profilePicture: {
+            url: `https:${profile.fields.profilePicture.fields.file.url}`,
+            alt: profile.fields.profilePicture.fields.description || '',
+            width: profile.fields.profilePicture.fields.file.details.image.width,
+            height: profile.fields.profilePicture.fields.file.details.image.height
+          }
+        }
+      : {
+          profilePicture: {
+            url: '',
+            alt: '',
+            width: 0,
+            height: 0
+          }
+        }),
     socials: profile.fields.socials.map((social) => ({
       icon: social?.fields.icon || 'website',
       link: {
@@ -115,24 +167,46 @@ export async function getPosts(): Promise<PostType[]> {
     published: post.fields.published,
     hidden: post.fields.hidden,
     tags: post.fields.tags,
-    previewImage: post.fields.previewImage?.fields.file?.url
-      ? 'https://' + post.fields.previewImage?.fields.file?.url
-      : 'https://warp.sch.bme.hu/images/cover',
-    previewImageAlt: post.fields.previewImage?.fields.description,
-    ogImage: post.fields.ogImage?.fields.file?.url
-      ? 'https://' + post.fields.ogImage?.fields.file?.url
-      : 'https://warp.sch.bme.hu/images/cover',
-    ogImageAlt: post.fields.ogImage?.fields.description || '',
-    ogImageWidth: post.fields.ogImage?.fields.file?.details?.image?.width || 960,
-    ogImageHeight: post.fields.ogImage?.fields.file?.details?.image?.height || 540
+    ...(post.fields.previewImage &&
+      post.fields.previewImage.fields.file &&
+      post.fields.previewImage.fields.file.details.image && {
+        previewImage: {
+          url: `https://${post.fields.previewImage.fields.file.url}`,
+          alt: post.fields.previewImage.fields.description || '',
+          width: post.fields.previewImage.fields.file.details.image.width,
+          height: post.fields.previewImage.fields.file.details.image.height
+        }
+      }),
+    ...(post.fields.ogImage && post.fields.ogImage.fields.file && post.fields.ogImage.fields.file.details.image
+      ? {
+          ogImage: {
+            url: `https://${post.fields.ogImage.fields.file.url}`,
+            alt: post.fields.ogImage.fields.description || '',
+            width: post.fields.ogImage.fields.file.details.image.width,
+            height: post.fields.ogImage.fields.file.details.image.height
+          }
+        }
+      : {
+          ogImage: {
+            url: 'https://warp.sch.bme.hu/images/cover',
+            alt: '',
+            width: 960,
+            height: 540
+          }
+        })
   }));
 }
 
-export async function getPostBySlug(slug: string): Promise<PostType> {
+export async function getPostBySlug(slug: string): Promise<PostType | undefined> {
   const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton, 'hu'>({
     content_type: 'post',
-    'fields.slug[match]': slug
+    'fields.slug[match]': slug,
+    limit: 1
   });
+
+  if (postEntries.items.length === 0) {
+    return undefined;
+  }
 
   return postEntries.items.map((post) => ({
     slug: post.fields.slug,
@@ -144,16 +218,33 @@ export async function getPostBySlug(slug: string): Promise<PostType> {
     published: post.fields.published,
     hidden: post.fields.hidden,
     tags: post.fields.tags,
-    previewImage: post.fields.previewImage?.fields.file?.url
-      ? 'https://' + post.fields.previewImage?.fields.file?.url
-      : 'https://warp.sch.bme.hu/images/cover',
-    previewImageAlt: post.fields.previewImage?.fields.description,
-    ogImage: post.fields.ogImage?.fields.file?.url
-      ? 'https://' + post.fields.ogImage?.fields.file?.url
-      : 'https://warp.sch.bme.hu/images/cover',
-    ogImageAlt: post.fields.ogImage?.fields.description || '',
-    ogImageWidth: post.fields.ogImage?.fields.file?.details?.image?.width || 960,
-    ogImageHeight: post.fields.ogImage?.fields.file?.details?.image?.height || 540
+    ...(post.fields.previewImage &&
+      post.fields.previewImage.fields.file &&
+      post.fields.previewImage.fields.file.details.image && {
+        previewImage: {
+          url: `https://${post.fields.previewImage.fields.file.url}`,
+          alt: post.fields.previewImage.fields.description || '',
+          width: post.fields.previewImage.fields.file.details.image.width,
+          height: post.fields.previewImage.fields.file.details.image.height
+        }
+      }),
+    ...(post.fields.ogImage && post.fields.ogImage.fields.file && post.fields.ogImage.fields.file.details.image
+      ? {
+          ogImage: {
+            url: `https://${post.fields.ogImage.fields.file.url}`,
+            alt: post.fields.ogImage.fields.description || '',
+            width: post.fields.ogImage.fields.file.details.image.width,
+            height: post.fields.ogImage.fields.file.details.image.height
+          }
+        }
+      : {
+          ogImage: {
+            url: 'https://warp.sch.bme.hu/images/cover',
+            alt: '',
+            width: 960,
+            height: 540
+          }
+        })
   }))[0];
 }
 

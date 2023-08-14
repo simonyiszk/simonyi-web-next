@@ -45,8 +45,8 @@ export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImag
             alt: image.picture.alt,
             title: image.title,
             description: image.description,
-            width: image.width,
-            height: image.height
+            width: image.picture.width,
+            height: image.picture.height
           };
         })}
         index={index}
