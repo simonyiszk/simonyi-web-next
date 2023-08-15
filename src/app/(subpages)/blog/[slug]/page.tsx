@@ -71,7 +71,7 @@ export default async function PostPage({
   if (!post) return notFound();
 
   return (
-    <div className="self-center w-full max-w-3xl p-4">
+    <div className="self-center w-full max-w-3xl">
       <BlogPost data={post} />
     </div>
   );
