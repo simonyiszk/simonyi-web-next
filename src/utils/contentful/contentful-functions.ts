@@ -1,32 +1,12 @@
 import { cache } from 'react';
-import { createClient } from 'contentful';
-import {
-  TypeLightboxSkeleton,
-  TypeProfileSkeleton,
-  TypeStudentGroupSkeleton,
-  TypePostSkeleton,
-  TypeAboutSkeleton,
-  TypeFooterSkeleton
-} from '~/@types/generated/content-types';
-import { AboutType, FooterDataType, LightboxImage, Locales, PostType, ProfileType, StudentGroupType } from '~/@types';
-import { defaults } from '.';
+import { AboutType, FooterDataType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { defaults } from '..';
+import { getAboutEntries, getFooterEntries, getLightboxEntries, getPostEntries, getProfileEntries, getStudentGroupEntries } from '.';
 
-export const revalidate = false; // only revalidate when redeployed
+export const revalidate = false;
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID ?? 'No space ID',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? 'No access token',
-  host: 'cdn.contentful.com',
-  environment: process.env.CONTENTFUL_ENVIRONMENT
-});
-
-export const getAbout = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
-  const aboutEntries = await client.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
-    content_type: 'about',
-    limit: 1,
-    order: ['-sys.createdAt'],
-    locale
-  });
+export const getAboutFromCache = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
+  const aboutEntries = await getAboutEntries(locale);
 
   if (aboutEntries.items.length === 0) {
     return defaults.about;
@@ -40,14 +20,8 @@ export const getAbout = cache(async (locale: Locales = 'hu'): Promise<AboutType>
   };
 });
 
-export const getLightbox = cache(async (locale: Locales = 'hu'): Promise<LightboxImage[]> => {
-  const lightboxEntries = await client.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton>({
-    content_type: 'lightbox',
-    include: 1,
-    order: ['-fields.date', 'fields.name', '-sys.createdAt'],
-    limit: 100,
-    locale
-  });
+export const getLightboxFromCache = cache(async (locale: Locales = 'hu'): Promise<LightboxImage[]> => {
+  const lightboxEntries = await getLightboxEntries(locale);
 
   return lightboxEntries.items.map((lightbox) => ({
     ...(lightbox.fields.photo && lightbox.fields.photo.fields.file && lightbox.fields.photo.fields.file.details.image
@@ -65,13 +39,8 @@ export const getLightbox = cache(async (locale: Locales = 'hu'): Promise<Lightbo
   }));
 });
 
-export const getStudentGroups = cache(async (locale: Locales = 'hu'): Promise<StudentGroupType[]> => {
-  const studentGroupEntries = await client.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton>({
-    content_type: 'studentGroup',
-    include: 2,
-    order: ['fields.name'],
-    locale
-  });
+export const getStudentGroupsFromCache = cache(async (locale: Locales = 'hu'): Promise<StudentGroupType[]> => {
+  const studentGroupEntries = await getStudentGroupEntries(locale);
 
   return studentGroupEntries.items.map((studentGroup) => ({
     name: studentGroup.fields.name,
@@ -102,14 +71,8 @@ export const getStudentGroups = cache(async (locale: Locales = 'hu'): Promise<St
   }));
 });
 
-export const getProfiles = cache(async (locale: Locales = 'hu'): Promise<ProfileType[]> => {
-  const profileEntries = await client.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton>({
-    content_type: 'profile',
-    include: 2,
-    limit: 4,
-    order: ['fields.priority', 'fields.name'],
-    locale
-  });
+export const getProfilesFromCache = cache(async (locale: Locales = 'hu'): Promise<ProfileType[]> => {
+  const profileEntries = await getProfileEntries(locale);
 
   return profileEntries.items.map((profile) => ({
     name: profile.fields.name,
@@ -139,12 +102,8 @@ export const getProfiles = cache(async (locale: Locales = 'hu'): Promise<Profile
   }));
 });
 
-export const getPosts = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
-  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
-    content_type: 'post',
-    order: ['-fields.date', '-sys.createdAt'],
-    locale
-  });
+export const getPostsFromCache = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
+  const postEntries = await getPostEntries(locale);
 
   return postEntries.items.map((post) => ({
     slug: post.fields.slug,
@@ -180,13 +139,8 @@ export const getPosts = cache(async (locale: Locales = 'hu'): Promise<PostType[]
   }));
 });
 
-export const getPostBySlug = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
-  const postEntries = await client.withoutUnresolvableLinks.getEntries<TypePostSkeleton>({
-    content_type: 'post',
-    'fields.slug[match]': slug,
-    limit: 1,
-    locale
-  });
+export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
+  const postEntries = await getPostEntries(locale);
 
   if (postEntries.items.length === 0) {
     return undefined;
@@ -226,18 +180,8 @@ export const getPostBySlug = cache(async (slug: string, locale: Locales = 'hu'):
   }))[0];
 });
 
-export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
-  const posts = await getPosts(locale);
-  return posts.find((post) => post.slug === slug);
-});
-
-export const getFooter = cache(async (locale: Locales = 'hu'): Promise<FooterDataType> => {
-  const footerEntries = await client.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton>({
-    content_type: 'footer',
-    include: 2,
-    limit: 1,
-    locale
-  });
+export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<FooterDataType> => {
+  const footerEntries = await getFooterEntries(locale);
 
   if (footerEntries.items.length === 0) {
     return {
@@ -268,4 +212,58 @@ export const getFooter = cache(async (locale: Locales = 'hu'): Promise<FooterDat
         }
       : defaults.footer)
   }))[0];
+});
+
+export const getPaginatedPostsFromCache = cache(async (page = 1, size = 10, locale: Locales = 'hu'): Promise<Paginated<PostType>> => {
+  const postEntries = await getPostEntries(locale);
+
+  const safeSize = size > 0 && size < 20 ? size : 10;
+
+  const hiddenPosts = postEntries.items.filter((post) => post.fields.hidden);
+
+  const totalItems = postEntries.total - hiddenPosts.length;
+  const totalPages = Math.ceil(totalItems / safeSize);
+
+  const safePage = page > 0 && page <= totalPages ? page : 1;
+
+  const items = postEntries.items.filter((post) => !post.fields.hidden).slice((safePage - 1) * safeSize, safePage * safeSize);
+
+  return {
+    totalItems,
+    totalPages,
+    currentPage: safePage,
+    pageSize: safeSize,
+    items: items.map((post) => ({
+      slug: post.fields.slug,
+      body: post.fields.body,
+      title: post.fields.title,
+      description: post.fields.description,
+      date: post.fields.date ? new Date(post.fields.date) : undefined,
+      authors: post.fields.authors,
+      hidden: post.fields.hidden,
+      tags: post.fields.tags,
+      ...(post.fields.previewImage &&
+        post.fields.previewImage.fields.file &&
+        post.fields.previewImage.fields.file.details.image && {
+          previewImage: {
+            url: `https://${post.fields.previewImage.fields.file.url}`,
+            alt: post.fields.previewImage.fields.description || '',
+            width: post.fields.previewImage.fields.file.details.image.width,
+            height: post.fields.previewImage.fields.file.details.image.height
+          }
+        }),
+      ...(post.fields.ogImage && post.fields.ogImage.fields.file && post.fields.ogImage.fields.file.details.image
+        ? {
+            ogImage: {
+              url: `https://${post.fields.ogImage.fields.file.url}`,
+              alt: post.fields.ogImage.fields.description || '',
+              width: post.fields.ogImage.fields.file.details.image.width,
+              height: post.fields.ogImage.fields.file.details.image.height
+            }
+          }
+        : {
+            ogImage: defaults.ogImage
+          })
+    }))
+  };
 });

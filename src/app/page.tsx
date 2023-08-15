@@ -1,5 +1,5 @@
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, HomeFooter } from '~/components';
-import { getAbout, getFooter, getLightbox, getProfiles, getStudentGroups } from '~/utils';
+import { getAboutFromCache, getFooterFromCache, getLightboxFromCache, getProfilesFromCache, getStudentGroupsFromCache } from '~/utils';
 import { Locales } from '~/@types';
 
 export const dynamic = 'force-static';
@@ -7,11 +7,11 @@ export const dynamic = 'force-static';
 async function getData() {
   const locale: Locales = 'hu';
 
-  const about = await getAbout(locale);
-  const lightbox = await getLightbox(locale);
-  const groups = await getStudentGroups(locale);
-  const profiles = await getProfiles(locale);
-  const footer = await getFooter(locale);
+  const about = await getAboutFromCache(locale);
+  const lightbox = await getLightboxFromCache(locale);
+  const groups = await getStudentGroupsFromCache(locale);
+  const profiles = await getProfilesFromCache(locale);
+  const footer = await getFooterFromCache(locale);
 
   return { about, lightbox, groups, profiles, footer };
 }
