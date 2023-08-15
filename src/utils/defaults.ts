@@ -16,10 +16,10 @@ export const defaults: {
 } = {
   lightboxImage: {
     picture: {
-      url: '',
+      url: 'https://warp.sch.bme.hu/images/cover',
       alt: '',
-      width: 0,
-      height: 0
+      width: 960,
+      height: 540
     },
     title: '',
     description: ''
@@ -39,10 +39,10 @@ export const defaults: {
     }
   },
   profilePicture: {
-    url: '',
+    url: 'https://warp.sch.bme.hu/images/profile',
     alt: '',
-    width: 0,
-    height: 0
+    width: 512,
+    height: 512
   },
   ogImage: {
     url: 'https://warp.sch.bme.hu/images/cover',
