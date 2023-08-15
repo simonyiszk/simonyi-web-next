@@ -1,5 +1,5 @@
 import { StudentGroup } from '~/components';
-import { StudentGroupType } from '~/types';
+import { StudentGroupType } from '~/@types';
 
 export default function HomeStudentGroups({ groups }: { groups: Array<StudentGroupType> }) {
   return (

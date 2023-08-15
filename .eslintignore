@@ -12,6 +12,7 @@
 .yarn/
 public/
 node_modules/
+src/@types/generated/
 
 # Don't ignore these files
 !.eslintrc.json
@@ -27,3 +28,6 @@ node_modules/
 !*.js
 !*.tsx
 !*.ts
+
+# Ignore these files
+next-env.d.ts

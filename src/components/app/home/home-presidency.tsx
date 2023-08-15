@@ -1,5 +1,5 @@
 import { Profile } from '~/components';
-import { ProfileType } from '~/types';
+import { ProfileType } from '~/@types';
 
 export default function HomePresidency({ profiles }: { profiles: Array<ProfileType> }) {
   return (

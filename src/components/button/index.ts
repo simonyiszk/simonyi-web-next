@@ -1,3 +1,1 @@
-import { Button } from './button.component';
-
-export { Button };
+export * from './button.component';

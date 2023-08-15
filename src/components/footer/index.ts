@@ -1,3 +1,2 @@
-import { HomeFooter } from './home-footer.component';
-
-export { HomeFooter };
+export * from './footer.component';
+export * from './footer-section.component';

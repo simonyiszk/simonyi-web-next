@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button, ChevronIcon, HomeHeader, SimonyiFullLightIcon } from '~/components';
+import { Button, ChevronIcon, HeaderHome, SimonyiFullLightIcon } from '~/components';
 
 export default function HomeGreeting() {
   return (
@@ -8,7 +8,7 @@ export default function HomeGreeting() {
         <Image src="/images/hero/default.png" alt="Hero image" fill priority style={{ objectFit: 'cover' }} />
       </div>
       <div className="flex flex-col min-h-screen justify-between items-center pb-[calc(80px+2rem)]">
-        <HomeHeader />
+        <HeaderHome />
         <div className="flex flex-col gap-8">
           <div className="max-w-[353px] max-h-[75px] m-8">
             <SimonyiFullLightIcon width="100%" height="100%" filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))" />
