@@ -1,5 +1,5 @@
 import { BLOCKS } from '@contentful/rich-text-types';
-import { AboutType, FooterDataType, ImageType, LightboxImage, SocialType } from '~/@types';
+import { AboutType, FooterType, ImageType, LightboxImage, SocialType } from '~/@types';
 
 type Unpacked<T> = T extends (infer U)[] ? U : T;
 
@@ -9,8 +9,8 @@ export const defaults: {
   social: SocialType;
   profilePicture: ImageType;
   ogImage: ImageType;
-  footer: FooterDataType;
-  footerSection: Unpacked<FooterDataType['sections']>;
+  footer: FooterType;
+  footerSection: Unpacked<FooterType['sections']>;
   about: AboutType;
   pagination: { page: number; size: number };
 } = {
@@ -51,7 +51,12 @@ export const defaults: {
     height: 540
   },
   footer: {
-    sections: []
+    sections: [],
+    github: {
+      text: 'github.com/simonyiszk/simonyi-web-next',
+      title: 'github.com/simonyiszk/simonyi-web-next',
+      url: 'https://github.com/simonyiszk/simonyi-web-next'
+    }
   },
   footerSection: {
     links: [],
