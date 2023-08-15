@@ -6,7 +6,7 @@ function BlogPost({ data }: { data: PostType }) {
   const { title, date, previewImage, body } = data;
 
   return (
-    <div className="flex-grow self-center m-4 rounded-md bg-darkmode_regular p-4 max-w-3xl whitespace-pre-wrap">
+    <div className="m-4 rounded-md bg-darkmode_regular p-4 whitespace-pre-wrap">
       {previewImage && (
         <div className="rounded-t-md relative h-80 -mx-4 -mt-4 mb-8">
           <Image src={previewImage.url} alt={previewImage.alt} fill className="rounded-t-md object-cover" />
