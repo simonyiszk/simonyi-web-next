@@ -67,7 +67,7 @@ export function isTypeLink<Modifiers extends ChainModifiers, Locales extends Loc
 
 export interface TypePostFields {
     slug: EntryFieldTypes.Symbol;
-    title?: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol;
     authors?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     date?: EntryFieldTypes.Date;
     description?: EntryFieldTypes.Text;
