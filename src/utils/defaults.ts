@@ -12,6 +12,7 @@ export const defaults: {
   footer: FooterDataType;
   footerSection: Unpacked<FooterDataType['sections']>;
   about: AboutType;
+  pagination: { page: number; size: number };
 } = {
   lightboxImage: {
     picture: {
@@ -63,5 +64,9 @@ export const defaults: {
       content: [],
       data: {}
     }
+  },
+  pagination: {
+    page: 1,
+    size: 10
   }
 };
