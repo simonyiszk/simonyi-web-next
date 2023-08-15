@@ -60,12 +60,13 @@ export type PostType = {
   ogImage?: ImageType;
 };
 
-export type FooterDataType = {
+export type FooterType = {
   sections: {
     title: string;
     links: LinkType[];
     address?: Document;
   }[];
+  github?: LinkType;
 };
 
 export type Locales = 'hu' | 'en-US';

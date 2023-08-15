@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { AboutType, FooterDataType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { AboutType, FooterType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
 import { defaults } from '..';
 import { getAboutEntries, getFooterEntries, getLightboxEntries, getPostEntries, getProfileEntries, getStudentGroupEntries } from '.';
 
@@ -149,7 +149,7 @@ export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales
   return posts[0];
 });
 
-export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<FooterDataType> => {
+export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<FooterType> => {
   const footerEntries = await getFooterEntries(locale);
 
   if (footerEntries.items.length === 0) {
@@ -177,7 +177,8 @@ export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<
                   }))
                 }
               : defaults.footerSection)
-          }))
+          })),
+          github: footer.fields.github?.fields
         }
       : defaults.footer)
   }))[0];

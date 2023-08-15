@@ -16,6 +16,7 @@ export function isTypeAbout<Modifiers extends ChainModifiers, Locales extends Lo
 export interface TypeFooterFields {
     name: EntryFieldTypes.Symbol;
     sections?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeFooterSectionSkeleton>>;
+    github?: EntryFieldTypes.EntryLink<TypeLinkSkeleton>;
 }
 
 export type TypeFooterSkeleton = EntrySkeletonType<TypeFooterFields, "footer">;
