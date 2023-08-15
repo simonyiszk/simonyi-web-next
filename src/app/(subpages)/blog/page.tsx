@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { Locales } from '~/@types';
 import { BlogPaginator, BlogPostPreview } from '~/components';
 import { getPaginatedPostsFromCache } from '~/utils';
@@ -32,6 +33,10 @@ async function getData(searchParams: SearchParams) {
 
 export default async function Page({ searchParams }: { searchParams: SearchParams }) {
   const { posts, currentPage, totalPages } = await getData(searchParams);
+
+  if (posts.length === 0) {
+    return notFound();
+  }
 
   return (
     <div className="flex-grow self-center p-4 flex flex-col gap-8 w-full max-w-3xl">
