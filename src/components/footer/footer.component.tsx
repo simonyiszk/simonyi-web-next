@@ -4,7 +4,7 @@ import { contentfulDocumentToReactComponents } from '~/utils';
 import { Link } from '..';
 import { FooterSection } from '.';
 
-function HomeFooter({ data }: { data: FooterDataType }) {
+function Footer({ data }: { data: FooterDataType }) {
   return (
     <div className="flex flex-col items-center bg-darkmode_regular gap-8 p-8">
       <div className="flex flex-wrap flex-col sm:flex-row items-start max-w-home gap-16 pb-8 justify-evenly w-auto md:w-full">
@@ -37,4 +37,4 @@ function HomeFooter({ data }: { data: FooterDataType }) {
   );
 }
 
-export { HomeFooter };
+export { Footer };

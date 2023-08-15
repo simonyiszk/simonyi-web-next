@@ -1,4 +1,4 @@
-import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, HomeFooter } from '~/components';
+import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from '~/components';
 import { getAboutFromCache, getFooterFromCache, getLightboxFromCache, getProfilesFromCache, getStudentGroupsFromCache } from '~/utils';
 import { Locales } from '~/@types';
 
@@ -29,7 +29,7 @@ export default async function Page() {
         <HomeStudentGroups groups={groups} />
         <HomePresidency profiles={profiles} />
       </div>
-      <HomeFooter data={footer} />
+      <Footer data={footer} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Locales } from '~/@types';
-import { SubpageHeader, HomeFooter } from '~/components';
+import { HeaderSubpage, Footer } from '~/components';
 import { getFooterFromCache } from '~/utils';
 
 export const dynamic = 'force-static';
@@ -17,9 +17,9 @@ export default async function SubpageLayout({ children }: { children: React.Reac
 
   return (
     <div className="flex flex-col justify-between min-h-safe_screen gap-16">
-      <SubpageHeader />
+      <HeaderSubpage />
       {children}
-      <HomeFooter data={footer} />
+      <Footer data={footer} />
     </div>
   );
 }
