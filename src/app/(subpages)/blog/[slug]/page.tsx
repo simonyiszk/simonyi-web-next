@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getPostBySlugFromCache } from '~/utils';
+import { getPostBySlugFromCache } from '~/utils';
 import { Locales } from '~/@types';
 import { BlogPost } from '~/components';
 
@@ -55,7 +55,7 @@ export async function generateMetadata({
 }
 
 async function getData({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+  const post = await getPostBySlugFromCache(params.slug);
   return { post };
 }
 

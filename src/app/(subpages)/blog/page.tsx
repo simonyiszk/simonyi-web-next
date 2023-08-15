@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Locales } from '~/@types';
 import { BlogPostPreview } from '~/components';
-import { getPosts } from '~/utils';
+import { getPostsFromCache } from '~/utils';
 
 export const dynamic = 'force-static';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 async function getData() {
   const locale: Locales = 'hu';
 
-  const posts = await getPosts(locale);
+  const posts = await getPostsFromCache(locale);
 
   return { posts: posts.filter((post) => !post.hidden) };
 }
