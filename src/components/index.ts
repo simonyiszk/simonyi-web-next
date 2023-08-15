@@ -9,3 +9,4 @@ export * from './student-group';
 export * from './lightbox';
 export * from './spinner';
 export * from './app';
+export * from './not-found';
