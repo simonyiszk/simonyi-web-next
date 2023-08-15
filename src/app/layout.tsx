@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://simonyi.bme.hu'),
   title: {
     default: 'Simonyi Károly Szakkollégium',
     template: '%s - Simonyi Károly Szakkollégium',
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
         alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
       }
     ],
-    locale: 'hu-HU'
+    locale: 'hu',
+    alternateLocale: 'en_US'
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html data-theme="dark" lang="hu" className="h-full">
       <body className="bg-dark text-white text-opacity-text">

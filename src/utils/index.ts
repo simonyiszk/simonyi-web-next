@@ -1,4 +1,3 @@
-import { about, images, groups, profiles } from './data';
-import { isBrowser } from './functions';
-
-export { about, images, groups, profiles, isBrowser };
+export * from './functions';
+export * from './defaults';
+export * from './contentful';

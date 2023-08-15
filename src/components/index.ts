@@ -1,54 +1,12 @@
-import { HomeFooter } from './footer';
-import { HomeHeader, SubpageHeader } from './header';
-import { Button } from './button';
-import { Link } from './link';
-import {
-  ChevronIcon,
-  ClockIcon,
-  EmailIcon,
-  FacebookIcon,
-  GitHubIcon,
-  GlobeIcon,
-  IncreaseIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  PhoneIcon,
-  SimonyiFullDarkIcon,
-  SimonyiFullLightIcon,
-  SimonyiLogoIcon,
-  SocialIcon,
-  YouTubeIcon,
-  TikTokIcon
-} from './icons';
-import { Profile } from './profile';
-import { SEO } from './seo';
-import { StudentGroup } from './student-group';
-import { LightBox } from './lightbox';
-
-export {
-  ChevronIcon,
-  ClockIcon,
-  EmailIcon,
-  FacebookIcon,
-  GitHubIcon,
-  GlobeIcon,
-  HomeFooter,
-  HomeHeader,
-  IncreaseIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  PhoneIcon,
-  Profile,
-  SEO,
-  SimonyiFullDarkIcon,
-  SimonyiFullLightIcon,
-  SimonyiLogoIcon,
-  SocialIcon,
-  StudentGroup,
-  YouTubeIcon,
-  TikTokIcon,
-  Button,
-  Link,
-  SubpageHeader,
-  LightBox
-};
+export * from './footer';
+export * from './header';
+export * from './button';
+export * from './link';
+export * from './icons';
+export * from './profile';
+export * from './seo';
+export * from './student-group';
+export * from './lightbox';
+export * from './spinner';
+export * from './app';
+export * from './not-found';

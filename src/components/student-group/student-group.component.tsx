@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ChevronIcon, SocialIcon } from '../icons';
-import type { StudentGroupType } from '../../types';
+import type { StudentGroupType } from '~/@types';
+import { ChevronIcon, SocialIcon } from '..';
 
 function StudentGroup({ name, logo, description, socials = [], isDense = false }: StudentGroupType & { isDense?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,10 +48,10 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
             title={social.link.title}
             target="_blank"
             key={index}
-            className="bg-simonyi_zold px-[13px] py-[6px] rounded-md"
+            className="bg-simonyi_zold px-[13px] py-[7px] rounded-md"
             rel="noreferrer"
           >
-            <SocialIcon iconName={social.icon} props={{ className: 'w-4 h-4 leading-4 fill-white inline-block align-middle' }} />
+            <SocialIcon iconName={social.icon} props={{ className: 'w-4 h-4 my-[1px] fill-white' }} />
           </a>
         ))}
       </div>

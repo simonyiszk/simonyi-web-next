@@ -1,27 +1,7 @@
-import { SimonyiFullDarkIcon, SimonyiFullLightIcon, SimonyiLogoIcon } from './bme';
-import { EmailIcon, FacebookIcon, GitHubIcon, GlobeIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon, TikTokIcon } from './social';
-import { ChevronIcon } from './chevron-icon.component';
-import { IncreaseIcon } from './increase-icon.component';
-import { SocialIcon } from './social-icon.component';
-import { ClockIcon } from './clock-icon.component';
-import { HamburgerIcon } from './hamburger-icon.component';
-
-export {
-  ChevronIcon,
-  EmailIcon,
-  FacebookIcon,
-  GitHubIcon,
-  GlobeIcon,
-  IncreaseIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  PhoneIcon,
-  YouTubeIcon,
-  TikTokIcon,
-  SimonyiFullDarkIcon,
-  SimonyiFullLightIcon,
-  SimonyiLogoIcon,
-  SocialIcon,
-  ClockIcon,
-  HamburgerIcon
-};
+export * from './bme';
+export * from './social';
+export * from './chevron-icon.component';
+export * from './increase-icon.component';
+export * from './social-icon.component';
+export * from './clock-icon.component';
+export * from './hamburger-icon.component';

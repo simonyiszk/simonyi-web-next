@@ -1,7 +1,6 @@
 import { SVGProps } from 'react';
-import { EmailIcon, FacebookIcon, GitHubIcon, GlobeIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon } from '../icons';
-import { SocialIconType } from '../../types';
-import { TikTokIcon } from './social';
+import { SocialIconType } from '~/@types';
+import { TikTokIcon, EmailIcon, FacebookIcon, GitHubIcon, GlobeIcon, InstagramIcon, LinkedInIcon, PhoneIcon, YouTubeIcon } from '.';
 
 function SocialIcon({ iconName, props }: { iconName: string; props?: SVGProps<SVGSVGElement> }) {
   switch (iconName.toLocaleLowerCase() as SocialIconType) {
