@@ -187,16 +187,11 @@ export const getPaginatedPostsFromCache = cache(
   async (page: number | string | undefined, size: number | string | undefined, locale: Locales = 'hu'): Promise<Paginated<PostType>> => {
     const postEntries = await getPostEntries(locale);
 
-    const defaultValues = {
-      page: 1,
-      size: 1
-    };
+    let unsafePage = page ? Number(page) : defaults.pagination.page;
+    let unsafeSize = size ? Number(size) : defaults.pagination.size;
 
-    let unsafePage = page ? Number(page) : defaultValues.page;
-    let unsafeSize = size ? Number(size) : defaultValues.size;
-
-    unsafePage = Number.isNaN(unsafePage) ? defaultValues.page : unsafePage;
-    unsafeSize = Number.isNaN(unsafeSize) ? defaultValues.size : unsafeSize;
+    unsafePage = Number.isNaN(unsafePage) ? defaults.pagination.page : unsafePage;
+    unsafeSize = Number.isNaN(unsafeSize) ? defaults.pagination.size : unsafeSize;
 
     const safeSize = unsafeSize > 0 && unsafeSize < 21 ? unsafeSize : 20;
 
