@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { default as NextLink } from 'next/link';
 import { SimonyiLogoIcon, HamburgerIcon } from '../icons';
 
-function SubpageHeader() {
+function HeaderSubpage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -56,4 +56,4 @@ function SubpageHeader() {
   );
 }
 
-export { SubpageHeader };
+export { HeaderSubpage };

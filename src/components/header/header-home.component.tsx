@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-function HomeHeader() {
+function HeaderHome() {
   return (
     <div className="flex gap-x-16 gap-y-8 justify-center items-center flex-wrap p-8">
       <a className="h-[50px] w-[188px] relative" href="http://www.bme.hu/" target="_blank" rel="noreferrer">
@@ -18,4 +18,4 @@ function HomeHeader() {
   );
 }
 
-export { HomeHeader };
+export { HeaderHome };

@@ -1,2 +1,2 @@
-export * from './home-header.component';
-export * from './subpage-header.component';
+export * from './header-home.component';
+export * from './header-subpage.component';
