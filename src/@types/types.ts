@@ -1,44 +1,44 @@
 import { Document } from '@contentful/rich-text-types';
 
-type SocialIconType = 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'phone' | 'youtube' | 'tiktok' | 'website';
+export type SocialIconType = 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'phone' | 'youtube' | 'tiktok' | 'website';
 
-type AboutType = {
+export type AboutType = {
   title: string;
   description: Document;
 };
 
-type ImageType = {
+export type ImageType = {
   url: string;
   alt: string;
   width: number;
   height: number;
 };
 
-type LightboxImage = {
+export type LightboxImage = {
   picture: ImageType;
   title?: string;
   description?: string;
 };
 
-type LinkType = {
+export type LinkType = {
   url: string;
   title: string;
   text: string;
 };
 
-type SocialType = {
+export type SocialType = {
   icon: SocialIconType;
   link: LinkType;
 };
 
-type ProfileType = {
+export type ProfileType = {
   profilePicture: ImageType;
   name: string;
   title: string;
   socials: SocialType[];
 };
 
-type StudentGroupType = {
+export type StudentGroupType = {
   name: string;
   logo: ImageType;
   description: string;
@@ -46,7 +46,7 @@ type StudentGroupType = {
   isDense?: boolean;
 };
 
-type PostType = {
+export type PostType = {
   slug: string;
   body: Document;
   title?: string;
@@ -60,25 +60,12 @@ type PostType = {
   ogImage?: ImageType;
 };
 
-type FooterDataType = {
+export type FooterDataType = {
   sections: {
     title: string;
     links: LinkType[];
     address?: Document;
   }[];
-};
-
-export type {
-  AboutType,
-  ImageType,
-  LightboxImage,
-  LinkType,
-  ProfileType,
-  StudentGroupType,
-  SocialIconType,
-  SocialType,
-  PostType,
-  FooterDataType
 };
 
 export type Locales = 'hu' | 'en-US';
