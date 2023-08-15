@@ -72,7 +72,7 @@ export interface TypePostFields {
     date?: EntryFieldTypes.Date;
     description?: EntryFieldTypes.Text;
     body: EntryFieldTypes.RichText;
-    hidden?: EntryFieldTypes.Boolean;
+    hidden: EntryFieldTypes.Boolean;
     tags?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     previewImage?: EntryFieldTypes.AssetLink;
     ogImage?: EntryFieldTypes.AssetLink;
