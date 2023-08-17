@@ -1,18 +1,16 @@
 {
-  "pages": {
-    "home": {
-      "course": "Tanfolyam",
-      "rent": "Bérlés",
-      "blog": "Blog",
-      "studentGroups": "Köreink",
-      "presidency": "Elnökség",
-      "bmeAlt": "Budapesti Műszaki és Gazdaságtudományi Egyetem (BME)",
-      "vikAlt": "Villamosmérnöki és Informatikai Kar (VIK)",
-      "schonherzAlt": "Schönherz"
-    },
-    "blog": {
-      "homepage": "Főoldal",
-      "blog": "Blog"
-    }
+  "home": {
+    "course": "Tanfolyam",
+    "rent": "Bérlés",
+    "blog": "Blog",
+    "studentGroups": "Köreink",
+    "presidency": "Elnökség",
+    "bmeAlt": "Budapesti Műszaki és Gazdaságtudományi Egyetem (BME)",
+    "vikAlt": "Villamosmérnöki és Informatikai Kar (VIK)",
+    "schonherzAlt": "Schönherz"
+  },
+  "blog": {
+    "homepage": "Főoldal",
+    "blog": "Blog"
   }
 }

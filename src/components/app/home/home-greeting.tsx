@@ -1,8 +1,11 @@
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { ImageType } from '~/@types';
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from '~/components';
 
 export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
+  const t = useTranslations('home');
+
   return (
     <div className="min-h-screen">
       <div className="-z-10 absolute top-0 left-0 bg-black w-full max-w-full h-screen max-h-full blur-home flex">
@@ -16,10 +19,10 @@ export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
             <a href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank" rel="noreferrer">
-              <Button>Tanfolyam</Button>
+              <Button>{t('course')}</Button>
             </a>
             <a href="https://termek.sch.bme.hu/" title="termek.sch.bme.hu" target="_blank" rel="noreferrer">
-              <Button>Bérlés</Button>
+              <Button>{t('rent')}</Button>
             </a>
           </div>
         </div>
