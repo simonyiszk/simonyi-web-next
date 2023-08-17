@@ -35,6 +35,14 @@ function Footer({ data }: { data: FooterType }) {
           <p className="text-center font-body">{data.github.text}</p>
         </Link>
       )}
+      <a
+        href="https://vercel.com?utm_source=kir-dev&utm_campaign=oss"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative mx-8 block h-8 w-40 text-white hover:opacity-75"
+      >
+        <Image src="/vercel.svg" fill alt="Logo of Vercel" />
+      </a>
     </div>
   );
 }
