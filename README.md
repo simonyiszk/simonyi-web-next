@@ -36,4 +36,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ## Sponsors
 
-[![Powered by Vercel](public/vercel.svg "Powered by Vercel")](https://vercel.com?utm_source=kir-dev&utm_campaign=oss)
+[![Powered by Vercel](public/vercel.svg 'Powered by Vercel')](https://vercel.com?utm_source=kir-dev&utm_campaign=oss)
