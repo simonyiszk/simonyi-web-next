@@ -68,5 +68,3 @@ export type FooterType = {
   }[];
   github?: LinkType;
 };
-
-export type Locales = 'hu' | 'en-US';

@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { AboutType, FooterType, ImageType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { AboutType, FooterType, ImageType, LightboxImage, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
 import { defaults } from '..';
 import {
   getAboutEntries,
@@ -13,7 +13,7 @@ import {
 
 export const revalidate = false;
 
-export const getHeroFromCache = cache(async (locale: Locales = 'hu'): Promise<ImageType> => {
+export const getHeroFromCache = cache(async (locale = 'hu'): Promise<ImageType> => {
   const heroEntries = await getHeroEntries(locale);
 
   if (heroEntries.items.length === 0) {
@@ -34,7 +34,7 @@ export const getHeroFromCache = cache(async (locale: Locales = 'hu'): Promise<Im
   };
 });
 
-export const getAboutFromCache = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
+export const getAboutFromCache = cache(async (locale = 'hu'): Promise<AboutType> => {
   const aboutEntries = await getAboutEntries(locale);
 
   if (aboutEntries.items.length === 0) {
@@ -49,7 +49,7 @@ export const getAboutFromCache = cache(async (locale: Locales = 'hu'): Promise<A
   };
 });
 
-export const getLightboxFromCache = cache(async (locale: Locales = 'hu'): Promise<LightboxImage[]> => {
+export const getLightboxFromCache = cache(async (locale = 'hu'): Promise<LightboxImage[]> => {
   const lightboxEntries = await getLightboxEntries(locale);
 
   return lightboxEntries.items.map((lightbox) => ({
@@ -68,7 +68,7 @@ export const getLightboxFromCache = cache(async (locale: Locales = 'hu'): Promis
   }));
 });
 
-export const getStudentGroupsFromCache = cache(async (locale: Locales = 'hu'): Promise<StudentGroupType[]> => {
+export const getStudentGroupsFromCache = cache(async (locale = 'hu'): Promise<StudentGroupType[]> => {
   const studentGroupEntries = await getStudentGroupEntries(locale);
 
   return studentGroupEntries.items.map((studentGroup) => ({
@@ -100,7 +100,7 @@ export const getStudentGroupsFromCache = cache(async (locale: Locales = 'hu'): P
   }));
 });
 
-export const getProfilesFromCache = cache(async (locale: Locales = 'hu'): Promise<ProfileType[]> => {
+export const getProfilesFromCache = cache(async (locale = 'hu'): Promise<ProfileType[]> => {
   const profileEntries = await getProfileEntries(locale);
 
   return profileEntries.items.map((profile) => ({
@@ -131,7 +131,7 @@ export const getProfilesFromCache = cache(async (locale: Locales = 'hu'): Promis
   }));
 });
 
-export const getPostsFromCache = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
+export const getPostsFromCache = cache(async (locale = 'hu'): Promise<PostType[]> => {
   const postEntries = await getPostEntries(locale);
 
   return postEntries.items.map((post) => ({
@@ -168,7 +168,7 @@ export const getPostsFromCache = cache(async (locale: Locales = 'hu'): Promise<P
   }));
 });
 
-export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
+export const getPostBySlugFromCache = cache(async (slug: string, locale = 'hu'): Promise<PostType | undefined> => {
   const posts = (await getPostsFromCache(locale)).filter((post) => post.slug === slug);
 
   if (posts.length === 0) {
@@ -178,7 +178,7 @@ export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales
   return posts[0];
 });
 
-export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<FooterType> => {
+export const getFooterFromCache = cache(async (locale = 'hu'): Promise<FooterType> => {
   const footerEntries = await getFooterEntries(locale);
 
   if (footerEntries.items.length === 0) {
@@ -214,7 +214,7 @@ export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<
 });
 
 export const getPaginatedPostsFromCache = cache(
-  async (page: number | string | undefined, size: number | string | undefined, locale: Locales = 'hu'): Promise<Paginated<PostType>> => {
+  async (page: number | string | undefined, size: number | string | undefined, locale = 'hu'): Promise<Paginated<PostType>> => {
     const postEntries = await getPostEntries(locale);
 
     let unsafePage = page ? Number(page) : defaults.pagination.page;
