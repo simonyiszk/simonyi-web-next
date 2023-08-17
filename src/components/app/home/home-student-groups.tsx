@@ -1,13 +1,15 @@
+import { useTranslations } from 'next-intl';
 import { StudentGroup } from '~/components';
 import { StudentGroupType } from '~/@types';
 
 export default function HomeStudentGroups({ groups }: { groups: Array<StudentGroupType> }) {
+  const t = useTranslations('home');
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
-        <h1 className="text-h1 font-heading">Köreink</h1>
+        <h1 className="font-heading text-h1">{t('studentGroups')}</h1>
       </div>
-      <div className="self-center flex justify-center flex-col md:flex-row gap-8 flex-wrap w-full">
+      <div className="flex w-full flex-col flex-wrap justify-center gap-8 self-center md:flex-row">
         {groups.map((group, index) => (
           <StudentGroup
             key={index}

@@ -1,30 +1,33 @@
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { ImageType } from '~/@types';
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from '~/components';
 
 export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
+  const t = useTranslations('home');
+
   return (
     <div className="min-h-screen">
-      <div className="-z-10 absolute top-0 left-0 bg-black w-full max-w-full h-screen max-h-full blur-home flex">
+      <div className="absolute left-0 top-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
         <Image src={heroImage.url} alt={heroImage.alt} fill priority style={{ objectFit: 'cover' }} />
       </div>
-      <div className="flex flex-col min-h-screen justify-between items-center pb-[calc(80px+2rem)]">
+      <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
         <HeaderHome />
         <div className="flex flex-col gap-8">
-          <div className="max-w-[353px] max-h-[75px] m-8">
+          <div className="m-8 max-h-[75px] max-w-[353px]">
             <SimonyiDarkIcon width="100%" height="100%" filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))" />
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
             <a href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank" rel="noreferrer">
-              <Button>Tanfolyam</Button>
+              <Button>{t('course')}</Button>
             </a>
             <a href="https://termek.sch.bme.hu/" title="termek.sch.bme.hu" target="_blank" rel="noreferrer">
-              <Button>Bérlés</Button>
+              <Button>{t('rent')}</Button>
             </a>
           </div>
         </div>
         <div className="h-6">
-          <ChevronIcon className="w-4 leading-6 fill-light align-middle inline-block" />
+          <ChevronIcon className="inline-block w-4 fill-light align-middle leading-6" />
         </div>
       </div>
     </div>

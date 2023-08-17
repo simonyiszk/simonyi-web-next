@@ -1,0 +1,16 @@
+{
+  "home": {
+    "course": "Courses",
+    "rent": "Renting",
+    "blog": "Blog",
+    "studentGroups": "Student Groups",
+    "presidency": "Presidency",
+    "bmeAlt": "Budapest University of Technology and Economics (BME)",
+    "vikAlt": "Faculty of Electrical Engineering and Informatics (VIK)",
+    "schonherzAlt": "Schönherz"
+  },
+  "blog": {
+    "homepage": "Homepage",
+    "blog": "Blog"
+  }
+}
