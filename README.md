@@ -24,6 +24,7 @@ Create .env.local
 cp .env.example .env.local
 
 # or download from Vercel, using the vercel-cli
+vercel link
 vercel env pull
 ```
 
