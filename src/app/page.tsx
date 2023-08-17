@@ -1,5 +1,12 @@
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from '~/components';
-import { getAboutFromCache, getFooterFromCache, getLightboxFromCache, getProfilesFromCache, getStudentGroupsFromCache } from '~/utils';
+import {
+  getAboutFromCache,
+  getFooterFromCache,
+  getHeroFromCache,
+  getLightboxFromCache,
+  getProfilesFromCache,
+  getStudentGroupsFromCache
+} from '~/utils';
 import { Locales } from '~/@types';
 
 export const dynamic = 'force-static';
@@ -7,21 +14,22 @@ export const dynamic = 'force-static';
 async function getData() {
   const locale: Locales = 'hu';
 
+  const hero = await getHeroFromCache(locale);
   const about = await getAboutFromCache(locale);
   const lightbox = await getLightboxFromCache(locale);
   const groups = await getStudentGroupsFromCache(locale);
   const profiles = await getProfilesFromCache(locale);
   const footer = await getFooterFromCache(locale);
 
-  return { about, lightbox, groups, profiles, footer };
+  return { hero, about, lightbox, groups, profiles, footer };
 }
 
 export default async function Page() {
-  const { about, lightbox, groups, profiles, footer } = await getData();
+  const { hero, about, lightbox, groups, profiles, footer } = await getData();
 
   return (
     <>
-      <HomeGreeting />
+      <HomeGreeting heroImage={hero} />
       <div className="max-w-home mx-auto p-8 flex flex-col gap-[calc(80px+2rem)] pb-[calc(80px+2rem)]">
         <div />
         <HomeSubpages />

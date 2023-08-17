@@ -48,7 +48,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
             title={social.link.title}
             target="_blank"
             key={index}
-            className="bg-simonyi_zold px-[13px] py-[7px] rounded-md"
+            className="bg-simonyi_zold px-[13px] py-[7px] rounded-md hover:opacity-75"
             rel="noreferrer"
           >
             <SocialIcon iconName={social.icon} props={{ className: 'w-4 h-4 my-[1px] fill-white' }} />

@@ -39,6 +39,18 @@ export function isTypeFooterSection<Modifiers extends ChainModifiers, Locales ex
     return entry.sys.contentType.sys.id === 'footerSection'
 }
 
+export interface TypeHeroFields {
+    name: EntryFieldTypes.Symbol;
+    image: EntryFieldTypes.AssetLink;
+}
+
+export type TypeHeroSkeleton = EntrySkeletonType<TypeHeroFields, "hero">;
+export type TypeHero<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeHeroSkeleton, Modifiers, Locales>;
+
+export function isTypeHero<Modifiers extends ChainModifiers, Locales extends LocaleCode>(entry: Entry<EntrySkeletonType, Modifiers, Locales>): entry is TypeHero<Modifiers, Locales> {
+    return entry.sys.contentType.sys.id === 'hero'
+}
+
 export interface TypeLightboxFields {
     name: EntryFieldTypes.Symbol;
     photo: EntryFieldTypes.AssetLink;

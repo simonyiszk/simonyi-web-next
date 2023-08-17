@@ -1,9 +1,38 @@
 import { cache } from 'react';
-import { AboutType, FooterType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
+import { AboutType, FooterType, ImageType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
 import { defaults } from '..';
-import { getAboutEntries, getFooterEntries, getLightboxEntries, getPostEntries, getProfileEntries, getStudentGroupEntries } from '.';
+import {
+  getAboutEntries,
+  getFooterEntries,
+  getHeroEntries,
+  getLightboxEntries,
+  getPostEntries,
+  getProfileEntries,
+  getStudentGroupEntries
+} from '.';
 
 export const revalidate = false;
+
+export const getHeroFromCache = cache(async (locale: Locales = 'hu'): Promise<ImageType> => {
+  const heroEntries = await getHeroEntries(locale);
+
+  if (heroEntries.items.length === 0) {
+    return defaults.hero;
+  }
+
+  const hero = heroEntries.items[0];
+
+  if (!hero.fields.image || !hero.fields.image.fields.file || !hero.fields.image.fields.file.details.image) {
+    return defaults.hero;
+  }
+
+  return {
+    url: `https:${hero.fields.image.fields.file.url}`,
+    alt: hero.fields.image.fields.description || '',
+    width: hero.fields.image.fields.file.details.image.width,
+    height: hero.fields.image.fields.file.details.image.height
+  };
+});
 
 export const getAboutFromCache = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
   const aboutEntries = await getAboutEntries(locale);
