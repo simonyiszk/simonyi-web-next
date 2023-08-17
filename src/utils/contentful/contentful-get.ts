@@ -5,10 +5,23 @@ import {
   TypeStudentGroupSkeleton,
   TypePostSkeleton,
   TypeAboutSkeleton,
-  TypeFooterSkeleton
+  TypeFooterSkeleton,
+  TypeHeroSkeleton
 } from '~/@types/generated';
 import { Locales } from '~/@types';
 import { contentfulClient } from '.';
+
+export const getHeroEntries = cache(async (locale: Locales) => {
+  const heroEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeHeroSkeleton>({
+    content_type: 'hero',
+    include: 1,
+    limit: 1,
+    order: ['-sys.createdAt'],
+    locale
+  });
+
+  return heroEntries;
+});
 
 export const getAboutEntries = cache(async (locale: Locales) => {
   const aboutEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
