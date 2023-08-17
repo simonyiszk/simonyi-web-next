@@ -1,1 +1,1 @@
-export * from './simonyi-icon.component';
+export * from './simonyi';
