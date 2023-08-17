@@ -1,7 +1,5 @@
 # simonyi-web-next
 
-The repository of ["Simonyi Website"](https://simonyi.bme.hu)
-
 This project uses:
 
 - [Yarn v3](https://yarnpkg.com/getting-started/install)
