@@ -1,6 +1,6 @@
+import { useTranslations } from 'next-intl';
 import { Profile } from '~/components';
 import { ProfileType } from '~/@types';
-import { useTranslations } from 'next-intl';
 
 export default function HomePresidency({ profiles }: { profiles: Array<ProfileType> }) {
   const t = useTranslations('home');

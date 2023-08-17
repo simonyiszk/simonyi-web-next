@@ -1,6 +1,6 @@
+import { useTranslations } from 'next-intl';
 import { StudentGroup } from '~/components';
 import { StudentGroupType } from '~/@types';
-import { useTranslations } from 'next-intl';
 
 export default function HomeStudentGroups({ groups }: { groups: Array<StudentGroupType> }) {
   const t = useTranslations('home');
