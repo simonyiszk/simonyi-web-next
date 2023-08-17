@@ -1,4 +1,23 @@
 {
+  "metadata": {
+    "metadataBase": "https://simonyi.bme.hu/en",
+    "title": {
+      "default": "Simonyi Károly College",
+      "template": "%s - Simonyi Károly College",
+      "absolute": "Simonyi Károly College"
+    },
+    "description": "TODO",
+    "openGraph": {
+      "images": {
+        "alt": "Simonyi Károly College"
+      }
+    },
+    "twitter": {
+      "images": {
+        "alt": "Simonyi Károly College"
+      }
+    }
+  },
   "home": {
     "course": "Courses",
     "rent": "Renting",

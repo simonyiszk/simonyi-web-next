@@ -10,7 +10,7 @@ type ParamsType = {
   locale: string;
 };
 
-export async function generateMetadata({ locale, slug }: ParamsType): Promise<Metadata> {
+export async function generateMetadata({ params: { locale, slug } }: { params: ParamsType }): Promise<Metadata> {
   const post = await getPostBySlugFromCache(slug, locale);
 
   const title = post?.title;

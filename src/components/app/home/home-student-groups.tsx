@@ -4,6 +4,7 @@ import { StudentGroupType } from '~/@types';
 
 export default function HomeStudentGroups({ groups }: { groups: Array<StudentGroupType> }) {
   const t = useTranslations('home');
+
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
