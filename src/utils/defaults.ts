@@ -13,6 +13,7 @@ export const defaults: {
   footerSection: Unpacked<FooterType['sections']>;
   about: AboutType;
   pagination: { page: number; size: number };
+  hero: ImageType;
 } = {
   lightboxImage: {
     picture: {
@@ -73,5 +74,11 @@ export const defaults: {
   pagination: {
     page: 1,
     size: 10
+  },
+  hero: {
+    url: 'https://warp.sch.bme.hu/images/hero',
+    alt: '',
+    width: 1366,
+    height: 768
   }
 };
