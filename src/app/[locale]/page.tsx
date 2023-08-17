@@ -11,16 +11,16 @@ import {
 export const dynamic = 'force-static';
 
 type ParamsType = {
-  lang: string;
+  locale: string;
 };
 
-async function getData({ lang }: ParamsType) {
-  const hero = await getHeroFromCache(lang);
-  const about = await getAboutFromCache(lang);
-  const lightbox = await getLightboxFromCache(lang);
-  const groups = await getStudentGroupsFromCache(lang);
-  const profiles = await getProfilesFromCache(lang);
-  const footer = await getFooterFromCache(lang);
+async function getData({ locale }: ParamsType) {
+  const hero = await getHeroFromCache(locale);
+  const about = await getAboutFromCache(locale);
+  const lightbox = await getLightboxFromCache(locale);
+  const groups = await getStudentGroupsFromCache(locale);
+  const profiles = await getProfilesFromCache(locale);
+  const footer = await getFooterFromCache(locale);
 
   return { hero, about, lightbox, groups, profiles, footer };
 }

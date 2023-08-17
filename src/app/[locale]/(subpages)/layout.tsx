@@ -4,11 +4,11 @@ import { getFooterFromCache } from '~/utils';
 export const dynamic = 'force-static';
 
 type ParamsType = {
-  lang: string;
+  locale: string;
 };
 
-async function getData({ lang }: ParamsType) {
-  const footer = await getFooterFromCache(lang);
+async function getData({ locale }: ParamsType) {
+  const footer = await getFooterFromCache(locale);
 
   return { footer };
 }

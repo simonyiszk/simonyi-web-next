@@ -15,11 +15,11 @@ type SearchParams = {
 };
 
 type ParamsType = {
-  lang: string;
+  locale: string;
 } & SearchParams;
 
-async function getData({ page, size, lang }: ParamsType) {
-  const { items, currentPage, pageSize, totalItems, totalPages } = await getPaginatedPostsFromCache(page, size, lang);
+async function getData({ page, size, locale }: ParamsType) {
+  const { items, currentPage, pageSize, totalItems, totalPages } = await getPaginatedPostsFromCache(page, size, locale);
 
   return {
     posts: items.filter((post) => !post.hidden),

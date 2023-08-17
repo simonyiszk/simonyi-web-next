@@ -43,9 +43,13 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ params: { lang } }));
 }
 
-export default async function RootLayout({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
+type ParamsType = {
+  locale: string;
+};
+
+export default async function RootLayout({ children, params }: { children: React.ReactNode; params: ParamsType }) {
   return (
-    <html data-theme="dark" lang={params.lang} className="h-full">
+    <html data-theme="dark" lang={params.locale} className="h-full">
       <body className="bg-dark text-white text-opacity-text">
         <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
       </body>
