@@ -1,7 +1,7 @@
 import { HeaderSubpage, Footer } from '~/components';
 import { getFooterFromCache } from '~/utils';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 type ParamsType = {
   locale: string;

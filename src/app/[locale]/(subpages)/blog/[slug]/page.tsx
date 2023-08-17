@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlugFromCache } from '~/utils';
 import { BlogPost } from '~/components';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 type ParamsType = {
   slug: string;

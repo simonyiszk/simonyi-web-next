@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import { PostType } from '~/@types';
 
 function BlogPostPreview({ data }: { data: PostType }) {

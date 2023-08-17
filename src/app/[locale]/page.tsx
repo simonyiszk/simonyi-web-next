@@ -8,7 +8,7 @@ import {
   getStudentGroupsFromCache
 } from '~/utils';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 type ParamsType = {
   locale: string;

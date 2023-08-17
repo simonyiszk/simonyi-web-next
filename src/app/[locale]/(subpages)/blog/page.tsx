@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { BlogPaginator, BlogPostPreview } from '~/components';
 import { getPaginatedPostsFromCache } from '~/utils';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Blog'

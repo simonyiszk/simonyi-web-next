@@ -22,4 +22,4 @@ const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/
 });
 
-module.exports = withNextIntl(withMDX(nextConfig));
+module.exports = withMDX(withNextIntl(nextConfig));
