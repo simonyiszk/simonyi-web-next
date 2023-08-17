@@ -51,7 +51,7 @@ export default async function RootLayout({ children, params }: { children: React
   return (
     <html data-theme="dark" lang={params.locale} className="h-full">
       <body className="bg-dark text-white text-opacity-text">
-        <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
+        <div className="flex min-h-safe_screen flex-col justify-between">{children}</div>
       </body>
     </html>
   );

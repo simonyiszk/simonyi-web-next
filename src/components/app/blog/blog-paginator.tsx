@@ -4,7 +4,7 @@ function PaginatorEntry({ page, isCurrentPage }: { page: number; isCurrentPage: 
   return (
     <Link href={`/blog/?page=${page}`}>
       <div
-        className={`flex-none w-14 h-14 p-4 flex items-center justify-center ${
+        className={`flex h-14 w-14 flex-none items-center justify-center p-4 ${
           isCurrentPage ? 'bg-simonyi_zold' : 'bg-darkmode_regular'
         } rounded-md`}
       >
@@ -16,7 +16,7 @@ function PaginatorEntry({ page, isCurrentPage }: { page: number; isCurrentPage: 
 
 export function BlogPaginator({ currentPage, totalPages }: { currentPage: number; totalPages: number }) {
   return (
-    <div className="flex flex-row justify-center flex-wrap gap-4 w-full">
+    <div className="flex w-full flex-row flex-wrap justify-center gap-4">
       {Array.from(Array(totalPages)).map((_, i) => {
         const actualPage = i + 1;
         //console.log(`actualPage: ${actualPage}, currentPage: ${currentPage}, isCurrentPage: ${currentPage === actualPage}`);

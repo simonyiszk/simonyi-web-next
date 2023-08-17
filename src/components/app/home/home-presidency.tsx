@@ -5,9 +5,9 @@ export default function HomePresidency({ profiles }: { profiles: Array<ProfileTy
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
-        <h1 className="text-h1 font-heading">Elnökség</h1>
+        <h1 className="font-heading text-h1">Elnökség</h1>
       </div>
-      <div className="flex flex-row gap-8 flex-wrap w-full justify-center self-center">
+      <div className="flex w-full flex-row flex-wrap justify-center gap-8 self-center">
         {profiles.map((profile, index) => (
           <Profile
             key={index}
