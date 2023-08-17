@@ -7,11 +7,11 @@ export const dynamic = 'force-static';
 
 type ParamsType = {
   slug: string;
-  lang: string;
+  locale: string;
 };
 
-export async function generateMetadata({ lang, slug }: ParamsType): Promise<Metadata> {
-  const post = await getPostBySlugFromCache(slug, lang);
+export async function generateMetadata({ locale, slug }: ParamsType): Promise<Metadata> {
+  const post = await getPostBySlugFromCache(slug, locale);
 
   const title = post?.title;
   const description = post?.description;
@@ -50,20 +50,13 @@ export async function generateMetadata({ lang, slug }: ParamsType): Promise<Meta
   };
 }
 
-async function getData({ params }: { params: ParamsType }) {
-  const post = await getPostBySlugFromCache(params.slug, params.lang);
+async function getData({ slug, locale }: ParamsType) {
+  const post = await getPostBySlugFromCache(slug, locale);
   return { post };
 }
 
-export default async function PostPage({
-  params
-}: {
-  params: {
-    slug: string;
-    lang: string;
-  };
-}) {
-  const { post } = await getData({ params });
+export default async function PostPage({ params }: { params: ParamsType }) {
+  const { post } = await getData(params);
 
   if (!post) return notFound();
 
