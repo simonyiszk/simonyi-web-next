@@ -7,25 +7,26 @@ import {
   getProfilesFromCache,
   getStudentGroupsFromCache
 } from '~/utils';
-import { Locales } from '~/@types';
 
 export const dynamic = 'force-static';
 
-async function getData() {
-  const locale: Locales = 'hu';
+type ParamsType = {
+  lang: string;
+};
 
-  const hero = await getHeroFromCache(locale);
-  const about = await getAboutFromCache(locale);
-  const lightbox = await getLightboxFromCache(locale);
-  const groups = await getStudentGroupsFromCache(locale);
-  const profiles = await getProfilesFromCache(locale);
-  const footer = await getFooterFromCache(locale);
+async function getData({ lang }: ParamsType) {
+  const hero = await getHeroFromCache(lang);
+  const about = await getAboutFromCache(lang);
+  const lightbox = await getLightboxFromCache(lang);
+  const groups = await getStudentGroupsFromCache(lang);
+  const profiles = await getProfilesFromCache(lang);
+  const footer = await getFooterFromCache(lang);
 
   return { hero, about, lightbox, groups, profiles, footer };
 }
 
-export default async function Page() {
-  const { hero, about, lightbox, groups, profiles, footer } = await getData();
+export default async function Page({ params }: { params: ParamsType }) {
+  const { hero, about, lightbox, groups, profiles, footer } = await getData(params);
 
   return (
     <>

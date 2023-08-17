@@ -1,21 +1,17 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlugFromCache } from '~/utils';
-import { Locales } from '~/@types';
 import { BlogPost } from '~/components';
 
 export const dynamic = 'force-static';
 
-export async function generateMetadata({
-  params
-}: {
-  params: {
-    slug: string;
-  };
-}): Promise<Metadata> {
-  const locale: Locales = 'hu';
+type ParamsType = {
+  slug: string;
+  lang: string;
+};
 
-  const post = await getPostBySlugFromCache(params.slug, locale);
+export async function generateMetadata({ lang, slug }: ParamsType): Promise<Metadata> {
+  const post = await getPostBySlugFromCache(slug, lang);
 
   const title = post?.title;
   const description = post?.description;
@@ -54,8 +50,8 @@ export async function generateMetadata({
   };
 }
 
-async function getData({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlugFromCache(params.slug);
+async function getData({ params }: { params: ParamsType }) {
+  const post = await getPostBySlugFromCache(params.slug, params.lang);
   return { post };
 }
 
@@ -64,6 +60,7 @@ export default async function PostPage({
 }: {
   params: {
     slug: string;
+    lang: string;
   };
 }) {
   const { post } = await getData({ params });

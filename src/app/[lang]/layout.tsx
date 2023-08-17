@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import './globals.css';
+import { locales } from '~/utils';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://simonyi.bme.hu'),
@@ -38,9 +39,13 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export function generateStaticParams() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+export default async function RootLayout({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
   return (
-    <html data-theme="dark" lang="hu" className="h-full">
+    <html data-theme="dark" lang={params.lang} className="h-full">
       <body className="bg-dark text-white text-opacity-text">
         <div className="flex flex-col justify-between min-h-safe_screen">{children}</div>
       </body>
