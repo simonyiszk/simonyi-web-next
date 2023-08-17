@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ImageType } from '~/@types';
-import { Button, ChevronIcon, HeaderHome, SimonyiFullLightIcon } from '~/components';
+import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from '~/components';
 
 export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
   return (
@@ -12,7 +12,7 @@ export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
         <HeaderHome />
         <div className="flex flex-col gap-8">
           <div className="max-w-[353px] max-h-[75px] m-8">
-            <SimonyiFullLightIcon width="100%" height="100%" filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))" />
+            <SimonyiDarkIcon width="100%" height="100%" filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))" />
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
             <a href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank" rel="noreferrer">
