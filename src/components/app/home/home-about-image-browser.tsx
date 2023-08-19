@@ -27,11 +27,11 @@ export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImag
   };
 
   return (
-    <div className="flex md:flex-wrap gap-[10px] overflow-x-scroll md:overflow-x-hidden -mx-8 md:mx-0 justify-start md:justify-center lg:justify-end">
+    <div className="-mx-8 flex justify-start gap-[10px] overflow-x-scroll md:mx-0 md:flex-wrap md:justify-center md:overflow-x-hidden lg:justify-end">
       {lightboxImages.slice(0, 9).map((image, index) => (
         <div
           key={index}
-          className="w-[177.05px] h-[100px] flex-shrink-0 bg-black hover:cursor-pointer relative"
+          className="relative h-[100px] w-[177.05px] flex-shrink-0 bg-black hover:cursor-pointer"
           onClick={() => openLightbox(index)}
         >
           <Image

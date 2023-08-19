@@ -35,12 +35,12 @@ function LightBox({ images }: { images: ImageType[] }) {
   };
 
   return (
-    <div className="grid mb-4">
-      <div className="flex md:flex-wrap gap-4 overflow-x-auto md:overflow-x-hidden -mx-4 md:mx-0 justify-start md:justify-center">
+    <div className="mb-4 grid">
+      <div className="-mx-4 flex justify-start gap-4 overflow-x-auto md:mx-0 md:flex-wrap md:justify-center md:overflow-x-hidden">
         {images.map((image, index) => (
           <div
             key={index}
-            className="w-[128px] h-[72px] flex-shrink-0 bg-black hover:cursor-pointer relative"
+            className="relative h-[72px] w-[128px] flex-shrink-0 bg-black hover:cursor-pointer"
             onClick={() => openLightbox(index)}
           >
             <Image src={image.url} alt={image.alt} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
