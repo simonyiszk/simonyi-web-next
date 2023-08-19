@@ -1,1 +1,10 @@
-export * from './contentful-types'
+export type { TypeAbout, TypeAboutFields, TypeAboutSkeleton } from "./TypeAbout";
+export type { TypeFooter, TypeFooterFields, TypeFooterSkeleton } from "./TypeFooter";
+export type { TypeFooterSection, TypeFooterSectionFields, TypeFooterSectionSkeleton } from "./TypeFooterSection";
+export type { TypeHero, TypeHeroFields, TypeHeroSkeleton } from "./TypeHero";
+export type { TypeLightbox, TypeLightboxFields, TypeLightboxSkeleton } from "./TypeLightbox";
+export type { TypeLink, TypeLinkFields, TypeLinkSkeleton } from "./TypeLink";
+export type { TypePost, TypePostFields, TypePostSkeleton } from "./TypePost";
+export type { TypeProfile, TypeProfileFields, TypeProfileSkeleton } from "./TypeProfile";
+export type { TypeSocial, TypeSocialFields, TypeSocialSkeleton } from "./TypeSocial";
+export type { TypeStudentGroup, TypeStudentGroupFields, TypeStudentGroupSkeleton } from "./TypeStudentGroup";

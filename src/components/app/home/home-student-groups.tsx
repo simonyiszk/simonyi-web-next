@@ -5,9 +5,9 @@ export default function HomeStudentGroups({ groups }: { groups: Array<StudentGro
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
-        <h1 className="text-h1 font-heading">Köreink</h1>
+        <h1 className="font-heading text-h1">Köreink</h1>
       </div>
-      <div className="self-center flex justify-center flex-col md:flex-row gap-8 flex-wrap w-full">
+      <div className="flex w-full flex-col flex-wrap justify-center gap-8 self-center md:flex-row">
         {groups.map((group, index) => (
           <StudentGroup
             key={index}

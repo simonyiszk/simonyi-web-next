@@ -30,30 +30,30 @@ function RemoveParagraph({ children }: { children: ReactNode }) {
 export function contentfulDocumentToReactComponents(document: Document) {
   return documentToReactComponents(document, {
     renderNode: {
-      [BLOCKS.HEADING_1]: (node, children) => <h1 className="text-h1 font-heading mb-4">{children}</h1>,
-      [BLOCKS.HEADING_2]: (node, children) => <h2 className="text-h2 font-heading mb-3">{children}</h2>,
-      [BLOCKS.HEADING_3]: (node, children) => <h3 className="text-h3 font-heading mb-2">{children}</h3>,
-      [BLOCKS.HEADING_4]: (node, children) => <h4 className="text-h4 font-heading mb-1">{children}</h4>,
-      [BLOCKS.HEADING_5]: (node, children) => <h5 className="font-heading mb-1">{children}</h5>,
-      [BLOCKS.HEADING_6]: (node, children) => <h6 className="font-heading mb-1">{children}</h6>,
-      [BLOCKS.PARAGRAPH]: (node, children) => <p className="font-body mb-4">{children}</p>,
+      [BLOCKS.HEADING_1]: (node, children) => <h1 className="mb-4 font-heading text-h1">{children}</h1>,
+      [BLOCKS.HEADING_2]: (node, children) => <h2 className="mb-3 font-heading text-h2">{children}</h2>,
+      [BLOCKS.HEADING_3]: (node, children) => <h3 className="mb-2 font-heading text-h3">{children}</h3>,
+      [BLOCKS.HEADING_4]: (node, children) => <h4 className="mb-1 font-heading text-h4">{children}</h4>,
+      [BLOCKS.HEADING_5]: (node, children) => <h5 className="mb-1 font-heading">{children}</h5>,
+      [BLOCKS.HEADING_6]: (node, children) => <h6 className="mb-1 font-heading">{children}</h6>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4 font-body">{children}</p>,
       [BLOCKS.OL_LIST]: (node, children) => (
-        <ol className="list-decimal font-body ml-4 mb-4">
+        <ol className="mb-4 ml-4 list-decimal font-body">
           <RemoveParagraph>{children}</RemoveParagraph>
         </ol>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
-        <ul className="list-disc font-body ml-4 mb-4">
+        <ul className="mb-4 ml-4 list-disc font-body">
           <RemoveParagraph>{children}</RemoveParagraph>
         </ul>
       ),
-      [BLOCKS.LIST_ITEM]: (node, children) => <li className="font-body ml-2">{children}</li>,
+      [BLOCKS.LIST_ITEM]: (node, children) => <li className="ml-2 font-body">{children}</li>,
       [BLOCKS.QUOTE]: (node, children) => (
         <>
-          <blockquote className="font-body border-l-4 border-simonyi_zold pl-4 mb-4 italic">
+          <blockquote className="mb-4 border-l-4 border-simonyi_zold pl-4 font-body italic">
             <svg
               aria-hidden="true"
-              className="w-10 h-10 text-simonyi_zold"
+              className="h-10 w-10 text-simonyi_zold"
               viewBox="0 0 24 27"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -68,10 +68,10 @@ export function contentfulDocumentToReactComponents(document: Document) {
         </>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <p className="font-body mb-4">
+        <p className="mb-4 font-body">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="w-full h-auto"
+            className="h-auto w-full"
             src={`https://${node.data.target.fields.file.url}`}
             height={node.data.target.fields.file.details.image.height}
             width={node.data.target.fields.file.details.image.width}
@@ -83,8 +83,8 @@ export function contentfulDocumentToReactComponents(document: Document) {
       /* TABLE */
       // TODO: Fix table not being responsive
       [BLOCKS.TABLE]: (node, children) => (
-        <div className="overflow-x-auto my-4">
-          <table className="text-left min-w-full">
+        <div className="my-4 overflow-x-auto">
+          <table className="min-w-full text-left">
             <tbody>{children}</tbody>
           </table>
         </div>
