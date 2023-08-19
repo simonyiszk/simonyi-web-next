@@ -16,7 +16,7 @@ export default async function SubpageLayout({ children }: { children: React.Reac
   const { footer } = await getData();
 
   return (
-    <div className="flex flex-col justify-between min-h-safe_screen gap-16">
+    <div className="flex min-h-safe_screen flex-col justify-between gap-16">
       <HeaderSubpage />
       {children}
       <Footer data={footer} />
