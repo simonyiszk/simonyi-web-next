@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "metadataBase": "https://simonyi.bme.hu/en",
+    "title": {
+      "default": "Simonyi Károly College for Advanced Studies",
+      "template": "%s - Simonyi Károly College for Advanced Studies",
+      "absolute": "Simonyi Károly College for Advanced Studies"
+    },
+    "description": "TODO",
+    "openGraph": {
+      "images": {
+        "alt": "Simonyi Károly College for Advanced Studies"
+      }
+    },
+    "twitter": {
+      "images": {
+        "alt": "Simonyi Károly College for Advanced Studies"
+      }
+    }
+  },
+  "home": {
+    "course": "Courses",
+    "rent": "Renting",
+    "blog": "Blog",
+    "studentGroups": "Student Groups",
+    "presidency": "Presidency",
+    "bmeAlt": "Budapest University of Technology and Economics (BME)",
+    "vikAlt": "Faculty of Electrical Engineering and Informatics (VIK)",
+    "schonherzAlt": "Schönherz"
+  },
+  "blog": {
+    "homepage": "Homepage",
+    "blog": "Blog"
+  }
+}
