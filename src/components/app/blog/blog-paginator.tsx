@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next-intl/link';
 
 function PaginatorEntry({ page, isCurrentPage }: { page: number; isCurrentPage: boolean }) {
   return (

@@ -1,46 +1,56 @@
 import { Metadata } from 'next';
 import './globals.css';
+import { getTranslator } from 'next-intl/server';
+import { locales } from '~/utils';
+import { PageProps } from '~/@types';
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://simonyi.bme.hu'),
-  title: {
-    default: 'Simonyi Károly Szakkollégium',
-    template: '%s - Simonyi Károly Szakkollégium',
-    absolute: 'Főoldal - Simonyi Károly Szakkollégium'
-  },
-  description:
-    'A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.',
-  openGraph: {
-    type: 'website',
-    images: [
-      {
-        url: '/images/cover.png',
-        width: 960,
-        height: 540,
-        alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
-      }
-    ],
-    locale: 'hu',
-    alternateLocale: 'en_US'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [
-      {
-        url: '/images/cover.png',
-        width: 960,
-        height: 540,
-        alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
-      }
-    ],
-    site: 'simonyiszakkoli',
-    creator: 'simonyiszakkoli'
-  }
-};
+export async function generateMetadata({ params: { locale } }: { params: PageProps['params'] }): Promise<Metadata> {
+  const t = await getTranslator(locale, 'metadata');
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  return {
+    metadataBase: new URL(t('metadataBase')),
+    title: {
+      default: t('title.default'),
+      template: t('title.template'),
+      absolute: t('title.absolute')
+    },
+    description: t('description'),
+    openGraph: {
+      type: 'website',
+      images: [
+        {
+          url: '/images/defaults/cover.png',
+          width: 960,
+          height: 540,
+          alt: t('openGraph.images.alt')
+        }
+      ],
+      locale: 'hu',
+      alternateLocale: ['en_US']
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [
+        {
+          url: '/images/defaults/cover.png',
+          width: 960,
+          height: 540,
+          alt: t('twitter.images.alt')
+        }
+      ],
+      site: 'simonyiszakkoli',
+      creator: 'simonyiszakkoli'
+    }
+  };
+}
+
+export function generateStaticParams() {
+  return [...locales.map((lang) => ({ params: { lang } })), '/'];
+}
+
+export default async function RootLayout({ children, params: { locale } }: PageProps) {
   return (
-    <html data-theme="dark" lang="hu" className="h-full">
+    <html data-theme="dark" lang={locale} className="h-full">
       <body className="bg-dark text-white text-opacity-text">
         <div className="flex min-h-safe_screen flex-col justify-between">{children}</div>
       </body>
