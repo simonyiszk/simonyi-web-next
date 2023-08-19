@@ -69,4 +69,14 @@ export type FooterType = {
   github?: LinkType;
 };
 
-export type Locales = 'hu' | 'en-US';
+export type PageProps = {
+  children: React.ReactNode;
+  params: {
+    locale: string;
+    slug: string;
+  };
+  searchParams: {
+    page?: string;
+    size?: string;
+  };
+};
