@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/default/cover.png',
+        url: '/images/defaults/cover.png',
         width: 960,
         height: 540,
         alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: '/images/default/cover.png',
+        url: '/images/defaults/cover.png',
         width: 960,
         height: 540,
         alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
