@@ -17,7 +17,7 @@ export const defaults: {
 } = {
   lightboxImage: {
     picture: {
-      url: 'https://warp.sch.bme.hu/images/default/cover',
+      url: 'https://warp.sch.bme.hu/images/cover',
       alt: '',
       width: 960,
       height: 540
@@ -40,13 +40,13 @@ export const defaults: {
     }
   },
   profilePicture: {
-    url: 'https://warp.sch.bme.hu/images/default/profile',
+    url: 'https://warp.sch.bme.hu/images/profile',
     alt: '',
     width: 512,
     height: 512
   },
   ogImage: {
-    url: 'https://warp.sch.bme.hu/images/default/cover',
+    url: 'https://warp.sch.bme.hu/images/cover',
     alt: '',
     width: 960,
     height: 540
@@ -76,7 +76,7 @@ export const defaults: {
     size: 10
   },
   hero: {
-    url: 'https://warp.sch.bme.hu/images/default/hero',
+    url: 'https://warp.sch.bme.hu/images/hero',
     alt: '',
     width: 1366,
     height: 768

@@ -82,7 +82,7 @@ function SEO({
       'A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.',
     defaultFavicon: '/favicon.svg',
     defaultSiteUrl: `https://simonyi.bme.hu`,
-    defaultImage: '/images/default/cover.png',
+    defaultImage: '/images/defaults/cover.png',
     defaultImageAlt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies',
     defaultOgType: 'website',
     defaultOgImageType: 'image/png',

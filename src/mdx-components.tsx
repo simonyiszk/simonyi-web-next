@@ -57,7 +57,7 @@ export const mdxComponents: MDXComponents = {
   /*
     img: ({ children, ...props }) => (
       <span className="relative">
-        <Image src={props.src || '/images/default/default/cover.png'} alt={props.alt || 'Default image alt text'} fill>
+        <Image src={props.src || '/images/defaults/cover.png'} alt={props.alt || 'Default image alt text'} fill>
           {children}
         </Image>
       </span>
