@@ -13,37 +13,37 @@ import type { MDXComponents } from 'mdx/types';
 export const mdxComponents: MDXComponents = {
   // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
   h1: ({ children, ...props }) => (
-    <h1 className="mb-4 font-heading text-h1" {...props}>
+    <h1 className="text-h1 font-heading mb-4" {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }) => (
-    <h2 className="mb-3 font-heading text-h2" {...props}>
+    <h2 className="text-h2 font-heading mb-3" {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }) => (
-    <h3 className="mb-2 font-heading text-h3" {...props}>
+    <h3 className="text-h3 font-heading mb-2" {...props}>
       {children}
     </h3>
   ),
   h4: ({ children, ...props }) => (
-    <h4 className="mb-1 font-heading text-h4" {...props}>
+    <h4 className="text-h4 font-heading mb-1" {...props}>
       {children}
     </h4>
   ),
   h5: ({ children, ...props }) => (
-    <h5 className="mb-1 font-heading" {...props}>
+    <h5 className="font-heading mb-1" {...props}>
       {children}
     </h5>
   ),
   h6: ({ children, ...props }) => (
-    <h6 className="mb-1 font-heading" {...props}>
+    <h6 className="font-heading mb-1" {...props}>
       {children}
     </h6>
   ),
   p: ({ children, ...props }) => (
-    <p className="mb-4 font-body" {...props}>
+    <p className="font-body mb-4" {...props}>
       {children}
     </p>
   ),
@@ -57,7 +57,7 @@ export const mdxComponents: MDXComponents = {
   /*
     img: ({ children, ...props }) => (
       <span className="relative">
-        <Image src={props.src || '/images/cover.png'} alt={props.alt || 'Default image alt text'} fill>
+        <Image src={props.src || '/images/default/default/cover.png'} alt={props.alt || 'Default image alt text'} fill>
           {children}
         </Image>
       </span>
@@ -66,31 +66,31 @@ export const mdxComponents: MDXComponents = {
   img: ({ children, ...props }) => (
     <span>
       {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-      <img className="h-auto w-full" {...props}>
+      <img className="w-full h-auto" {...props}>
         {children}
       </img>
     </span>
   ),
   pre: Code,
   ol: ({ children, ...props }) => (
-    <ol className="mb-4 ml-4 list-decimal font-body" {...props}>
+    <ol className="list-decimal font-body ml-4 mb-4" {...props}>
       {children}
     </ol>
   ),
   ul: ({ children, ...props }) => (
-    <ul className="mb-4 ml-4 list-disc font-body" {...props}>
+    <ul className="list-disc font-body ml-4 mb-4" {...props}>
       {children}
     </ul>
   ),
   li: ({ children, ...props }) => (
-    <li className="ml-2 font-body" {...props}>
+    <li className="font-body ml-2" {...props}>
       {children}
     </li>
   ),
   blockquote: ({ children, ...props }) => (
     <>
-      <blockquote className="mb-4 border-l-4 border-simonyi_zold pl-4 font-body italic" {...props}>
-        <svg aria-hidden="true" className="h-10 w-10 text-simonyi_zold" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <blockquote className="font-body border-l-4 border-simonyi_zold pl-4 mb-4 italic" {...props}>
+        <svg aria-hidden="true" className="w-10 h-10 text-simonyi_zold" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
             fill="currentColor"
