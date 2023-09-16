@@ -23,13 +23,13 @@ export default function AboutTimeline() {
               <TimelineYearCell className={[2003, 2023].some((e) => entry.year == e) ? 'bg-simonyi_zold' : ''}>
                 {entry.year}
               </TimelineYearCell>
-              <TimelineCell className="justify-self-start text-left">{entry.description}</TimelineCell>
+              <TimelineCell className="justify-self-start">{entry.description}</TimelineCell>
             </Fragment>
           );
         } else
           return (
             <Fragment key={entry.description}>
-              <TimelineCell className="justify-self-end text-right">{entry.description}</TimelineCell>
+              <TimelineCell className="justify-self-start sm:justify-self-end sm:text-right">{entry.description}</TimelineCell>
               <TimelineYearCell className={[2003, 2023].some((e) => entry.year == e) ? 'bg-simonyi_zold' : ''}>
                 {entry.year}
               </TimelineYearCell>
@@ -64,7 +64,7 @@ const VerticalLine = styled.div`
     top: calc(100% - 10px);
     left: -18px;
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 30em) {
     left: 48px;
   }
 `;
@@ -79,7 +79,7 @@ const TimelineGrid = styled.div`
   position: relative;
   // Lol I haven't seen such attribute before
   grid-auto-flow: dense;
-  @media screen and (max-width: 1rem) {
+  @media screen and (max-width: 30em) {
     grid-template-columns: 100px calc(100% - 100px);
     .empty {
       display: none;

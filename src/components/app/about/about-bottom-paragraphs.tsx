@@ -66,7 +66,7 @@ export default function AboutBottomParagraphs() {
         becsben tartja munkásságát, kutatásaiért elnyerte a Kossuth-díjat, és a Magyar Tudományos Akadémia tagjaként több elismerésben is
         részesült.
       </p>
-      <h1 className="mb-6 font-heading text-h1">Közélet</h1>
+      <h1 className="mb-6 mt-16 font-heading text-h1">Közélet</h1>
       <h2 className="mb-6 mt-10 font-heading text-h2">Szakkollégiumi körök</h2>
       <p className="indent-5">
         A szakkollégium körökből áll, melyek célja az egyetemi képzés kiegészítése. A hallgatók a reguláris oktatási formák mellett,
