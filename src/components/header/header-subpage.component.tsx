@@ -17,6 +17,9 @@ function HeaderSubpage() {
           <NextLink href="/" className="hover:underline">
             Főoldal
           </NextLink>
+          <NextLink href="/about" className="hover:underline">
+            Rólunk
+          </NextLink>
           <NextLink href="/blog" className="hover:underline">
             Blog
           </NextLink>
