@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { AboutTopParagraphs, AboutTimeline, AboutBottomParagraphs } from '~/components/app/about';
 
 export const dynamic = 'force-static';
 
@@ -7,5 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <h1>About</h1>;
+  return (
+    <div className="mx-auto flex max-w-home flex-col gap-8 p-4">
+      <AboutTopParagraphs />
+      <AboutTimeline />
+      <AboutBottomParagraphs />
+    </div>
+  );
 }
