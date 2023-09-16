@@ -7,6 +7,11 @@ export type AboutType = {
   description: Document;
 };
 
+export type TimelineEntityType = {
+  year: number;
+  description: string;
+};
+
 export type ImageType = {
   url: string;
   alt: string;
