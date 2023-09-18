@@ -10,6 +10,7 @@ export type AboutType = {
 export type TimelineEntityType = {
   year: number;
   description: string;
+  isImportant?: boolean;
 };
 
 export type ImageType = {
