@@ -1,22 +1,20 @@
 import React, { Fragment } from 'react';
-import { FaCaretDown } from 'react-icons/fa6';
 import { TimelineEntityType } from '~/@types';
-import { defaults } from '~/utils';
+import { CaretDownIcon } from '~/components/icons';
+import { contentfulDocumentToReactComponents } from '~/utils';
 
 /** src: https://github.com/kir-dev/sch60/blob/master/src/components/pages/AboutUs.tsx */
-export default function AboutTimeline() {
-  const timeline = defaults.timeline;
-
+export function AboutTimeline({ timelineEntries }: { timelineEntries: TimelineEntityType[] }) {
   return (
     <div className="relative grid grid-flow-dense grid-cols-timeline-mobile items-center justify-items-center gap-y-8 px-0 py-4 sm:grid-cols-timeline-full">
       <div className="absolute left-12 h-full w-0 border-e-4 border-dashed border-white sm:left-1/2">
-        <FaCaretDown size={40} color="white" className="absolute left-[-18px] top-[calc(100%-10px)] m-0" />
+        <CaretDownIcon className="absolute left-[-18px] top-[calc(100%-10px)] fill-white" width="40px" height="40px" />
       </div>
       {/** TODO remove defaults */}
-      {timeline.map((entry, index) => {
+      {timelineEntries.map((entry, index) => {
         if (index % 2) {
           return (
-            <Fragment key={entry.description}>
+            <Fragment key={index}>
               <div className="hidden sm:block" />
               <TimelineYearCell {...entry} />
               <TimelineCell {...entry} />
@@ -24,7 +22,7 @@ export default function AboutTimeline() {
           );
         } else
           return (
-            <Fragment key={entry.description}>
+            <Fragment key={index}>
               <TimelineCell {...entry} className="sm:justify-self-end sm:text-right" />
               <TimelineYearCell {...entry} />
               <div className="hidden sm:block" />
@@ -35,24 +33,24 @@ export default function AboutTimeline() {
   );
 }
 
-const TimelineCell: React.FC<React.ComponentProps<'div'> & TimelineEntityType> = ({ description, className }) => {
+function TimelineCell({ description, className }: React.ComponentProps<'div'> & TimelineEntityType) {
   return (
     <div
       className={`relative col-[2] box-border justify-self-start rounded-lg bg-darkmode_regular p-3 text-white sm:col-auto ${className}`}
     >
-      {description}
+      {contentfulDocumentToReactComponents(description)}
     </div>
   );
-};
+}
 
-const TimelineYearCell: React.FC<React.ComponentProps<'div'> & TimelineEntityType> = ({ year, isImportant, className }) => {
+function TimelineYearCell({ year, isImportant, className }: React.ComponentProps<'div'> & TimelineEntityType) {
   return (
     <div
       className={`relative col-[1] row-[initial] box-border rounded-lg bg-darkmode_regular p-2 text-xl text-white ${
         isImportant ? 'bg-simonyi_zold' : ''
       } sm:col-auto ${className}`}
     >
-      {year}
+      <p className="font-body">{year}</p>
     </div>
   );
-};
+}
