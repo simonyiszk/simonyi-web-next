@@ -1,5 +1,5 @@
 import { BLOCKS } from '@contentful/rich-text-types';
-import { AboutType, FooterType, ImageType, LightboxImage, SocialType } from '~/@types';
+import { AboutType, FooterType, ImageType, LightboxImage, SocialType, TimelineEntityType } from '~/@types';
 
 type Unpacked<T> = T extends (infer U)[] ? U : T;
 
@@ -14,6 +14,7 @@ export const defaults: {
   about: AboutType;
   pagination: { page: number; size: number };
   hero: ImageType;
+  timeline: TimelineEntityType;
 } = {
   lightboxImage: {
     picture: {
@@ -80,5 +81,14 @@ export const defaults: {
     alt: '',
     width: 1366,
     height: 768
+  },
+  timeline: {
+    year: 0,
+    description: {
+      nodeType: BLOCKS.DOCUMENT,
+      content: [],
+      data: {}
+    },
+    isImportant: false
   }
 };

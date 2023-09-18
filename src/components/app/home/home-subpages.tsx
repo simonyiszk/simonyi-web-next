@@ -5,6 +5,9 @@ export default function HomeSubPages() {
   return (
     <div className="flex flex-col">
       <div className="flex flex-row flex-wrap justify-evenly gap-4">
+        <Link href="/about">
+          <Button>Rólunk</Button>
+        </Link>
         <Link href="/blog">
           <Button>Blog</Button>
         </Link>

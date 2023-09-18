@@ -1,14 +1,27 @@
 import { cache } from 'react';
-import { AboutType, FooterType, ImageType, LightboxImage, Locales, Paginated, PostType, ProfileType, StudentGroupType } from '~/@types';
+import {
+  AboutType,
+  FooterType,
+  ImageType,
+  LightboxImage,
+  Locales,
+  Paginated,
+  PostType,
+  ProfileType,
+  StudentGroupType,
+  TimelineEntityType
+} from '~/@types';
 import { defaults } from '..';
 import {
-  getAboutEntries,
+  getHomeAboutEntry,
   getFooterEntries,
   getHeroEntries,
   getLightboxEntries,
   getPostEntries,
   getProfileEntries,
-  getStudentGroupEntries
+  getStudentGroupEntries,
+  getAboutEntries,
+  getTimelineEntries
 } from '.';
 
 export const revalidate = false;
@@ -34,8 +47,8 @@ export const getHeroFromCache = cache(async (locale: Locales = 'hu'): Promise<Im
   };
 });
 
-export const getAboutFromCache = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
-  const aboutEntries = await getAboutEntries(locale);
+export const getHomeAboutEntryFromCache = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
+  const aboutEntries = await getHomeAboutEntry(locale);
 
   if (aboutEntries.items.length === 0) {
     return defaults.about;
@@ -47,6 +60,37 @@ export const getAboutFromCache = cache(async (locale: Locales = 'hu'): Promise<A
     title: about.fields.title,
     description: about.fields.description
   };
+});
+
+export const getAboutEntriesFromCache = cache(
+  async (locale: Locales = 'hu'): Promise<{ before: AboutType; after: AboutType } | undefined> => {
+    const entries = await getAboutEntries(locale);
+    const before = entries[0];
+    const after = entries[1];
+
+    if (before.items.length > 0 && after.items.length > 0) {
+      return {
+        before: {
+          title: before.items[0].fields.title,
+          description: before.items[0].fields.description
+        },
+        after: {
+          title: after.items[0].fields.title,
+          description: after.items[0].fields.description
+        }
+      };
+    }
+  }
+);
+
+export const getTimelineEntriesFromCache = cache(async (locale: Locales = 'hu'): Promise<TimelineEntityType[]> => {
+  const timelineEntries = await getTimelineEntries(locale);
+
+  return timelineEntries.items.map((timeline) => ({
+    year: timeline.fields.year,
+    description: timeline.fields.description,
+    isImportant: timeline.fields.important
+  }));
 });
 
 export const getLightboxFromCache = cache(async (locale: Locales = 'hu'): Promise<LightboxImage[]> => {
