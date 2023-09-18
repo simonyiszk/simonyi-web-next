@@ -17,6 +17,9 @@ function HeaderSubpage() {
           <NextLink href="/" className="hover:underline">
             Főoldal
           </NextLink>
+          <NextLink href="/about" className="hover:underline">
+            Rólunk
+          </NextLink>
           <NextLink href="/blog" className="hover:underline">
             Blog
           </NextLink>
@@ -40,6 +43,13 @@ function HeaderSubpage() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Főoldal
+              </NextLink>
+              <NextLink
+                href="/about"
+                className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Rólunk
               </NextLink>
               <NextLink
                 href="/blog"
