@@ -14,7 +14,7 @@ export const defaults: {
   about: AboutType;
   pagination: { page: number; size: number };
   hero: ImageType;
-  timeline: TimelineEntityType[];
+  timeline: TimelineEntityType;
 } = {
   lightboxImage: {
     picture: {
@@ -82,59 +82,13 @@ export const defaults: {
     width: 1366,
     height: 768
   },
-  timeline: [
-    {
-      year: 1954,
-      description: 'Útjukra indulnak a budavári kollégiumban a körök és a hagyományos események. Megalapul a HA5KFU Rádióamatőr Klub.'
+  timeline: {
+    year: 0,
+    description: {
+      nodeType: BLOCKS.DOCUMENT,
+      content: [],
+      data: {}
     },
-    {
-      year: 1961,
-      description: 'Megalapul a SPOT Fotókör.'
-    },
-    {
-      year: 1962,
-      description: 'Megalapul a Budavári Schönherz Stúdió (BSS).'
-    },
-    {
-      year: 1993,
-      description: 'Megalapul az AC Studio & Live (AC).'
-    },
-    {
-      year: 2001,
-      description: `Megalapul a Kir-Dev.`
-    },
-    {
-      year: 2003,
-      isImportant: true,
-      description:
-        'November 4-én az I. Simonyi Névfelvevő Ünnepség és Konferencián megalapítják a Simonyi Károly Szakkollégiumot elődeink. Alapító köreink: AC, BSS, HA5KFU, KSZK, RD.'
-    },
-    {
-      year: 2008,
-      description:
-        'A Rádiótechnikai Diákkör (RD) újjászületik, ezáltal megalapul a Schönherz Elektronikai Műhely (SEM). Megalapul a LEGO Kör. 6 körrel folytatja a Simonyi.'
-    },
-    {
-      year: 2009,
-      description: 'Elnyerjük a Junior Prima Primissima Díjat. Csatlakozik a szakkolihoz a Kir-Dev. 7 körrel folytatja a Simonyi.'
-    },
-    {
-      year: 2011,
-      description: 'Megalapul a Schönherz Design Stúdió, azaz schdesign. 8 körrel folytatja a Simonyi.'
-    },
-    {
-      year: 2014,
-      description: 'A KSZK kiválik a szakkollégiumból, és önálló szervezetté alakul.'
-    },
-    {
-      year: 2015,
-      description: 'Csatlakozik a szakkolihoz a SPOT. Megalapul a MGMT Kör. 9 köre van a Simonyinak.'
-    },
-    {
-      year: 2023,
-      isImportant: true,
-      description:
-        '20 éves a szakkollégium, jubileumi Konferenciát és nagy születésnapi ünnepséget rendezünk, kiadásra kerül a Simonyi20-as könyv.'
-    }
-  ]
+    isImportant: false
+  }
 };
