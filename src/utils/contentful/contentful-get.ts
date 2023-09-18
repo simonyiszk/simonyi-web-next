@@ -99,6 +99,7 @@ export const getProfileEntries = cache(async (locale: Locales) => {
     include: 2,
     limit: 4,
     order: ['fields.priority', 'fields.name'],
+    'fields.displayOnHome': true,
     locale
   });
 
