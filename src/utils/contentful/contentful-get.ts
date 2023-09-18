@@ -6,7 +6,8 @@ import {
   TypePostSkeleton,
   TypeAboutSkeleton,
   TypeFooterSkeleton,
-  TypeHeroSkeleton
+  TypeHeroSkeleton,
+  TypeTimelineSkeleton
 } from '~/@types/generated';
 import { Locales } from '~/@types';
 import { contentfulClient } from '.';
@@ -23,15 +24,50 @@ export const getHeroEntries = cache(async (locale: Locales) => {
   return heroEntries;
 });
 
-export const getAboutEntries = cache(async (locale: Locales) => {
+export const getHomeAboutEntry = cache(async (locale: Locales) => {
   const aboutEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
     content_type: 'about',
     limit: 1,
     order: ['-sys.createdAt'],
-    locale
+    locale,
+    'fields.displayOnHomepage': true
   });
 
   return aboutEntries;
+});
+
+export const getAboutEntries = cache(async (locale: Locales) => {
+  const aboutBeforeTimelineEntry = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
+    content_type: 'about',
+    limit: 1,
+    order: ['-sys.createdAt'],
+    locale,
+    'fields.displayOnHomepage': false,
+    'fields.displayOnAboutBeforeTimeline': true,
+    'fields.displayOnAboutAfterTimeline': false
+  });
+
+  const aboutAfterTimelineEntry = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>({
+    content_type: 'about',
+    limit: 1,
+    order: ['-sys.createdAt'],
+    locale,
+    'fields.displayOnHomepage': false,
+    'fields.displayOnAboutBeforeTimeline': false,
+    'fields.displayOnAboutAfterTimeline': true
+  });
+
+  return [aboutBeforeTimelineEntry, aboutAfterTimelineEntry];
+});
+
+export const getTimelineEntries = cache(async (locale: Locales) => {
+  const timelineEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeTimelineSkeleton>({
+    content_type: 'timeline',
+    order: ['fields.year', '-sys.createdAt'],
+    locale
+  });
+
+  return timelineEntries;
 });
 
 export const getLightboxEntries = cache(async (locale: Locales) => {

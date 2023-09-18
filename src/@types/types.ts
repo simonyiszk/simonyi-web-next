@@ -3,8 +3,14 @@ import { Document } from '@contentful/rich-text-types';
 export type SocialIconType = 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'phone' | 'youtube' | 'tiktok' | 'website';
 
 export type AboutType = {
-  title: string;
+  title?: string;
   description: Document;
+};
+
+export type TimelineEntityType = {
+  year: number;
+  description: Document;
+  isImportant: boolean;
 };
 
 export type ImageType = {
