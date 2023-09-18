@@ -105,6 +105,7 @@ export const defaults: {
     },
     {
       year: 2003,
+      isImportant: true,
       description:
         'November 4-én az I. Simonyi Névfelvevő Ünnepség és Konferencián megalapítják a Simonyi Károly Szakkollégiumot elődeink. Alapító köreink: AC, BSS, HA5KFU, KSZK, RD.'
     },
@@ -131,6 +132,7 @@ export const defaults: {
     },
     {
       year: 2023,
+      isImportant: true,
       description:
         '20 éves a szakkollégium, jubileumi Konferenciát és nagy születésnapi ünnepséget rendezünk, kiadásra kerül a Simonyi20-as könyv.'
     }

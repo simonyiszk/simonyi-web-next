@@ -1,8 +1,6 @@
-'use client';
-
-import { Fragment } from 'react';
-import styled from 'styled-components';
+import React, { Fragment } from 'react';
 import { FaCaretDown } from 'react-icons/fa6';
+import { TimelineEntityType } from '~/@types';
 import { defaults } from '~/utils';
 
 /** src: https://github.com/kir-dev/sch60/blob/master/src/components/pages/AboutUs.tsx */
@@ -10,86 +8,51 @@ export default function AboutTimeline() {
   const timeline = defaults.timeline;
 
   return (
-    <TimelineGrid>
-      <VerticalLine>
-        <FaCaretDown size={40} color="white" />
-      </VerticalLine>
+    <div className="grid-cols-timeline-mobile sm:grid-cols-timeline-full relative grid grid-flow-dense items-center justify-items-center gap-y-8 px-0 py-4">
+      <div className="absolute left-12 h-full w-0 border-e-4 border-dashed border-white sm:left-1/2">
+        <FaCaretDown size={40} color="white" className="absolute left-[-18px] top-[calc(100%-10px)] m-0" />
+      </div>
       {/** TODO remove defaults */}
       {timeline.map((entry, index) => {
         if (index % 2) {
           return (
             <Fragment key={entry.description}>
-              <div className="empty" />
-              <TimelineYearCell className={[2003, 2023].some((e) => entry.year == e) ? 'bg-simonyi_zold' : ''}>
-                {entry.year}
-              </TimelineYearCell>
-              <TimelineCell className="justify-self-start">{entry.description}</TimelineCell>
+              <div className="hidden sm:block" />
+              <TimelineYearCell {...entry} />
+              <TimelineCell {...entry} />
             </Fragment>
           );
         } else
           return (
             <Fragment key={entry.description}>
-              <TimelineCell className="justify-self-start sm:justify-self-end sm:text-right">{entry.description}</TimelineCell>
-              <TimelineYearCell className={[2003, 2023].some((e) => entry.year == e) ? 'bg-simonyi_zold' : ''}>
-                {entry.year}
-              </TimelineYearCell>
-              <div className="empty" />
+              <TimelineCell {...entry} className="sm:justify-self-end sm:text-right" />
+              <TimelineYearCell {...entry} />
+              <div className="hidden sm:block" />
             </Fragment>
           );
       })}
-    </TimelineGrid>
+    </div>
   );
 }
 
-const TimelineCell = styled.div.attrs({
-  className: 'bg-darkmode_regular p-3'
-})`
-  color: white;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 0.5rem;
-`;
+const TimelineCell: React.FC<React.ComponentProps<'div'> & TimelineEntityType> = ({ description, className }) => {
+  return (
+    <div
+      className={`relative col-[2] box-border justify-self-start rounded-lg bg-darkmode_regular p-3 text-white sm:col-auto ${className}`}
+    >
+      {description}
+    </div>
+  );
+};
 
-const TimelineYearCell = styled(TimelineCell).attrs({ className: 'text-xl p-2' })``;
-
-const VerticalLine = styled.div`
-  height: 100%;
-  border-right: 4px dashed white;
-  width: 0;
-  position: absolute;
-  left: 50%;
-  > svg {
-    margin: 0;
-    position: absolute;
-    top: calc(100% - 10px);
-    left: -18px;
-  }
-  @media screen and (max-width: 30em) {
-    left: 48px;
-  }
-`;
-
-const TimelineGrid = styled.div`
-  display: grid;
-  grid-template-columns: calc(50% - 50px) 100px calc(50% - 50px);
-  padding: 1rem 0;
-  grid-row-gap: 2rem;
-  align-items: center;
-  justify-items: center;
-  position: relative;
-  // Lol I haven't seen such attribute before
-  grid-auto-flow: dense;
-  @media screen and (max-width: 30em) {
-    grid-template-columns: 100px calc(100% - 100px);
-    .empty {
-      display: none;
-    }
-    ${TimelineCell} {
-      grid-column: 2;
-    }
-    ${TimelineYearCell} {
-      grid-column: 1;
-      grid-row: initial;
-    }
-  }
-`;
+const TimelineYearCell: React.FC<React.ComponentProps<'div'> & TimelineEntityType> = ({ year, isImportant, className }) => {
+  return (
+    <div
+      className={`relative col-[1] row-[initial] box-border rounded-lg bg-darkmode_regular p-2 text-xl text-white ${
+        isImportant ? 'bg-simonyi_zold' : ''
+      } sm:col-auto ${className}`}
+    >
+      {year}
+    </div>
+  );
+};

@@ -90,6 +90,10 @@ module.exports = {
       },
       blur: {
         home: '10px'
+      },
+      gridTemplateColumns: {
+        'timeline-full': 'calc(50% - 50px) 100px calc(50% - 50px)',
+        'timeline-mobile': '100px calc(100% - 100px)'
       }
     },
     darkMode: ['class', '[data-theme="dark"]']
