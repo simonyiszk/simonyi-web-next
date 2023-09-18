@@ -1,6 +1,6 @@
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from '~/components';
 import {
-  getAboutFromCache,
+  getHomeAboutEntryFromCache,
   getFooterFromCache,
   getHeroFromCache,
   getLightboxFromCache,
@@ -15,7 +15,7 @@ async function getData() {
   const locale: Locales = 'hu';
 
   const hero = await getHeroFromCache(locale);
-  const about = await getAboutFromCache(locale);
+  const about = await getHomeAboutEntryFromCache(locale);
   const lightbox = await getLightboxFromCache(locale);
   const groups = await getStudentGroupsFromCache(locale);
   const profiles = await getProfilesFromCache(locale);
