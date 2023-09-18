@@ -8,7 +8,7 @@ export default function AboutTimeline() {
   const timeline = defaults.timeline;
 
   return (
-    <div className="grid-cols-timeline-mobile sm:grid-cols-timeline-full relative grid grid-flow-dense items-center justify-items-center gap-y-8 px-0 py-4">
+    <div className="relative grid grid-flow-dense grid-cols-timeline-mobile items-center justify-items-center gap-y-8 px-0 py-4 sm:grid-cols-timeline-full">
       <div className="absolute left-12 h-full w-0 border-e-4 border-dashed border-white sm:left-1/2">
         <FaCaretDown size={40} color="white" className="absolute left-[-18px] top-[calc(100%-10px)] m-0" />
       </div>
