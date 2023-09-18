@@ -10,7 +10,6 @@ export function AboutTimeline({ timelineEntries }: { timelineEntries: TimelineEn
       <div className="absolute left-12 h-full w-0 border-e-4 border-dashed border-white sm:left-1/2">
         <CaretDownIcon className="absolute left-[-18px] top-[calc(100%-10px)] fill-white" width="40px" height="40px" />
       </div>
-      {/** TODO remove defaults */}
       {timelineEntries.map((entry, index) => {
         if (index % 2) {
           return (
