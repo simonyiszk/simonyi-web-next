@@ -36,7 +36,7 @@ export function contentfulDocumentToReactComponents(document: Document) {
       [BLOCKS.HEADING_4]: (node, children) => <h4 className="mb-1 font-heading text-h4">{children}</h4>,
       [BLOCKS.HEADING_5]: (node, children) => <h5 className="mb-1 font-heading">{children}</h5>,
       [BLOCKS.HEADING_6]: (node, children) => <h6 className="mb-1 font-heading">{children}</h6>,
-      [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4 font-body">{children}</p>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4 font-body last:mb-0">{children}</p>,
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className="mb-4 ml-4 list-decimal font-body">
           <RemoveParagraph>{children}</RemoveParagraph>

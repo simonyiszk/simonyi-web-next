@@ -2,8 +2,11 @@ import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleC
 
 export interface TypeAboutFields {
     name: EntryFieldTypes.Symbol;
-    title: EntryFieldTypes.Symbol;
+    title?: EntryFieldTypes.Symbol;
     description: EntryFieldTypes.RichText;
+    displayOnHomepage: EntryFieldTypes.Boolean;
+    displayOnAboutBeforeTimeline: EntryFieldTypes.Boolean;
+    displayOnAboutAfterTimeline: EntryFieldTypes.Boolean;
 }
 
 export type TypeAboutSkeleton = EntrySkeletonType<TypeAboutFields, "about">;
