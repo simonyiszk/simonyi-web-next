@@ -4,6 +4,11 @@
   },
   "redirects": [
     {
+      "source": "/ly/:short",
+      "destination": "https://api.shorz.kir-dev.hu/ly/:short",
+      "permanent": true
+    },
+    {
       "source": "/ntp2020",
       "destination": "https://drive.google.com/drive/folders/1jWwyL4pQ-hrOpx5kygeUmbvfPx4EbLOI?usp=sharing",
       "permanent": true
