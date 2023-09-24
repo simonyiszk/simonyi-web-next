@@ -1,14 +1,14 @@
 import { Profile } from '~/components';
-import { ProfileType } from '~/@types';
+import { PresidencyType } from '~/@types';
 
-export default function HomePresidency({ profiles }: { profiles: Array<ProfileType> }) {
+export default function HomePresidency({ presidency }: { presidency: PresidencyType }) {
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
-        <h1 className="font-heading text-h1">Elnökség</h1>
+        <h1 className="font-heading text-h1">{presidency.title}</h1>
       </div>
       <div className="flex w-full flex-row flex-wrap justify-center gap-8 self-center">
-        {profiles.map((profile, index) => (
+        {presidency.profiles.map((profile, index) => (
           <Profile
             key={index}
             profilePicture={profile.profilePicture}
