@@ -1,14 +1,14 @@
 import { cache } from 'react';
 import {
   AboutType,
+  CurrentStudnetGroupsType,
   FooterType,
   ImageType,
   LightboxImage,
   Locales,
   Paginated,
   PostType,
-  ProfileType,
-  StudentGroupType,
+  PresidencyType,
   TimelineEntityType
 } from '~/@types';
 import { defaults } from '..';
@@ -18,10 +18,10 @@ import {
   getHeroEntries,
   getLightboxEntries,
   getPostEntries,
-  getProfileEntries,
-  getStudentGroupEntries,
+  getCurrentStudentGroupsEntry,
   getAboutEntries,
-  getTimelineEntries
+  getTimelineEntries,
+  getPresidencyEntry
 } from '.';
 
 export const revalidate = false;
@@ -112,67 +112,116 @@ export const getLightboxFromCache = cache(async (locale: Locales = 'hu'): Promis
   }));
 });
 
-export const getStudentGroupsFromCache = cache(async (locale: Locales = 'hu'): Promise<StudentGroupType[]> => {
-  const studentGroupEntries = await getStudentGroupEntries(locale);
+export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = 'hu'): Promise<CurrentStudnetGroupsType> => {
+  const currentStudentGroupsEntries = await getCurrentStudentGroupsEntry(locale);
 
-  return studentGroupEntries.items.map((studentGroup) => ({
-    name: studentGroup.fields.name,
-    ...(studentGroup.fields.logo && studentGroup.fields.logo.fields.file && studentGroup.fields.logo.fields.file.details.image
-      ? {
-          logo: {
-            url: `https:${studentGroup.fields.logo.fields.file.url}`,
-            alt: studentGroup.fields.logo.fields.description || '',
-            width: studentGroup.fields.logo.fields.file.details.image.width,
-            height: studentGroup.fields.logo.fields.file.details.image.height
-          }
-        }
-      : { logo: defaults.studentGroupLogo }),
-    description: studentGroup.fields.description,
-    socials: studentGroup.fields.socials.map((social) => ({
-      ...(social && social.fields.link
-        ? {
-            icon: social.fields.icon,
-            link: {
-              url: social.fields.link.fields.url,
-              title: social.fields.link.fields.title,
-              text: social.fields.link.fields.text
+  if (currentStudentGroupsEntries.items.length === 0) {
+    return {
+      title: '',
+      studentGroups: []
+    };
+  }
+
+  return currentStudentGroupsEntries.items.map((currentStudentGroups) => ({
+    title: currentStudentGroups.fields.title,
+    studentGroups: currentStudentGroups.fields.studentGroups.map((studentGroup) => {
+      if (!studentGroup) {
+        return {
+          name: '',
+          logo: defaults.studentGroupLogo,
+          description: '',
+          socials: [],
+          isDense: false
+        };
+      }
+
+      return {
+        name: studentGroup.fields.name,
+        ...(studentGroup.fields.logo && studentGroup.fields.logo.fields.file && studentGroup.fields.logo.fields.file.details.image
+          ? {
+              logo: {
+                url: `https:${studentGroup.fields.logo.fields.file.url}`,
+                alt: studentGroup.fields.logo.fields.description || '',
+                width: studentGroup.fields.logo.fields.file.details.image.width,
+                height: studentGroup.fields.logo.fields.file.details.image.height
+              }
             }
-          }
-        : defaults.social)
-    })),
-    isDense: studentGroup.fields.isDense
-  }));
+          : { logo: defaults.studentGroupLogo }),
+        description: studentGroup.fields.description,
+        socials: studentGroup.fields.links.map((link) => ({
+          ...(link
+            ? {
+                icon: link.fields.icon,
+                link: {
+                  url: link.fields.url,
+                  title: link.fields.title,
+                  text: link.fields.text
+                }
+              }
+            : defaults.social)
+        })),
+        isDense: studentGroup.fields.isDense
+      };
+    })
+  }))[0];
 });
 
-export const getProfilesFromCache = cache(async (locale: Locales = 'hu'): Promise<ProfileType[]> => {
-  const profileEntries = await getProfileEntries(locale);
+export const getPresidencyFromCache = cache(async (locale: Locales = 'hu'): Promise<PresidencyType> => {
+  const presidency = await getPresidencyEntry(locale);
 
-  return profileEntries.items.map((profile) => ({
-    name: profile.fields.name,
-    title: profile.fields.title,
-    ...(profile.fields.profilePicture &&
-    profile.fields.profilePicture.fields.file &&
-    profile.fields.profilePicture.fields.file.details.image
+  if (presidency.items.length === 0) {
+    return {
+      title: '',
+      profiles: []
+    };
+  }
+
+  return presidency.items.map((presidency) => ({
+    title: presidency.fields.title,
+    ...(presidency.fields.profiles
       ? {
-          profilePicture: {
-            url: `https:${profile.fields.profilePicture.fields.file.url}`,
-            alt: profile.fields.profilePicture.fields.description || '',
-            width: profile.fields.profilePicture.fields.file.details.image.width,
-            height: profile.fields.profilePicture.fields.file.details.image.height
-          }
+          profiles: presidency.fields.profiles.map((profile) => {
+            if (!profile) {
+              return {
+                name: '',
+                title: '',
+                socials: [],
+                profilePicture: defaults.profilePicture
+              };
+            }
+
+            return {
+              name: profile.fields.name,
+              title: profile.fields.title,
+              socials: profile.fields.links?.map((link) => ({
+                icon: link?.fields.icon || 'website',
+                link: {
+                  url: link?.fields.url || '',
+                  title: link?.fields.title || '',
+                  text: link?.fields.text || ''
+                }
+              })),
+              ...(profile.fields.profilePicture &&
+              profile.fields.profilePicture.fields.file &&
+              profile.fields.profilePicture.fields.file.details.image
+                ? {
+                    profilePicture: {
+                      url: `https:${profile.fields.profilePicture.fields.file.url}`,
+                      alt: profile.fields.profilePicture.fields.description || '',
+                      width: profile.fields.profilePicture.fields.file.details.image.width,
+                      height: profile.fields.profilePicture.fields.file.details.image.height
+                    }
+                  }
+                : {
+                    profilePicture: defaults.profilePicture
+                  })
+            };
+          })
         }
       : {
-          profilePicture: defaults.profilePicture
-        }),
-    socials: profile.fields.socials.map((social) => ({
-      icon: social?.fields.icon || 'website',
-      link: {
-        url: social?.fields.link?.fields.url || '',
-        title: social?.fields.link?.fields.title || '',
-        text: social?.fields.link?.fields.text || ''
-      }
-    }))
-  }));
+          profiles: []
+        })
+  }))[0];
 });
 
 export const getPostsFromCache = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
