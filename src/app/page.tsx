@@ -4,8 +4,8 @@ import {
   getFooterFromCache,
   getHeroFromCache,
   getLightboxFromCache,
-  getProfilesFromCache,
-  getStudentGroupsFromCache
+  getPresidencyFromCache,
+  getCurrentStudentGroupsFromCache
 } from '~/utils';
 import { Locales } from '~/@types';
 
@@ -17,15 +17,15 @@ async function getData() {
   const hero = await getHeroFromCache(locale);
   const about = await getHomeAboutEntryFromCache(locale);
   const lightbox = await getLightboxFromCache(locale);
-  const groups = await getStudentGroupsFromCache(locale);
-  const profiles = await getProfilesFromCache(locale);
+  const currentStudentGroups = await getCurrentStudentGroupsFromCache(locale);
+  const presidency = await getPresidencyFromCache(locale);
   const footer = await getFooterFromCache(locale);
 
-  return { hero, about, lightbox, groups, profiles, footer };
+  return { hero, about, lightbox, currentStudentGroups, presidency, footer };
 }
 
 export default async function Page() {
-  const { hero, about, lightbox, groups, profiles, footer } = await getData();
+  const { hero, about, lightbox, currentStudentGroups, presidency, footer } = await getData();
 
   return (
     <>
@@ -34,8 +34,8 @@ export default async function Page() {
         <div />
         <HomeSubpages />
         <HomeAbout about={about} images={lightbox} />
-        <HomeStudentGroups groups={groups} />
-        <HomePresidency profiles={profiles} />
+        <HomeStudentGroups currentStudentGroups={currentStudentGroups} />
+        <HomePresidency presidency={presidency} />
       </div>
       <Footer data={footer} />
     </>
