@@ -1,13 +1,13 @@
 import { cache } from 'react';
 import {
   TypeLightboxSkeleton,
-  TypeProfileSkeleton,
-  TypeStudentGroupSkeleton,
   TypePostSkeleton,
   TypeAboutSkeleton,
   TypeFooterSkeleton,
   TypeHeroSkeleton,
-  TypeTimelineSkeleton
+  TypeTimelineSkeleton,
+  TypePresidencySkeleton,
+  TypeCurrentStudentGroupsSkeleton
 } from '~/@types/generated';
 import { Locales } from '~/@types';
 import { contentfulClient } from '.';
@@ -82,28 +82,28 @@ export const getLightboxEntries = cache(async (locale: Locales) => {
   return lightboxEntries;
 });
 
-export const getStudentGroupEntries = cache(async (locale: Locales) => {
-  const studentGroupEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeStudentGroupSkeleton>({
-    content_type: 'studentGroup',
+export const getCurrentStudentGroupsEntry = cache(async (locale: Locales) => {
+  const currentStudentGroupsEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeCurrentStudentGroupsSkeleton>({
+    content_type: 'currentStudentGroups',
     include: 2,
-    order: ['fields.name'],
+    limit: 1,
+    order: ['fields.name', '-sys.createdAt'],
     locale
   });
 
-  return studentGroupEntries;
+  return currentStudentGroupsEntries;
 });
 
-export const getProfileEntries = cache(async (locale: Locales) => {
-  const profileEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeProfileSkeleton>({
-    content_type: 'profile',
-    include: 2,
-    limit: 4,
-    order: ['fields.priority', 'fields.name'],
-    'fields.displayOnHome': true,
+export const getPresidencyEntry = cache(async (locale: Locales) => {
+  const presidencyEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypePresidencySkeleton>({
+    content_type: 'presidency',
+    include: 3,
+    order: ['-fields.year', '-sys.createdAt'],
+    limit: 1,
     locale
   });
 
-  return profileEntries;
+  return presidencyEntries;
 });
 
 export const getPostEntries = cache(async (locale: Locales) => {
