@@ -1,11 +1,11 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
-import type { TypeSocialSkeleton } from "./TypeSocial";
+import type { TypeLinkSkeleton } from "./TypeLink";
 
 export interface TypeStudentGroupFields {
     name: EntryFieldTypes.Symbol;
     logo: EntryFieldTypes.AssetLink;
     description: EntryFieldTypes.Text;
-    socials: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeSocialSkeleton>>;
+    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
     isDense: EntryFieldTypes.Boolean;
 }
 

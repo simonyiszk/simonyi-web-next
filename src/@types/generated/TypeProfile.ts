@@ -1,13 +1,11 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
-import type { TypeSocialSkeleton } from "./TypeSocial";
+import type { TypeLinkSkeleton } from "./TypeLink";
 
 export interface TypeProfileFields {
     name: EntryFieldTypes.Symbol;
     title: EntryFieldTypes.Symbol;
     profilePicture: EntryFieldTypes.AssetLink;
-    socials: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeSocialSkeleton>>;
-    priority: EntryFieldTypes.Symbol;
-    displayOnHome: EntryFieldTypes.Boolean;
+    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeLinkSkeleton>>;
     from?: EntryFieldTypes.Date;
     to?: EntryFieldTypes.Date;
 }

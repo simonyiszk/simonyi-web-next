@@ -44,12 +44,22 @@ export type ProfileType = {
   socials: SocialType[];
 };
 
+export type PresidencyType = {
+  title: string;
+  profiles: ProfileType[];
+};
+
 export type StudentGroupType = {
   name: string;
   logo: ImageType;
   description: string;
   socials: SocialType[];
   isDense?: boolean;
+};
+
+export type CurrentStudnetGroupsType = {
+  title: string;
+  studentGroups: StudentGroupType[];
 };
 
 export type PostType = {
