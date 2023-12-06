@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import "../globals.css";
 import { notFound } from "next/navigation";
-
-const locales = ["en", "hu"];
+import { locales } from "~/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://simonyi.bme.hu"),

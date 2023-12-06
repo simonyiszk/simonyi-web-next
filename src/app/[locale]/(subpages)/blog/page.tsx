@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Locales } from "~/@types";
+import { PageProps } from "~/@types";
 import { BlogPaginator, BlogPostPreview } from "~/components";
 import { getPaginatedPostsFromCache } from "~/utils";
 
@@ -10,16 +10,7 @@ export const metadata: Metadata = {
   title: "Blog",
 };
 
-type SearchParams = {
-  page?: string;
-  size?: string;
-};
-
-async function getData(searchParams: SearchParams) {
-  const locale: Locales = "hu";
-
-  const { page, size } = searchParams;
-
+async function getData({ params: { locale }, searchParams: { page, size } }: PageProps) {
   const { items, currentPage, pageSize, totalItems, totalPages } = await getPaginatedPostsFromCache(page, size, locale);
 
   return {
@@ -31,8 +22,8 @@ async function getData(searchParams: SearchParams) {
   };
 }
 
-export default async function Page({ searchParams }: { searchParams: SearchParams }) {
-  const { posts, currentPage, totalPages } = await getData(searchParams);
+export default async function Page(props: PageProps) {
+  const { posts, currentPage, totalPages } = await getData(props);
 
   if (posts.length === 0) {
     return notFound();

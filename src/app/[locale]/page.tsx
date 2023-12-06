@@ -1,3 +1,4 @@
+import { PageProps } from "~/@types";
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from "~/components";
 import {
   getHomeAboutEntryFromCache,
@@ -7,12 +8,10 @@ import {
   getPresidencyFromCache,
   getCurrentStudentGroupsFromCache,
 } from "~/utils";
-import { Locales } from "~/@types";
 
 export const dynamic = "force-static";
 
-async function getData() {
-  const locale: Locales = "hu";
+async function getData({ params: { locale } }: PageProps) {
 
   const hero = await getHeroFromCache(locale);
   const about = await getHomeAboutEntryFromCache(locale);
@@ -24,8 +23,8 @@ async function getData() {
   return { hero, about, lightbox, currentStudentGroups, presidency, footer };
 }
 
-export default async function Page() {
-  const { hero, about, lightbox, currentStudentGroups, presidency, footer } = await getData();
+export default async function Page(props: PageProps) {
+  const { hero, about, lightbox, currentStudentGroups, presidency, footer } = await getData(props);
 
   return (
     <>
