@@ -3,10 +3,6 @@ import "../globals.css";
 import { notFound } from "next/navigation";
 import { locales } from "~/utils";
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://simonyi.bme.hu"),
   title: {
