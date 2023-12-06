@@ -1,5 +1,8 @@
 import { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
+import { notFound } from "next/navigation";
+
+const locales = ["en", "hu"];
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://simonyi.bme.hu"),
@@ -38,9 +41,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function LocaleLayout({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) {
+  // Validate that the incoming `locale` parameter is valid
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if (!locales.includes(locale as any)) notFound();
+
   return (
-    <html data-theme="dark" lang="hu" className="h-full">
+    <html data-theme="dark" lang={locale}>
       <body className="bg-dark text-white text-opacity-text">
         <div className="flex min-h-safe_screen flex-col justify-between">{children}</div>
       </body>
