@@ -51,5 +51,4 @@ jobs:
         with:
           eslint: true
           eslint_args: "--max-warnings 0"
-          eslint_extensions: js,jsx,ts,tsx,mdx
-          prettier: true
+          eslint_extensions: js,jsx,ts,tsx
