@@ -40,7 +40,7 @@ function LightBox({ images }: { images: ImageType[] }) {
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative h-[72px] w-[128px] flex-shrink-0 bg-black hover:cursor-pointer"
+            className="relative h-[72px] w-[128px] shrink-0 bg-black hover:cursor-pointer"
             onClick={() => openLightbox(index)}
           >
             <Image src={image.url} alt={image.alt} fill style={{ width: "100%", height: "100%", objectFit: "cover" }} />

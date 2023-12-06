@@ -39,7 +39,7 @@ export default async function Page({ searchParams }: { searchParams: SearchParam
   }
 
   return (
-    <div className="flex w-full max-w-3xl flex-grow flex-col gap-8 self-center p-4">
+    <div className="flex w-full max-w-3xl grow flex-col gap-8 self-center p-4">
       {posts.map((post) => {
         return <BlogPostPreview key={post.slug} data={post} />;
       })}
