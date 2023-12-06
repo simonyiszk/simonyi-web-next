@@ -1,4 +1,4 @@
-import { format } from 'util';
+import { format } from "util";
 
 function SEO({
   themeColor,
@@ -27,7 +27,7 @@ function SEO({
   twitterImageAlt,
   twitterSite,
   twitterCreator,
-  children
+  children,
 }: {
   themeColor?: string;
   title?: string;
@@ -73,24 +73,24 @@ function SEO({
     defaultOgImageHeight,
     defaultTwitterCard,
     defaultTwitterSite,
-    defaultTwitterCreator
+    defaultTwitterCreator,
   } = {
-    defaultThemeColor: '#63BC47',
-    defaultTitle: `Simonyi Károly Szakkollégium`,
-    defaultTitleTemplate: `%s - Simonyi Károly Szakkollégium`,
+    defaultThemeColor: "#63BC47",
+    defaultTitle: "Simonyi Károly Szakkollégium",
+    defaultTitleTemplate: "%s - Simonyi Károly Szakkollégium",
     defaultDescription:
-      'A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.',
-    defaultFavicon: '/favicon.svg',
-    defaultSiteUrl: `https://simonyi.bme.hu`,
-    defaultImage: '/images/defaults/cover.png',
-    defaultImageAlt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies',
-    defaultOgType: 'website',
-    defaultOgImageType: 'image/png',
-    defaultOgImageWidth: '960',
-    defaultOgImageHeight: '540',
-    defaultTwitterCard: 'summary_large_image',
-    defaultTwitterSite: 'simonyiszakkoli',
-    defaultTwitterCreator: 'simonyiszakkoli'
+      "A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.",
+    defaultFavicon: "/favicon.svg",
+    defaultSiteUrl: "https://simonyi.bme.hu",
+    defaultImage: "/images/defaults/cover.png",
+    defaultImageAlt: "Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies",
+    defaultOgType: "website",
+    defaultOgImageType: "image/png",
+    defaultOgImageWidth: "960",
+    defaultOgImageHeight: "540",
+    defaultTwitterCard: "summary_large_image",
+    defaultTwitterSite: "simonyiszakkoli",
+    defaultTwitterCreator: "simonyiszakkoli",
   };
 
   // Generic SEO support
@@ -101,7 +101,7 @@ function SEO({
     favicon: favicon || defaultFavicon,
     image: `${siteUrl || defaultSiteUrl}${image || defaultImage}`,
     imageAlt: `${imageAlt || defaultImageAlt}`,
-    url: `${siteUrl || defaultSiteUrl}${pathname || ''}`
+    url: `${siteUrl || defaultSiteUrl}${pathname || ""}`,
   };
 
   // Facebook / Open Graph
@@ -115,7 +115,7 @@ function SEO({
     imageAlt: ogImageAlt || seo.imageAlt,
     imageType: ogImageType || defaultOgImageType,
     imageWidth: ogImageWidth || defaultOgImageWidth,
-    imageHeight: ogImageHeight || defaultOgImageHeight
+    imageHeight: ogImageHeight || defaultOgImageHeight,
   };
 
   // Twitter
@@ -128,7 +128,7 @@ function SEO({
     image: twitterImage || seo.image,
     imageAlt: twitterImageAlt || seo.imageAlt,
     site: twitterSite || defaultTwitterSite,
-    creator: twitterCreator || defaultTwitterCreator
+    creator: twitterCreator || defaultTwitterCreator,
   };
 
   return (

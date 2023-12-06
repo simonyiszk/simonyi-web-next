@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import { TimelineEntityType } from '~/@types';
-import { CaretDownIcon } from '~/components/icons';
-import { contentfulDocumentToReactComponents } from '~/utils';
+import React, { Fragment } from "react";
+import { TimelineEntityType } from "~/@types";
+import { CaretDownIcon } from "~/components/icons";
+import { contentfulDocumentToReactComponents } from "~/utils";
 
 /** src: https://github.com/kir-dev/sch60/blob/master/src/components/pages/AboutUs.tsx */
 export function AboutTimeline({ timelineEntries }: { timelineEntries: TimelineEntityType[] }) {
@@ -32,7 +32,7 @@ export function AboutTimeline({ timelineEntries }: { timelineEntries: TimelineEn
   );
 }
 
-function TimelineCell({ description, className }: React.ComponentProps<'div'> & TimelineEntityType) {
+function TimelineCell({ description, className }: React.ComponentProps<"div"> & TimelineEntityType) {
   return (
     <div
       className={`relative col-[2] box-border justify-self-start rounded-lg bg-darkmode_regular p-3 text-white sm:col-auto ${className}`}
@@ -42,11 +42,11 @@ function TimelineCell({ description, className }: React.ComponentProps<'div'> & 
   );
 }
 
-function TimelineYearCell({ year, isImportant, className }: React.ComponentProps<'div'> & TimelineEntityType) {
+function TimelineYearCell({ year, isImportant, className }: React.ComponentProps<"div"> & TimelineEntityType) {
   return (
     <div
       className={`relative col-[1] row-[initial] box-border rounded-lg bg-darkmode_regular p-2 text-xl text-white ${
-        isImportant ? 'bg-simonyi_zold' : ''
+        isImportant ? "bg-simonyi_zold" : ""
       } sm:col-auto ${className}`}
     >
       <p className="font-body">{year}</p>

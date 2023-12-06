@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { LinkType } from '~/@types';
-import { Link } from '..';
+import { ReactNode } from "react";
+import { LinkType } from "~/@types";
+import { Link } from "..";
 
 function FooterSection({ title, links, address }: { title: string; links: LinkType[]; address?: ReactNode }) {
   return (

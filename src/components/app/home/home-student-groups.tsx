@@ -1,5 +1,5 @@
-import { StudentGroup } from '~/components';
-import { CurrentStudnetGroupsType } from '~/@types';
+import { StudentGroup } from "~/components";
+import { CurrentStudnetGroupsType } from "~/@types";
 
 export default function HomeStudentGroups({ currentStudentGroups }: { currentStudentGroups: CurrentStudnetGroupsType }) {
   return (

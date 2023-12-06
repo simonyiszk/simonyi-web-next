@@ -1,4 +1,4 @@
-import { LoadingHome } from '~/components';
+import { LoadingHome } from "~/components";
 
 export default function Loading() {
   return <LoadingHome />;

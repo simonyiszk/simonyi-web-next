@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import { SVGProps } from "react";
 
 function TikTokIcon(props?: SVGProps<SVGSVGElement>) {
   return (

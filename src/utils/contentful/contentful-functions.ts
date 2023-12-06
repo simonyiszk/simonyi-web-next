@@ -1,4 +1,4 @@
-import { cache } from 'react';
+import { cache } from "react";
 import {
   AboutType,
   CurrentStudnetGroupsType,
@@ -9,9 +9,9 @@ import {
   Paginated,
   PostType,
   PresidencyType,
-  TimelineEntityType
-} from '~/@types';
-import { defaults } from '..';
+  TimelineEntityType,
+} from "~/@types";
+import { defaults } from "..";
 import {
   getHomeAboutEntry,
   getFooterEntries,
@@ -21,12 +21,12 @@ import {
   getCurrentStudentGroupsEntry,
   getAboutEntries,
   getTimelineEntries,
-  getPresidencyEntry
-} from '.';
+  getPresidencyEntry,
+} from ".";
 
 export const revalidate = false;
 
-export const getHeroFromCache = cache(async (locale: Locales = 'hu'): Promise<ImageType> => {
+export const getHeroFromCache = cache(async (locale: Locales = "hu"): Promise<ImageType> => {
   const heroEntries = await getHeroEntries(locale);
 
   if (heroEntries.items.length === 0) {
@@ -41,13 +41,13 @@ export const getHeroFromCache = cache(async (locale: Locales = 'hu'): Promise<Im
 
   return {
     url: `https:${hero.fields.image.fields.file.url}`,
-    alt: hero.fields.image.fields.description || '',
+    alt: hero.fields.image.fields.description || "",
     width: hero.fields.image.fields.file.details.image.width,
-    height: hero.fields.image.fields.file.details.image.height
+    height: hero.fields.image.fields.file.details.image.height,
   };
 });
 
-export const getHomeAboutEntryFromCache = cache(async (locale: Locales = 'hu'): Promise<AboutType> => {
+export const getHomeAboutEntryFromCache = cache(async (locale: Locales = "hu"): Promise<AboutType> => {
   const aboutEntries = await getHomeAboutEntry(locale);
 
   if (aboutEntries.items.length === 0) {
@@ -58,12 +58,12 @@ export const getHomeAboutEntryFromCache = cache(async (locale: Locales = 'hu'): 
 
   return {
     title: about.fields.title,
-    description: about.fields.description
+    description: about.fields.description,
   };
 });
 
 export const getAboutEntriesFromCache = cache(
-  async (locale: Locales = 'hu'): Promise<{ before: AboutType; after: AboutType } | undefined> => {
+  async (locale: Locales = "hu"): Promise<{ before: AboutType; after: AboutType } | undefined> => {
     const entries = await getAboutEntries(locale);
     const before = entries[0];
     const after = entries[1];
@@ -72,53 +72,53 @@ export const getAboutEntriesFromCache = cache(
       return {
         before: {
           title: before.items[0].fields.title,
-          description: before.items[0].fields.description
+          description: before.items[0].fields.description,
         },
         after: {
           title: after.items[0].fields.title,
-          description: after.items[0].fields.description
-        }
+          description: after.items[0].fields.description,
+        },
       };
     }
-  }
+  },
 );
 
-export const getTimelineEntriesFromCache = cache(async (locale: Locales = 'hu'): Promise<TimelineEntityType[]> => {
+export const getTimelineEntriesFromCache = cache(async (locale: Locales = "hu"): Promise<TimelineEntityType[]> => {
   const timelineEntries = await getTimelineEntries(locale);
 
   return timelineEntries.items.map((timeline) => ({
     year: timeline.fields.year,
     description: timeline.fields.description,
-    isImportant: timeline.fields.important
+    isImportant: timeline.fields.important,
   }));
 });
 
-export const getLightboxFromCache = cache(async (locale: Locales = 'hu'): Promise<LightboxImage[]> => {
+export const getLightboxFromCache = cache(async (locale: Locales = "hu"): Promise<LightboxImage[]> => {
   const lightboxEntries = await getLightboxEntries(locale);
 
   return lightboxEntries.items.map((lightbox) => ({
     ...(lightbox.fields.photo && lightbox.fields.photo.fields.file && lightbox.fields.photo.fields.file.details.image
       ? {
-          picture: {
-            url: `https:${lightbox.fields.photo.fields.file.url}`,
-            alt: lightbox.fields.photo.fields.description || '',
-            width: lightbox.fields.photo.fields.file.details.image.width,
-            height: lightbox.fields.photo.fields.file.details.image.height
-          },
-          title: lightbox.fields.photo.fields.title,
-          description: lightbox.fields.photo.fields.description
-        }
-      : defaults.lightboxImage)
+        picture: {
+          url: `https:${lightbox.fields.photo.fields.file.url}`,
+          alt: lightbox.fields.photo.fields.description || "",
+          width: lightbox.fields.photo.fields.file.details.image.width,
+          height: lightbox.fields.photo.fields.file.details.image.height,
+        },
+        title: lightbox.fields.photo.fields.title,
+        description: lightbox.fields.photo.fields.description,
+      }
+      : defaults.lightboxImage),
   }));
 });
 
-export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = 'hu'): Promise<CurrentStudnetGroupsType> => {
+export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = "hu"): Promise<CurrentStudnetGroupsType> => {
   const currentStudentGroupsEntries = await getCurrentStudentGroupsEntry(locale);
 
   if (currentStudentGroupsEntries.items.length === 0) {
     return {
-      title: '',
-      studentGroups: []
+      title: "",
+      studentGroups: [],
     };
   }
 
@@ -127,11 +127,11 @@ export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = '
     studentGroups: currentStudentGroups.fields.studentGroups.map((studentGroup) => {
       if (!studentGroup) {
         return {
-          name: '',
+          name: "",
           logo: defaults.studentGroupLogo,
-          description: '',
+          description: "",
           socials: [],
-          isDense: false
+          isDense: false,
         };
       }
 
@@ -139,40 +139,40 @@ export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = '
         name: studentGroup.fields.name,
         ...(studentGroup.fields.logo && studentGroup.fields.logo.fields.file && studentGroup.fields.logo.fields.file.details.image
           ? {
-              logo: {
-                url: `https:${studentGroup.fields.logo.fields.file.url}`,
-                alt: studentGroup.fields.logo.fields.description || '',
-                width: studentGroup.fields.logo.fields.file.details.image.width,
-                height: studentGroup.fields.logo.fields.file.details.image.height
-              }
-            }
+            logo: {
+              url: `https:${studentGroup.fields.logo.fields.file.url}`,
+              alt: studentGroup.fields.logo.fields.description || "",
+              width: studentGroup.fields.logo.fields.file.details.image.width,
+              height: studentGroup.fields.logo.fields.file.details.image.height,
+            },
+          }
           : { logo: defaults.studentGroupLogo }),
         description: studentGroup.fields.description,
         socials: studentGroup.fields.links.map((link) => ({
           ...(link
             ? {
-                icon: link.fields.icon,
-                link: {
-                  url: link.fields.url,
-                  title: link.fields.title,
-                  text: link.fields.text
-                }
-              }
-            : defaults.social)
+              icon: link.fields.icon,
+              link: {
+                url: link.fields.url,
+                title: link.fields.title,
+                text: link.fields.text,
+              },
+            }
+            : defaults.social),
         })),
-        isDense: studentGroup.fields.isDense
+        isDense: studentGroup.fields.isDense,
       };
-    })
+    }),
   }))[0];
 });
 
-export const getPresidencyFromCache = cache(async (locale: Locales = 'hu'): Promise<PresidencyType> => {
+export const getPresidencyFromCache = cache(async (locale: Locales = "hu"): Promise<PresidencyType> => {
   const presidency = await getPresidencyEntry(locale);
 
   if (presidency.items.length === 0) {
     return {
-      title: '',
-      profiles: []
+      title: "",
+      profiles: [],
     };
   }
 
@@ -180,51 +180,51 @@ export const getPresidencyFromCache = cache(async (locale: Locales = 'hu'): Prom
     title: presidency.fields.title,
     ...(presidency.fields.profiles
       ? {
-          profiles: presidency.fields.profiles.map((profile) => {
-            if (!profile) {
-              return {
-                name: '',
-                title: '',
-                socials: [],
-                profilePicture: defaults.profilePicture
-              };
-            }
-
+        profiles: presidency.fields.profiles.map((profile) => {
+          if (!profile) {
             return {
-              name: profile.fields.name,
-              title: profile.fields.title,
-              socials: profile.fields.links?.map((link) => ({
-                icon: link?.fields.icon || 'website',
-                link: {
-                  url: link?.fields.url || '',
-                  title: link?.fields.title || '',
-                  text: link?.fields.text || ''
-                }
-              })),
-              ...(profile.fields.profilePicture &&
+              name: "",
+              title: "",
+              socials: [],
+              profilePicture: defaults.profilePicture,
+            };
+          }
+
+          return {
+            name: profile.fields.name,
+            title: profile.fields.title,
+            socials: profile.fields.links?.map((link) => ({
+              icon: link?.fields.icon || "website",
+              link: {
+                url: link?.fields.url || "",
+                title: link?.fields.title || "",
+                text: link?.fields.text || "",
+              },
+            })),
+            ...(profile.fields.profilePicture &&
               profile.fields.profilePicture.fields.file &&
               profile.fields.profilePicture.fields.file.details.image
-                ? {
-                    profilePicture: {
-                      url: `https:${profile.fields.profilePicture.fields.file.url}`,
-                      alt: profile.fields.profilePicture.fields.description || '',
-                      width: profile.fields.profilePicture.fields.file.details.image.width,
-                      height: profile.fields.profilePicture.fields.file.details.image.height
-                    }
-                  }
-                : {
-                    profilePicture: defaults.profilePicture
-                  })
-            };
-          })
-        }
+              ? {
+                profilePicture: {
+                  url: `https:${profile.fields.profilePicture.fields.file.url}`,
+                  alt: profile.fields.profilePicture.fields.description || "",
+                  width: profile.fields.profilePicture.fields.file.details.image.width,
+                  height: profile.fields.profilePicture.fields.file.details.image.height,
+                },
+              }
+              : {
+                profilePicture: defaults.profilePicture,
+              }),
+          };
+        }),
+      }
       : {
-          profiles: []
-        })
+        profiles: [],
+      }),
   }))[0];
 });
 
-export const getPostsFromCache = cache(async (locale: Locales = 'hu'): Promise<PostType[]> => {
+export const getPostsFromCache = cache(async (locale: Locales = "hu"): Promise<PostType[]> => {
   const postEntries = await getPostEntries(locale);
 
   return postEntries.items.map((post) => ({
@@ -239,29 +239,29 @@ export const getPostsFromCache = cache(async (locale: Locales = 'hu'): Promise<P
     ...(post.fields.previewImage &&
       post.fields.previewImage.fields.file &&
       post.fields.previewImage.fields.file.details.image && {
-        previewImage: {
-          url: `https://${post.fields.previewImage.fields.file.url}`,
-          alt: post.fields.previewImage.fields.description || '',
-          width: post.fields.previewImage.fields.file.details.image.width,
-          height: post.fields.previewImage.fields.file.details.image.height
-        }
-      }),
+      previewImage: {
+        url: `https://${post.fields.previewImage.fields.file.url}`,
+        alt: post.fields.previewImage.fields.description || "",
+        width: post.fields.previewImage.fields.file.details.image.width,
+        height: post.fields.previewImage.fields.file.details.image.height,
+      },
+    }),
     ...(post.fields.ogImage && post.fields.ogImage.fields.file && post.fields.ogImage.fields.file.details.image
       ? {
-          ogImage: {
-            url: `https://${post.fields.ogImage.fields.file.url}`,
-            alt: post.fields.ogImage.fields.description || '',
-            width: post.fields.ogImage.fields.file.details.image.width,
-            height: post.fields.ogImage.fields.file.details.image.height
-          }
-        }
+        ogImage: {
+          url: `https://${post.fields.ogImage.fields.file.url}`,
+          alt: post.fields.ogImage.fields.description || "",
+          width: post.fields.ogImage.fields.file.details.image.width,
+          height: post.fields.ogImage.fields.file.details.image.height,
+        },
+      }
       : {
-          ogImage: defaults.ogImage
-        })
+        ogImage: defaults.ogImage,
+      }),
   }));
 });
 
-export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = 'hu'): Promise<PostType | undefined> => {
+export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = "hu"): Promise<PostType | undefined> => {
   const posts = (await getPostsFromCache(locale)).filter((post) => post.slug === slug);
 
   if (posts.length === 0) {
@@ -271,43 +271,43 @@ export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales
   return posts[0];
 });
 
-export const getFooterFromCache = cache(async (locale: Locales = 'hu'): Promise<FooterType> => {
+export const getFooterFromCache = cache(async (locale: Locales = "hu"): Promise<FooterType> => {
   const footerEntries = await getFooterEntries(locale);
 
   if (footerEntries.items.length === 0) {
     return {
-      sections: []
+      sections: [],
     };
   }
 
   return footerEntries.items.map((footer) => ({
     ...(footer.fields.sections
       ? {
-          sections: footer.fields.sections.map((section) => ({
-            ...(section && section.fields.links
-              ? {
-                  title: section.fields.title,
-                  address: section.fields.address,
-                  links: section.fields.links.map((link) => ({
-                    ...(link
-                      ? {
-                          url: link.fields.url,
-                          title: link.fields.title,
-                          text: link.fields.text
-                        }
-                      : defaults.social.link)
-                  }))
-                }
-              : defaults.footerSection)
-          })),
-          github: footer.fields.github?.fields
-        }
-      : defaults.footer)
+        sections: footer.fields.sections.map((section) => ({
+          ...(section && section.fields.links
+            ? {
+              title: section.fields.title,
+              address: section.fields.address,
+              links: section.fields.links.map((link) => ({
+                ...(link
+                  ? {
+                    url: link.fields.url,
+                    title: link.fields.title,
+                    text: link.fields.text,
+                  }
+                  : defaults.social.link),
+              })),
+            }
+            : defaults.footerSection),
+        })),
+        github: footer.fields.github?.fields,
+      }
+      : defaults.footer),
   }))[0];
 });
 
 export const getPaginatedPostsFromCache = cache(
-  async (page: number | string | undefined, size: number | string | undefined, locale: Locales = 'hu'): Promise<Paginated<PostType>> => {
+  async (page: number | string | undefined, size: number | string | undefined, locale: Locales = "hu"): Promise<Paginated<PostType>> => {
     const postEntries = await getPostEntries(locale);
 
     let unsafePage = page ? Number(page) : defaults.pagination.page;
@@ -344,26 +344,26 @@ export const getPaginatedPostsFromCache = cache(
         ...(post.fields.previewImage &&
           post.fields.previewImage.fields.file &&
           post.fields.previewImage.fields.file.details.image && {
-            previewImage: {
-              url: `https://${post.fields.previewImage.fields.file.url}`,
-              alt: post.fields.previewImage.fields.description || '',
-              width: post.fields.previewImage.fields.file.details.image.width,
-              height: post.fields.previewImage.fields.file.details.image.height
-            }
-          }),
+          previewImage: {
+            url: `https://${post.fields.previewImage.fields.file.url}`,
+            alt: post.fields.previewImage.fields.description || "",
+            width: post.fields.previewImage.fields.file.details.image.width,
+            height: post.fields.previewImage.fields.file.details.image.height,
+          },
+        }),
         ...(post.fields.ogImage && post.fields.ogImage.fields.file && post.fields.ogImage.fields.file.details.image
           ? {
-              ogImage: {
-                url: `https://${post.fields.ogImage.fields.file.url}`,
-                alt: post.fields.ogImage.fields.description || '',
-                width: post.fields.ogImage.fields.file.details.image.width,
-                height: post.fields.ogImage.fields.file.details.image.height
-              }
-            }
+            ogImage: {
+              url: `https://${post.fields.ogImage.fields.file.url}`,
+              alt: post.fields.ogImage.fields.description || "",
+              width: post.fields.ogImage.fields.file.details.image.width,
+              height: post.fields.ogImage.fields.file.details.image.height,
+            },
+          }
           : {
-              ogImage: defaults.ogImage
-            })
-      }))
+            ogImage: defaults.ogImage,
+          }),
+      })),
     };
-  }
+  },
 );

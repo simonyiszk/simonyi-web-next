@@ -1,6 +1,6 @@
-import { Document } from '@contentful/rich-text-types';
+import { Document } from "@contentful/rich-text-types";
 
-export type SocialIconType = 'email' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'phone' | 'youtube' | 'tiktok' | 'website';
+export type SocialIconType = "email" | "facebook" | "github" | "instagram" | "linkedin" | "phone" | "youtube" | "tiktok" | "website";
 
 export type AboutType = {
   title?: string;
@@ -85,4 +85,4 @@ export type FooterType = {
   github?: LinkType;
 };
 
-export type Locales = 'hu' | 'en-US';
+export type Locales = "hu" | "en-US";

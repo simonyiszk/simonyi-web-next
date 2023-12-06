@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import { ImageType } from '~/@types';
-import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from '~/components';
+import Image from "next/image";
+import { ImageType } from "~/@types";
+import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
 
 export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
   return (
     <div className="min-h-screen">
       <div className="absolute left-0 top-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
-        <Image src={heroImage.url} alt={heroImage.alt} fill priority style={{ objectFit: 'cover' }} />
+        <Image src={heroImage.url} alt={heroImage.alt} fill priority style={{ objectFit: "cover" }} />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
         <HeaderHome />

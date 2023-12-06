@@ -1,4 +1,4 @@
-import { Spinner } from '.';
+import { Spinner } from ".";
 
 export function LoadingHome() {
   return (

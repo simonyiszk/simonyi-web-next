@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { default as NextLink } from 'next/link';
-import { SimonyiLogoIcon, HamburgerIcon } from '../icons';
+import { useState } from "react";
+import { default as NextLink } from "next/link";
+import { SimonyiLogoIcon, HamburgerIcon } from "../icons";
 
 function HeaderSubpage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

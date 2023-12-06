@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import { PostType } from '~/@types';
-import { contentfulDocumentToReactComponents } from '~/utils';
+import Image from "next/image";
+import { PostType } from "~/@types";
+import { contentfulDocumentToReactComponents } from "~/utils";
 
 function BlogPost({ data }: { data: PostType }) {
   const { title, date, previewImage, body } = data;
@@ -14,7 +14,7 @@ function BlogPost({ data }: { data: PostType }) {
       )}
       <div className="mb-8">
         {title && <h1 className="mb-4 font-heading text-5xl text-h1">{title}</h1>}
-        {date && <div className="font-body">{date.toLocaleDateString('hu')}</div>}
+        {date && <div className="font-body">{date.toLocaleDateString("hu")}</div>}
       </div>
       {contentfulDocumentToReactComponents(body)}
     </div>

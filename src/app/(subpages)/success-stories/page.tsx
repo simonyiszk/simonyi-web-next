@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: 'Büszkeségeink'
+  title: "Büszkeségeink",
 };
 
 export default function Page() {

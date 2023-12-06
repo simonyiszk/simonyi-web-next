@@ -1,41 +1,41 @@
-import { Metadata } from 'next';
-import './globals.css';
+import { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://simonyi.bme.hu'),
+  metadataBase: new URL("https://simonyi.bme.hu"),
   title: {
-    default: 'Simonyi Károly Szakkollégium',
-    template: '%s - Simonyi Károly Szakkollégium',
-    absolute: 'Főoldal - Simonyi Károly Szakkollégium'
+    default: "Simonyi Károly Szakkollégium",
+    template: "%s - Simonyi Károly Szakkollégium",
+    absolute: "Főoldal - Simonyi Károly Szakkollégium",
   },
   description:
-    'A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.',
+    "A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.",
   openGraph: {
-    type: 'website',
+    type: "website",
     images: [
       {
-        url: '/images/defaults/cover.png',
+        url: "/images/defaults/cover.png",
         width: 960,
         height: 540,
-        alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
-      }
+        alt: "Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies",
+      },
     ],
-    locale: 'hu',
-    alternateLocale: 'en_US'
+    locale: "hu",
+    alternateLocale: "en_US",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     images: [
       {
-        url: '/images/defaults/cover.png',
+        url: "/images/defaults/cover.png",
         width: 960,
         height: 540,
-        alt: 'Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies'
-      }
+        alt: "Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies",
+      },
     ],
-    site: 'simonyiszakkoli',
-    creator: 'simonyiszakkoli'
-  }
+    site: "simonyiszakkoli",
+    creator: "simonyiszakkoli",
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,13 +1,13 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Locales } from '~/@types';
-import { BlogPaginator, BlogPostPreview } from '~/components';
-import { getPaginatedPostsFromCache } from '~/utils';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { Locales } from "~/@types";
+import { BlogPaginator, BlogPostPreview } from "~/components";
+import { getPaginatedPostsFromCache } from "~/utils";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: 'Blog'
+  title: "Blog",
 };
 
 type SearchParams = {
@@ -16,7 +16,7 @@ type SearchParams = {
 };
 
 async function getData(searchParams: SearchParams) {
-  const locale: Locales = 'hu';
+  const locale: Locales = "hu";
 
   const { page, size } = searchParams;
 
@@ -27,7 +27,7 @@ async function getData(searchParams: SearchParams) {
     currentPage,
     pageSize,
     totalItems,
-    totalPages
+    totalPages,
   };
 }
 

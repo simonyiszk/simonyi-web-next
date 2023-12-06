@@ -1,17 +1,17 @@
-'use client';
-import Image from 'next/image';
-import { useState } from 'react';
-import { default as Lightbox } from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
-import Captions from 'yet-another-react-lightbox/plugins/captions';
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
-import Video from 'yet-another-react-lightbox/plugins/video';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import 'yet-another-react-lightbox/plugins/captions.css';
-import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import { LightboxImage } from '~/@types';
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import { default as Lightbox } from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Video from "yet-another-react-lightbox/plugins/video";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/captions.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { LightboxImage } from "~/@types";
 
 export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImages: LightboxImage[] }) {
   const [index, setIndex] = useState(0);
@@ -38,7 +38,7 @@ export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImag
             src={image.picture.url}
             alt={image.picture.alt}
             fill
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
             sizes="177.05px"
           />
         </div>
@@ -52,7 +52,7 @@ export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImag
             title: image.title,
             description: image.description,
             width: image.picture.width,
-            height: image.picture.height
+            height: image.picture.height,
           };
         })}
         index={index}

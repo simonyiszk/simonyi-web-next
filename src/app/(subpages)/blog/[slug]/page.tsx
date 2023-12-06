@@ -1,19 +1,19 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { getPostBySlugFromCache } from '~/utils';
-import { Locales } from '~/@types';
-import { BlogPost } from '~/components';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getPostBySlugFromCache } from "~/utils";
+import { Locales } from "~/@types";
+import { BlogPost } from "~/components";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: {
     slug: string;
   };
 }): Promise<Metadata> {
-  const locale: Locales = 'hu';
+  const locale: Locales = "hu";
 
   const post = await getPostBySlugFromCache(params.slug, locale);
 
@@ -26,11 +26,11 @@ export async function generateMetadata({
   };
   const ogImage = post?.ogImage
     ? {
-        url: post.ogImage,
-        alt: post.ogImage.alt,
-        width: post.ogImage.width,
-        height: post.ogImage.height
-      }
+      url: post.ogImage,
+      alt: post.ogImage.alt,
+      width: post.ogImage.width,
+      height: post.ogImage.height,
+    }
     : undefined;
 
   const date = post?.date?.toDateString();
@@ -42,15 +42,15 @@ export async function generateMetadata({
     openGraph: {
       releaseDate: date,
       images: ogImage ? [ogImage.url] : undefined,
-      locale: 'hu',
-      alternateLocale: ['en_US']
+      locale: "hu",
+      alternateLocale: ["en_US"],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       images: ogImage ? [ogImage.url] : undefined,
-      site: 'simonyiszakkoli',
-      creator: 'simonyiszakkoli'
-    }
+      site: "simonyiszakkoli",
+      creator: "simonyiszakkoli",
+    },
   };
 }
 
@@ -60,7 +60,7 @@ async function getData({ params }: { params: { slug: string } }) {
 }
 
 export default async function PostPage({
-  params
+  params,
 }: {
   params: {
     slug: string;

@@ -1,11 +1,11 @@
-import { Locales } from '~/@types';
-import { HeaderSubpage, Footer } from '~/components';
-import { getFooterFromCache } from '~/utils';
+import { Locales } from "~/@types";
+import { HeaderSubpage, Footer } from "~/components";
+import { getFooterFromCache } from "~/utils";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 async function getData() {
-  const locale: Locales = 'hu';
+  const locale: Locales = "hu";
 
   const footer = await getFooterFromCache(locale);
 

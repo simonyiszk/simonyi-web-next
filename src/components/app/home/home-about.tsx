@@ -1,6 +1,6 @@
-import { AboutType, LightboxImage } from '~/@types';
-import { contentfulDocumentToReactComponents } from '~/utils';
-import HomeAboutImageBrowser from './home-about-image-browser';
+import { AboutType, LightboxImage } from "~/@types";
+import { contentfulDocumentToReactComponents } from "~/utils";
+import HomeAboutImageBrowser from "./home-about-image-browser";
 
 export default function HomeAbout({ about, images }: { about: AboutType; images: LightboxImage[] }) {
   return (

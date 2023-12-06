@@ -1,23 +1,23 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Document, BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
-import { cloneElement, Children, ReactNode, ReactElement } from 'react';
-import { Link } from '~/components';
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document, BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import { cloneElement, Children, ReactNode, ReactElement } from "react";
+import { Link } from "~/components";
 
 function RemoveParagraph({ children }: { children: ReactNode }) {
   const processChild = (child: ReactNode): ReactNode => {
-    if (typeof child === 'string') {
+    if (typeof child === "string") {
       return child;
     }
 
     const elementChild = child as ReactElement;
 
-    if (elementChild.type === 'p') {
+    if (elementChild.type === "p") {
       return <>{elementChild.props.children}</>;
     }
 
     if (elementChild.props && elementChild.props.children) {
       return cloneElement(elementChild, {
-        children: Children.map(elementChild.props.children, processChild)
+        children: Children.map(elementChild.props.children, processChild),
       });
     }
 
@@ -112,7 +112,7 @@ export function contentfulDocumentToReactComponents(document: Document) {
         </Link>
       ),
       [MARKS.BOLD]: (node, children) => <b>{children}</b>,
-      [MARKS.ITALIC]: (node, children) => <i>{children}</i>
-    }
+      [MARKS.ITALIC]: (node, children) => <i>{children}</i>,
+    },
   });
 }

@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 function PaginatorEntry({ page, isCurrentPage }: { page: number; isCurrentPage: boolean }) {
   return (
     <Link href={`/blog/?page=${page}`}>
       <div
         className={`flex h-14 w-14 flex-none items-center justify-center p-4 ${
-          isCurrentPage ? 'bg-simonyi_zold' : 'bg-darkmode_regular'
+          isCurrentPage ? "bg-simonyi_zold" : "bg-darkmode_regular"
         } rounded-md`}
       >
         {page}

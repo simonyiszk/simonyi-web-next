@@ -1,6 +1,6 @@
-import { Code } from 'bright';
-import { Link } from './components';
-import type { MDXComponents } from 'mdx/types';
+import { Code } from "bright";
+import { Link } from "./components";
+import type { MDXComponents } from "mdx/types";
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -99,13 +99,13 @@ export const mdxComponents: MDXComponents = {
         {children}
       </blockquote>
     </>
-  )
+  ),
 };
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     ...mdxComponents,
-    ...components
+    ...components,
   };
 }

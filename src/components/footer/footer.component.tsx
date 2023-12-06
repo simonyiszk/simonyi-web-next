@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import { FooterType } from '~/@types';
-import { contentfulDocumentToReactComponents } from '~/utils';
-import { Link } from '..';
-import { FooterSection } from '.';
+import Image from "next/image";
+import { FooterType } from "~/@types";
+import { contentfulDocumentToReactComponents } from "~/utils";
+import { Link } from "..";
+import { FooterSection } from ".";
 
 function Footer({ data }: { data: FooterType }) {
   return (

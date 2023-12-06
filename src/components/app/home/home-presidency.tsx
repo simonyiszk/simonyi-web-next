@@ -1,5 +1,5 @@
-import { Profile } from '~/components';
-import { PresidencyType } from '~/@types';
+import { Profile } from "~/components";
+import { PresidencyType } from "~/@types";
 
 export default function HomePresidency({ presidency }: { presidency: PresidencyType }) {
   return (
