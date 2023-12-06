@@ -9,8 +9,6 @@ import {
   getCurrentStudentGroupsFromCache,
 } from "~/utils";
 
-export const dynamic = "force-static";
-
 async function getData({ params: { locale } }: PageProps) {
 
   const hero = await getHeroFromCache(locale);

@@ -2,8 +2,6 @@ import { PageProps } from "~/@types";
 import { HeaderSubpage, Footer } from "~/components";
 import { getFooterFromCache } from "~/utils";
 
-export const dynamic = "force-static";
-
 async function getData({ params: { locale } }: PageProps) {
 
   const footer = await getFooterFromCache(locale);

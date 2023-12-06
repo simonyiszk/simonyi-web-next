@@ -4,8 +4,6 @@ import { PageProps } from "~/@types";
 import { BlogPaginator, BlogPostPreview } from "~/components";
 import { getPaginatedPostsFromCache } from "~/utils";
 
-export const dynamic = "force-static";
-
 export const metadata: Metadata = {
   title: "Blog",
 };

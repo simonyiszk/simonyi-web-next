@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 import { AboutTimeline } from "~/components/app/about";
 import { contentfulDocumentToReactComponents, getAboutEntriesFromCache, getTimelineEntriesFromCache } from "~/utils";
 
-export const dynamic = "force-static";
-
 export const metadata: Metadata = {
   title: "Rólunk",
 };

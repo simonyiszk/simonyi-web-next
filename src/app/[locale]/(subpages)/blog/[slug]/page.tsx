@@ -4,8 +4,6 @@ import { getPostBySlugFromCache } from "~/utils";
 import { BlogPost } from "~/components";
 import { PageProps } from "~/@types";
 
-export const dynamic = "force-static";
-
 export async function generateMetadata({ params: { locale, slug } }: { params: PageProps["params"] }): Promise<Metadata> {
 
   const post = await getPostBySlugFromCache(slug, locale);
