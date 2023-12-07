@@ -6,8 +6,7 @@
       "template": "%s - Simonyi Károly Szakkollégium",
       "absolute": "Simonyi Károly Szakkollégium"
     },
-    "description":
-      "A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.",
+    "description": "A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.",
     "openGraph": {
       "images": {
         "alt": "Simonyi Károly Szakkollégium"
@@ -22,6 +21,7 @@
   "home": {
     "course": "Tanfolyam",
     "rent": "Bérlés",
+    "aboutUs": "Rólunk",
     "blog": "Blog",
     "studentGroups": "Köreink",
     "presidency": "Elnökség",

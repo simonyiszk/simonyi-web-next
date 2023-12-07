@@ -6,7 +6,7 @@
       "template": "%s - Simonyi Károly College for Advanced Studies",
       "absolute": "Simonyi Károly College for Advanced Studies"
     },
-    "description": "TODO",
+    "description": "The Simonyi Karoly Collegium  is a student-based professional organisation at the Faculty of Electrical Engineering and Informatics of the BUTE. Its members cover the entire spectrum of electrical engineering and computer science, from studio engineering to web design and development, electronics and even robotics.",
     "openGraph": {
       "images": {
         "alt": "Simonyi Károly College for Advanced Studies"
@@ -21,6 +21,7 @@
   "home": {
     "course": "Courses",
     "rent": "Renting",
+    "aboutUs": "About us",
     "blog": "Blog",
     "studentGroups": "Student Groups",
     "presidency": "Presidency",

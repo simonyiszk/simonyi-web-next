@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { PageProps } from "~/@types";
 import { AboutTimeline } from "~/components/app/about";
 import { contentfulDocumentToReactComponents, getAboutEntriesFromCache, getTimelineEntriesFromCache } from "~/utils";
 
@@ -7,9 +8,9 @@ export const metadata: Metadata = {
   title: "Rólunk",
 };
 
-async function getData() {
-  const aboutEntries = await getAboutEntriesFromCache();
-  const timelineEntries = await getTimelineEntriesFromCache();
+async function getData({ params: { locale } }: PageProps) {
+  const aboutEntries = await getAboutEntriesFromCache(locale);
+  const timelineEntries = await getTimelineEntriesFromCache(locale);
 
   if (!aboutEntries) {
     throw notFound();
@@ -18,8 +19,8 @@ async function getData() {
   return { before: aboutEntries.before, after: aboutEntries.after, timelineEntries };
 }
 
-export default async function AboutPage() {
-  const { before, after, timelineEntries } = await getData();
+export default async function AboutPage(props: PageProps) {
+  const { before, after, timelineEntries } = await getData(props);
 
   return (
     <div className="flex w-full max-w-home flex-col gap-8 self-center p-4">
