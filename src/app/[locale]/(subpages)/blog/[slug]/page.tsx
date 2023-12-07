@@ -1,21 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlugFromCache } from "~/utils";
-import { Locales } from "~/@types";
 import { BlogPost } from "~/components";
+import { PageProps } from "~/@types";
 
-export const dynamic = "force-static";
+export async function generateMetadata({ params: { locale, slug } }: { params: PageProps["params"] }): Promise<Metadata> {
 
-export async function generateMetadata({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}): Promise<Metadata> {
-  const locale: Locales = "hu";
-
-  const post = await getPostBySlugFromCache(params.slug, locale);
+  const post = await getPostBySlugFromCache(slug, locale);
 
   const title = post?.title;
   const description = post?.description;
@@ -54,19 +45,13 @@ export async function generateMetadata({
   };
 }
 
-async function getData({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlugFromCache(params.slug);
+async function getData({ params: { slug, locale } }: PageProps) {
+  const post = await getPostBySlugFromCache(slug, locale);
   return { post };
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}) {
-  const { post } = await getData({ params });
+export default async function PostPage(props: PageProps) {
+  const { post } = await getData(props);
 
   if (!post) return notFound();
 

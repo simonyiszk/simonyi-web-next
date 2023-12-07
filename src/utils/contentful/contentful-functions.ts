@@ -5,7 +5,6 @@ import {
   FooterType,
   ImageType,
   LightboxImage,
-  Locales,
   Paginated,
   PostType,
   PresidencyType,
@@ -26,7 +25,7 @@ import {
 
 export const revalidate = false;
 
-export const getHeroFromCache = cache(async (locale: Locales = "hu"): Promise<ImageType> => {
+export const getHeroFromCache = cache(async (locale = "hu"): Promise<ImageType> => {
   const heroEntries = await getHeroEntries(locale);
 
   if (heroEntries.items.length === 0) {
@@ -47,7 +46,7 @@ export const getHeroFromCache = cache(async (locale: Locales = "hu"): Promise<Im
   };
 });
 
-export const getHomeAboutEntryFromCache = cache(async (locale: Locales = "hu"): Promise<AboutType> => {
+export const getHomeAboutEntryFromCache = cache(async (locale = "hu"): Promise<AboutType> => {
   const aboutEntries = await getHomeAboutEntry(locale);
 
   if (aboutEntries.items.length === 0) {
@@ -63,7 +62,7 @@ export const getHomeAboutEntryFromCache = cache(async (locale: Locales = "hu"): 
 });
 
 export const getAboutEntriesFromCache = cache(
-  async (locale: Locales = "hu"): Promise<{ before: AboutType; after: AboutType } | undefined> => {
+  async (locale = "hu"): Promise<{ before: AboutType; after: AboutType } | undefined> => {
     const entries = await getAboutEntries(locale);
     const before = entries[0];
     const after = entries[1];
@@ -83,7 +82,7 @@ export const getAboutEntriesFromCache = cache(
   },
 );
 
-export const getTimelineEntriesFromCache = cache(async (locale: Locales = "hu"): Promise<TimelineEntityType[]> => {
+export const getTimelineEntriesFromCache = cache(async (locale = "hu"): Promise<TimelineEntityType[]> => {
   const timelineEntries = await getTimelineEntries(locale);
 
   return timelineEntries.items.map((timeline) => ({
@@ -93,7 +92,7 @@ export const getTimelineEntriesFromCache = cache(async (locale: Locales = "hu"):
   }));
 });
 
-export const getLightboxFromCache = cache(async (locale: Locales = "hu"): Promise<LightboxImage[]> => {
+export const getLightboxFromCache = cache(async (locale = "hu"): Promise<LightboxImage[]> => {
   const lightboxEntries = await getLightboxEntries(locale);
 
   return lightboxEntries.items.map((lightbox) => ({
@@ -112,7 +111,7 @@ export const getLightboxFromCache = cache(async (locale: Locales = "hu"): Promis
   }));
 });
 
-export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = "hu"): Promise<CurrentStudnetGroupsType> => {
+export const getCurrentStudentGroupsFromCache = cache(async (locale = "hu"): Promise<CurrentStudnetGroupsType> => {
   const currentStudentGroupsEntries = await getCurrentStudentGroupsEntry(locale);
 
   if (currentStudentGroupsEntries.items.length === 0) {
@@ -166,7 +165,7 @@ export const getCurrentStudentGroupsFromCache = cache(async (locale: Locales = "
   }))[0];
 });
 
-export const getPresidencyFromCache = cache(async (locale: Locales = "hu"): Promise<PresidencyType> => {
+export const getPresidencyFromCache = cache(async (locale = "hu"): Promise<PresidencyType> => {
   const presidency = await getPresidencyEntry(locale);
 
   if (presidency.items.length === 0) {
@@ -224,7 +223,7 @@ export const getPresidencyFromCache = cache(async (locale: Locales = "hu"): Prom
   }))[0];
 });
 
-export const getPostsFromCache = cache(async (locale: Locales = "hu"): Promise<PostType[]> => {
+export const getPostsFromCache = cache(async (locale = "hu"): Promise<PostType[]> => {
   const postEntries = await getPostEntries(locale);
 
   return postEntries.items.map((post) => ({
@@ -261,7 +260,7 @@ export const getPostsFromCache = cache(async (locale: Locales = "hu"): Promise<P
   }));
 });
 
-export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales = "hu"): Promise<PostType | undefined> => {
+export const getPostBySlugFromCache = cache(async (slug: string, locale = "hu"): Promise<PostType | undefined> => {
   const posts = (await getPostsFromCache(locale)).filter((post) => post.slug === slug);
 
   if (posts.length === 0) {
@@ -271,7 +270,7 @@ export const getPostBySlugFromCache = cache(async (slug: string, locale: Locales
   return posts[0];
 });
 
-export const getFooterFromCache = cache(async (locale: Locales = "hu"): Promise<FooterType> => {
+export const getFooterFromCache = cache(async (locale = "hu"): Promise<FooterType> => {
   const footerEntries = await getFooterEntries(locale);
 
   if (footerEntries.items.length === 0) {
@@ -307,7 +306,7 @@ export const getFooterFromCache = cache(async (locale: Locales = "hu"): Promise<
 });
 
 export const getPaginatedPostsFromCache = cache(
-  async (page: number | string | undefined, size: number | string | undefined, locale: Locales = "hu"): Promise<Paginated<PostType>> => {
+  async (page: number | string | undefined, size: number | string | undefined, locale = "hu"): Promise<Paginated<PostType>> => {
     const postEntries = await getPostEntries(locale);
 
     let unsafePage = page ? Number(page) : defaults.pagination.page;

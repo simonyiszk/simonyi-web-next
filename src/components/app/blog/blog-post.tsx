@@ -13,7 +13,7 @@ function BlogPost({ data }: { data: PostType }) {
         </div>
       )}
       <div className="mb-8">
-        {title && <h1 className="mb-4 font-heading text-5xl text-h1">{title}</h1>}
+        {title && <h1 className="mb-4 font-heading text-h1">{title}</h1>}
         {date && <div className="font-body">{date.toLocaleDateString("hu")}</div>}
       </div>
       {contentfulDocumentToReactComponents(body)}

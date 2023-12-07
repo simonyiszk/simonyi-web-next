@@ -30,7 +30,7 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -40,11 +40,11 @@ jobs:
 
       - name: Install dependencies (internal PR)
         if: ${{ github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name }}
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
 
       - name: Install dependencies (external PR)
         if: ${{ github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name }}
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn install --immutable
 
       - name: Run linters
         uses: wearerequired/lint-action@v2

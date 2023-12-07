@@ -31,7 +31,7 @@ export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImag
       {lightboxImages.slice(0, 9).map((image, index) => (
         <div
           key={index}
-          className="relative h-[100px] w-[177.05px] flex-shrink-0 bg-black hover:cursor-pointer"
+          className="relative h-[100px] w-[177.05px] shrink-0 bg-black hover:cursor-pointer"
           onClick={() => openLightbox(index)}
         >
           <Image

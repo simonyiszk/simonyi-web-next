@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withNextIntl = require("next-intl/plugin")();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md"],
@@ -8,4 +11,5 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+
+module.exports = withNextIntl(nextConfig);
