@@ -1,28 +1,29 @@
-{
-  "env": {
-    "browser": true,
-    "es2021": true
+/** @type {import("eslint").Linter.Config} */
+const config = {
+  env: {
+    browser: true,
+    es2021: true,
   },
-  "extends": [
+  extends: [
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  "plugins": [
+  plugins: [
     "react",
     "import",
-    "@typescript-eslint"
+    "@typescript-eslint",
   ],
-  "rules": {
+  rules: {
     "import/prefer-default-export": 0,
     "react/react-in-jsx-scope": 0,
     "import/order": [
@@ -32,8 +33,8 @@
           {
             "pattern": "~/**",
             "group": "internal",
-            "position": "after"
-          }
+            "position": "after",
+          },
         ],
         "groups": [
           "builtin",
@@ -44,79 +45,81 @@
           "sibling",
           "index",
           "object",
-          "type"
-        ]
-      }
+          "type",
+        ],
+      },
     ],
     "array-bracket-newline": [
       "warn",
-      "consistent"
+      "consistent",
     ],
     "array-element-newline": [
       "warn",
-      "consistent"
+      "consistent",
     ],
     "object-curly-newline": [
       "warn",
       {
-        "consistent": true
-      }
+        "consistent": true,
+      },
     ],
     "quotes": [
       "warn",
       "double",
       {
         "avoidEscape": true,
-        "allowTemplateLiterals": false
-      }
+        "allowTemplateLiterals": false,
+      },
     ],
     "comma-dangle": [
       "warn",
-      "always-multiline"
+      "always-multiline",
     ],
     "object-curly-spacing": [
       "warn",
-      "always"
+      "always",
     ],
     "array-bracket-spacing": [
       "warn",
-      "never"
+      "never",
     ],
     "arrow-parens": [
       "warn",
-      "always"
+      "always",
     ],
     "semi": [
       "warn",
-      "always"
+      "always",
     ],
     "indent": [
       "warn",
-      2
+      2,
     ],
     "linebreak-style": [
       "warn",
-      "unix"
+      "unix",
     ],
     "function-paren-newline": [
       "warn",
-      "multiline-arguments"
+      "multiline-arguments",
     ],
     "eol-last": [
       "warn",
-      "always"
+      "always",
     ],
     "no-trailing-spaces": [
-      "warn"
-    ]
+      "warn",
+    ],
   },
   "settings": {
     "react": {
-      "version": "detect"
+      "version": "detect",
     },
     "import/resolver": {
       "typescript": true,
-      "node": true
-    }
-  }
-}
+      "node": true,
+    },
+  },
+};
+
+module.exports = config;

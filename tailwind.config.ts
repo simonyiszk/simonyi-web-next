@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -99,4 +100,6 @@ module.exports = {
     darkMode: ["class", '[data-theme="dark"]'],
   },
   plugins: [],
-};
+} satisfies Config;
+
+export default config;
