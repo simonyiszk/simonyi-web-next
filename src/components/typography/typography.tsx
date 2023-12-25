@@ -65,25 +65,25 @@ export function Typography({
   const variantToClassName = () => {
     switch (variant) {
     case "body":
-      return "font-space_grotesk text-body";
+      return "font-body text-body";
     case "label":
-      return "font-space_grotesk text-label";
+      return "font-body text-label";
     case "h1":
-      return "font-archivo text-h1";
+      return "font-heading text-h1";
     case "h2":
-      return "font-archivo text-h2";
+      return "font-heading text-h2";
     case "h3":
-      return "font-archivo text-h3";
+      return "font-heading text-h3";
     case "h4":
-      return "font-archivo text-h4";
+      return "font-heading text-h4";
     case "h5":
-      return "font-archivo text-h4";
+      return "font-heading text-h4";
     case "h6":
-      return "font-archivo text-h4";
+      return "font-heading text-h4";
     case "a":
-      return "font-space_grotesk text-body hover:underline text-simonyi_zold";
+      return "font-body text-body hover:underline text-simonyi_zold";
     default:
-      return "font-space_grotesk text-body";
+      return "font-body text-body";
     }
   };
 
