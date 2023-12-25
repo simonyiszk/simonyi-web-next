@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 export function NotFoundComponent() {
   return (
     <div className="m-4 flex flex-col">
