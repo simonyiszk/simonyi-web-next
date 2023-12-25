@@ -62,7 +62,7 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
     <html
       data-theme="dark"
       lang={locale}
-      className={`${spaceGrotesk.className} ${archivo.className}`}
+      className={`${spaceGrotesk.variable} ${archivo.variable}`}
     >
       <body className="bg-dark text-white text-opacity-text">
         <div className="flex min-h-safe_screen flex-col justify-between">{children}</div>
