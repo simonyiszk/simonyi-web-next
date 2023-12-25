@@ -94,8 +94,8 @@ const config = {
       fontFamily: {
         // https://www.figma.com/file/JOHGaqs67K52ZSj32xF8Bd/Weboldal?node-id=12%3A1076
         heading: ["var(--font-archivo)", ...fontFamily.sans],
-        body: ["var(--font-space-grotesk)", ...fontFamily.sans],
-        label: ["var(--font-space-grotesk)", ...fontFamily.sans],
+        body: ["var(--font-space_grotesk)", ...fontFamily.sans],
+        label: ["var(--font-space_grotesk)", ...fontFamily.sans],
       },
       screens: {
         sm: "30em",
