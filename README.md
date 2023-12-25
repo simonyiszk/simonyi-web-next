@@ -2,8 +2,8 @@
 
 This project uses:
 
-- [Yarn v3](https://yarnpkg.com/getting-started/install)
-- [Next.js 13 with App Router](https://nextjs.org/docs/app)
+- [Yarn v4](https://yarnpkg.com/getting-started/install)
+- [Next.js 14 with App Router](https://nextjs.org/docs/app)
 - [Contentful v10](https://github.com/contentful/contentful.js)
 - [Tailwind v3](https://tailwindcss.com/)
 
@@ -22,6 +22,7 @@ Create .env.local
 cp .env.example .env.local
 
 # or download from Vercel, using the vercel-cli
+npm i -g vercel
 vercel link
 vercel env pull
 ```
