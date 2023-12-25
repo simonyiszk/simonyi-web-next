@@ -6,7 +6,7 @@ export default createMiddleware({
 
   // Used when no locale matches
   defaultLocale: "hu",
-  localePrefix: "as-needed",
+  localePrefix: "always",
 });
 
 export const config = {
