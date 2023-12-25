@@ -77,14 +77,14 @@ const config = {
           },
         ],
         body: [
-          "20px",
+          "16px",
           {
             fontWeight: "400",
-            lineHeight: "26px",
+            lineHeight: "24px",
           },
         ],
-        link: [
-          "16px",
+        label: [
+          "14px",
           {
             fontWeight: "400",
             lineHeight: "20px",
