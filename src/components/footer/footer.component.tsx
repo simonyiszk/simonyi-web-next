@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { FooterType } from "~/@types";
 import { contentfulDocumentToReactComponents } from "~/utils";
 import { Link } from "..";
+import { Typography } from "../typography";
 import { FooterSection } from ".";
 
 function Footer({ data }: { data: FooterType }) {
@@ -53,7 +54,7 @@ function Footer({ data }: { data: FooterType }) {
       </div>
       {data.github && (
         <Link href={data.github.url} title={data.github.title}>
-          <p className="text-center font-body">{data.github.text}</p>
+          <Typography className="text-center">{data.github.text}</Typography>
         </Link>
       )}
       <a

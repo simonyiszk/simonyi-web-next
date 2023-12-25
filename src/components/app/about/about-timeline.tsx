@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { TimelineEntityType } from "~/@types";
-import { CaretDownIcon } from "~/components/icons";
+import { CaretDownIcon, Typography } from "~/components";
 import { contentfulDocumentToReactComponents } from "~/utils";
 
 /** src: https://github.com/kir-dev/sch60/blob/master/src/components/pages/AboutUs.tsx */
@@ -49,7 +49,7 @@ function TimelineYearCell({ year, isImportant, className }: React.ComponentProps
         isImportant ? "bg-simonyi_zold" : ""
       } sm:col-auto ${className}`}
     >
-      <p className="font-body">{year}</p>
+      <Typography>{year}</Typography>
     </div>
   );
 }

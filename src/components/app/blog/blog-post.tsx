@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PostType } from "~/@types";
+import { Typography } from "~/components";
 import { contentfulDocumentToReactComponents } from "~/utils";
 
 function BlogPost({ data }: { data: PostType }) {
@@ -13,8 +14,8 @@ function BlogPost({ data }: { data: PostType }) {
         </div>
       )}
       <div className="mb-8">
-        {title && <h1 className="mb-4 font-heading text-h1">{title}</h1>}
-        {date && <div className="font-body">{date.toLocaleDateString("hu")}</div>}
+        {title && <Typography as="h1" variant="h1" className="mb-4">{title}</Typography>}
+        {date && <Typography>{date.toLocaleDateString("hu")}</Typography>}
       </div>
       {contentfulDocumentToReactComponents(body)}
     </div>

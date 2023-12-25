@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import { Typography } from "~/components";
 
 export const metadata: Metadata = {
   title: "Büszkeségeink",
 };
 
 export default function Page() {
-  return <h1>Success stories</h1>;
+  return <Typography as="h1" variant="h1">Success stories</Typography>;
 }
