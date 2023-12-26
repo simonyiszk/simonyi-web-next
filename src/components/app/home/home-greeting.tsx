@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ImageType } from "~/@types";
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
 
-export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
+export default function HomeGreeting({ heroImage, currentLocale }: { heroImage: ImageType, currentLocale: string }) {
   const t = useTranslations("pages.home");
 
   return (
@@ -12,7 +12,7 @@ export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
         <Image src={heroImage.url} alt={heroImage.alt} fill priority style={{ objectFit: "cover" }} />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
-        <HeaderHome />
+        <HeaderHome currentLocale={currentLocale} />
         <div className="flex flex-col gap-8">
           <div className="m-8 max-h-[75px] max-w-[353px]">
             <SimonyiDarkIcon width="100%" height="100%" filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))" />

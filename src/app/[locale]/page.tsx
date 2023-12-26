@@ -21,7 +21,7 @@ export default async function Page(props: PageProps) {
 
   return (
     <>
-      <HomeGreeting heroImage={hero} />
+      <HomeGreeting heroImage={hero} currentLocale={props.params.locale} />
       <div className="mx-auto flex max-w-home flex-col gap-[calc(80px+2rem)] p-8 pb-[calc(80px+2rem)]">
         <div />
         <HomeSubpages />
