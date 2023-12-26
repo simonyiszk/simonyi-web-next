@@ -4,7 +4,7 @@ import { ImageType } from "~/@types";
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
 
 export default function HomeGreeting({ heroImage }: { heroImage: ImageType }) {
-  const t = useTranslations("home");
+  const t = useTranslations("pages.home");
 
   return (
     <div className="min-h-screen">

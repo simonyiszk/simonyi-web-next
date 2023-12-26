@@ -2,44 +2,56 @@ import { Metadata } from "next";
 import "../globals.css";
 import { notFound } from "next/navigation";
 import localFont from "next/font/local";
+import { getTranslations } from "next-intl/server";
 import { locales } from "~/utils";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://simonyi.bme.hu"),
-  title: {
-    default: "Simonyi Károly Szakkollégium",
-    template: "%s - Simonyi Károly Szakkollégium",
-    absolute: "Főoldal - Simonyi Károly Szakkollégium",
+export async function generateMetadata({
+  params: {
+    locale,
   },
-  description:
-    "A Simonyi Károly Szakkollégium egy hallgatói szakmai szervezet, amely a BME Villamosmérnöki és Informatikai Karán működik. Tagjai a villamosmérnöki és informatikai szakma közel teljes palettáját művelik stúdiótechnikától kezdve a webdesign és -fejlesztésen át az elektronikáig, sőt robotikáig.",
-  openGraph: {
-    type: "website",
-    images: [
-      {
-        url: "/images/defaults/cover.png",
-        width: 960,
-        height: 540,
-        alt: "Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies",
-      },
-    ],
-    locale: "hu",
-    alternateLocale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: "/images/defaults/cover.png",
-        width: 960,
-        height: 540,
-        alt: "Simonyi Károly Szakkollégium - Simonyi Károly College for Advanced Studies",
-      },
-    ],
-    site: "simonyiszakkoli",
-    creator: "simonyiszakkoli",
-  },
-};
+}: {
+  params: {
+    locale: string
+  }
+}) {
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    metadataBase: new URL("https://simonyi.bme.hu"),
+    title: {
+      default: t("title.default"),
+      template: t("title.template"),
+      absolute: t("title.absolute"),
+    },
+    description: t("description"),
+    openGraph: {
+      type: "website",
+      locale: "hu",
+      alternateLocale: "en",
+      images: [
+        {
+          url: "/images/defaults/cover.png",
+          width: 960,
+          height: 540,
+          alt: t("title.default"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "simonyiszakkoli",
+      creator: "simonyiszakkoli",
+      images: [
+        {
+          url: "/images/defaults/cover.png",
+          width: 960,
+          height: 540,
+          alt: t("title.default"),
+        },
+      ],
+    },
+  } satisfies Metadata;
+}
 
 const spaceGrotesk = localFont({
   src: "../../fonts/space_grotesk-vf.ttf",

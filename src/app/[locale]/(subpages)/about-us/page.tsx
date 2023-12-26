@@ -1,13 +1,26 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { PageProps } from "~/@types";
 import { AboutTimeline } from "~/components/app/about";
 import { Typography } from "~/components";
 import { contentfulDocumentToReactComponents, query } from "~/utils";
 
-export const metadata: Metadata = {
-  title: "Rólunk",
-};
+export async function generateMetadata({
+  params: {
+    locale,
+  },
+}: {
+  params: {
+    locale: string
+  }
+}) {
+  const t = await getTranslations({ locale, namespace: "pages.subpages.aboutUs" });
+
+  return {
+    title: t("title"),
+  } satisfies Metadata;
+}
 
 async function getData({ params: { locale } }: PageProps) {
   const aboutEntries = await query.about(locale);

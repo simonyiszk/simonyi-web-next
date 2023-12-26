@@ -18,19 +18,30 @@
       }
     }
   },
-  "home": {
-    "course": "Courses",
-    "rent": "Renting",
-    "aboutUs": "About us",
-    "blog": "Blog",
-    "studentGroups": "Student Groups",
-    "presidency": "Presidency",
-    "bmeAlt": "Budapest University of Technology and Economics (BME)",
-    "vikAlt": "Faculty of Electrical Engineering and Informatics (VIK)",
-    "schonherzAlt": "Schönherz"
-  },
-  "blog": {
-    "homepage": "Homepage",
-    "blog": "Blog"
+  "pages": {
+    "home": {
+      "course": "Courses",
+      "rent": "Renting",
+      "aboutUs": "About us",
+      "blog": "Blog",
+      "studentGroups": "Student Groups",
+      "presidency": "Presidency",
+      "bmeAlt": "Budapest University of Technology and Economics (BME)",
+      "vikAlt": "Faculty of Electrical Engineering and Informatics (VIK)",
+      "schonherzAlt": "Schönherz"
+    },
+    "subpages": {
+      "header": {
+        "homepage": "Homepage",
+        "aboutUs": "About Us",
+        "blog": "Blog"
+      },
+      "aboutUs": {
+        "title": "About Us"
+      },
+      "blog": {
+        "title": "Blog"
+      }
+    }
   }
 }

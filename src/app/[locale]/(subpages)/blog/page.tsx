@@ -1,12 +1,24 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { PageProps } from "~/@types";
 import { BlogPaginator, BlogPostPreview } from "~/components";
 import { query } from "~/utils";
 
-export const metadata: Metadata = {
-  title: "Blog",
-};
+export async function generateMetadata({
+  params: {
+    locale,
+  },
+}: {
+  params: {
+    locale: string
+  }
+}) {
+  const t = await getTranslations({ locale, namespace: "pages.subpages.blog" });
+  return {
+    title: t("title"),
+  } satisfies Metadata;
+}
 
 async function getData({ params: { locale }, searchParams: { page, size } }: PageProps) {
   const { items, currentPage, pageSize, totalItems, totalPages } = await query.paginatedPosts(locale, page, size);

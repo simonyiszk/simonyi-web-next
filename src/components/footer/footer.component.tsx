@@ -7,7 +7,7 @@ import { Typography } from "../typography";
 import { FooterSection } from ".";
 
 function Footer({ data }: { data: FooterType }) {
-  const t = useTranslations("home");
+  const t = useTranslations("pages.home");
 
   return (
     <div className="flex flex-col items-center gap-8 bg-darkmode_regular p-8">

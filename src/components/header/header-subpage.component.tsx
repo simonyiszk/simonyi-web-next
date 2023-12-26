@@ -4,7 +4,15 @@ import { useState } from "react";
 import { default as NextLink } from "next/link";
 import { SimonyiLogoIcon, HamburgerIcon } from "../icons";
 
-function HeaderSubpage() {
+export function HeaderSubpage({
+  homepage,
+  aboutUs,
+  blog,
+}: {
+  homepage: string;
+  aboutUs: string;
+  blog: string;
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -15,13 +23,13 @@ function HeaderSubpage() {
             <SimonyiLogoIcon />
           </div>
           <NextLink href="/" className="hover:underline">
-            Főoldal
+            {homepage}
           </NextLink>
-          <NextLink href="/about" className="hover:underline">
-            Rólunk
+          <NextLink href="/about-us" className="hover:underline">
+            {aboutUs}
           </NextLink>
           <NextLink href="/blog" className="hover:underline">
-            Blog
+            {blog}
           </NextLink>
         </div>
       </header>
@@ -42,21 +50,21 @@ function HeaderSubpage() {
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Főoldal
+                {homepage}
               </NextLink>
               <NextLink
-                href="/about"
+                href="/about-us"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Rólunk
+                {aboutUs}
               </NextLink>
               <NextLink
                 href="/blog"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Blog
+                {blog}
               </NextLink>
             </div>
           </div>
@@ -65,5 +73,3 @@ function HeaderSubpage() {
     </>
   );
 }
-
-export { HeaderSubpage };

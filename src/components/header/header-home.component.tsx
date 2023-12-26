@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 function HeaderHome() {
-  const t = useTranslations("home");
+  const t = useTranslations("pages.home");
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 p-8">

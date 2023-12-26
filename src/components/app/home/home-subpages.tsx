@@ -3,12 +3,12 @@ import Link from "next/link";
 import { Button } from "~/components/button";
 
 export default function HomeSubPages() {
-  const t = useTranslations("home");
+  const t = useTranslations("pages.home");
 
   return (
     <div className="flex flex-col">
       <div className="flex flex-row flex-wrap justify-evenly gap-4">
-        <Link href="/about">
+        <Link href="/about-us">
           <Button>{t("aboutUs")}</Button>
         </Link>
         <Link href="/blog">
