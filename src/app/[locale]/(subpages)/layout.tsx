@@ -1,10 +1,10 @@
 import { PageProps } from "~/@types";
 import { HeaderSubpage, Footer } from "~/components";
-import { getFooterFromCache } from "~/utils";
+import { query } from "~/utils";
 
 async function getData({ params: { locale } }: PageProps) {
 
-  const footer = await getFooterFromCache(locale);
+  const footer = await query.footer(locale);
 
   return { footer };
 }

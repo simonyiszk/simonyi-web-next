@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPostBySlugFromCache } from "~/utils";
+import { query } from "~/utils";
 import { BlogPost } from "~/components";
 import { PageProps } from "~/@types";
 
 export async function generateMetadata({ params: { locale, slug } }: { params: PageProps["params"] }): Promise<Metadata> {
 
-  const post = await getPostBySlugFromCache(slug, locale);
+  const post = await query.postBySlug(slug, locale);
 
   const title = post?.title;
   const description = post?.description;
@@ -46,7 +46,7 @@ export async function generateMetadata({ params: { locale, slug } }: { params: P
 }
 
 async function getData({ params: { slug, locale } }: PageProps) {
-  const post = await getPostBySlugFromCache(slug, locale);
+  const post = await query.postBySlug(slug, locale);
   return { post };
 }
 

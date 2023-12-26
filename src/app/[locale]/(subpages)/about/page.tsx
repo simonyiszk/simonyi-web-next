@@ -3,15 +3,15 @@ import { notFound } from "next/navigation";
 import { PageProps } from "~/@types";
 import { AboutTimeline } from "~/components/app/about";
 import { Typography } from "~/components";
-import { contentfulDocumentToReactComponents, getAboutEntriesFromCache, getTimelineEntriesFromCache } from "~/utils";
+import { contentfulDocumentToReactComponents, query } from "~/utils";
 
 export const metadata: Metadata = {
   title: "Rólunk",
 };
 
 async function getData({ params: { locale } }: PageProps) {
-  const aboutEntries = await getAboutEntriesFromCache(locale);
-  const timelineEntries = await getTimelineEntriesFromCache(locale);
+  const aboutEntries = await query.about(locale);
+  const timelineEntries = await query.timeline(locale);
 
   if (!aboutEntries) {
     throw notFound();

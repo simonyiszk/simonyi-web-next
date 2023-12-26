@@ -1,22 +1,17 @@
 import { PageProps } from "~/@types";
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from "~/components";
 import {
-  getHomeAboutEntryFromCache,
-  getFooterFromCache,
-  getHeroFromCache,
-  getLightboxFromCache,
-  getPresidencyFromCache,
-  getCurrentStudentGroupsFromCache,
+  query,
 } from "~/utils";
 
 async function getData({ params: { locale } }: PageProps) {
 
-  const hero = await getHeroFromCache(locale);
-  const about = await getHomeAboutEntryFromCache(locale);
-  const lightbox = await getLightboxFromCache(locale);
-  const currentStudentGroups = await getCurrentStudentGroupsFromCache(locale);
-  const presidency = await getPresidencyFromCache(locale);
-  const footer = await getFooterFromCache(locale);
+  const hero = await query.homeHero(locale);
+  const about = await query.homeAbout(locale);
+  const lightbox = await query.lightbox(locale);
+  const currentStudentGroups = await query.currentClubs(locale);
+  const presidency = await query.presidency(locale);
+  const footer = await query.footer(locale);
 
   return { hero, about, lightbox, currentStudentGroups, presidency, footer };
 }
