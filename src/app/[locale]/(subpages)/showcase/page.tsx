@@ -14,7 +14,7 @@ export default function Page() {
       <Typography variant="h4" as="h4">h4</Typography>
       <Typography variant="h5" as="h5">h5</Typography>
       <Typography variant="h6" as="h6">h6</Typography>
-      <Typography variant="a" as="a" props={{ href: "https://google.com" }}>a</Typography>
+      <Typography variant="link" as="a" props={{ href: "https://google.com" }}>a</Typography>
     </div>
   );
 }

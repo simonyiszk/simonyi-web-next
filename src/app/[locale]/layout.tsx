@@ -60,7 +60,6 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
 
   return (
     <html
-      data-theme="dark"
       lang={locale}
       className={`${spaceGrotesk.variable} ${archivo.variable}`}
     >

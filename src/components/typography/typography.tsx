@@ -51,13 +51,13 @@ type ATypographyProps = {
 };
 
 export function Typography({
-  as: Element = "div",
+  as: Element = "span",
   variant = "body",
   className,
   children,
   props,
 }: {
-  variant?: "body" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "a";
+  variant?: "body" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "link";
   className?: string;
   children?: ReactNode;
 } & (DivTypographyProps | PTypographyProps | SpanTypographyProps | H1TypographyProps | H2TypographyProps | H3TypographyProps | H4TypographyProps | H5TypographyProps | H6TypographyProps | ATypographyProps)) {
@@ -80,8 +80,8 @@ export function Typography({
       return "font-heading text-h4";
     case "h6":
       return "font-heading text-h4";
-    case "a":
-      return "font-body text-body hover:underline text-simonyi_zold";
+    case "link":
+      return "font-body text-body hover:underline cursor-pointer text-simonyi_zold";
     default:
       return "font-body text-body";
     }

@@ -130,7 +130,6 @@ const config = {
         "timeline-mobile": "100px calc(100% - 100px)",
       },
     },
-    darkMode: ["class", '[data-theme="dark"]'],
   },
   plugins: [],
 } satisfies Config;
