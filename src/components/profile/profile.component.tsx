@@ -16,7 +16,7 @@ function Profile({ name, title, profilePicture, socials }: ProfileType) {
         />
       </div>
       <Typography as="h2" variant="h2" className="text-center">{name}</Typography>
-      <Typography className="text-center leading-[30px]">{title}</Typography>
+      <p className="text-center font-body text-body_large leading-[30px]">{title}</p>
       <div className="mt-7 flex flex-wrap justify-center gap-7">
         {socials.map((social, index) => (
           <a href={social.link.url} title={social.link.title} target="_blank" key={index} rel="noreferrer" className="hover:opacity-75">

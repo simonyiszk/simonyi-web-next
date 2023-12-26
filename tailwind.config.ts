@@ -76,6 +76,13 @@ const config = {
             lineHeight: "17px",
           },
         ],
+        body_large: [
+          "20px",
+          {
+            fontWeight: "400",
+            lineHeight: "26px",
+          },
+        ],
         body: [
           "16px",
           {

@@ -31,11 +31,11 @@ export function contentfulDocumentToReactComponents(document: Document) {
   return documentToReactComponents(document, {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => <Typography as="h1" variant="h1" className="mb-4">{children}</Typography>,
-      [BLOCKS.HEADING_2]: (node, children) => <Typography as="h1" variant="h1" className="mb-3">{children}</Typography>,
-      [BLOCKS.HEADING_3]: (node, children) => <Typography as="h1" variant="h1" className="mb-2">{children}</Typography>,
-      [BLOCKS.HEADING_4]: (node, children) => <Typography as="h1" variant="h1" className="mb-1">{children}</Typography>,
-      [BLOCKS.HEADING_5]: (node, children) => <Typography as="h1" variant="h1" className="mb-1">{children}</Typography>,
-      [BLOCKS.HEADING_6]: (node, children) => <Typography as="h1" variant="h1" className="mb-1">{children}</Typography>,
+      [BLOCKS.HEADING_2]: (node, children) => <Typography as="h2" variant="h2" className="mb-3">{children}</Typography>,
+      [BLOCKS.HEADING_3]: (node, children) => <Typography as="h3" variant="h3" className="mb-2">{children}</Typography>,
+      [BLOCKS.HEADING_4]: (node, children) => <Typography as="h4" variant="h4" className="mb-1">{children}</Typography>,
+      [BLOCKS.HEADING_5]: (node, children) => <Typography as="h5" variant="h5" className="mb-1">{children}</Typography>,
+      [BLOCKS.HEADING_6]: (node, children) => <Typography as="h6" variant="h6" className="mb-1">{children}</Typography>,
       [BLOCKS.PARAGRAPH]: (node, children) => <Typography as="p" variant="body" className="mb-4 last:mb-0">{children}</Typography>,
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className="mb-4 ml-4 list-decimal font-body">
