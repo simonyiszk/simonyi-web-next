@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { default as NextLink } from "next/link";
+import { Link } from "../../navigation";
 import { SimonyiLogoIcon, HamburgerIcon } from "../icons";
 
 export function HeaderSubpage({
@@ -22,15 +22,15 @@ export function HeaderSubpage({
           <div className="h-8 w-8">
             <SimonyiLogoIcon />
           </div>
-          <NextLink href="/" className="hover:underline">
+          <Link href="/" className="hover:underline">
             {homepage}
-          </NextLink>
-          <NextLink href="/about-us" className="hover:underline">
+          </Link>
+          <Link href="/about-us" className="hover:underline">
             {aboutUs}
-          </NextLink>
-          <NextLink href="/blog" className="hover:underline">
+          </Link>
+          <Link href="/blog" className="hover:underline">
             {blog}
-          </NextLink>
+          </Link>
         </div>
       </header>
       <header className="w-full bg-darkmode_regular md:hidden">
@@ -45,27 +45,27 @@ export function HeaderSubpage({
         {isMenuOpen && (
           <div className="flex flex-col gap-x-8 gap-y-4 p-4 ">
             <div className="m-auto flex w-full max-w-home flex-col items-center justify-start gap-x-8 gap-y-4 align-middle md:flex-row">
-              <NextLink
+              <Link
                 href="/"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {homepage}
-              </NextLink>
-              <NextLink
+              </Link>
+              <Link
                 href="/about-us"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {aboutUs}
-              </NextLink>
-              <NextLink
+              </Link>
+              <Link
                 href="/blog"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {blog}
-              </NextLink>
+              </Link>
             </div>
           </div>
         )}
