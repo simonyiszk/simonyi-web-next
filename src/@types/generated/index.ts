@@ -8,6 +8,5 @@ export type { TypeLink, TypeLinkFields, TypeLinkSkeleton } from "./TypeLink";
 export type { TypePost, TypePostFields, TypePostSkeleton } from "./TypePost";
 export type { TypePresidency, TypePresidencyFields, TypePresidencySkeleton } from "./TypePresidency";
 export type { TypeProfile, TypeProfileFields, TypeProfileSkeleton } from "./TypeProfile";
-export type { TypeSocial, TypeSocialFields, TypeSocialSkeleton } from "./TypeSocial";
 export type { TypeStudentGroup, TypeStudentGroupFields, TypeStudentGroupSkeleton } from "./TypeStudentGroup";
 export type { TypeTimeline, TypeTimelineFields, TypeTimelineSkeleton } from "./TypeTimeline";
