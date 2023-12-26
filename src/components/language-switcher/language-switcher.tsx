@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "../../navigation";
 import { Typography } from "../typography";
 
 export function LanguageSwitcher({
@@ -11,7 +11,7 @@ export function LanguageSwitcher({
     <div
       className="m-2 flex flex-col gap-2"
     >
-      <Link locale="hu" href="/hu">
+      <Link locale="hu" href="/">
         <div
           className={`flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 bg-opacity-button p-2 transition duration-200 ease-in-out hover:bg-simonyi_zold ${currentLocale === "hu" ? "border-simonyi_zold bg-simonyi_zold" : "border-simonyi_zold-900 bg-white hover:border-simonyi_zold"}`}
         >
@@ -19,7 +19,7 @@ export function LanguageSwitcher({
           <Typography variant="body">Magyar</Typography>
         </div>
       </Link>
-      <Link locale="en" href="/en">
+      <Link locale="en" href="/">
         <div
           className={`flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 bg-opacity-button p-2 transition duration-200 ease-in-out hover:bg-simonyi_zold ${currentLocale === "en" ? "border-simonyi_zold bg-simonyi_zold" : "border-simonyi_zold-900 bg-white hover:border-simonyi_zold"}`}
         >

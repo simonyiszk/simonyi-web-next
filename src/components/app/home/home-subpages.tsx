@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { Button } from "~/components/button";
+import { Link } from "../../../navigation";
 
 export default function HomeSubPages() {
   const t = useTranslations("pages.home");

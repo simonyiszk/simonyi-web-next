@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "../../../navigation";
 
 function PaginatorEntry({ page, isCurrentPage }: { page: number; isCurrentPage: boolean }) {
   return (
