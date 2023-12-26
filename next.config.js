@@ -7,7 +7,24 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["warp.sch.bme.hu", "images.ctfassets.net", "cdn.contentful.com", "preview.contentful.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "warp.sch.bme.hu",
+      },
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.contentful.com",
+      },
+      {
+        protocol: "https",
+        hostname: "preview.contentful.com",
+      },
+    ],
   },
 };
 
