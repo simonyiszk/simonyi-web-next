@@ -1,7 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document, BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import { cloneElement, Children, ReactNode, ReactElement } from "react";
-import { Link } from "~/components";
+import { Link, Typography } from "~/components";
 
 function RemoveParagraph({ children }: { children: ReactNode }) {
   const processChild = (child: ReactNode): ReactNode => {
@@ -30,13 +30,13 @@ function RemoveParagraph({ children }: { children: ReactNode }) {
 export function contentfulDocumentToReactComponents(document: Document) {
   return documentToReactComponents(document, {
     renderNode: {
-      [BLOCKS.HEADING_1]: (node, children) => <h1 className="mb-4 font-heading text-h1">{children}</h1>,
-      [BLOCKS.HEADING_2]: (node, children) => <h2 className="mb-3 font-heading text-h2">{children}</h2>,
-      [BLOCKS.HEADING_3]: (node, children) => <h3 className="mb-2 font-heading text-h3">{children}</h3>,
-      [BLOCKS.HEADING_4]: (node, children) => <h4 className="mb-1 font-heading text-h4">{children}</h4>,
-      [BLOCKS.HEADING_5]: (node, children) => <h5 className="mb-1 font-heading">{children}</h5>,
-      [BLOCKS.HEADING_6]: (node, children) => <h6 className="mb-1 font-heading">{children}</h6>,
-      [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4 font-body last:mb-0">{children}</p>,
+      [BLOCKS.HEADING_1]: (node, children) => <Typography as="h1" variant="h1" className="mb-4">{children}</Typography>,
+      [BLOCKS.HEADING_2]: (node, children) => <Typography as="h2" variant="h2" className="mb-3">{children}</Typography>,
+      [BLOCKS.HEADING_3]: (node, children) => <Typography as="h3" variant="h3" className="mb-2">{children}</Typography>,
+      [BLOCKS.HEADING_4]: (node, children) => <Typography as="h4" variant="h4" className="mb-1">{children}</Typography>,
+      [BLOCKS.HEADING_5]: (node, children) => <Typography as="h5" variant="h5" className="mb-1">{children}</Typography>,
+      [BLOCKS.HEADING_6]: (node, children) => <Typography as="h6" variant="h6" className="mb-1">{children}</Typography>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <Typography as="p" variant="body" className="mb-4 last:mb-0">{children}</Typography>,
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className="mb-4 ml-4 list-decimal font-body">
           <RemoveParagraph>{children}</RemoveParagraph>

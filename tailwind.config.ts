@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss";
+
+const config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -12,13 +14,38 @@ module.exports = {
     extend: {
       colors: {
         // https://www.figma.com/file/JOHGaqs67K52ZSj32xF8Bd/Weboldal?node-id=12%3A1075
-        simonyi_zold: "#63BC47",
         dark: "#231F20",
         darkmode_regular: "#333333",
         light: "#F8F8F8",
         white: "#FFFFFF",
-        simonyi_zold_halvany: "#63BC47",
-        simonyi_sarga: "#FFFF3C",
+        simonyi_zold: {
+          DEFAULT: "#63BC47",
+          50: "#f4fbf2",
+          100: "#e6f7e1",
+          200: "#cfedc5",
+          300: "#a9dd98",
+          400: "#7bc563",
+          500: "#63bc47",
+          600: "#448b2e",
+          700: "#376e27",
+          800: "#2f5823",
+          900: "#28481f",
+          950: "#11270c",
+        },
+        simonyi_sarga: {
+          DEFAULT: "#FFFF3C",
+          50: "#fcfee8",
+          100: "#faffc2",
+          200: "#faff89",
+          300: "#ffff3c",
+          400: "#fdf312",
+          500: "#ecd906",
+          600: "#ccab02",
+          700: "#a37b05",
+          800: "#86600d",
+          900: "#724e11",
+          950: "#432a05",
+        },
       },
       fontSize: {
         h1: [
@@ -49,15 +76,22 @@ module.exports = {
             lineHeight: "17px",
           },
         ],
-        text: [
+        body_large: [
           "20px",
           {
             fontWeight: "400",
             lineHeight: "26px",
           },
         ],
-        link: [
+        body: [
           "16px",
+          {
+            fontWeight: "400",
+            lineHeight: "24px",
+          },
+        ],
+        label: [
+          "14px",
           {
             fontWeight: "400",
             lineHeight: "20px",
@@ -66,9 +100,9 @@ module.exports = {
       },
       fontFamily: {
         // https://www.figma.com/file/JOHGaqs67K52ZSj32xF8Bd/Weboldal?node-id=12%3A1076
-        heading: "Archivo, sans-serif",
-        body: "Space Grotesk, sans-serif",
-        mono: "Menlo, monospace",
+        heading: ["var(--font-archivo)", ...fontFamily.sans],
+        body: ["var(--font-space_grotesk)", ...fontFamily.sans],
+        label: ["var(--font-space_grotesk)", ...fontFamily.sans],
       },
       screens: {
         sm: "30em",
@@ -96,7 +130,8 @@ module.exports = {
         "timeline-mobile": "100px calc(100% - 100px)",
       },
     },
-    darkMode: ["class", '[data-theme="dark"]'],
   },
   plugins: [],
-};
+} satisfies Config;
+
+export default config;

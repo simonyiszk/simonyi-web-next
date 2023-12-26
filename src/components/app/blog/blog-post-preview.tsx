@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PostType } from "~/@types";
+import { Typography } from "~/components";
 
 function BlogPostPreview({ data }: { data: PostType }) {
   return (
@@ -13,8 +14,8 @@ function BlogPostPreview({ data }: { data: PostType }) {
             <div className="h-full w-full rounded-l-md bg-darkmode_regular" />
           )}
         </div>
-        <p className={`${data.date ? "pt-4" : "row-span-2 py-4"} font-heading text-3xl`}>{data.title || data.slug}</p>
-        {data.date && <p className="font-body">{data.date.toLocaleDateString("hu")}</p>}
+        <Typography as="p" variant="h3" className={`${data.date ? "pt-4" : "row-span-2 py-4"}`}>{data.title || data.slug}</Typography>
+        {data.date && <Typography>{data.date.toLocaleDateString("hu")}</Typography>}
       </div>
     </Link>
   );

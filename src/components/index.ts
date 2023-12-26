@@ -10,3 +10,4 @@ export * from "./lightbox";
 export * from "./spinner";
 export * from "./app";
 export * from "./not-found";
+export * from "./typography";

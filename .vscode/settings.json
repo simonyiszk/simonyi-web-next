@@ -6,12 +6,11 @@
     "**/.pnp.*": true
   },
   "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "eslint.format.enable": true,
   "eslint.trace.server": "messages"

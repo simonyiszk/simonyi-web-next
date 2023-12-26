@@ -18,19 +18,30 @@
       }
     }
   },
-  "home": {
-    "course": "Tanfolyam",
-    "rent": "Bérlés",
-    "aboutUs": "Rólunk",
-    "blog": "Blog",
-    "studentGroups": "Köreink",
-    "presidency": "Elnökség",
-    "bmeAlt": "Budapesti Műszaki és Gazdaságtudományi Egyetem (BME)",
-    "vikAlt": "Villamosmérnöki és Informatikai Kar (VIK)",
-    "schonherzAlt": "Schönherz"
-  },
-  "blog": {
-    "homepage": "Főoldal",
-    "blog": "Blog"
+  "pages": {
+    "home": {
+      "course": "Tanfolyam",
+      "rent": "Bérlés",
+      "aboutUs": "Rólunk",
+      "blog": "Blog",
+      "studentGroups": "Köreink",
+      "presidency": "Elnökség",
+      "bmeAlt": "Budapesti Műszaki és Gazdaságtudományi Egyetem (BME)",
+      "vikAlt": "Villamosmérnöki és Informatikai Kar (VIK)",
+      "schonherzAlt": "Schönherz"
+    },
+    "subpages": {
+      "header": {
+        "homepage": "Főoldal",
+        "aboutUs": "Rólunk",
+        "blog": "Blog"
+      },
+      "aboutUs": {
+        "title": "Rólunk"
+      },
+      "blog": {
+        "title": "Blog"
+      }
+    }
   }
 }

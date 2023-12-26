@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import type { StudentGroupType } from "~/@types";
 import { ChevronIcon, SocialIcon } from "..";
+import { Typography } from "../typography";
 
 function StudentGroup({ name, logo, description, socials = [], isDense = false }: StudentGroupType & { isDense?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
           className="flex w-full flex-row items-center justify-between gap-8 hover:cursor-pointer md:hover:cursor-auto"
           onClick={(e) => handleToggle(e)}
         >
-          <h3 className="w-full text-left font-heading text-h3 md:text-center">{name}</h3>
+          <Typography as="h3" variant="h3" className="w-full text-left md:text-center">{name}</Typography>
           <div className={`block p-2 md:hidden ${isOpen ? "-scale-y-100" : "scale-y-100"}`}>
             <ChevronIcon
               className={`inline-block w-4 fill-light align-middle leading-6 ${isOpen ? "fill-simonyi_sarga" : "fill-simonyi_zold"}`}
@@ -33,7 +34,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
             <Image src={logo.url} alt={logo.alt} fill />
           </div>
           <div className={`${isOpen ? "block" : "hidden md:block"}`}>
-            <p className="font-body">{description}</p>
+            <Typography>{description}</Typography>
           </div>
         </>
       </div>
