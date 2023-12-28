@@ -1,6 +1,10 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+import { PageProps } from "~/@types";
 import { Typography } from "~/components";
 
-export default function Page() {
+export default function Page(props: PageProps) {
+  unstable_setRequestLocale(props.params.locale);
+
   return (
     <div
       className="flex flex-col gap-4 self-center p-8"
