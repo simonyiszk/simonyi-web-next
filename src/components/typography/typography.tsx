@@ -81,7 +81,7 @@ export function Typography({
     case "h6":
       return "font-heading text-h4";
     case "link":
-      return "font-body text-body hover:underline cursor-pointer text-simonyi_zold";
+      return "font-body text-body hover:underline cursor-pointer text-primary";
     default:
       return "font-body text-body";
     }

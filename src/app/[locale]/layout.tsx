@@ -1,9 +1,13 @@
 import { Metadata } from "next";
 import "../globals.css";
-import { notFound } from "next/navigation";
 import localFont from "next/font/local";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import { locales } from "~/utils";
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params: {
@@ -65,18 +69,21 @@ const archivo = localFont({
   variable: "--font-archivo",
 });
 
-export default async function LocaleLayout({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) {
-  // Validate that the incoming `locale` parameter is valid
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if (!locales.includes(locale as any)) notFound();
+export default function LocaleLayout({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) {
+  unstable_setRequestLocale(locale);
+  const messages = useMessages();
 
   return (
     <html
       lang={locale}
       className={`${spaceGrotesk.variable} ${archivo.variable}`}
     >
-      <body className="bg-dark text-white text-opacity-text">
-        <div className="flex min-h-safe_screen flex-col justify-between">{children}</div>
+      <body className="bg-dark text-white text-opacity-text selection:bg-primary-200 selection:text-primary-950">
+        <div className="flex min-h-safe_screen flex-col justify-between">
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { PageProps } from "~/@types";
 import { AboutTimeline } from "~/components/app/about";
 import { Typography } from "~/components";
@@ -34,6 +34,7 @@ async function getData({ params: { locale } }: PageProps) {
 }
 
 export default async function AboutPage(props: PageProps) {
+  unstable_setRequestLocale(props.params.locale);
   const { before, after, timelineEntries } = await getData(props);
 
   return (

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { PageProps } from "~/@types";
 import { BlogPaginator, BlogPostPreview } from "~/components";
@@ -33,6 +33,7 @@ async function getData({ params: { locale }, searchParams: { page, size } }: Pag
 }
 
 export default async function Page(props: PageProps) {
+  unstable_setRequestLocale(props.params.locale);
   const { posts, currentPage, totalPages } = await getData(props);
 
   if (posts.length === 0) {

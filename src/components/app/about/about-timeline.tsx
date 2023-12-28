@@ -46,7 +46,7 @@ function TimelineYearCell({ year, isImportant, className }: React.ComponentProps
   return (
     <div
       className={`relative col-[1] row-[initial] box-border rounded-lg bg-darkmode_regular p-2 text-xl text-white ${
-        isImportant ? "bg-simonyi_zold" : ""
+        isImportant ? "bg-primary" : ""
       } sm:col-auto ${className}`}
     >
       <Typography>{year}</Typography>

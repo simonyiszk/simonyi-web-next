@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
 import { query } from "~/utils";
 import { BlogPost } from "~/components";
 import { PageProps } from "~/@types";
@@ -46,6 +47,7 @@ export async function generateMetadata({ params: { locale, slug } }: { params: P
 }
 
 async function getData({ params: { slug, locale } }: PageProps) {
+  unstable_setRequestLocale(locale);
   const post = await query.postBySlug(slug, locale);
   return { post };
 }

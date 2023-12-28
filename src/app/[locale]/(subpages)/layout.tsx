@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { PageProps } from "~/@types";
 import { HeaderSubpage, Footer } from "~/components";
 import { query } from "~/utils";
@@ -11,6 +11,7 @@ async function getData({ params: { locale } }: PageProps) {
 }
 
 export default async function SubpageLayout(props: PageProps) {
+  unstable_setRequestLocale(props.params.locale);
   const { footer } = await getData(props);
   const t = await getTranslations({ locale: props.params.locale, namespace: "pages.subpages.header" });
 

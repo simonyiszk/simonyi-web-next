@@ -25,7 +25,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
           <Typography as="h3" variant="h3" className="w-full text-left md:text-center">{name}</Typography>
           <div className={`block p-2 md:hidden ${isOpen ? "-scale-y-100" : "scale-y-100"}`}>
             <ChevronIcon
-              className={`inline-block w-4 fill-light align-middle leading-6 ${isOpen ? "fill-simonyi_sarga" : "fill-simonyi_zold"}`}
+              className={`inline-block w-4 fill-light align-middle leading-6 ${isOpen ? "fill-secondary" : "fill-primary"}`}
             />
           </div>
         </div>
@@ -49,7 +49,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
             title={social.link.title}
             target="_blank"
             key={index}
-            className="rounded-md bg-simonyi_zold px-[13px] py-[7px] hover:opacity-75"
+            className="rounded-md bg-primary px-[13px] py-[7px] hover:opacity-75"
             rel="noreferrer"
           >
             <SocialIcon iconName={social.icon} props={{ className: "w-4 h-4 my-[1px] fill-white" }} />

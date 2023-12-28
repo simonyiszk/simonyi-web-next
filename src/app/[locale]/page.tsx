@@ -1,3 +1,4 @@
+import { unstable_setRequestLocale } from "next-intl/server";
 import { PageProps } from "~/@types";
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from "~/components";
 import {
@@ -17,6 +18,7 @@ async function getData({ params: { locale } }: PageProps) {
 }
 
 export default async function Page(props: PageProps) {
+  unstable_setRequestLocale(props.params.locale);
   const { hero, about, lightbox, currentStudentGroups, presidency, footer } = await getData(props);
 
   return (
