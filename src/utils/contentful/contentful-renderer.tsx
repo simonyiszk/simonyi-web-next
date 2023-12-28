@@ -50,10 +50,10 @@ export function contentfulDocumentToReactComponents(document: Document) {
       [BLOCKS.LIST_ITEM]: (node, children) => <li className="ml-2 font-body">{children}</li>,
       [BLOCKS.QUOTE]: (node, children) => (
         <>
-          <blockquote className="mb-4 border-l-4 border-simonyi_zold pl-4 font-body italic">
+          <blockquote className="mb-4 border-l-4 border-primary pl-4 font-body italic">
             <svg
               aria-hidden="true"
-              className="h-10 w-10 text-simonyi_zold"
+              className="h-10 w-10 text-primary"
               viewBox="0 0 24 27"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export function contentfulDocumentToReactComponents(document: Document) {
       /* TABLE */
       [MARKS.CODE]: (node, children) => <code className="p-2">{children}</code>,
       [INLINES.HYPERLINK]: (node, children) => (
-        <Link className="font-body text-simonyi_zold" href={`${node.data.uri}`}>
+        <Link className="font-body text-primary" href={`${node.data.uri}`}>
           {children}
         </Link>
       ),

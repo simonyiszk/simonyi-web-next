@@ -8,7 +8,7 @@ function FooterSection({ title, links, address }: { title: string; links: LinkTy
     <div className="flex flex-col gap-1">
       <Typography as="h2" variant="h2" className="mb-4">{title}</Typography>
       {links.map((link, index) => (
-        <Link key={index} className="font-body text-simonyi_zold" href={link.url} title={link.title} target="_blank" rel="noreferrer">
+        <Link key={index} className="font-body text-primary" href={link.url} title={link.title} target="_blank" rel="noreferrer">
           {link.title}
         </Link>
       ))}

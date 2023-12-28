@@ -18,7 +18,7 @@ const config = {
         darkmode_regular: "#333333",
         light: "#F8F8F8",
         white: "#FFFFFF",
-        simonyi_zold: {
+        primary: {
           DEFAULT: "#63BC47",
           50: "#f4fbf2",
           100: "#e6f7e1",
@@ -32,7 +32,7 @@ const config = {
           900: "#28481f",
           950: "#11270c",
         },
-        simonyi_sarga: {
+        secondary: {
           DEFAULT: "#FFFF3C",
           50: "#fcfee8",
           100: "#faffc2",

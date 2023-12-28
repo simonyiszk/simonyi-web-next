@@ -11,7 +11,7 @@ function Profile({ name, title, profilePicture, socials }: ProfileType) {
           src={profilePicture.url}
           alt={profilePicture.alt}
           fill
-          className="rounded-[50%] border-2 border-solid border-simonyi_zold object-cover text-center leading-[200px]"
+          className="rounded-[50%] border-2 border-solid border-primary object-cover text-center leading-[200px]"
           sizes="200px"
         />
       </div>
@@ -20,7 +20,7 @@ function Profile({ name, title, profilePicture, socials }: ProfileType) {
       <div className="mt-7 flex flex-wrap justify-center gap-7">
         {socials.map((social, index) => (
           <a href={social.link.url} title={social.link.title} target="_blank" key={index} rel="noreferrer" className="hover:opacity-75">
-            <SocialIcon iconName={social.icon} props={{ className: "w-6 h-6 leading-4 inline-block align-middle fill-simonyi_zold" }} />
+            <SocialIcon iconName={social.icon} props={{ className: "w-6 h-6 leading-4 inline-block align-middle fill-primary" }} />
           </a>
         ))}
       </div>
