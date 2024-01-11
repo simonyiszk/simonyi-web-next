@@ -11,7 +11,7 @@ export function HeaderHome({
 
   return (
     <div className="flex w-full flex-col flex-wrap items-stretch justify-between md:flex-row md:items-center">
-      <div className="invisible hidden md:block">
+      <div className="md:invisible md:block">
         <LanguageSwitcher currentLocale={currentLocale} />
       </div>
       <div className="flex flex-1 flex-wrap items-center justify-center gap-x-16 gap-y-8 p-8">
@@ -45,7 +45,9 @@ export function HeaderHome({
           </div>
         </a>
       </div>
-      <LanguageSwitcher currentLocale={currentLocale} />
+      <div className="hidden md:block">
+        <LanguageSwitcher currentLocale={currentLocale} />
+      </div>
     </div>
   );
 }
