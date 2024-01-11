@@ -22,7 +22,7 @@ export default function HomeGreeting({ heroImage, currentLocale }: { heroImage: 
             <a href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank" rel="noreferrer">
               <Button>{t("course")}</Button>
             </a>
-            <Link href="/termek">
+            <Link href="/berles">
               <Button>{t("rent")}</Button>
             </Link>
           </div>
