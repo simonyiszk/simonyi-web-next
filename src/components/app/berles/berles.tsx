@@ -55,7 +55,7 @@ function GoogleForm({
   switch(variant) {
   case "rooms":
     return (
-      <div className="relative overflow-hidden pb-[1400px]">
+      <div className="relative overflow-hidden pb-[700px]">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSdjHyZorWbo_x-LQNvTlioYZce7Tv_8Ijduv6hb41Ip6mEDsA/viewform?embedded=true"
           className="absolute inset-0 h-full w-full"
@@ -64,7 +64,7 @@ function GoogleForm({
     );
   case "equipment":
     return (
-      <div className="relative overflow-hidden pb-[1400px]">
+      <div className="relative overflow-hidden pb-[700px]">
         <iframe
           className="absolute inset-0 h-full w-full"
           src="https://docs.google.com/forms/d/e/1FAIpQLSe9dkm5Teizpyt50aCSZot0vU-z_sT3qlq8Zbb-DkYM_X5Jow/viewform?embedded=true"
