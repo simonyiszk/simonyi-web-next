@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ImageType } from "~/@types";
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
+import { Link } from "~/navigation";
 
 export default function HomeGreeting({ heroImage, currentLocale }: { heroImage: ImageType, currentLocale: string }) {
   const t = useTranslations("pages.home");
@@ -21,9 +22,9 @@ export default function HomeGreeting({ heroImage, currentLocale }: { heroImage: 
             <a href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank" rel="noreferrer">
               <Button>{t("course")}</Button>
             </a>
-            <a href="https://termek.sch.bme.hu/" title="termek.sch.bme.hu" target="_blank" rel="noreferrer">
+            <Link href="/berles">
               <Button>{t("rent")}</Button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="h-6">
