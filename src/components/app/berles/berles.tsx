@@ -6,7 +6,7 @@ import { Typography } from "~/components";
 function GoogleCalendar({
   variant,
 }: {
-  variant: "102" | "103" | "1319" | "eszkozok"
+  variant: "102" | "103" | "1319" | "equipment"
 }) {
   switch (variant) {
   case "102":
@@ -36,14 +36,15 @@ function GoogleCalendar({
         ></iframe>
       </div>
     );
-  case "eszkozok": (
-    <div className="relative overflow-hidden pb-[700px]">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_4c5sark3hfmim3udflvco0k550%40group.calendar.google.com&ctz=Europe%2FBudapest"
-        className="absolute inset-0 h-full w-full"
-      ></iframe>
-    </div>
-  );
+  case "equipment":
+    return (
+      <div className="relative overflow-hidden pb-[700px]">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_4c5sark3hfmim3udflvco0k550%40group.calendar.google.com&ctz=Europe%2FBudapest"
+          className="absolute inset-0 h-full w-full"
+        ></iframe>
+      </div>
+    );
   }
 }
 
@@ -95,10 +96,10 @@ function Button({
 
 export function Berles() {
   const [openCalendar, setOpenCalendar] = useState({
-    102: false,
-    103: false,
-    1319: false,
-    eszkozok: false,
+    "102": false,
+    "103": false,
+    "1319": false,
+    equipment: false,
   });
 
   const [openForm, setOpenForm] = useState({
@@ -106,7 +107,7 @@ export function Berles() {
     equipment: false,
   });
 
-  const switchCalendar = (variant: "102" | "103" | "1319" | "eszkozok") => {
+  const switchCalendar = (variant: keyof typeof openCalendar) => {
     const newOpenState = !openCalendar[variant];
     Object.keys(openCalendar).forEach((key) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -142,7 +143,7 @@ export function Berles() {
         <Button onClick={() => switchCalendar("102")} state={openCalendar["102"]}>102 naptár</Button>
         <Button onClick={() => switchCalendar("103")} state={openCalendar["103"]}>103 naptár</Button>
         <Button onClick={() => switchCalendar("1319")} state={openCalendar["1319"]}>1319 naptár</Button>
-        <Button onClick={() => switchCalendar("eszkozok")} state={openCalendar["eszkozok"]}>Eszközök naptár</Button>
+        <Button onClick={() => switchCalendar("equipment")} state={openCalendar["equipment"]}>Eszközök naptár</Button>
       </div>
       {
         openCalendar["102"] && (
@@ -156,7 +157,9 @@ export function Berles() {
       }
       {
         openCalendar["103"] && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">103 naptár</Typography>
             <GoogleCalendar variant="103" />
           </div>
@@ -164,17 +167,21 @@ export function Berles() {
       }
       {
         openCalendar["1319"] && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">1319 naptár</Typography>
             <GoogleCalendar variant="1319" />
           </div>
         )
       }
       {
-        openCalendar["eszkozok"] && (
-          <div>
+        openCalendar.equipment && (
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">Eszközök naptár</Typography>
-            <GoogleCalendar variant="eszkozok" />
+            <GoogleCalendar variant="equipment" />
           </div>
         )
       }
@@ -185,7 +192,9 @@ export function Berles() {
       </div>
       {
         openForm.rooms && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">Terembérlés form</Typography>
             <GoogleForm variant="rooms" />
           </div>
@@ -193,7 +202,9 @@ export function Berles() {
       }
       {
         openForm.equipment && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">Eszközbérlés form</Typography>
             <GoogleForm variant="equipment" />
           </div>
