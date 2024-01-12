@@ -157,7 +157,9 @@ export function Berles() {
       }
       {
         openCalendar["103"] && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">103 naptár</Typography>
             <GoogleCalendar variant="103" />
           </div>
@@ -165,7 +167,9 @@ export function Berles() {
       }
       {
         openCalendar["1319"] && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">1319 naptár</Typography>
             <GoogleCalendar variant="1319" />
           </div>
@@ -173,7 +177,9 @@ export function Berles() {
       }
       {
         openCalendar.equipment && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">Eszközök naptár</Typography>
             <GoogleCalendar variant="equipment" />
           </div>
@@ -186,7 +192,9 @@ export function Berles() {
       </div>
       {
         openForm.rooms && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">Terembérlés form</Typography>
             <GoogleForm variant="rooms" />
           </div>
@@ -194,7 +202,9 @@ export function Berles() {
       }
       {
         openForm.equipment && (
-          <div>
+          <div
+            className="flex flex-col gap-4"
+          >
             <Typography variant="h3">Eszközbérlés form</Typography>
             <GoogleForm variant="equipment" />
           </div>
