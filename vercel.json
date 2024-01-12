@@ -72,6 +72,10 @@
       "source": "/spot/:path*",
       "destination": "https://spot.sch.bme.hu/:path*",
       "permanent": true
+    },
+    {
+      "source": "/berles",
+      "destination": "https://simonyi.bme.hu/hu/berles"
     }
   ]
 }
