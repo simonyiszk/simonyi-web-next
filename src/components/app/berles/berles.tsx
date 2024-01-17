@@ -58,7 +58,7 @@ function GoogleForm({
     return (
       <div className="relative overflow-hidden pb-[700px]">
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdjHyZorWbo_x-LQNvTlioYZce7Tv_8Ijduv6hb41Ip6mEDsA/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfgGo-mqAbn1OK-N5BVdpZy7d_oKZ6dLsxfFWXyiBmtn0rOlQ/viewform?embedded=true"
           className="absolute inset-0 h-full w-full"
         ></iframe>
       </div>
@@ -68,7 +68,7 @@ function GoogleForm({
       <div className="relative overflow-hidden pb-[700px]">
         <iframe
           className="absolute inset-0 h-full w-full"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSe9dkm5Teizpyt50aCSZot0vU-z_sT3qlq8Zbb-DkYM_X5Jow/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfdZjTPlMgFtMxqV_Eg_kvdAsiROAS-II007DSu7lLbVU2m-A/viewform?embedded=true"
         ></iframe>
       </div>
     );
