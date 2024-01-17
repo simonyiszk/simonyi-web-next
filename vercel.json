@@ -76,6 +76,14 @@
     {
       "source": "/berles",
       "destination": "https://simonyi.bme.hu/hu/berles"
+    },
+    {
+      "source": "/termek",
+      "destination": "https://simonyi.bme.hu/hu/berles"
+    },
+    {
+      "source": "/eszkozok",
+      "destination": "https://simonyi.bme.hu/hu/berles"
     }
   ]
 }
