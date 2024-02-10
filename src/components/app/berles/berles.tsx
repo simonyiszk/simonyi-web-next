@@ -13,7 +13,7 @@ function GoogleCalendar({
     return (
       <div className="relative overflow-hidden pb-[700px]">
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_2d3437383937303138313835%40resource.calendar.google.com&ctz=Europe%2FBudapest"
+          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_2d3437383937303138313835%40resource.calendar.google.com&ctz=Europe%2FBudapest&wkst=2"
           className="absolute inset-0 h-full w-full"
         ></iframe>
       </div>
@@ -22,7 +22,7 @@ function GoogleCalendar({
     return (
       <div className="relative overflow-hidden pb-[700px]">
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_2d36373839343232382d313732%40resource.calendar.google.com&ctz=Europe%2FBudapest"
+          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_2d36373839343232382d313732%40resource.calendar.google.com&ctz=Europe%2FBudapest&wkst=2"
           className="absolute inset-0 h-full w-full"
         ></iframe>
       </div>
@@ -31,7 +31,7 @@ function GoogleCalendar({
     return (
       <div className="relative overflow-hidden pb-[700px]">
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_3237303234353631353230%40resource.calendar.google.com&ctz=Europe%2FBudapest"
+          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_3237303234353631353230%40resource.calendar.google.com&ctz=Europe%2FBudapest&wkst=2"
           className="absolute inset-0 h-full w-full"
         ></iframe>
       </div>
@@ -40,7 +40,7 @@ function GoogleCalendar({
     return (
       <div className="relative overflow-hidden pb-[700px]">
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_4c5sark3hfmim3udflvco0k550%40group.calendar.google.com&ctz=Europe%2FBudapest"
+          src="https://calendar.google.com/calendar/embed?src=simonyi.bme.hu_4c5sark3hfmim3udflvco0k550%40group.calendar.google.com&ctz=Europe%2FBudapest&wkst=2"
           className="absolute inset-0 h-full w-full"
         ></iframe>
       </div>
