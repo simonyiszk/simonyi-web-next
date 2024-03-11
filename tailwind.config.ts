@@ -123,7 +123,7 @@ const config = {
         button: "0.16",
       },
       blur: {
-        home: "10px",
+        home: "7px",
       },
       gridTemplateColumns: {
         "timeline-full": "calc(50% - 50px) 100px calc(50% - 50px)",

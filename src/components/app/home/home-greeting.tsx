@@ -4,22 +4,53 @@ import { ImageType } from "~/@types";
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
 import { Link } from "~/navigation";
 
-export default function HomeGreeting({ heroImage, currentLocale }: { heroImage: ImageType, currentLocale: string }) {
+export default function HomeGreeting({
+  heroImage,
+  currentLocale,
+}: {
+  heroImage: ImageType;
+  currentLocale: string;
+}) {
   const t = useTranslations("pages.home");
 
   return (
     <div className="min-h-screen">
       <div className="absolute left-0 top-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
-        <Image src={heroImage.url} alt={heroImage.alt} fill priority style={{ objectFit: "cover" }} />
+        <Image
+          src={heroImage.url}
+          alt={heroImage.alt}
+          fill
+          priority
+          style={{ objectFit: "cover" }}
+        />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
         <HeaderHome currentLocale={currentLocale} />
         <div className="flex flex-col gap-8">
-          <div className="m-8 max-h-[75px] max-w-[353px]">
-            <SimonyiDarkIcon width="100%" height="100%" filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))" />
+          <div className="m-4 max-h-[75px] max-w-[353px]">
+            <SimonyiDarkIcon
+              width="100%"
+              height="100%"
+              filter="drop-shadow(0 4px 8px rgb(0, 0, 0, 0.6))"
+            />
+          </div>
+          <div className="flex justify-center">
+            <a
+              href="https://konferencia.simonyi.bme.hu/"
+              title="konferencia.simonyi.bme.hu"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button className="w-full">{t("simonyikonf")}</Button>
+            </a>
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
-            <a href="https://tanfolyam.simonyi.bme.hu/" title="tanfolyam.simonyi.bme.hu" target="_blank" rel="noreferrer">
+            <a
+              href="https://tanfolyam.simonyi.bme.hu/"
+              title="tanfolyam.simonyi.bme.hu"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button>{t("course")}</Button>
             </a>
             <Link href="/berles">
