@@ -84,6 +84,10 @@
     {
       "source": "/eszkozok",
       "destination": "https://simonyi.bme.hu/hu/berles"
+    },
+    {
+      "source": "/interkoll",
+      "destination": "https://shorz.kir-dev.hu/"
     }
   ]
 }
