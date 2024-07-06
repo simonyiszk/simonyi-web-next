@@ -3,6 +3,21 @@ const withNextIntl = require("next-intl/plugin")();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "termek.sch.bme.hu",
+          },
+        ],
+        destination: "/berles",
+        permanent: true,
+      },
+    ];
+  },
   pageExtensions: ["ts", "tsx", "md"],
   reactStrictMode: true,
   swcMinify: true,
@@ -27,6 +42,5 @@ const nextConfig = {
     ],
   },
 };
-
 
 module.exports = withNextIntl(nextConfig);
