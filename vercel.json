@@ -88,6 +88,10 @@
     {
       "source": "/interkoll",
       "destination": "https://shorz.kir-dev.hu/"
+    },
+    {
+      "source": "/konf",
+      "destination": "https://simonyi.bme.hu/ly/nqejO"
     }
   ]
 }
