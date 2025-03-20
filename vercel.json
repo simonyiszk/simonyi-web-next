@@ -92,6 +92,14 @@
     {
       "source": "/konf",
       "destination": "https://simonyi.bme.hu/ly/nqejO"
+    },
+    {
+      "source": "/skktv",
+      "destination": "https://skktv.simonyi.bme.hu"
+    },
+    {
+      "source": "/verseny",
+      "destination": "https://skktv.simonyi.bme.hu"
     }
   ]
 }
