@@ -36,17 +36,17 @@ export default function HomeGreeting({
           </div>
           <div className="flex justify-center">
             <a
-              href="https://konferencia.simonyi.bme.hu/"
-              title="konferencia.simonyi.bme.hu"
+              href="https://skktv.simonyi.bme.hu/?utm_source=simonyi.bme.hu"
+              title="skktv.simonyi.bme.hu"
               target="_blank"
               rel="noreferrer"
             >
-              <Button className="w-full">{t("simonyikonf")}</Button>
+              <Button className="w-full">{t("tanverseny")}</Button>
             </a>
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
             <a
-              href="https://tanfolyam.simonyi.bme.hu/"
+              href="https://tanfolyam.simonyi.bme.hu/?utm_source=simonyi.bme.hu"
               title="tanfolyam.simonyi.bme.hu"
               target="_blank"
               rel="noreferrer"
