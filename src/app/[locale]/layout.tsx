@@ -79,6 +79,7 @@ export default function LocaleLayout({ children, params: { locale } }: { childre
       className={`${spaceGrotesk.variable} ${archivo.variable}`}
     >
       <body className="bg-dark text-white text-opacity-text selection:bg-primary-200 selection:text-primary-950">
+        <script defer src={process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT} data-domain="simonyi.bme.hu"/>
         <div className="flex min-h-safe_screen flex-col justify-between">
           <NextIntlClientProvider messages={messages}>
             {children}
