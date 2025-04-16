@@ -16,7 +16,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
   };
 
   return (
-    <div className="flex max-w-full flex-col items-center justify-between gap-8 rounded-2xl bg-darkmode_regular p-5 md:max-w-[45%] lg:max-w-[31%]">
+    <div className="flex max-w-full flex-col items-center justify-between gap-8 rounded-2xl bg-darkmode_regular p-8 md:max-w-[45%] lg:max-w-[31%]">
       <div className="flex w-full flex-col items-center gap-8">
         <div
           className="flex w-full flex-row items-center justify-between gap-8 hover:cursor-pointer md:hover:cursor-auto"
@@ -33,7 +33,7 @@ function StudentGroup({ name, logo, description, socials = [], isDense = false }
           <div className={`${isOpen ? "block" : "hidden md:block"} relative h-[100px] w-full max-w-[250px]`}>
             <Image src={logo.url} alt={logo.alt} fill />
           </div>
-          <div className={`${isOpen ? "block" : "hidden md:block"}`}>
+          <div className={`text-justify ${isOpen ? "block" : "hidden md:block"}`}>
             <Typography>{description}</Typography>
           </div>
         </>
