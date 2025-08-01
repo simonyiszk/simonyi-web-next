@@ -80,7 +80,7 @@ export default async function LocaleLayout(props: PageProps) {
       lang={locale}
       className={`${spaceGrotesk.variable} ${archivo.variable}`}
     >
-      <body className="bg-dark text-white text-opacity-text selection:bg-primary-200 selection:text-primary-950">
+      <body className="bg-dark text-white/95 selection:bg-primary-200 selection:text-primary-950">
         <script defer src={process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT} data-domain="simonyi.bme.hu"/>
         <div className="flex min-h-safe_screen flex-col justify-between">
           <NextIntlClientProvider>

@@ -85,8 +85,8 @@ function Button({
     <button
       className={
         state
-          ? "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 border-primary bg-primary bg-opacity-button p-2 transition duration-200 ease-in-out hover:bg-primary"
-          : "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 border-primary-900 bg-white bg-opacity-button p-2 transition duration-200 ease-in-out hover:border-primary hover:bg-primary"
+          ? "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 border-primary bg-primary/15 p-2 transition duration-200 ease-in-out hover:bg-primary"
+          : "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 border-primary-900 bg-white/15 p-2 transition duration-200 ease-in-out hover:border-primary hover:bg-primary"
       }
       {...props}
     ></button>

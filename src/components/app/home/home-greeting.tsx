@@ -44,7 +44,7 @@ export function HomeGreeting({
               target="_blank"
               rel="noreferrer"
             >
-              <Button className="w-full">{t("tanverseny")}</Button>
+              <Button className="w-full cursor-pointer">{t("tanverseny")}</Button>
             </a>
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
@@ -54,10 +54,10 @@ export function HomeGreeting({
               target="_blank"
               rel="noreferrer"
             >
-              <Button>{t("course")}</Button>
+              <Button className="cursor-pointer">{t("course")}</Button>
             </a>
             <Link href="/berles">
-              <Button>{t("rent")}</Button>
+              <Button className="cursor-pointer">{t("rent")}</Button>
             </Link>
           </div>
         </div>
