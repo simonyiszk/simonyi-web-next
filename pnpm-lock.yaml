@@ -17,6 +17,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: 4.1.11
         version: 4.1.11
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
       contentful:
         specifier: 11.7.15
         version: 11.7.15
@@ -41,6 +44,9 @@ importers:
       react-dom:
         specifier: 19.1.1
         version: 19.1.1(react@19.1.1)
+      tailwind-merge:
+        specifier: 3.3.1
+        version: 3.3.1
       tailwindcss:
         specifier: 4.1.11
         version: 4.1.11
@@ -906,6 +912,10 @@ packages:
   cliui@9.0.1:
     resolution: {integrity: sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==}
     engines: {node: '>=20'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   code-block-writer@13.0.3:
     resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
@@ -2070,6 +2080,9 @@ packages:
   symbol-observable@1.2.0:
     resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
     engines: {node: '>=0.10.0'}
+
+  tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
@@ -3323,6 +3336,8 @@ snapshots:
       strip-ansi: 7.1.0
       wrap-ansi: 9.0.0
 
+  clsx@2.1.1: {}
+
   code-block-writer@13.0.3: {}
 
   code-point-at@1.1.0: {}
@@ -4471,6 +4486,8 @@ snapshots:
       supports-color: 7.2.0
 
   symbol-observable@1.2.0: {}
+
+  tailwind-merge@3.3.1: {}
 
   tailwindcss@4.1.11: {}
 

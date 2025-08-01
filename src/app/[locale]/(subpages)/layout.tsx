@@ -1,7 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageProps, ParamsType } from "~/@types";
-import { HeaderSubpage, Footer } from "~/components";
-import { query } from "~/utils";
+import { Footer } from "~/components/footer";
+import { HeaderSubpage } from "~/components/header/header-subpage";
+import { query } from "~/utils/contentful/contentful-query";
 
 async function getData({locale}: ParamsType) {
 

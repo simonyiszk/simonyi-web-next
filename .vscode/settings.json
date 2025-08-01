@@ -1,11 +1,10 @@
 {
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks",
   "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
@@ -13,5 +12,5 @@
     "source.fixAll.eslint": "explicit"
   },
   "eslint.format.enable": true,
-  "eslint.trace.server": "messages"
+  "eslint.trace.server": "messages",
 }

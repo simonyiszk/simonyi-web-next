@@ -1,4 +1,4 @@
-import { LoadingHome } from "~/components";
+import { LoadingHome } from "~/components/spinner/loading-home";
 
 export default function Loading() {
   return <LoadingHome />;

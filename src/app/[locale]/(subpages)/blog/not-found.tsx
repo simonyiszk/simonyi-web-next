@@ -1,4 +1,4 @@
-import { NoContentComponent } from "~/components";
+import { NoContentComponent } from "~/components/not-found/no-content";
 
 export default function NotFound() {
   return (

@@ -12,7 +12,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
 
-export async function generateMetadata(params: Promise<ParamsType>) {
+export async function generateMetadata(params: Promise<ParamsType>): Promise<Metadata> {
   const { locale } = await params;
 
   const t = await getTranslations({ locale, namespace: "metadata" });

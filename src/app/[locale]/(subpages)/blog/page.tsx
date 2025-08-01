@@ -2,18 +2,11 @@ import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { PageProps, ParamsType, SearchParamsType } from "~/@types";
-import { BlogPaginator, BlogPostPreview } from "~/components";
-import { query } from "~/utils";
+import { BlogPaginator } from "~/components/app/blog/blog-paginator";
+import { BlogPostPreview } from "~/components/app/blog/blog-post-preview";
+import { query } from "~/utils/contentful/contentful-query";
 
-export async function generateMetadata({
-  params: {
-    locale,
-  },
-}: {
-  params: {
-    locale: string
-  }
-}) {
+export async function generateMetadata({locale}: ParamsType): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "pages.subpages.blog" });
   return {
     title: t("title"),

@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageProps, ParamsType } from "~/@types";
-import { AboutTimeline } from "~/components/app/about";
-import { Typography } from "~/components";
-import { contentfulDocumentToReactComponents, query } from "~/utils";
+import { query } from "~/utils/contentful/contentful-query";
+import { TypographyH1 } from "~/components/typography";
+import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer";
+import { AboutTimeline } from "~/components/app/about/about-timeline";
 
-export async function generateMetadata({locale}: ParamsType) {
+export async function generateMetadata({locale}: ParamsType): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "pages.subpages.aboutUs" });
 
   return {
@@ -34,7 +35,7 @@ export default async function AboutPage(props: PageProps) {
   return (
     <div className="flex w-full max-w-home flex-col gap-8 self-center p-4">
       <div className="flex max-w-3xl flex-col self-center">
-        {before.title && <Typography as="h1" variant="h1" className="mb-10 text-center">{before.title}</Typography>}
+        {before.title && <TypographyH1 className="mb-10 text-center">{before.title}</TypographyH1>}
         {contentfulDocumentToReactComponents(before.description)}
       </div>
       <AboutTimeline timelineEntries={timelineEntries} />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Typography } from "~/components";
+import { TypographyH1, TypographyH2, TypographyH3 } from "~/components/typography";
 
 function GoogleCalendar({
   variant,
@@ -137,8 +137,8 @@ export function Berles() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Typography variant="h1">Eszköz- és terembérlés</Typography>
-      <Typography variant="h2">Naptárak</Typography>
+      <TypographyH1>Eszköz- és terembérlés</TypographyH1>
+      <TypographyH2>Naptárak</TypographyH2>
       <div className="flex flex-row flex-wrap gap-4">
         <Button onClick={() => switchCalendar("102")} state={openCalendar["102"]}>102 naptár</Button>
         <Button onClick={() => switchCalendar("103")} state={openCalendar["103"]}>103 naptár</Button>
@@ -150,7 +150,7 @@ export function Berles() {
           <div
             className="flex flex-col gap-4"
           >
-            <Typography variant="h3">102 naptár</Typography>
+            <TypographyH3>102 naptár</TypographyH3>
             <GoogleCalendar variant="102" />
           </div>
         )
@@ -160,7 +160,7 @@ export function Berles() {
           <div
             className="flex flex-col gap-4"
           >
-            <Typography variant="h3">103 naptár</Typography>
+            <TypographyH3>103 naptár</TypographyH3>
             <GoogleCalendar variant="103" />
           </div>
         )
@@ -170,7 +170,7 @@ export function Berles() {
           <div
             className="flex flex-col gap-4"
           >
-            <Typography variant="h3">1319 naptár</Typography>
+            <TypographyH3>1319 naptár</TypographyH3>
             <GoogleCalendar variant="1319" />
           </div>
         )
@@ -180,12 +180,12 @@ export function Berles() {
           <div
             className="flex flex-col gap-4"
           >
-            <Typography variant="h3">Eszközök naptár</Typography>
+            <TypographyH3>Eszközök naptár</TypographyH3>
             <GoogleCalendar variant="equipment" />
           </div>
         )
       }
-      <Typography variant="h2">Formok</Typography>
+      <TypographyH2>Formok</TypographyH2>
       <div className="flex flex-row flex-wrap gap-4">
         <Button onClick={() => switchForm("rooms")} state={openForm.rooms}>Terembérlés form</Button>
         <Button onClick={() => switchForm("equipment")} state={openForm.equipment}>Eszközbérlés form</Button>
@@ -195,7 +195,7 @@ export function Berles() {
           <div
             className="flex flex-col gap-4"
           >
-            <Typography variant="h3">Terembérlés form</Typography>
+            <TypographyH3>Terembérlés form</TypographyH3>
             <GoogleForm variant="rooms" />
           </div>
         )
@@ -205,7 +205,7 @@ export function Berles() {
           <div
             className="flex flex-col gap-4"
           >
-            <Typography variant="h3">Eszközbérlés form</Typography>
+            <TypographyH3>Eszközbérlés form</TypographyH3>
             <GoogleForm variant="equipment" />
           </div>
         )

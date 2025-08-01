@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import { TimelineEntityType } from "~/@types";
-import { CaretDownIcon, Typography } from "~/components";
-import { contentfulDocumentToReactComponents } from "~/utils";
+import { CaretDownIcon } from "~/components/icons/caret-down-icon";
+import { TypographyBody } from "~/components/typography";
+import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer";
 
 /** src: https://github.com/kir-dev/sch60/blob/master/src/components/pages/AboutUs.tsx */
 export function AboutTimeline({ timelineEntries }: { timelineEntries: TimelineEntityType[] }) {
@@ -49,7 +50,7 @@ function TimelineYearCell({ year, isImportant, className }: React.ComponentProps
         isImportant ? "bg-primary" : ""
       } sm:col-auto ${className}`}
     >
-      <Typography>{year}</Typography>
+      <TypographyBody>{year}</TypographyBody>
     </div>
   );
 }

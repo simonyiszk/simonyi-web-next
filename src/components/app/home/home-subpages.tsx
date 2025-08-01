@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "~/components/button";
 import { Link } from "~/i18n/navigation";
 
-export default function HomeSubPages() {
+export function HomeSubpages() {
   const t = useTranslations("pages.home");
 
   return (

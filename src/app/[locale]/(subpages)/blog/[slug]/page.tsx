@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { query } from "~/utils";
-import { BlogPost } from "~/components";
 import { PageProps, ParamsType } from "~/@types";
+import { query } from "~/utils/contentful/contentful-query";
+import { BlogPost } from "~/components/app/blog/blog-post";
 
 export async function generateMetadata({ locale, slug }: ParamsType): Promise<Metadata> {
 

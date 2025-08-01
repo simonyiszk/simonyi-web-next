@@ -1,10 +1,13 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ImageType } from "~/@types";
-import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
+import { Button } from "~/components/button";
+import { HeaderHome } from "~/components/header/header-home";
+import { SimonyiDarkIcon } from "~/components/icons/bme/simonyi/simonyi-dark-icon";
+import { ChevronIcon } from "~/components/icons/chevron-icon";
 import { Link } from "~/i18n/navigation";
 
-export default function HomeGreeting({
+export function HomeGreeting({
   heroImage,
   currentLocale,
 }: {

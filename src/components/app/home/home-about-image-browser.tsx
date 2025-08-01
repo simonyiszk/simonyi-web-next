@@ -13,7 +13,7 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { LightboxImage } from "~/@types";
 
-export default function HomeAboutImageBrowser({ lightboxImages }: { lightboxImages: LightboxImage[] }) {
+export function HomeAboutImageBrowser({ lightboxImages }: { lightboxImages: LightboxImage[] }) {
   const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
