@@ -1,8 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withNextIntl = require("next-intl/plugin")();
+import {NextConfig} from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
@@ -42,5 +41,7 @@ const nextConfig = {
     ],
   },
 };
+
+const withNextIntl = createNextIntlPlugin();
 
 module.exports = withNextIntl(nextConfig);
