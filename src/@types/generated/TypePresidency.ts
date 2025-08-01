@@ -9,4 +9,4 @@ export interface TypePresidencyFields {
 }
 
 export type TypePresidencySkeleton = EntrySkeletonType<TypePresidencyFields, "presidency">;
-export type TypePresidency<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypePresidencySkeleton, Modifiers, Locales>;
+export type TypePresidency<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePresidencySkeleton, Modifiers, Locales>;

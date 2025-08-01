@@ -1,42 +1,73 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Document, BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
-import { cloneElement, Children, ReactNode, ReactElement } from "react";
-import { Link, Typography } from "~/components";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { Document, BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
+import Link from "next/link"
+import { cloneElement, Children, ReactNode, ReactElement } from "react"
+import {
+  TypographyH1,
+  TypographyH2,
+  TypographyH3,
+  TypographyH4,
+  TypographyH5,
+  TypographyH6,
+  TypographyBody,
+} from "~/components/typography"
 
 function RemoveParagraph({ children }: { children: ReactNode }) {
   const processChild = (child: ReactNode): ReactNode => {
     if (typeof child === "string") {
-      return child;
+      return child
     }
 
-    const elementChild = child as ReactElement;
+    const elementChild = child as ReactElement
 
     if (elementChild.type === "p") {
-      return <>{elementChild.props.children}</>;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return <>{(elementChild.props as any).children}</>
     }
 
-    if (elementChild.props && elementChild.props.children) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if (elementChild.props && (elementChild.props as any).children) {
       return cloneElement(elementChild, {
-        children: Children.map(elementChild.props.children, processChild),
-      });
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        children: Children.map(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (elementChild.props as any).children,
+          processChild,
+        ),
+      })
     }
 
-    return child;
-  };
+    return child
+  }
 
-  return <>{Children.map(children, processChild)}</>;
+  return <>{Children.map(children, processChild)}</>
 }
 
 export function contentfulDocumentToReactComponents(document: Document) {
   return documentToReactComponents(document, {
     renderNode: {
-      [BLOCKS.HEADING_1]: (node, children) => <Typography as="h1" variant="h1" className="mb-4">{children}</Typography>,
-      [BLOCKS.HEADING_2]: (node, children) => <Typography as="h2" variant="h2" className="mb-3">{children}</Typography>,
-      [BLOCKS.HEADING_3]: (node, children) => <Typography as="h3" variant="h3" className="mb-2">{children}</Typography>,
-      [BLOCKS.HEADING_4]: (node, children) => <Typography as="h4" variant="h4" className="mb-1">{children}</Typography>,
-      [BLOCKS.HEADING_5]: (node, children) => <Typography as="h5" variant="h5" className="mb-1">{children}</Typography>,
-      [BLOCKS.HEADING_6]: (node, children) => <Typography as="h6" variant="h6" className="mb-1">{children}</Typography>,
-      [BLOCKS.PARAGRAPH]: (node, children) => <Typography as="p" variant="body" className="mb-4 last:mb-0">{children}</Typography>,
+      [BLOCKS.HEADING_1]: (node, children) => (
+        <TypographyH1 className="mb-4">{children}</TypographyH1>
+      ),
+      [BLOCKS.HEADING_2]: (node, children) => (
+        <TypographyH2 className="mb-3">{children}</TypographyH2>
+      ),
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <TypographyH3 className="mb-2">{children}</TypographyH3>
+      ),
+      [BLOCKS.HEADING_4]: (node, children) => (
+        <TypographyH4 className="mb-1">{children}</TypographyH4>
+      ),
+      [BLOCKS.HEADING_5]: (node, children) => (
+        <TypographyH5 className="mb-1">{children}</TypographyH5>
+      ),
+      [BLOCKS.HEADING_6]: (node, children) => (
+        <TypographyH6 className="mb-1">{children}</TypographyH6>
+      ),
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <TypographyBody className="mb-4 last:mb-0">{children}</TypographyBody>
+      ),
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className="mb-4 ml-4 list-decimal font-body">
           <RemoveParagraph>{children}</RemoveParagraph>
@@ -47,7 +78,9 @@ export function contentfulDocumentToReactComponents(document: Document) {
           <RemoveParagraph>{children}</RemoveParagraph>
         </ul>
       ),
-      [BLOCKS.LIST_ITEM]: (node, children) => <li className="ml-2 font-body">{children}</li>,
+      [BLOCKS.LIST_ITEM]: (node, children) => (
+        <li className="ml-2 font-body">{children}</li>
+      ),
       [BLOCKS.QUOTE]: (node, children) => (
         <>
           <blockquote className="mb-4 border-l-4 border-primary pl-4 font-body italic">
@@ -114,5 +147,5 @@ export function contentfulDocumentToReactComponents(document: Document) {
       [MARKS.BOLD]: (node, children) => <b>{children}</b>,
       [MARKS.ITALIC]: (node, children) => <i>{children}</i>,
     },
-  });
+  })
 }

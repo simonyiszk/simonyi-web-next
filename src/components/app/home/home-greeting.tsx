@@ -1,17 +1,20 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { ImageType } from "~/@types";
-import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
-import { Link } from "~/navigation";
+import { useTranslations } from "next-intl"
+import Image from "next/image"
+import { ImageType } from "~/@types"
+import { Button } from "~/components/button"
+import { HeaderHome } from "~/components/header/header-home"
+import { SimonyiDarkIcon } from "~/components/icons/bme/simonyi/simonyi-dark-icon"
+import { ChevronIcon } from "~/components/icons/chevron-icon"
+import { Link } from "~/i18n/navigation"
 
-export default function HomeGreeting({
+export function HomeGreeting({
   heroImage,
   currentLocale,
 }: {
-  heroImage: ImageType;
-  currentLocale: string;
+  heroImage: ImageType
+  currentLocale: string
 }) {
-  const t = useTranslations("pages.home");
+  const t = useTranslations("pages.home")
 
   return (
     <div className="min-h-screen">
@@ -41,7 +44,9 @@ export default function HomeGreeting({
               target="_blank"
               rel="noreferrer"
             >
-              <Button className="w-full">{t("tanverseny")}</Button>
+              <Button className="w-full cursor-pointer">
+                {t("tanverseny")}
+              </Button>
             </a>
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
@@ -51,10 +56,10 @@ export default function HomeGreeting({
               target="_blank"
               rel="noreferrer"
             >
-              <Button>{t("course")}</Button>
+              <Button className="cursor-pointer">{t("course")}</Button>
             </a>
             <Link href="/berles">
-              <Button>{t("rent")}</Button>
+              <Button className="cursor-pointer">{t("rent")}</Button>
             </Link>
           </div>
         </div>
@@ -63,5 +68,5 @@ export default function HomeGreeting({
         </div>
       </div>
     </div>
-  );
+  )
 }

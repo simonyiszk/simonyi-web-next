@@ -8,4 +8,4 @@ export interface TypeLightboxFields {
 }
 
 export type TypeLightboxSkeleton = EntrySkeletonType<TypeLightboxFields, "lightbox">;
-export type TypeLightbox<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeLightboxSkeleton, Modifiers, Locales>;
+export type TypeLightbox<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeLightboxSkeleton, Modifiers, Locales>;

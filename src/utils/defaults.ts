@@ -1,20 +1,27 @@
-import { BLOCKS } from "@contentful/rich-text-types";
-import { AboutType, FooterType, ImageType, LightboxImage, SocialType, TimelineEntityType } from "~/@types";
+import { BLOCKS } from "@contentful/rich-text-types"
+import {
+  AboutType,
+  FooterType,
+  ImageType,
+  LightboxImage,
+  SocialType,
+  TimelineEntityType,
+} from "~/@types"
 
-type Unpacked<T> = T extends (infer U)[] ? U : T;
+type Unpacked<T> = T extends (infer U)[] ? U : T
 
 export const defaults: {
-  lightboxImage: LightboxImage;
-  studentGroupLogo: ImageType;
-  social: SocialType;
-  profilePicture: ImageType;
-  ogImage: ImageType;
-  footer: FooterType;
-  footerSection: Unpacked<FooterType["sections"]>;
-  about: AboutType;
-  pagination: { page: number; size: number };
-  hero: ImageType;
-  timeline: TimelineEntityType;
+  lightboxImage: LightboxImage
+  studentGroupLogo: ImageType
+  social: SocialType
+  profilePicture: ImageType
+  ogImage: ImageType
+  footer: FooterType
+  footerSection: Unpacked<FooterType["sections"]>
+  about: AboutType
+  pagination: { page: number; size: number }
+  hero: ImageType
+  timeline: TimelineEntityType
 } = {
   lightboxImage: {
     picture: {
@@ -91,4 +98,4 @@ export const defaults: {
     },
     isImportant: false,
   },
-};
+}

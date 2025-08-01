@@ -8,4 +8,4 @@ export interface TypeFooterSectionFields {
 }
 
 export type TypeFooterSectionSkeleton = EntrySkeletonType<TypeFooterSectionFields, "footerSection">;
-export type TypeFooterSection<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeFooterSectionSkeleton, Modifiers, Locales>;
+export type TypeFooterSection<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeFooterSectionSkeleton, Modifiers, Locales>;

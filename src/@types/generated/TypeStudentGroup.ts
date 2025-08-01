@@ -10,4 +10,4 @@ export interface TypeStudentGroupFields {
 }
 
 export type TypeStudentGroupSkeleton = EntrySkeletonType<TypeStudentGroupFields, "studentGroup">;
-export type TypeStudentGroup<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeStudentGroupSkeleton, Modifiers, Locales>;
+export type TypeStudentGroup<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeStudentGroupSkeleton, Modifiers, Locales>;

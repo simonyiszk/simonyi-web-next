@@ -1,11 +1,12 @@
-import { PresidencyType } from "~/@types";
-import { Profile , Typography } from "~/components";
+import { PresidencyType } from "~/@types"
+import { Profile } from "~/components/profile"
+import { TypographyH1 } from "~/components/typography"
 
-export default function HomePresidency({ presidency }: { presidency: PresidencyType }) {
+export function HomePresidency({ presidency }: { presidency: PresidencyType }) {
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
-        <Typography as="h1" variant="h1">{presidency.title}</Typography>
+        <TypographyH1>{presidency.title}</TypographyH1>
       </div>
       <div className="flex w-full flex-row flex-wrap justify-center gap-8 self-center">
         {presidency.profiles.map((profile, index) => (
@@ -19,5 +20,5 @@ export default function HomePresidency({ presidency }: { presidency: PresidencyT
         ))}
       </div>
     </div>
-  );
+  )
 }

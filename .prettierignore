@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+.next
+.vercel
+
+src/@types/generated
+pnpm-lock.yaml

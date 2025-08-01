@@ -1,19 +1,24 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { PageProps } from "~/@types";
-import { HeaderSubpage, Footer } from "~/components";
-import { query } from "~/utils";
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { PageProps, ParamsType } from "~/@types"
+import { Footer } from "~/components/footer"
+import { HeaderSubpage } from "~/components/header/header-subpage"
+import { query } from "~/utils/contentful/contentful-query"
 
-async function getData({ params: { locale } }: PageProps) {
+async function getData({ locale }: ParamsType) {
+  const footer = await query.footer(locale)
 
-  const footer = await query.footer(locale);
-
-  return { footer };
+  return { footer }
 }
 
 export default async function SubpageLayout(props: PageProps) {
-  unstable_setRequestLocale(props.params.locale);
-  const { footer } = await getData(props);
-  const t = await getTranslations({ locale: props.params.locale, namespace: "pages.subpages.header" });
+  const params = await props.params
+
+  setRequestLocale(params.locale)
+  const { footer } = await getData(params)
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "pages.subpages.header",
+  })
 
   return (
     <div className="flex min-h-safe_screen flex-col justify-between gap-16">
@@ -25,5 +30,5 @@ export default async function SubpageLayout(props: PageProps) {
       {props.children}
       <Footer data={footer} />
     </div>
-  );
+  )
 }

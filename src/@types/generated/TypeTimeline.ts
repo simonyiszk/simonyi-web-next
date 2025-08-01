@@ -7,4 +7,4 @@ export interface TypeTimelineFields {
 }
 
 export type TypeTimelineSkeleton = EntrySkeletonType<TypeTimelineFields, "timeline">;
-export type TypeTimeline<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeTimelineSkeleton, Modifiers, Locales>;
+export type TypeTimeline<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeTimelineSkeleton, Modifiers, Locales>;
