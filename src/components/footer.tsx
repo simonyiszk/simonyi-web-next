@@ -1,12 +1,12 @@
-import { useTranslations } from "next-intl";
-import { FooterType, LinkType } from "~/@types";
-import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer";
-import { Link, TypographyBody, TypographyH2 } from "./typography";
-import Image from "next/image";
-import { ReactNode } from "react";
+import { useTranslations } from 'next-intl'
+import { FooterType, LinkType } from '~/@types'
+import { contentfulDocumentToReactComponents } from '~/utils/contentful/contentful-renderer'
+import { Link, TypographyBody, TypographyH2 } from './typography'
+import Image from 'next/image'
+import { ReactNode } from 'react'
 
 export function Footer({ data }: { data: FooterType }) {
-  const t = useTranslations("pages.home");
+  const t = useTranslations('pages.home')
 
   return (
     <div className="flex flex-col items-center gap-8 bg-darkmode_regular p-8">
@@ -16,7 +16,11 @@ export function Footer({ data }: { data: FooterType }) {
             key={index}
             title={section.title}
             links={section.links}
-            address={section.address ? contentfulDocumentToReactComponents(section.address) : undefined}
+            address={
+              section.address
+                ? contentfulDocumentToReactComponents(section.address)
+                : undefined
+            }
           />
         ))}
       </div>
@@ -24,60 +28,91 @@ export function Footer({ data }: { data: FooterType }) {
         <Link
           className="relative h-[60px] w-[225px] hover:opacity-75"
           href="http://www.bme.hu/"
-          title={t("bmeAlt")}
+          title={t('bmeAlt')}
           target="_blank"
-          rel="noreferrer"
-        >
-          <Image src="/images/bme/bme.png" alt={t("bmeAlt")} fill sizes="225px" />
+          rel="noreferrer">
+          <Image
+            src="/images/bme/bme.png"
+            alt={t('bmeAlt')}
+            fill
+            sizes="225px"
+          />
         </Link>
         <Link
           className="relative h-[60px] w-[60px] hover:opacity-75"
           href="http://www.vik.bme.hu/"
-          title={t("vikAlt")}
+          title={t('vikAlt')}
           target="_blank"
-          rel="noreferrer"
-        >
-          <Image src="/images/bme/vik.png" alt={t("vikAlt")} fill sizes="60px" />
+          rel="noreferrer">
+          <Image
+            src="/images/bme/vik.png"
+            alt={t('vikAlt')}
+            fill
+            sizes="60px"
+          />
         </Link>
         <Link
           className="w-auto hover:opacity-75 md:w-[225px]"
           href="https://svie.hu/"
-          title={t("schonherzAlt")}
+          title={t('schonherzAlt')}
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           <div className="relative h-[60px] w-[192px]">
-            <Image src="/images/bme/schonherz.png" alt={t("schonherzAlt")} fill sizes="192px" />
+            <Image
+              src="/images/bme/schonherz.png"
+              alt={t('schonherzAlt')}
+              fill
+              sizes="192px"
+            />
           </div>
         </Link>
       </div>
       {data.github && (
         <Link href={data.github.url} title={data.github.title}>
-          <TypographyBody className="text-center">{data.github.text}</TypographyBody>
+          <TypographyBody className="text-center">
+            {data.github.text}
+          </TypographyBody>
         </Link>
       )}
       <a
         href="https://vercel.com?utm_source=kir-dev&utm_campaign=oss"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative mx-8 block h-8 w-40 text-white hover:opacity-75"
-      >
+        className="relative mx-8 block h-8 w-40 text-white hover:opacity-75">
         <Image src="/vercel.svg" fill alt="Logo of Vercel" />
       </a>
     </div>
-  );
+  )
 }
 
-function FooterSection({ title, links, address }: { title: string; links: LinkType[]; address?: ReactNode }) {
+function FooterSection({
+  title,
+  links,
+  address,
+}: {
+  title: string
+  links: LinkType[]
+  address?: ReactNode
+}) {
   return (
     <div className="flex flex-col gap-1">
       <TypographyH2 className="mb-4">{title}</TypographyH2>
       {links.map((link, index) => (
-        <Link key={index} className="font-body text-primary" href={link.url} title={link.title} target="_blank" rel="noreferrer">
+        <Link
+          key={index}
+          className="font-body text-primary"
+          href={link.url}
+          title={link.title}
+          target="_blank"
+          rel="noreferrer">
           {link.title}
         </Link>
       ))}
-      {address && <TypographyBody className="mt-4 whitespace-pre-wrap">{address}</TypographyBody>}
+      {address && (
+        <TypographyBody className="mt-4 whitespace-pre-wrap">
+          {address}
+        </TypographyBody>
+      )}
     </div>
-  );
+  )
 }

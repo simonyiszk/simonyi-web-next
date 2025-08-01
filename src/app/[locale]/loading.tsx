@@ -1,5 +1,5 @@
-import { LoadingHome } from "~/components/spinner/loading-home";
+import { LoadingHome } from '~/components/spinner/loading-home'
 
 export default function Loading() {
-  return <LoadingHome />;
+  return <LoadingHome />
 }

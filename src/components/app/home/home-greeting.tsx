@@ -1,20 +1,20 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { ImageType } from "~/@types";
-import { Button } from "~/components/button";
-import { HeaderHome } from "~/components/header/header-home";
-import { SimonyiDarkIcon } from "~/components/icons/bme/simonyi/simonyi-dark-icon";
-import { ChevronIcon } from "~/components/icons/chevron-icon";
-import { Link } from "~/i18n/navigation";
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+import { ImageType } from '~/@types'
+import { Button } from '~/components/button'
+import { HeaderHome } from '~/components/header/header-home'
+import { SimonyiDarkIcon } from '~/components/icons/bme/simonyi/simonyi-dark-icon'
+import { ChevronIcon } from '~/components/icons/chevron-icon'
+import { Link } from '~/i18n/navigation'
 
 export function HomeGreeting({
   heroImage,
   currentLocale,
 }: {
-  heroImage: ImageType;
-  currentLocale: string;
+  heroImage: ImageType
+  currentLocale: string
 }) {
-  const t = useTranslations("pages.home");
+  const t = useTranslations('pages.home')
 
   return (
     <div className="min-h-screen">
@@ -24,7 +24,7 @@ export function HomeGreeting({
           alt={heroImage.alt}
           fill
           priority
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
@@ -42,9 +42,10 @@ export function HomeGreeting({
               href="https://skktv.simonyi.bme.hu/?utm_source=simonyi.bme.hu"
               title="skktv.simonyi.bme.hu"
               target="_blank"
-              rel="noreferrer"
-            >
-              <Button className="w-full cursor-pointer">{t("tanverseny")}</Button>
+              rel="noreferrer">
+              <Button className="w-full cursor-pointer">
+                {t('tanverseny')}
+              </Button>
             </a>
           </div>
           <div className="flex flex-row flex-wrap justify-evenly gap-8">
@@ -52,12 +53,11 @@ export function HomeGreeting({
               href="https://tanfolyam.simonyi.bme.hu/?utm_source=simonyi.bme.hu"
               title="tanfolyam.simonyi.bme.hu"
               target="_blank"
-              rel="noreferrer"
-            >
-              <Button className="cursor-pointer">{t("course")}</Button>
+              rel="noreferrer">
+              <Button className="cursor-pointer">{t('course')}</Button>
             </a>
             <Link href="/berles">
-              <Button className="cursor-pointer">{t("rent")}</Button>
+              <Button className="cursor-pointer">{t('rent')}</Button>
             </Link>
           </div>
         </div>
@@ -66,5 +66,5 @@ export function HomeGreeting({
         </div>
       </div>
     </div>
-  );
+  )
 }

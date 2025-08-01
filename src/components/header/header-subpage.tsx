@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Link } from "~/i18n/navigation";
-import { SimonyiLogoIcon } from "~/components/icons/bme/simonyi/simonyi-logo-only-icon";
-import { HamburgerIcon } from "~/components/icons/hamburger-icon";
+import { useState } from 'react'
+import { Link } from '~/i18n/navigation'
+import { SimonyiLogoIcon } from '~/components/icons/bme/simonyi/simonyi-logo-only-icon'
+import { HamburgerIcon } from '~/components/icons/hamburger-icon'
 
 export function HeaderSubpage({
   homepage,
   aboutUs,
   blog,
 }: {
-  homepage: string;
-  aboutUs: string;
-  blog: string;
+  homepage: string
+  aboutUs: string
+  blog: string
 }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <>
@@ -39,7 +39,9 @@ export function HeaderSubpage({
           <div className="h-8 w-8">
             <SimonyiLogoIcon />
           </div>
-          <div className="h-4 w-6 cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div
+            className="h-4 w-6 cursor-pointer"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <HamburgerIcon />
           </div>
         </div>
@@ -49,22 +51,19 @@ export function HeaderSubpage({
               <Link
                 href="/"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
-                onClick={() => setIsMenuOpen(false)}
-              >
+                onClick={() => setIsMenuOpen(false)}>
                 {homepage}
               </Link>
               <Link
                 href="/about-us"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
-                onClick={() => setIsMenuOpen(false)}
-              >
+                onClick={() => setIsMenuOpen(false)}>
                 {aboutUs}
               </Link>
               <Link
                 href="/blog"
                 className="w-full p-4 text-center hover:underline md:w-auto md:p-0 md:text-left"
-                onClick={() => setIsMenuOpen(false)}
-              >
+                onClick={() => setIsMenuOpen(false)}>
                 {blog}
               </Link>
             </div>
@@ -72,5 +71,5 @@ export function HeaderSubpage({
         )}
       </header>
     </>
-  );
+  )
 }

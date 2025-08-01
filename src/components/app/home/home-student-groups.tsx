@@ -1,8 +1,12 @@
-import { CurrentStudnetGroupsType } from "~/@types";
-import { StudentGroup } from "~/components/student-group";
-import { TypographyH1 } from "~/components/typography";
+import { CurrentStudnetGroupsType } from '~/@types'
+import { StudentGroup } from '~/components/student-group'
+import { TypographyH1 } from '~/components/typography'
 
-export function HomeStudentGroups({ currentStudentGroups }: { currentStudentGroups: CurrentStudnetGroupsType }) {
+export function HomeStudentGroups({
+  currentStudentGroups,
+}: {
+  currentStudentGroups: CurrentStudnetGroupsType
+}) {
   return (
     <div className="flex flex-col gap-8">
       <div className="self-center md:self-start">
@@ -21,5 +25,5 @@ export function HomeStudentGroups({ currentStudentGroups }: { currentStudentGrou
         ))}
       </div>
     </div>
-  );
+  )
 }

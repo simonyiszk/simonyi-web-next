@@ -1,38 +1,38 @@
-"use client";
-import Image from "next/image";
-import { useState } from "react";
-import { default as Lightbox } from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import Captions from "yet-another-react-lightbox/plugins/captions";
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import Video from "yet-another-react-lightbox/plugins/video";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+'use client'
+import Image from 'next/image'
+import { useState } from 'react'
+import { default as Lightbox } from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
+import Captions from 'yet-another-react-lightbox/plugins/captions'
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
+import Video from 'yet-another-react-lightbox/plugins/video'
+import Zoom from 'yet-another-react-lightbox/plugins/zoom'
+import 'yet-another-react-lightbox/plugins/captions.css'
+import 'yet-another-react-lightbox/plugins/thumbnails.css'
 
 type ImageType = {
-  url: string;
-  alt: string;
-  title: string;
-  description: string;
-  width: number;
-  height: number;
-};
+  url: string
+  alt: string
+  title: string
+  description: string
+  width: number
+  height: number
+}
 
 export function LightBox({ images }: { images: ImageType[] }) {
-  const [index, setIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
+  const [index, setIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
 
   const openLightbox = (index = 0) => {
-    setIndex(index);
-    setIsOpen(true);
-  };
+    setIndex(index)
+    setIsOpen(true)
+  }
 
   const closeLightbox = () => {
-    setIsOpen(false);
-  };
+    setIsOpen(false)
+  }
 
   return (
     <div className="mb-4 grid">
@@ -41,9 +41,13 @@ export function LightBox({ images }: { images: ImageType[] }) {
           <div
             key={index}
             className="relative h-[72px] w-[128px] shrink-0 bg-black hover:cursor-pointer"
-            onClick={() => openLightbox(index)}
-          >
-            <Image src={image.url} alt={image.alt} fill style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            onClick={() => openLightbox(index)}>
+            <Image
+              src={image.url}
+              alt={image.alt}
+              fill
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         ))}
         <Lightbox
@@ -56,7 +60,7 @@ export function LightBox({ images }: { images: ImageType[] }) {
               description: image.description,
               width: image.width,
               height: image.height,
-            };
+            }
           })}
           index={index}
           close={() => closeLightbox()}
@@ -64,5 +68,5 @@ export function LightBox({ images }: { images: ImageType[] }) {
         />
       </div>
     </div>
-  );
+  )
 }

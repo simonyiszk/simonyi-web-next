@@ -1,6 +1,6 @@
-import { PresidencyType } from "~/@types";
-import { Profile } from "~/components/profile";
-import { TypographyH1 } from "~/components/typography";
+import { PresidencyType } from '~/@types'
+import { Profile } from '~/components/profile'
+import { TypographyH1 } from '~/components/typography'
 
 export function HomePresidency({ presidency }: { presidency: PresidencyType }) {
   return (
@@ -20,5 +20,5 @@ export function HomePresidency({ presidency }: { presidency: PresidencyType }) {
         ))}
       </div>
     </div>
-  );
+  )
 }

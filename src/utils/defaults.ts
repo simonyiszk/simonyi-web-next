@@ -1,71 +1,78 @@
-import { BLOCKS } from "@contentful/rich-text-types";
-import { AboutType, FooterType, ImageType, LightboxImage, SocialType, TimelineEntityType } from "~/@types";
+import { BLOCKS } from '@contentful/rich-text-types'
+import {
+  AboutType,
+  FooterType,
+  ImageType,
+  LightboxImage,
+  SocialType,
+  TimelineEntityType,
+} from '~/@types'
 
-type Unpacked<T> = T extends (infer U)[] ? U : T;
+type Unpacked<T> = T extends (infer U)[] ? U : T
 
 export const defaults: {
-  lightboxImage: LightboxImage;
-  studentGroupLogo: ImageType;
-  social: SocialType;
-  profilePicture: ImageType;
-  ogImage: ImageType;
-  footer: FooterType;
-  footerSection: Unpacked<FooterType["sections"]>;
-  about: AboutType;
-  pagination: { page: number; size: number };
-  hero: ImageType;
-  timeline: TimelineEntityType;
+  lightboxImage: LightboxImage
+  studentGroupLogo: ImageType
+  social: SocialType
+  profilePicture: ImageType
+  ogImage: ImageType
+  footer: FooterType
+  footerSection: Unpacked<FooterType['sections']>
+  about: AboutType
+  pagination: { page: number; size: number }
+  hero: ImageType
+  timeline: TimelineEntityType
 } = {
   lightboxImage: {
     picture: {
-      url: "https://warp.sch.bme.hu/images/cover",
-      alt: "",
+      url: 'https://warp.sch.bme.hu/images/cover',
+      alt: '',
       width: 960,
       height: 540,
     },
-    title: "",
-    description: "",
+    title: '',
+    description: '',
   },
   studentGroupLogo: {
-    url: "",
-    alt: "",
+    url: '',
+    alt: '',
     width: 0,
     height: 0,
   },
   social: {
-    icon: "website",
+    icon: 'website',
     link: {
-      url: "",
-      title: "",
-      text: "",
+      url: '',
+      title: '',
+      text: '',
     },
   },
   profilePicture: {
-    url: "https://warp.sch.bme.hu/images/profile",
-    alt: "",
+    url: 'https://warp.sch.bme.hu/images/profile',
+    alt: '',
     width: 512,
     height: 512,
   },
   ogImage: {
-    url: "https://warp.sch.bme.hu/images/cover",
-    alt: "",
+    url: 'https://warp.sch.bme.hu/images/cover',
+    alt: '',
     width: 960,
     height: 540,
   },
   footer: {
     sections: [],
     github: {
-      text: "github.com/simonyiszk/simonyi-web-next",
-      title: "github.com/simonyiszk/simonyi-web-next",
-      url: "https://github.com/simonyiszk/simonyi-web-next",
+      text: 'github.com/simonyiszk/simonyi-web-next',
+      title: 'github.com/simonyiszk/simonyi-web-next',
+      url: 'https://github.com/simonyiszk/simonyi-web-next',
     },
   },
   footerSection: {
     links: [],
-    title: "",
+    title: '',
   },
   about: {
-    title: "",
+    title: '',
     description: {
       nodeType: BLOCKS.DOCUMENT,
       content: [],
@@ -77,8 +84,8 @@ export const defaults: {
     size: 10,
   },
   hero: {
-    url: "https://warp.sch.bme.hu/images/hero",
-    alt: "",
+    url: 'https://warp.sch.bme.hu/images/hero',
+    alt: '',
     width: 1366,
     height: 768,
   },
@@ -91,4 +98,4 @@ export const defaults: {
     },
     isImportant: false,
   },
-};
+}

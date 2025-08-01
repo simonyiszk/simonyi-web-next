@@ -16,10 +16,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc --noEmit",
     "lint": "next lint",
-    "lint:eslint": "eslint --max-warnings=0 . && yarn run type-check",
-    "lint:eslint:fix": "eslint --max-warnings=0 --fix .",
+    "type-check": "tsc --noEmit",
+    "eslint": "eslint --max-warnings=0",
+    "eslint:fix": "eslint --max-warnings=0 --fix .",
     "contentful:typegen-offline": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
     "contentful:typegen": "dotenv -e .env -- cross-var cf-content-types-generator --v10 -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
   },
@@ -52,6 +52,7 @@
     "dotenv-cli": "10.0.0",
     "eslint": "9.32.0",
     "eslint-config-next": "15.4.5",
+    "prettier": "3.6.2",
     "typescript": "5.9.2",
     "util": "0.12.5"
   },
