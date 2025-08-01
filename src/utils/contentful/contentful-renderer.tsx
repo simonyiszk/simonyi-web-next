@@ -30,8 +30,8 @@ function RemoveParagraph({ children }: { children: ReactNode }) {
       return cloneElement(elementChild, {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         children: Children.map(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (elementChild.props as any).children,
           processChild,
         ),
