@@ -13,12 +13,16 @@ function RemoveParagraph({ children }: { children: ReactNode }) {
     const elementChild = child as ReactElement;
 
     if (elementChild.type === "p") {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return <>{(elementChild.props as any).children}</>;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (elementChild.props && (elementChild.props as any).children) {
       return cloneElement(elementChild, {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         children: Children.map((elementChild.props as any).children, processChild),
       });
     }
