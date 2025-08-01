@@ -41,6 +41,7 @@
     "yet-another-react-lightbox": "3.25.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "3.3.1",
     "@types/node": "24.1.0",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
@@ -49,6 +50,8 @@
     "cross-var": "1.1.0",
     "dotenv": "17.2.1",
     "dotenv-cli": "10.0.0",
+    "eslint": "9.32.0",
+    "eslint-config-next": "15.4.5",
     "typescript": "5.9.2",
     "util": "0.12.5"
   },
