@@ -12,12 +12,13 @@ function RemoveParagraph({ children }: { children: ReactNode }) {
     const elementChild = child as ReactElement;
 
     if (elementChild.type === "p") {
-      return <>{elementChild.props.children}</>;
+      return <>{(elementChild.props as any).children}</>;
     }
 
-    if (elementChild.props && elementChild.props.children) {
+    if (elementChild.props && (elementChild.props as any).children) {
       return cloneElement(elementChild, {
-        children: Children.map(elementChild.props.children, processChild),
+        // @ts-ignore
+        children: Children.map((elementChild.props as any).children, processChild),
       });
     }
 

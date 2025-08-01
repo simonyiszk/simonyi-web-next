@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "../../navigation";
+import { Link } from "~/i18n/navigation";
 import { Typography } from "../typography";
 
 export function LanguageSwitcher({

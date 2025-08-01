@@ -14,4 +14,4 @@ export interface TypePostFields {
 }
 
 export type TypePostSkeleton = EntrySkeletonType<TypePostFields, "post">;
-export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypePostSkeleton, Modifiers, Locales>;
+export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePostSkeleton, Modifiers, Locales>;

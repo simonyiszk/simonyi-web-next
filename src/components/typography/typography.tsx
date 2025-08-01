@@ -1,4 +1,4 @@
-import { ReactNode, createElement } from "react";
+import { JSX, ReactNode, createElement } from "react";
 
 type DivTypographyProps = {
   as?: "div";

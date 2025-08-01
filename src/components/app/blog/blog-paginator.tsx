@@ -1,4 +1,4 @@
-import { Link } from "../../../navigation";
+import { Link } from "~/i18n/navigation";
 
 function PaginatorEntry({ page, isCurrentPage }: { page: number; isCurrentPage: boolean }) {
   return (

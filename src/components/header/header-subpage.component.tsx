@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "../../navigation";
+import { Link } from "~/i18n/navigation";
 import { SimonyiLogoIcon, HamburgerIcon } from "../icons";
 
 export function HeaderSubpage({

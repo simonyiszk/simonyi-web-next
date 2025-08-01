@@ -8,4 +8,4 @@ export interface TypeCurrentStudentGroupsFields {
 }
 
 export type TypeCurrentStudentGroupsSkeleton = EntrySkeletonType<TypeCurrentStudentGroupsFields, "currentStudentGroups">;
-export type TypeCurrentStudentGroups<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeCurrentStudentGroupsSkeleton, Modifiers, Locales>;
+export type TypeCurrentStudentGroups<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeCurrentStudentGroupsSkeleton, Modifiers, Locales>;

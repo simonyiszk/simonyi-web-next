@@ -1,9 +1,11 @@
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { PageProps } from "~/@types";
 import { Typography } from "~/components";
 
-export default function Page(props: PageProps) {
-  unstable_setRequestLocale(props.params.locale);
+export default async function Page(props: PageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   return (
     <div

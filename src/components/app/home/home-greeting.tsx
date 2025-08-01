@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ImageType } from "~/@types";
 import { Button, ChevronIcon, HeaderHome, SimonyiDarkIcon } from "~/components";
-import { Link } from "~/navigation";
+import { Link } from "~/i18n/navigation";
 
 export default function HomeGreeting({
   heroImage,

@@ -6,7 +6,7 @@ import { contentfulDocumentToReactComponents } from "~/utils";
 /** src: https://github.com/kir-dev/sch60/blob/master/src/components/pages/AboutUs.tsx */
 export function AboutTimeline({ timelineEntries }: { timelineEntries: TimelineEntityType[] }) {
   return (
-    <div className="relative grid grid-flow-dense grid-cols-timeline-mobile items-center justify-items-center gap-y-8 px-0 py-4 sm:grid-cols-timeline-full">
+    <div className="relative grid grid-flow-dense grid-cols-timeline_mobile items-center justify-items-center gap-y-8 px-0 py-4 sm:grid-cols-timeline_full">
       <div className="absolute left-12 h-full w-0 border-e-4 border-dashed border-white sm:left-1/2">
         <CaretDownIcon className="absolute left-[-18px] top-[calc(100%-10px)] fill-white" width="40px" height="40px" />
       </div>

@@ -21,7 +21,7 @@
     "lint:eslint": "eslint --max-warnings=0 . && yarn run type-check",
     "lint:eslint:fix": "eslint --max-warnings=0 --fix .",
     "contentful:typegen-offline": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
-    "contentful:typegen": "dotenv -e .env.local -- cross-var cf-content-types-generator --v10 -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
+    "contentful:typegen": "dotenv -e .env -- cross-var cf-content-types-generator --v10 -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "16.1.0",

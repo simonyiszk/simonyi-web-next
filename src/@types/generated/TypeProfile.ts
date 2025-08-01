@@ -11,4 +11,4 @@ export interface TypeProfileFields {
 }
 
 export type TypeProfileSkeleton = EntrySkeletonType<TypeProfileFields, "profile">;
-export type TypeProfile<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeProfileSkeleton, Modifiers, Locales>;
+export type TypeProfile<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeProfileSkeleton, Modifiers, Locales>;

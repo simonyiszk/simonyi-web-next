@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { PageProps } from "~/@types";
+import { PageProps, ParamsType, SearchParamsType } from "~/@types";
 import { BlogPaginator, BlogPostPreview } from "~/components";
 import { query } from "~/utils";
 
@@ -20,7 +20,7 @@ export async function generateMetadata({
   } satisfies Metadata;
 }
 
-async function getData({ params: { locale }, searchParams: { page, size } }: PageProps) {
+async function getData({locale}: ParamsType, {page, size}: SearchParamsType) {
   const { items, currentPage, pageSize, totalItems, totalPages } = await query.paginatedPosts(locale, page, size);
 
   return {
@@ -33,8 +33,11 @@ async function getData({ params: { locale }, searchParams: { page, size } }: Pag
 }
 
 export default async function Page(props: PageProps) {
-  unstable_setRequestLocale(props.params.locale);
-  const { posts, currentPage, totalPages } = await getData(props);
+  const params = await props.params;
+  const {searchParams} = props
+
+  setRequestLocale(params.locale);
+  const { posts, currentPage, totalPages } = await getData(params, searchParams);
 
   if (posts.length === 0) {
     return notFound();

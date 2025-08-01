@@ -1,11 +1,11 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-import { PageProps } from "~/@types";
+import { setRequestLocale } from "next-intl/server";
+import { PageProps, ParamsType } from "~/@types";
 import { HomeAbout, HomeGreeting, HomePresidency, HomeStudentGroups, HomeSubpages, Footer } from "~/components";
 import {
   query,
 } from "~/utils";
 
-async function getData({ params: { locale } }: PageProps) {
+async function getData({locale}: ParamsType) {
 
   const hero = await query.homeHero(locale);
   const about = await query.homeAbout(locale);
@@ -18,12 +18,14 @@ async function getData({ params: { locale } }: PageProps) {
 }
 
 export default async function Page(props: PageProps) {
-  unstable_setRequestLocale(props.params.locale);
-  const { hero, about, lightbox, currentStudentGroups, presidency, footer } = await getData(props);
+  const params = await props.params;
+
+  setRequestLocale(params.locale);
+  const { hero, about, lightbox, currentStudentGroups, presidency, footer } = await getData(params);
 
   return (
     <>
-      <HomeGreeting heroImage={hero} currentLocale={props.params.locale} />
+      <HomeGreeting heroImage={hero} currentLocale={params.locale} />
       <div className="mx-auto flex max-w-home flex-col gap-[calc(80px+2rem)] p-8 pb-[calc(80px+2rem)]">
         <div />
         <HomeSubpages />

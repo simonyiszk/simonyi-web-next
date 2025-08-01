@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { PostType } from "~/@types";
 import { Typography } from "~/components";
-import { Link } from "../../../navigation";
+import { Link } from "~/i18n/navigation";
 
 function BlogPostPreview({ data }: { data: PostType }) {
   return (

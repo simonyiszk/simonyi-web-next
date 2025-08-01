@@ -1,23 +1,20 @@
 import { Metadata } from "next";
 import "../globals.css";
 import localFont from "next/font/local";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { locales } from "~/utils";
+import {NextIntlClientProvider, hasLocale, useMessages} from 'next-intl';
+import { getTranslations, setRequestLocale } from "next-intl/server";
+
+import {notFound} from 'next/navigation';
+import {routing} from '~/i18n/routing';
+import { PageProps, ParamsType } from "~/@types";
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({locale}));
 }
 
-export async function generateMetadata({
-  params: {
-    locale,
-  },
-}: {
-  params: {
-    locale: string
-  }
-}) {
+export async function generateMetadata(params: Promise<ParamsType>) {
+  const { locale } = await params;
+
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
@@ -69,9 +66,14 @@ const archivo = localFont({
   variable: "--font-archivo",
 });
 
-export default function LocaleLayout({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) {
-  unstable_setRequestLocale(locale);
-  const messages = useMessages();
+export default async function LocaleLayout(props: PageProps) {
+  const { locale } = await props.params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
 
   return (
     <html
@@ -81,8 +83,8 @@ export default function LocaleLayout({ children, params: { locale } }: { childre
       <body className="bg-dark text-white text-opacity-text selection:bg-primary-200 selection:text-primary-950">
         <script defer src={process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT} data-domain="simonyi.bme.hu"/>
         <div className="flex min-h-safe_screen flex-col justify-between">
-          <NextIntlClientProvider messages={messages}>
-            {children}
+          <NextIntlClientProvider>
+            {props.children}
           </NextIntlClientProvider>
         </div>
       </body>

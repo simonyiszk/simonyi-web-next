@@ -85,14 +85,18 @@ export type FooterType = {
   github?: LinkType;
 };
 
+export type ParamsType = {
+  locale: string;
+  slug: string;
+}
+
+export type SearchParamsType = {
+  page?: string;
+  size?: string;
+}
+
 export type PageProps = {
   children: React.ReactNode;
-  params: {
-    locale: string;
-    slug: string;
-  };
-  searchParams: {
-    page?: string;
-    size?: string;
-  };
+  params: Promise<ParamsType>;
+  searchParams: SearchParamsType;
 };

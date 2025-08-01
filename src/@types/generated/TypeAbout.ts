@@ -10,4 +10,4 @@ export interface TypeAboutFields {
 }
 
 export type TypeAboutSkeleton = EntrySkeletonType<TypeAboutFields, "about">;
-export type TypeAbout<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeAboutSkeleton, Modifiers, Locales>;
+export type TypeAbout<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeAboutSkeleton, Modifiers, Locales>;

@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { query } from "~/utils";
 import { BlogPost } from "~/components";
-import { PageProps } from "~/@types";
+import { PageProps, ParamsType } from "~/@types";
 
-export async function generateMetadata({ params: { locale, slug } }: { params: PageProps["params"] }): Promise<Metadata> {
+export async function generateMetadata({ locale, slug }: ParamsType): Promise<Metadata> {
 
   const post = await query.postBySlug(slug, locale);
 
@@ -46,14 +46,16 @@ export async function generateMetadata({ params: { locale, slug } }: { params: P
   };
 }
 
-async function getData({ params: { slug, locale } }: PageProps) {
-  unstable_setRequestLocale(locale);
+async function getData({ slug, locale }: ParamsType) {
+  setRequestLocale(locale);
   const post = await query.postBySlug(slug, locale);
   return { post };
 }
 
 export default async function PostPage(props: PageProps) {
-  const { post } = await getData(props);
+  const params = await props.params;
+
+  const { post } = await getData(params);
 
   if (!post) return notFound();
 
