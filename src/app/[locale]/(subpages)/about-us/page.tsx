@@ -1,22 +1,22 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { PageProps, ParamsType } from '~/@types'
-import { query } from '~/utils/contentful/contentful-query'
-import { TypographyH1 } from '~/components/typography'
-import { contentfulDocumentToReactComponents } from '~/utils/contentful/contentful-renderer'
-import { AboutTimeline } from '~/components/app/about/about-timeline'
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { PageProps, ParamsType } from "~/@types"
+import { query } from "~/utils/contentful/contentful-query"
+import { TypographyH1 } from "~/components/typography"
+import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer"
+import { AboutTimeline } from "~/components/app/about/about-timeline"
 
 export async function generateMetadata({
   locale,
 }: ParamsType): Promise<Metadata> {
   const t = await getTranslations({
     locale,
-    namespace: 'pages.subpages.aboutUs',
+    namespace: "pages.subpages.aboutUs",
   })
 
   return {
-    title: t('title'),
+    title: t("title"),
   } satisfies Metadata
 }
 

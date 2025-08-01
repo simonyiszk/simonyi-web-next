@@ -1,7 +1,7 @@
-import { AboutType, LightboxImage } from '~/@types'
-import { HomeAboutImageBrowser } from './home-about-image-browser'
-import { TypographyH1 } from '~/components/typography'
-import { contentfulDocumentToReactComponents } from '~/utils/contentful/contentful-renderer'
+import { AboutType, LightboxImage } from "~/@types"
+import { HomeAboutImageBrowser } from "./home-about-image-browser"
+import { TypographyH1 } from "~/components/typography"
+import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer"
 
 export function HomeAbout({
   about,

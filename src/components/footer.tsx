@@ -1,12 +1,12 @@
-import { useTranslations } from 'next-intl'
-import { FooterType, LinkType } from '~/@types'
-import { contentfulDocumentToReactComponents } from '~/utils/contentful/contentful-renderer'
-import { Link, TypographyBody, TypographyH2 } from './typography'
-import Image from 'next/image'
-import { ReactNode } from 'react'
+import { useTranslations } from "next-intl"
+import { FooterType, LinkType } from "~/@types"
+import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer"
+import { Link, TypographyBody, TypographyH2 } from "./typography"
+import Image from "next/image"
+import { ReactNode } from "react"
 
 export function Footer({ data }: { data: FooterType }) {
-  const t = useTranslations('pages.home')
+  const t = useTranslations("pages.home")
 
   return (
     <div className="flex flex-col items-center gap-8 bg-darkmode_regular p-8">
@@ -28,12 +28,13 @@ export function Footer({ data }: { data: FooterType }) {
         <Link
           className="relative h-[60px] w-[225px] hover:opacity-75"
           href="http://www.bme.hu/"
-          title={t('bmeAlt')}
+          title={t("bmeAlt")}
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           <Image
             src="/images/bme/bme.png"
-            alt={t('bmeAlt')}
+            alt={t("bmeAlt")}
             fill
             sizes="225px"
           />
@@ -41,12 +42,13 @@ export function Footer({ data }: { data: FooterType }) {
         <Link
           className="relative h-[60px] w-[60px] hover:opacity-75"
           href="http://www.vik.bme.hu/"
-          title={t('vikAlt')}
+          title={t("vikAlt")}
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           <Image
             src="/images/bme/vik.png"
-            alt={t('vikAlt')}
+            alt={t("vikAlt")}
             fill
             sizes="60px"
           />
@@ -54,13 +56,14 @@ export function Footer({ data }: { data: FooterType }) {
         <Link
           className="w-auto hover:opacity-75 md:w-[225px]"
           href="https://svie.hu/"
-          title={t('schonherzAlt')}
+          title={t("schonherzAlt")}
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           <div className="relative h-[60px] w-[192px]">
             <Image
               src="/images/bme/schonherz.png"
-              alt={t('schonherzAlt')}
+              alt={t("schonherzAlt")}
               fill
               sizes="192px"
             />
@@ -78,7 +81,8 @@ export function Footer({ data }: { data: FooterType }) {
         href="https://vercel.com?utm_source=kir-dev&utm_campaign=oss"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative mx-8 block h-8 w-40 text-white hover:opacity-75">
+        className="relative mx-8 block h-8 w-40 text-white hover:opacity-75"
+      >
         <Image src="/vercel.svg" fill alt="Logo of Vercel" />
       </a>
     </div>
@@ -104,7 +108,8 @@ function FooterSection({
           href={link.url}
           title={link.title}
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           {link.title}
         </Link>
       ))}

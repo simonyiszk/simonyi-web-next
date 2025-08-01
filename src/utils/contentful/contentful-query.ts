@@ -1,4 +1,4 @@
-import { cache } from 'react'
+import { cache } from "react"
 import {
   TypeAboutSkeleton,
   TypeCurrentStudentGroupsSkeleton,
@@ -8,7 +8,7 @@ import {
   TypePostSkeleton,
   TypePresidencySkeleton,
   TypeTimelineSkeleton,
-} from '~/@types/generated'
+} from "~/@types/generated"
 import {
   AboutType,
   CurrentStudnetGroupsType,
@@ -19,20 +19,20 @@ import {
   PostType,
   PresidencyType,
   TimelineEntityType,
-} from '~/@types'
-import { stringToContentfulLocale } from '../locales'
-import { defaults } from '../defaults'
-import { contentfulClient } from './contentful-client'
+} from "~/@types"
+import { stringToContentfulLocale } from "../locales"
+import { defaults } from "../defaults"
+import { contentfulClient } from "./contentful-client"
 
 export const query = {
   homeHero: cache(async (locale: string) => {
     const heroEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeHeroSkeleton>(
         {
-          content_type: 'hero',
+          content_type: "hero",
           include: 1,
           limit: 1,
-          order: ['-sys.createdAt'],
+          order: ["-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
         },
       )
@@ -53,7 +53,7 @@ export const query = {
 
     return {
       url: `https:${hero.fields.image.fields.file.url}`,
-      alt: hero.fields.image.fields.description || '',
+      alt: hero.fields.image.fields.description || "",
       width: hero.fields.image.fields.file.details.image.width,
       height: hero.fields.image.fields.file.details.image.height,
     } satisfies ImageType
@@ -62,11 +62,11 @@ export const query = {
     const aboutEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>(
         {
-          content_type: 'about',
+          content_type: "about",
           limit: 1,
-          order: ['-sys.createdAt'],
+          order: ["-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
-          'fields.displayOnHomepage': true,
+          "fields.displayOnHomepage": true,
         },
       )
 
@@ -85,26 +85,26 @@ export const query = {
     const before =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>(
         {
-          content_type: 'about',
+          content_type: "about",
           limit: 1,
-          order: ['-sys.createdAt'],
+          order: ["-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
-          'fields.displayOnHomepage': false,
-          'fields.displayOnAboutBeforeTimeline': true,
-          'fields.displayOnAboutAfterTimeline': false,
+          "fields.displayOnHomepage": false,
+          "fields.displayOnAboutBeforeTimeline": true,
+          "fields.displayOnAboutAfterTimeline": false,
         },
       )
 
     const after =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeAboutSkeleton>(
         {
-          content_type: 'about',
+          content_type: "about",
           limit: 1,
-          order: ['-sys.createdAt'],
+          order: ["-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
-          'fields.displayOnHomepage': false,
-          'fields.displayOnAboutBeforeTimeline': false,
-          'fields.displayOnAboutAfterTimeline': true,
+          "fields.displayOnHomepage": false,
+          "fields.displayOnAboutBeforeTimeline": false,
+          "fields.displayOnAboutAfterTimeline": true,
         },
       )
 
@@ -128,8 +128,8 @@ export const query = {
     const timelineEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeTimelineSkeleton>(
         {
-          content_type: 'timeline',
-          order: ['fields.year', '-sys.createdAt'],
+          content_type: "timeline",
+          order: ["fields.year", "-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
         },
       )
@@ -147,9 +147,9 @@ export const query = {
     const lightboxEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeLightboxSkeleton>(
         {
-          content_type: 'lightbox',
+          content_type: "lightbox",
           include: 1,
-          order: ['-fields.date', 'fields.name', '-sys.createdAt'],
+          order: ["-fields.date", "fields.name", "-sys.createdAt"],
           limit: 100,
           locale: stringToContentfulLocale(locale),
         },
@@ -164,7 +164,7 @@ export const query = {
             ? {
                 picture: {
                   url: `https:${lightbox.fields.photo.fields.file.url}`,
-                  alt: lightbox.fields.photo.fields.description || '',
+                  alt: lightbox.fields.photo.fields.description || "",
                   width: lightbox.fields.photo.fields.file.details.image.width,
                   height:
                     lightbox.fields.photo.fields.file.details.image.height,
@@ -180,17 +180,17 @@ export const query = {
     const currentStudentGroupsEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeCurrentStudentGroupsSkeleton>(
         {
-          content_type: 'currentStudentGroups',
+          content_type: "currentStudentGroups",
           include: 2,
           limit: 1,
-          order: ['fields.name', '-sys.createdAt'],
+          order: ["fields.name", "-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
         },
       )
 
     if (currentStudentGroupsEntries.items.length === 0) {
       return {
-        title: '',
+        title: "",
         studentGroups: [],
       }
     }
@@ -201,9 +201,9 @@ export const query = {
         (studentGroup) => {
           if (!studentGroup) {
             return {
-              name: '',
+              name: "",
               logo: defaults.studentGroupLogo,
-              description: '',
+              description: "",
               socials: [],
               isDense: false,
             }
@@ -217,7 +217,7 @@ export const query = {
               ? {
                   logo: {
                     url: `https:${studentGroup.fields.logo.fields.file.url}`,
-                    alt: studentGroup.fields.logo.fields.description || '',
+                    alt: studentGroup.fields.logo.fields.description || "",
                     width:
                       studentGroup.fields.logo.fields.file.details.image.width,
                     height:
@@ -248,9 +248,9 @@ export const query = {
     const presidency =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypePresidencySkeleton>(
         {
-          content_type: 'presidency',
+          content_type: "presidency",
           include: 3,
-          order: ['-fields.year', '-sys.createdAt'],
+          order: ["-fields.year", "-sys.createdAt"],
           limit: 1,
           locale: stringToContentfulLocale(locale),
         },
@@ -258,7 +258,7 @@ export const query = {
 
     if (presidency.items.length === 0) {
       return {
-        title: '',
+        title: "",
         profiles: [],
       }
     }
@@ -270,8 +270,8 @@ export const query = {
             profiles: presidency.fields.profiles.map((profile) => {
               if (!profile) {
                 return {
-                  name: '',
-                  title: '',
+                  name: "",
+                  title: "",
                   socials: [],
                   profilePicture: defaults.profilePicture,
                 }
@@ -281,11 +281,11 @@ export const query = {
                 name: profile.fields.name,
                 title: profile.fields.title,
                 socials: profile.fields.links?.map((link) => ({
-                  icon: link?.fields.icon || 'website',
+                  icon: link?.fields.icon || "website",
                   link: {
-                    url: link?.fields.url || '',
-                    title: link?.fields.title || '',
-                    text: link?.fields.text || '',
+                    url: link?.fields.url || "",
+                    title: link?.fields.title || "",
+                    text: link?.fields.text || "",
                   },
                 })),
                 ...(profile.fields.profilePicture &&
@@ -296,7 +296,7 @@ export const query = {
                         url: `https:${profile.fields.profilePicture.fields.file.url}`,
                         alt:
                           profile.fields.profilePicture.fields.description ||
-                          '',
+                          "",
                         width:
                           profile.fields.profilePicture.fields.file.details
                             .image.width,
@@ -320,8 +320,8 @@ export const query = {
     const postEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypePostSkeleton>(
         {
-          content_type: 'post',
-          order: ['-fields.date', '-sys.createdAt'],
+          content_type: "post",
+          order: ["-fields.date", "-sys.createdAt"],
           locale: stringToContentfulLocale(locale),
         },
       )
@@ -342,7 +342,7 @@ export const query = {
             post.fields.previewImage.fields.file.details.image && {
               previewImage: {
                 url: `https://${post.fields.previewImage.fields.file.url}`,
-                alt: post.fields.previewImage.fields.description || '',
+                alt: post.fields.previewImage.fields.description || "",
                 width: post.fields.previewImage.fields.file.details.image.width,
                 height:
                   post.fields.previewImage.fields.file.details.image.height,
@@ -354,7 +354,7 @@ export const query = {
             ? {
                 ogImage: {
                   url: `https://${post.fields.ogImage.fields.file.url}`,
-                  alt: post.fields.ogImage.fields.description || '',
+                  alt: post.fields.ogImage.fields.description || "",
                   width: post.fields.ogImage.fields.file.details.image.width,
                   height: post.fields.ogImage.fields.file.details.image.height,
                 },
@@ -369,8 +369,8 @@ export const query = {
     const postEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypePostSkeleton>(
         {
-          content_type: 'post',
-          'fields.slug[match]': slug,
+          content_type: "post",
+          "fields.slug[match]": slug,
           limit: 1,
           locale: stringToContentfulLocale(locale),
         },
@@ -392,7 +392,7 @@ export const query = {
             post.fields.previewImage.fields.file.details.image && {
               previewImage: {
                 url: `https://${post.fields.previewImage.fields.file.url}`,
-                alt: post.fields.previewImage.fields.description || '',
+                alt: post.fields.previewImage.fields.description || "",
                 width: post.fields.previewImage.fields.file.details.image.width,
                 height:
                   post.fields.previewImage.fields.file.details.image.height,
@@ -404,7 +404,7 @@ export const query = {
             ? {
                 ogImage: {
                   url: `https://${post.fields.ogImage.fields.file.url}`,
-                  alt: post.fields.ogImage.fields.description || '',
+                  alt: post.fields.ogImage.fields.description || "",
                   width: post.fields.ogImage.fields.file.details.image.width,
                   height: post.fields.ogImage.fields.file.details.image.height,
                 },
@@ -425,7 +425,7 @@ export const query = {
     const footerEntries =
       await contentfulClient.withoutUnresolvableLinks.getEntries<TypeFooterSkeleton>(
         {
-          content_type: 'footer',
+          content_type: "footer",
           include: 2,
           limit: 1,
           locale: stringToContentfulLocale(locale),
@@ -475,8 +475,8 @@ export const query = {
       const postEntries =
         await contentfulClient.withoutUnresolvableLinks.getEntries<TypePostSkeleton>(
           {
-            content_type: 'post',
-            order: ['-fields.date', '-sys.createdAt'],
+            content_type: "post",
+            order: ["-fields.date", "-sys.createdAt"],
             locale: stringToContentfulLocale(locale),
           },
         )
@@ -524,7 +524,7 @@ export const query = {
             post.fields.previewImage.fields.file.details.image && {
               previewImage: {
                 url: `https://${post.fields.previewImage.fields.file.url}`,
-                alt: post.fields.previewImage.fields.description || '',
+                alt: post.fields.previewImage.fields.description || "",
                 width: post.fields.previewImage.fields.file.details.image.width,
                 height:
                   post.fields.previewImage.fields.file.details.image.height,
@@ -536,7 +536,7 @@ export const query = {
             ? {
                 ogImage: {
                   url: `https://${post.fields.ogImage.fields.file.url}`,
-                  alt: post.fields.ogImage.fields.description || '',
+                  alt: post.fields.ogImage.fields.description || "",
                   width: post.fields.ogImage.fields.file.details.image.width,
                   height: post.fields.ogImage.fields.file.details.image.height,
                 },

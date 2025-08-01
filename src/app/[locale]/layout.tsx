@@ -1,12 +1,12 @@
-import { Metadata } from 'next'
-import '../globals.css'
-import localFont from 'next/font/local'
-import { NextIntlClientProvider, hasLocale } from 'next-intl'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Metadata } from "next"
+import "../globals.css"
+import localFont from "next/font/local"
+import { NextIntlClientProvider, hasLocale } from "next-intl"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 
-import { notFound } from 'next/navigation'
-import { routing } from '~/i18n/routing'
-import { PageProps, ParamsType } from '~/@types'
+import { notFound } from "next/navigation"
+import { routing } from "~/i18n/routing"
+import { PageProps, ParamsType } from "~/@types"
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -17,39 +17,39 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale } = await params
 
-  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const t = await getTranslations({ locale, namespace: "metadata" })
 
   return {
-    metadataBase: new URL('https://simonyi.bme.hu'),
+    metadataBase: new URL("https://simonyi.bme.hu"),
     title: {
-      default: t('title.default'),
-      template: t('title.template'),
-      absolute: t('title.absolute'),
+      default: t("title.default"),
+      template: t("title.template"),
+      absolute: t("title.absolute"),
     },
-    description: t('description'),
+    description: t("description"),
     openGraph: {
-      type: 'website',
-      locale: 'hu',
-      alternateLocale: 'en',
+      type: "website",
+      locale: "hu",
+      alternateLocale: "en",
       images: [
         {
-          url: '/images/defaults/cover.png',
+          url: "/images/defaults/cover.png",
           width: 960,
           height: 540,
-          alt: t('title.default'),
+          alt: t("title.default"),
         },
       ],
     },
     twitter: {
-      card: 'summary_large_image',
-      site: 'simonyiszakkoli',
-      creator: 'simonyiszakkoli',
+      card: "summary_large_image",
+      site: "simonyiszakkoli",
+      creator: "simonyiszakkoli",
       images: [
         {
-          url: '/images/defaults/cover.png',
+          url: "/images/defaults/cover.png",
           width: 960,
           height: 540,
-          alt: t('title.default'),
+          alt: t("title.default"),
         },
       ],
     },
@@ -57,15 +57,15 @@ export async function generateMetadata(
 }
 
 const spaceGrotesk = localFont({
-  src: '../../fonts/space_grotesk-vf.ttf',
-  display: 'swap',
-  variable: '--font-space_grotesk',
+  src: "../../fonts/space_grotesk-vf.ttf",
+  display: "swap",
+  variable: "--font-space_grotesk",
 })
 
 const archivo = localFont({
-  src: '../../fonts/archivo-vf.ttf',
-  display: 'swap',
-  variable: '--font-archivo',
+  src: "../../fonts/archivo-vf.ttf",
+  display: "swap",
+  variable: "--font-archivo",
 })
 
 export default async function LocaleLayout(props: PageProps) {
@@ -80,7 +80,8 @@ export default async function LocaleLayout(props: PageProps) {
   return (
     <html
       lang={locale}
-      className={`${spaceGrotesk.variable} ${archivo.variable}`}>
+      className={`${spaceGrotesk.variable} ${archivo.variable}`}
+    >
       <body className="bg-dark text-white/95 selection:bg-primary-200 selection:text-primary-950">
         <script
           defer

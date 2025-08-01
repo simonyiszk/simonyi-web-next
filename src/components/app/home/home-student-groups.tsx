@@ -1,6 +1,6 @@
-import { CurrentStudnetGroupsType } from '~/@types'
-import { StudentGroup } from '~/components/student-group'
-import { TypographyH1 } from '~/components/typography'
+import { CurrentStudnetGroupsType } from "~/@types"
+import { StudentGroup } from "~/components/student-group"
+import { TypographyH1 } from "~/components/typography"
 
 export function HomeStudentGroups({
   currentStudentGroups,

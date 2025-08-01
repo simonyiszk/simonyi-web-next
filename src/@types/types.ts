@@ -1,15 +1,15 @@
-import { Document } from '@contentful/rich-text-types'
+import { Document } from "@contentful/rich-text-types"
 
 export type SocialIconType =
-  | 'email'
-  | 'facebook'
-  | 'github'
-  | 'instagram'
-  | 'linkedin'
-  | 'phone'
-  | 'youtube'
-  | 'tiktok'
-  | 'website'
+  | "email"
+  | "facebook"
+  | "github"
+  | "instagram"
+  | "linkedin"
+  | "phone"
+  | "youtube"
+  | "tiktok"
+  | "website"
 
 export type AboutType = {
   title?: string

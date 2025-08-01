@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import type { ProfileType } from '~/@types'
-import { TypographyH2 } from '~/components/typography'
-import { SocialIcon } from '~/components/icons/social-icon'
+import Image from "next/image"
+import type { ProfileType } from "~/@types"
+import { TypographyH2 } from "~/components/typography"
+import { SocialIcon } from "~/components/icons/social-icon"
 
 export function Profile({ name, title, profilePicture, socials }: ProfileType) {
   return (
@@ -27,12 +27,13 @@ export function Profile({ name, title, profilePicture, socials }: ProfileType) {
             target="_blank"
             key={index}
             rel="noreferrer"
-            className="hover:opacity-75">
+            className="hover:opacity-75"
+          >
             <SocialIcon
               iconName={social.icon}
               props={{
                 className:
-                  'w-6 h-6 leading-4 inline-block align-middle fill-primary',
+                  "w-6 h-6 leading-4 inline-block align-middle fill-primary",
               }}
             />
           </a>

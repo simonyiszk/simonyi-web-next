@@ -1,4 +1,4 @@
-import { Link } from '~/i18n/navigation'
+import { Link } from "~/i18n/navigation"
 
 function PaginatorEntry({
   page,
@@ -11,8 +11,9 @@ function PaginatorEntry({
     <Link href={`/blog/?page=${page}`}>
       <div
         className={`flex h-14 w-14 flex-none items-center justify-center p-4 ${
-          isCurrentPage ? 'bg-primary' : 'bg-darkmode_regular'
-        } rounded-md`}>
+          isCurrentPage ? "bg-primary" : "bg-darkmode_regular"
+        } rounded-md`}
+      >
         {page}
       </div>
     </Link>

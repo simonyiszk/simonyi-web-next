@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import { PostType } from '~/@types'
-import { TypographyBody, TypographyH1 } from '~/components/typography'
-import { contentfulDocumentToReactComponents } from '~/utils/contentful/contentful-renderer'
+import Image from "next/image"
+import { PostType } from "~/@types"
+import { TypographyBody, TypographyH1 } from "~/components/typography"
+import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer"
 
 export function BlogPost({ data }: { data: PostType }) {
   const { title, date, previewImage, body } = data
@@ -21,7 +21,7 @@ export function BlogPost({ data }: { data: PostType }) {
       <div className="mb-8">
         {title && <TypographyH1 className="mb-4">{title}</TypographyH1>}
         {date && (
-          <TypographyBody>{date.toLocaleDateString('hu')}</TypographyBody>
+          <TypographyBody>{date.toLocaleDateString("hu")}</TypographyBody>
         )}
       </div>
       {contentfulDocumentToReactComponents(body)}

@@ -1,4 +1,4 @@
-import { SVGProps } from 'react'
+import { SVGProps } from "react"
 
 export function HamburgerIcon(props?: SVGProps<SVGSVGElement>) {
   return (
@@ -6,7 +6,8 @@ export function HamburgerIcon(props?: SVGProps<SVGSVGElement>) {
       viewBox="0 0 6.857142857142857 4"
       overflow="visible"
       preserveAspectRatio="none"
-      {...props}>
+      {...props}
+    >
       <line
         x1="0"
         x2="6.857142857142857"
@@ -15,7 +16,8 @@ export function HamburgerIcon(props?: SVGProps<SVGSVGElement>) {
         stroke="#ffffff"
         strokeWidth="2"
         vectorEffect="non-scaling-stroke"
-        style={{ transform: 'none', transformOrigin: '3.42857px 0px' }}></line>
+        style={{ transform: "none", transformOrigin: "3.42857px 0px" }}
+      ></line>
       <line
         x1="0"
         x2="6.857142857142857"
@@ -25,7 +27,8 @@ export function HamburgerIcon(props?: SVGProps<SVGSVGElement>) {
         strokeWidth="2"
         vectorEffect="non-scaling-stroke"
         opacity="1"
-        style={{ transform: 'none', transformOrigin: '3.42857px 2px' }}></line>
+        style={{ transform: "none", transformOrigin: "3.42857px 2px" }}
+      ></line>
       <line
         x1="0"
         x2="6.857142857142857"
@@ -34,7 +37,8 @@ export function HamburgerIcon(props?: SVGProps<SVGSVGElement>) {
         stroke="#ffffff"
         strokeWidth="2"
         vectorEffect="non-scaling-stroke"
-        style={{ transform: 'none', transformOrigin: '3.42857px 4px' }}></line>
+        style={{ transform: "none", transformOrigin: "3.42857px 4px" }}
+      ></line>
     </svg>
   )
 }

@@ -1,4 +1,4 @@
-import { SVGProps } from 'react'
+import { SVGProps } from "react"
 
 export function SimonyiDarkIcon(props?: SVGProps<SVGSVGElement>) {
   return (

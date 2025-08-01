@@ -1,9 +1,9 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { setRequestLocale } from 'next-intl/server'
-import { PageProps, ParamsType } from '~/@types'
-import { query } from '~/utils/contentful/contentful-query'
-import { BlogPost } from '~/components/app/blog/blog-post'
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { setRequestLocale } from "next-intl/server"
+import { PageProps, ParamsType } from "~/@types"
+import { query } from "~/utils/contentful/contentful-query"
+import { BlogPost } from "~/components/app/blog/blog-post"
 
 export async function generateMetadata({
   locale,
@@ -38,14 +38,14 @@ export async function generateMetadata({
     openGraph: {
       releaseDate: date,
       images: ogImage ? [ogImage.url] : undefined,
-      locale: 'hu',
-      alternateLocale: ['en_US'],
+      locale: "hu",
+      alternateLocale: ["en_US"],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       images: ogImage ? [ogImage.url] : undefined,
-      site: 'simonyiszakkoli',
-      creator: 'simonyiszakkoli',
+      site: "simonyiszakkoli",
+      creator: "simonyiszakkoli",
     },
   }
 }

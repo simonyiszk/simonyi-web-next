@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import { PostType } from '~/@types'
-import { TypographyBody, TypographyH3 } from '~/components/typography'
-import { Link } from '~/i18n/navigation'
+import Image from "next/image"
+import { PostType } from "~/@types"
+import { TypographyBody, TypographyH3 } from "~/components/typography"
+import { Link } from "~/i18n/navigation"
 
 export function BlogPostPreview({ data }: { data: PostType }) {
   return (
@@ -19,11 +19,11 @@ export function BlogPostPreview({ data }: { data: PostType }) {
             <div className="h-full w-full rounded-l-md bg-darkmode_regular" />
           )}
         </div>
-        <TypographyH3 className={`${data.date ? 'pt-4' : 'row-span-2 py-4'}`}>
+        <TypographyH3 className={`${data.date ? "pt-4" : "row-span-2 py-4"}`}>
           {data.title || data.slug}
         </TypographyH3>
         {data.date && (
-          <TypographyBody>{data.date.toLocaleDateString('hu')}</TypographyBody>
+          <TypographyBody>{data.date.toLocaleDateString("hu")}</TypographyBody>
         )}
       </div>
     </Link>
