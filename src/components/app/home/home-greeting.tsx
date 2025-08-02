@@ -18,7 +18,7 @@ export function HomeGreeting({
 
   return (
     <div className="min-h-screen">
-      <div className="absolute left-0 top-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
+      <div className="absolute top-0 left-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
         <Image
           src={heroImage.url}
           alt={heroImage.alt}

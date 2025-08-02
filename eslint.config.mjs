@@ -19,6 +19,7 @@ const eslintConfig = [
     rules: {
       ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
       "better-tailwindcss/enforce-consistent-line-wrapping": "off",
+      "react/no-unescaped-entities": "off",
     },
     settings: {
       "better-tailwindcss": {
@@ -28,6 +29,8 @@ const eslintConfig = [
   },
   {
     ignores: [
+      ".next",
+      ".vercel",
       "node_modules",
       "dist",
       "build",
@@ -35,9 +38,6 @@ const eslintConfig = [
       "public",
       "src/@types/generated",
     ],
-    rules: {
-      "react/no-unescaped-entities": "off",
-    },
   },
 ]
 

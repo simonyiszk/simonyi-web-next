@@ -47,7 +47,7 @@ export function HeaderSubpage({
           </div>
         </div>
         {isMenuOpen && (
-          <div className="flex flex-col gap-x-8 gap-y-4 p-4 ">
+          <div className="flex flex-col gap-x-8 gap-y-4 p-4">
             <div className="m-auto flex w-full max-w-home flex-col items-center justify-start gap-x-8 gap-y-4 align-middle md:flex-row">
               <Link
                 href="/"

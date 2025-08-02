@@ -113,7 +113,7 @@ export function TypographyLink({
   return (
     <a
       className={cn(
-        "font-body text-body hover:underline cursor-pointer text-primary",
+        "cursor-pointer font-body text-body text-primary hover:underline",
         className,
       )}
       {...rest}

@@ -7,7 +7,7 @@ export function BlogPost({ data }: { data: PostType }) {
   const { title, date, previewImage, body } = data
 
   return (
-    <div className="m-4 whitespace-pre-wrap rounded-md bg-darkmode_regular p-4">
+    <div className="m-4 rounded-md bg-darkmode_regular p-4 whitespace-pre-wrap">
       {previewImage && (
         <div className="relative -mx-4 -mt-4 mb-8 h-80 rounded-t-md">
           <Image

@@ -55,7 +55,7 @@ export function StudentGroup({
       </div>
       <div
         className={`${isOpen ? "flex" : "hidden md:flex"} w-full flex-wrap justify-center ${isDense ? "md:justify-evenly" : ""} gap-5 ${
-          isDense ? "gap-5 md:gap-0" : ""
+          isDense ? "md:gap-0" : ""
         }`}
       >
         {socials.map((social, index) => (
