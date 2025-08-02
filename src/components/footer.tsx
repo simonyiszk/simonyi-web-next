@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl"
 import { FooterType, LinkType } from "~/@types"
 import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer"
-import { Link, TypographyBody, TypographyH2 } from "./typography"
+import { TypographyLink, TypographyBody, TypographyH2 } from "./typography"
 import Image from "next/image"
 import { ReactNode } from "react"
 
@@ -10,7 +10,14 @@ export function Footer({ data }: { data: FooterType }) {
 
   return (
     <div className="flex flex-col items-center gap-8 bg-darkmode_regular p-8">
-      <div className="flex w-auto max-w-home flex-col flex-wrap items-start justify-evenly gap-16 pb-8 sm:flex-row md:w-full">
+      <div
+        className={`
+          flex w-auto max-w-home flex-col flex-wrap items-start justify-evenly
+          gap-16 pb-8
+          sm:flex-row
+          md:w-full
+        `}
+      >
         {data.sections.map((section, index) => (
           <FooterSection
             key={index}
@@ -24,9 +31,17 @@ export function Footer({ data }: { data: FooterType }) {
           />
         ))}
       </div>
-      <div className="flex flex-col flex-wrap items-center gap-8 md:flex-row">
-        <Link
-          className="relative h-[60px] w-[225px] hover:opacity-75"
+      <div
+        className={`
+          flex flex-col flex-wrap items-center gap-8
+          md:flex-row
+        `}
+      >
+        <TypographyLink
+          className={`
+            relative h-[60px] w-[225px]
+            hover:opacity-75
+          `}
           href="http://www.bme.hu/"
           title={t("bmeAlt")}
           target="_blank"
@@ -38,9 +53,12 @@ export function Footer({ data }: { data: FooterType }) {
             fill
             sizes="225px"
           />
-        </Link>
-        <Link
-          className="relative h-[60px] w-[60px] hover:opacity-75"
+        </TypographyLink>
+        <TypographyLink
+          className={`
+            relative h-[60px] w-[60px]
+            hover:opacity-75
+          `}
           href="http://www.vik.bme.hu/"
           title={t("vikAlt")}
           target="_blank"
@@ -52,9 +70,13 @@ export function Footer({ data }: { data: FooterType }) {
             fill
             sizes="60px"
           />
-        </Link>
-        <Link
-          className="w-auto hover:opacity-75 md:w-[225px]"
+        </TypographyLink>
+        <TypographyLink
+          className={`
+            w-auto
+            hover:opacity-75
+            md:w-[225px]
+          `}
           href="https://svie.hu/"
           title={t("schonherzAlt")}
           target="_blank"
@@ -68,20 +90,23 @@ export function Footer({ data }: { data: FooterType }) {
               sizes="192px"
             />
           </div>
-        </Link>
+        </TypographyLink>
       </div>
       {data.github && (
-        <Link href={data.github.url} title={data.github.title}>
+        <TypographyLink href={data.github.url} title={data.github.title}>
           <TypographyBody className="text-center">
             {data.github.text}
           </TypographyBody>
-        </Link>
+        </TypographyLink>
       )}
       <a
         href="https://vercel.com?utm_source=kir-dev&utm_campaign=oss"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative mx-8 block h-8 w-40 text-white hover:opacity-75"
+        className={`
+          relative mx-8 block h-8 w-40 text-white
+          hover:opacity-75
+        `}
       >
         <Image src="/vercel.svg" fill alt="Logo of Vercel" />
       </a>
@@ -102,7 +127,7 @@ function FooterSection({
     <div className="flex flex-col gap-1">
       <TypographyH2 className="mb-4">{title}</TypographyH2>
       {links.map((link, index) => (
-        <Link
+        <TypographyLink
           key={index}
           className="font-body text-primary"
           href={link.url}
@@ -111,7 +136,7 @@ function FooterSection({
           rel="noreferrer"
         >
           {link.title}
-        </Link>
+        </TypographyLink>
       ))}
       {address && (
         <TypographyBody className="mt-4 whitespace-pre-wrap">

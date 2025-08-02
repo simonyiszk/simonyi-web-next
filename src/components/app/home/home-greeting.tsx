@@ -18,7 +18,12 @@ export function HomeGreeting({
 
   return (
     <div className="min-h-screen">
-      <div className="absolute top-0 left-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
+      <div
+        className={`
+          absolute top-0 left-0 -z-10 flex h-screen max-h-full w-full max-w-full
+          bg-black blur-home
+        `}
+      >
         <Image
           src={heroImage.url}
           alt={heroImage.alt}
@@ -27,7 +32,12 @@ export function HomeGreeting({
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
+      <div
+        className={`
+          flex min-h-screen flex-col items-center justify-between
+          pb-[calc(80px+2rem)]
+        `}
+      >
         <HeaderHome currentLocale={currentLocale} />
         <div className="flex flex-col gap-8">
           <div className="m-4 max-h-[75px] max-w-[353px]">
@@ -64,7 +74,9 @@ export function HomeGreeting({
           </div>
         </div>
         <div className="h-6">
-          <ChevronIcon className="inline-block w-4 fill-light align-middle leading-6" />
+          <ChevronIcon
+            className={`inline-block w-4 fill-light align-middle leading-6`}
+          />
         </div>
       </div>
     </div>

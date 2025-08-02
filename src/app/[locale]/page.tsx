@@ -29,7 +29,12 @@ export default async function Page(props: PageProps) {
   return (
     <>
       <HomeGreeting heroImage={hero} currentLocale={params.locale} />
-      <div className="mx-auto flex max-w-home flex-col gap-[calc(80px+2rem)] p-8 pb-[calc(80px+2rem)]">
+      <div
+        className={`
+          mx-auto flex max-w-home flex-col gap-[calc(80px+2rem)] p-8
+          pb-[calc(80px+2rem)]
+        `}
+      >
         <div />
         <HomeSubpages />
         <HomeAbout about={about} images={lightbox} />

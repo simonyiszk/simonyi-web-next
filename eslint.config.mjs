@@ -18,7 +18,12 @@ const eslintConfig = [
     },
     rules: {
       ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
-      "better-tailwindcss/enforce-consistent-line-wrapping": "off",
+      "better-tailwindcss/enforce-consistent-line-wrapping": [
+        "warn",
+        {
+          group: "newLine",
+        },
+      ],
       "react/no-unescaped-entities": "off",
     },
     settings: {
