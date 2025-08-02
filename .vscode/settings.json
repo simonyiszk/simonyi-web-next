@@ -5,10 +5,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "eslint.format.enable": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[typescript][typescriptreact][javascript][javascriptreact][json][jsonc][jsonl][html][css][yaml]": {
+  "[typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json][jsonc][jsonl][html][css][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
