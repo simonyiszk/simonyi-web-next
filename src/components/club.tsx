@@ -62,9 +62,17 @@ export function ClubCard({
   name,
   socials,
   isDense,
-}: StudentGroupType) {
+  className,
+}: StudentGroupType & {
+  className?: string
+}) {
   return (
-    <div className="hidden grow flex-col rounded-2xl bg-darkmode_regular p-8 md:flex md:max-w-[45%] lg:max-w-[31%]">
+    <div
+      className={cn(
+        "hidden grow flex-col rounded-2xl bg-darkmode_regular p-8 md:flex md:max-w-[45%] lg:max-w-[31%]",
+        className,
+      )}
+    >
       <div className="self-center">
         <ClubHeader name={name} />
       </div>
@@ -86,12 +94,18 @@ export function ClubAccordion({
   name,
   socials,
   isDense,
-}: StudentGroupType) {
+  className,
+}: StudentGroupType & {
+  className?: string
+}) {
   return (
     <Accordion
       type="single"
       collapsible
-      className="flex grow flex-col rounded-2xl bg-darkmode_regular p-8 md:hidden"
+      className={cn(
+        "flex grow flex-col rounded-2xl bg-darkmode_regular p-8 md:hidden",
+        className,
+      )}
     >
       <AccordionItem value="item-1">
         <AccordionTrigger>
