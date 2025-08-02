@@ -1,40 +1,40 @@
+import {
+  FacebookIcon,
+  GithubIcon,
+  GlobeIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  MailIcon,
+  PhoneIcon,
+  YoutubeIcon,
+} from "lucide-react"
 import { SVGProps } from "react"
 import { SocialIconType } from "~/@types"
-import { EmailIcon } from "./social/email-icon"
-import { FacebookIcon } from "./social/facebook-icon"
-import { GitHubIcon } from "./social/github-icon"
-import { GlobeIcon } from "./social/globe-icon"
-import { InstagramIcon } from "./social/instagram-icon"
-import { LinkedInIcon } from "./social/linkedin-icon"
-import { PhoneIcon } from "./social/phone-icon"
-import { TikTokIcon } from "./social/tiktok-icon"
-import { YouTubeIcon } from "./social/youtube-icon"
+import { TikTokIcon } from "./tiktok-icon"
 
-export function SocialIcon({
-  iconName,
-  props,
-}: {
-  iconName: string
-  props?: SVGProps<SVGSVGElement>
-}) {
-  switch (iconName.toLocaleLowerCase() as SocialIconType) {
+type SocialIconProps = SVGProps<SVGSVGElement> & {
+  iconName: SocialIconType
+}
+
+export function SocialIcon({ iconName, ...rest }: SocialIconProps) {
+  switch (iconName) {
     case "email":
-      return <EmailIcon {...props} />
+      return <MailIcon {...rest} />
     case "facebook":
-      return <FacebookIcon {...props} />
+      return <FacebookIcon {...rest} />
     case "github":
-      return <GitHubIcon {...props} />
+      return <GithubIcon {...rest} />
     case "instagram":
-      return <InstagramIcon {...props} />
+      return <InstagramIcon {...rest} />
     case "linkedin":
-      return <LinkedInIcon {...props} />
+      return <LinkedinIcon {...rest} />
     case "phone":
-      return <PhoneIcon {...props} />
+      return <PhoneIcon {...rest} />
     case "youtube":
-      return <YouTubeIcon {...props} />
+      return <YoutubeIcon {...rest} />
     case "tiktok":
-      return <TikTokIcon {...props} />
+      return <TikTokIcon {...rest} />
     default:
-      return <GlobeIcon {...props} />
+      return <GlobeIcon {...rest} />
   }
 }

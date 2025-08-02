@@ -1,39 +1,62 @@
 # simonyi-web-next
 
+The official website of Simonyi Károly College for Advanced Studies.
+
+Check out live at: [simonyi.bme.hu](https://simonyi.bme.hu)
+
+## Notable technologies
+
 This project uses:
 
-- [Yarn v4](https://yarnpkg.com/getting-started/install)
-- [Next.js 14 with App Router](https://nextjs.org/docs/app)
-- [Contentful v10](https://github.com/contentful/contentful.js)
-- [Tailwind v3](https://tailwindcss.com/)
+- [pnpm v10](https://yarnpkg.com/getting-started/install)
+- [Next.js 15 with App Router](https://nextjs.org/docs/app)
+- [Contentful v11](https://github.com/contentful/contentful.js)
+- [Tailwind v4](https://tailwindcss.com/)
 
-## Getting Started
+## Before starting
 
-Install packages:
+- PNPM: <https://pnpm.io/>
+- Vercel CLI: <https://vercel.com/docs/cli>
+- Node Version Manager
+  - nvm: <https://github.com/nvm-sh/nvm>
+  - fnm: <https://github.com/Schniz/fnm>
+
+## Set up project
+
+Install dependencies:
 
 ```bash
-yarn install
+pnpm i
 ```
 
-Create .env.local
+Link your local repository to the Vercel one.
 
 ```bash
-# from the example file
-cp .env.example .env.local
-
-# or download from Vercel, using the vercel-cli
-npm i -g vercel
 vercel link
-vercel env pull
 ```
 
-Start the dev server
+Pull the environment variables from Vercel.
 
 ```bash
-yarn dev
+vercel pull
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Create a symbolic link to `.vercel/.env.development.local` to act as `.env`.
+
+```bash
+# Linux
+ln -s .vercel/.env.development.local .env
+# Windows PowerShell
+New-Item -ItemType SymbolicLink -Value .vercel/.env.development.local -Path .env
+```
+
+## Start project
+
+```bash
+pnpm dev
+```
+
+- Frontend: [localhost:3000](http://localhost:3000)
 
 ## Sponsors
 

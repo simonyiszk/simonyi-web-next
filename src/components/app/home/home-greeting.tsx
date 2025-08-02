@@ -1,10 +1,10 @@
+import { ChevronDownIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { ImageType } from "~/@types"
 import { Button } from "~/components/button"
 import { HeaderHome } from "~/components/header/header-home"
-import { SimonyiDarkIcon } from "~/components/icons/bme/simonyi/simonyi-dark-icon"
-import { ChevronIcon } from "~/components/icons/chevron-icon"
+import { SimonyiDarkIcon } from "~/components/icons/simonyi-dark-icon"
 import { Link } from "~/i18n/navigation"
 
 export function HomeGreeting({
@@ -18,7 +18,12 @@ export function HomeGreeting({
 
   return (
     <div className="min-h-screen">
-      <div className="absolute left-0 top-0 -z-10 flex h-screen max-h-full w-full max-w-full bg-black blur-home">
+      <div
+        className={`
+          absolute top-0 left-0 -z-10 flex h-screen max-h-full w-full max-w-full
+          bg-black blur-home
+        `}
+      >
         <Image
           src={heroImage.url}
           alt={heroImage.alt}
@@ -27,7 +32,12 @@ export function HomeGreeting({
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="flex min-h-screen flex-col items-center justify-between pb-[calc(80px+2rem)]">
+      <div
+        className={`
+          flex min-h-screen flex-col items-center justify-between
+          pb-[calc(80px+2rem)]
+        `}
+      >
         <HeaderHome currentLocale={currentLocale} />
         <div className="flex flex-col gap-8">
           <div className="m-4 max-h-[75px] max-w-[353px]">
@@ -64,7 +74,7 @@ export function HomeGreeting({
           </div>
         </div>
         <div className="h-6">
-          <ChevronIcon className="inline-block w-4 fill-light align-middle leading-6" />
+          <ChevronDownIcon className="inline-block size-8" />
         </div>
       </div>
     </div>

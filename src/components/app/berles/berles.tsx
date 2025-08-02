@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Button } from "~/components/button"
 import {
   TypographyH1,
   TypographyH2,
@@ -75,24 +76,6 @@ function GoogleForm({ variant }: { variant: "rooms" | "equipment" }) {
   }
 }
 
-function Button({
-  state = false,
-  ...props
-}: {
-  state?: boolean
-} & React.ComponentProps<"button">) {
-  return (
-    <button
-      className={
-        state
-          ? "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 border-primary bg-primary/15 p-2 transition duration-200 ease-in-out hover:bg-primary"
-          : "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 border-primary-900 bg-white/15 p-2 transition duration-200 ease-in-out hover:border-primary hover:bg-primary"
-      }
-      {...props}
-    ></button>
-  )
-}
-
 export function Berles() {
   const [openCalendar, setOpenCalendar] = useState({
     "102": false,
@@ -141,25 +124,29 @@ export function Berles() {
       <div className="flex flex-row flex-wrap gap-4">
         <Button
           onClick={() => switchCalendar("102")}
-          state={openCalendar["102"]}
+          variant="outline"
+          isActive={openCalendar["102"]}
         >
           102 naptár
         </Button>
         <Button
           onClick={() => switchCalendar("103")}
-          state={openCalendar["103"]}
+          variant="outline"
+          isActive={openCalendar["103"]}
         >
           103 naptár
         </Button>
         <Button
           onClick={() => switchCalendar("1319")}
-          state={openCalendar["1319"]}
+          variant="outline"
+          isActive={openCalendar["1319"]}
         >
           1319 naptár
         </Button>
         <Button
           onClick={() => switchCalendar("equipment")}
-          state={openCalendar["equipment"]}
+          variant="outline"
+          isActive={openCalendar["equipment"]}
         >
           Eszközök naptár
         </Button>
@@ -190,12 +177,17 @@ export function Berles() {
       )}
       <TypographyH2>Formok</TypographyH2>
       <div className="flex flex-row flex-wrap gap-4">
-        <Button onClick={() => switchForm("rooms")} state={openForm.rooms}>
+        <Button
+          onClick={() => switchForm("rooms")}
+          variant="outline"
+          isActive={openForm.rooms}
+        >
           Terembérlés form
         </Button>
         <Button
           onClick={() => switchForm("equipment")}
-          state={openForm.equipment}
+          variant="outline"
+          isActive={openForm.equipment}
         >
           Eszközbérlés form
         </Button>

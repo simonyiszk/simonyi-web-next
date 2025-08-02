@@ -1,6 +1,6 @@
+import { ChevronDown } from "lucide-react"
 import React, { Fragment } from "react"
 import { TimelineEntityType } from "~/@types"
-import { CaretDownIcon } from "~/components/icons/caret-down-icon"
 import { TypographyBody } from "~/components/typography"
 import { contentfulDocumentToReactComponents } from "~/utils/contentful/contentful-renderer"
 
@@ -13,11 +13,7 @@ export function AboutTimeline({
   return (
     <div className="relative grid grid-flow-dense grid-cols-timeline_mobile items-center justify-items-center gap-y-8 px-0 py-4 sm:grid-cols-timeline_full">
       <div className="absolute left-12 h-full w-0 border-e-4 border-dashed border-white sm:left-1/2">
-        <CaretDownIcon
-          className="absolute left-[-18px] top-[calc(100%-10px)] fill-white"
-          width="40px"
-          height="40px"
-        />
+        <ChevronDown className="absolute top-[calc(100%-10px)] left-[-18px] size-[40px] text-white" />
       </div>
       {timelineEntries.map((entry, index) => {
         if (index % 2) {

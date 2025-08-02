@@ -1,3 +1,4 @@
+import { Slot } from "@radix-ui/react-slot"
 import {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
@@ -6,137 +7,194 @@ import {
 } from "react"
 import { cn } from "~/utils/cn"
 
+type AsChildType = {
+  asChild?: boolean
+}
+
+type HeadingType = DetailedHTMLProps<
+  HTMLAttributes<HTMLHeadingElement>,
+  HTMLHeadingElement
+> &
+  AsChildType
+
+type TypographyH1Type = HeadingType
+
 export function TypographyH1({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
+}: TypographyH1Type) {
+  const Comp = asChild ? Slot : "h1"
+
   return (
-    <h1 className={cn("font-heading text-h1", className)} {...rest}>
-      {children}
-    </h1>
+    <Comp
+      data-slot="h1"
+      className={cn("font-heading text-h1", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyH2Type = HeadingType
 
 export function TypographyH2({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
+}: TypographyH2Type) {
+  const Comp = asChild ? Slot : "h2"
+
   return (
-    <h2 className={cn("font-heading text-h2", className)} {...rest}>
-      {children}
-    </h2>
+    <Comp
+      data-slot="h2"
+      className={cn("font-heading text-h2", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyH3Type = HeadingType
 
 export function TypographyH3({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
+}: TypographyH3Type) {
+  const Comp = asChild ? Slot : "h3"
+
   return (
-    <h3 className={cn("font-heading text-h3", className)} {...rest}>
-      {children}
-    </h3>
+    <Comp
+      data-slot="h3"
+      className={cn("font-heading text-h3", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyH4Type = HeadingType
 
 export function TypographyH4({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
+}: TypographyH4Type) {
+  const Comp = asChild ? Slot : "h4"
+
   return (
-    <h4 className={cn("font-heading text-h4", className)} {...rest}>
-      {children}
-    </h4>
+    <Comp
+      data-slot="h4"
+      className={cn("font-heading text-h4", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyH5Type = HeadingType
 
 export function TypographyH5({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
+}: TypographyH5Type) {
+  const Comp = asChild ? Slot : "h5"
+
   return (
-    <h5 className={cn("font-heading text-h4", className)} {...rest}>
-      {children}
-    </h5>
+    <Comp
+      data-slot="h5"
+      className={cn("font-heading text-h4", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyH6Type = HeadingType
 
 export function TypographyH6({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
+}: TypographyH6Type) {
+  const Comp = asChild ? Slot : "h6"
+
   return (
-    <h6 className={cn("font-heading text-h4", className)} {...rest}>
-      {children}
-    </h6>
+    <Comp
+      data-slot="h6"
+      className={cn("font-heading text-h4", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyBodyType = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> &
+  AsChildType
 
 export function TypographyBody({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
+}: TypographyBodyType) {
+  const Comp = asChild ? Slot : "div"
+
   return (
-    <div className={cn("font-body text-body", className)} {...rest}>
-      {children}
-    </div>
+    <Comp
+      data-slot="div"
+      className={cn("font-body text-body", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyLabelType = DetailedHTMLProps<
+  LabelHTMLAttributes<HTMLLabelElement>,
+  HTMLLabelElement
+> &
+  AsChildType
 
 export function TypographyLabel({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>) {
+}: TypographyLabelType) {
+  const Comp = asChild ? Slot : "label"
+
   return (
-    <label className={cn("font-body text-label", className)} {...rest}>
-      {children}
-    </label>
+    <Comp
+      data-slot="label"
+      className={cn("font-body text-label", className)}
+      {...rest}
+    />
   )
 }
+
+type TypographyLinkType = DetailedHTMLProps<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+> &
+  AsChildType
 
 export function TypographyLink({
   className,
-  children,
+  asChild = false,
   ...rest
-}: DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->) {
+}: TypographyLinkType) {
+  const Comp = asChild ? Slot : "a"
+
   return (
-    <a
+    <Comp
+      data-slot="a"
       className={cn(
-        "font-body text-body hover:underline cursor-pointer text-primary",
+        `
+          cursor-pointer font-body text-body text-primary transition-all
+          duration-200 ease-in-out
+          hover:text-primary-400 hover:underline
+          active:text-primary-600
+        `,
         className,
       )}
       {...rest}
-    >
-      {children}
-    </a>
-  )
-}
-
-export function Link({
-  children,
-  className,
-  ...props
-}: DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->) {
-  return (
-    <a
-      className={cn("hover:cursor-pointer hover:underline", className)}
-      {...props}
-    >
-      {children}
-    </a>
+    />
   )
 }

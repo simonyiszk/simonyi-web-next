@@ -10,13 +10,7 @@ export function HomePresidency({ presidency }: { presidency: PresidencyType }) {
       </div>
       <div className="flex w-full flex-row flex-wrap justify-center gap-8 self-center">
         {presidency.profiles.map((profile, index) => (
-          <Profile
-            key={index}
-            profilePicture={profile.profilePicture}
-            name={profile.name}
-            title={profile.title}
-            socials={profile.socials}
-          />
+          <Profile key={index} {...profile} />
         ))}
       </div>
     </div>

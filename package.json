@@ -1,8 +1,8 @@
 {
-  "name": "simonyi-web-next-13",
+  "name": "simonyi-web-next-15",
   "version": "3.0.0",
   "private": true,
-  "description": "simonyi-web-next-13",
+  "description": "simonyi-web-next-15",
   "author": "triszt4n, gergoradeczki",
   "keywords": [
     "next",
@@ -17,20 +17,28 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit",
-    "eslint": "eslint --max-warnings=0",
-    "eslint:fix": "eslint --max-warnings=0 --fix .",
+    "check:type": "tsc --noEmit",
+    "check:eslint": "eslint --max-warnings=0",
+    "check:prettier": "prettier --check .",
+    "check": "pnpm run check:type && pnpm run check:eslint && pnpm run check:prettier",
+    "fix:eslint": "eslint --max-warnings=0 --fix .",
+    "fix:prettier": "prettier --write .",
+    "fix": "pnpm run fix:eslint && pnpm run fix:prettier",
     "contentful:typegen-offline": "cf-content-types-generator src/contentful/export.json --v10 --out src/@types/generated",
     "contentful:typegen": "dotenv -e .env -- cross-var cf-content-types-generator --v10 -s %CONTENTFUL_SPACE_ID% -t %CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN% -o src/@types/generated"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "16.1.0",
     "@contentful/rich-text-types": "17.1.0",
+    "@radix-ui/react-accordion": "1.2.11",
+    "@radix-ui/react-slot": "1.2.3",
     "@tailwindcss/postcss": "4.1.11",
+    "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "contentful": "11.7.15",
     "contentful-management": "11.54.4",
     "gray-matter": "4.0.3",
+    "lucide-react": "0.536.0",
     "next": "15.4.5",
     "next-intl": "4.3.4",
     "postcss": "8.5.6",
@@ -38,6 +46,7 @@
     "react-dom": "19.1.1",
     "tailwind-merge": "3.3.1",
     "tailwindcss": "4.1.11",
+    "tw-animate-css": "1.3.6",
     "yet-another-react-lightbox": "3.25.0"
   },
   "devDependencies": {
@@ -52,6 +61,7 @@
     "dotenv-cli": "10.0.0",
     "eslint": "9.32.0",
     "eslint-config-next": "15.4.5",
+    "eslint-plugin-better-tailwindcss": "3.7.3",
     "prettier": "3.6.2",
     "typescript": "5.9.2",
     "util": "0.12.5"
