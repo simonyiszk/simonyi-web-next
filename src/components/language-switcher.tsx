@@ -2,18 +2,24 @@ import Image from "next/image"
 import { Link } from "~/i18n/navigation"
 import { TypographyBody } from "~/components/typography"
 import { cn } from "~/utils/cn"
+import { Button } from "./button"
 
 export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
   return (
     <div className="m-2 flex flex-col gap-2">
-      <Link locale="hu" href="/">
-        <div
-          className={cn(
-            "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 p-2 transition duration-200 ease-in-out hover:bg-primary",
-            currentLocale === "hu" && "border-primary bg-primary/10",
-            currentLocale !== "hu" &&
-              "border-primary-900 bg-white/10 hover:border-primary",
-          )}
+      <Button
+        asChild
+        variant="outline"
+        isActive={currentLocale === "hu"}
+        className={cn(
+          "bg-white/10 ring-primary-900",
+          currentLocale === "hu" && "ring-4 ring-primary",
+        )}
+      >
+        <Link
+          locale="hu"
+          href="/"
+          className="flex flex-row items-center justify-start gap-2"
         >
           <Image
             src="/images/flags/hungarian.png"
@@ -23,16 +29,21 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
             className="h-4 w-4 rounded-full object-none"
           />
           <TypographyBody>Magyar</TypographyBody>
-        </div>
-      </Link>
-      <Link locale="en" href="/">
-        <div
-          className={cn(
-            "flex cursor-pointer flex-row items-center gap-2 rounded-md border-2 p-2 transition duration-200 ease-in-out hover:bg-primary",
-            currentLocale === "en" && "border-primary bg-primary/10",
-            currentLocale !== "en" &&
-              "border-primary-900 bg-white/10 hover:border-primary",
-          )}
+        </Link>
+      </Button>
+      <Button
+        asChild
+        variant="outline"
+        isActive={currentLocale === "en"}
+        className={cn(
+          "bg-white/10 ring-primary-900",
+          currentLocale === "en" && "ring-4 ring-primary",
+        )}
+      >
+        <Link
+          locale="en"
+          href="/"
+          className="flex flex-row items-center justify-start gap-2"
         >
           <Image
             src="/images/flags/english.png"
@@ -42,8 +53,8 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
             className="h-4 w-4 rounded-full object-none"
           />
           <TypographyBody>English</TypographyBody>
-        </div>
-      </Link>
+        </Link>
+      </Button>
     </div>
   )
 }
