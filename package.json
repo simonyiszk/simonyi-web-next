@@ -30,6 +30,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "16.1.0",
     "@contentful/rich-text-types": "17.1.0",
+    "@radix-ui/react-accordion": "1.2.11",
     "@radix-ui/react-slot": "1.2.3",
     "@tailwindcss/postcss": "4.1.11",
     "class-variance-authority": "0.7.1",

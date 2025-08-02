@@ -1,5 +1,7 @@
 import { FacebookIcon } from "lucide-react"
+import { StudentGroupType } from "~/@types"
 import { Button } from "~/components/button"
+import { ClubAccordion, ClubCard } from "~/components/club"
 import {
   TypographyBody,
   TypographyH1,
@@ -12,9 +14,96 @@ import {
   TypographyLink,
 } from "~/components/typography"
 
+const values: StudentGroupType = {
+  name: "AC Studio & Live",
+  description:
+    "Az AC Studio & Live felel a kollégiumban tartott kisebb-nagyobb rendezvények hangosításáért és fénytechnikájáért, továbbá kezelik, üzemeltetik és karbantartják a kollégium rendezvénytechnikai eszközparkját. A kör gazdagon felszerelt hangstúdiója alkalmas zenekarok, együttesek többsávos felvételeinek elkészítésére is, amit rajtuk kívül kollégiumi bandák és a Qpa csapatai is igénybe szoktak venni.",
+  logo: {
+    url: "https://images.ctfassets.net/u6yew21vg9af/1KcgbQoqY7j3tz8bhH7nyA/9042242153b868d55a6f0261e85c2566/ac.svg",
+    alt: "AC Studio & Live Logo",
+    width: 300,
+    height: 225,
+  },
+  socials: [
+    {
+      icon: "website",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "email",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "facebook",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "github",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "instagram",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "linkedin",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "phone",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "youtube",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+    {
+      icon: "tiktok",
+      link: {
+        url: "https://acstudio.sch.bme.hu/",
+        text: "acstudio.sch.bme.hu",
+        title: "acstudio.sch.bme.hu",
+      },
+    },
+  ],
+  isDense: false,
+}
+
 export default function DemoPage() {
   return (
-    <div className="flex flex-col items-start gap-2">
+    <div className="flex w-full flex-col items-start gap-2">
       <div className="ml-2 flex flex-col items-start gap-2">
         <TypographyH1>H1</TypographyH1>
         <TypographyH2>H2</TypographyH2>
@@ -44,6 +133,17 @@ export default function DemoPage() {
             <FacebookIcon className="size-6 text-white" />
           </Button>
           <Button variant="transparent">Transparent Button</Button>
+        </div>
+      </div>
+      <div className="ml-2 flex w-full flex-col items-start gap-2">
+        <div
+          className={`
+            flex w-[400px] flex-col flex-wrap justify-center gap-8 self-center
+            md:flex-row
+          `}
+        >
+          <ClubAccordion {...values} />
+          <ClubCard {...values} />
         </div>
       </div>
     </div>

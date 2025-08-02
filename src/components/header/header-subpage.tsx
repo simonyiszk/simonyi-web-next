@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Link } from "~/i18n/navigation"
-import { SimonyiLogoIcon } from "~/components/icons/bme/simonyi/simonyi-logo-only-icon"
+import { SimonyiLogoIcon } from "~/components/icons/simonyi-logo-only-icon"
 import { HamburgerIcon } from "~/components/icons/hamburger-icon"
 
 export function HeaderSubpage({

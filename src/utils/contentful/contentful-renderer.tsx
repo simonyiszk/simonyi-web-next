@@ -1,6 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Document, BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
-import Link from "next/link"
 import { cloneElement, Children, ReactNode, ReactElement } from "react"
 import {
   TypographyH1,
@@ -10,6 +9,7 @@ import {
   TypographyH5,
   TypographyH6,
   TypographyBody,
+  TypographyLink,
 } from "~/components/typography"
 
 function RemoveParagraph({ children }: { children: ReactNode }) {
@@ -113,7 +113,7 @@ export function contentfulDocumentToReactComponents(document: Document) {
         </p>
       ),
       [BLOCKS.HR]: () => <hr className="my-4" />,
-      /* TABLE */
+      /* TABLE START */
       // TODO: Fix table not being responsive
       [BLOCKS.TABLE]: (node, children) => (
         <div className="my-4 overflow-x-auto">
@@ -137,12 +137,15 @@ export function contentfulDocumentToReactComponents(document: Document) {
           <RemoveParagraph>{children}</RemoveParagraph>
         </td>
       ),
-      /* TABLE */
+      /* TABLE END */
       [MARKS.CODE]: (node, children) => <code className="p-2">{children}</code>,
       [INLINES.HYPERLINK]: (node, children) => (
-        <Link className="font-body text-primary" href={`${node.data.uri}`}>
+        <TypographyLink
+          className="font-body text-primary"
+          href={`${node.data.uri}`}
+        >
           {children}
-        </Link>
+        </TypographyLink>
       ),
       [MARKS.BOLD]: (node, children) => <b>{children}</b>,
       [MARKS.ITALIC]: (node, children) => <i>{children}</i>,

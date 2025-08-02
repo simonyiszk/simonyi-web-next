@@ -1,10 +1,10 @@
+import { ChevronDownIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { ImageType } from "~/@types"
 import { Button } from "~/components/button"
 import { HeaderHome } from "~/components/header/header-home"
-import { SimonyiDarkIcon } from "~/components/icons/bme/simonyi/simonyi-dark-icon"
-import { ChevronIcon } from "~/components/icons/chevron-icon"
+import { SimonyiDarkIcon } from "~/components/icons/simonyi-dark-icon"
 import { Link } from "~/i18n/navigation"
 
 export function HomeGreeting({
@@ -74,9 +74,7 @@ export function HomeGreeting({
           </div>
         </div>
         <div className="h-6">
-          <ChevronIcon
-            className={`inline-block w-4 fill-light align-middle leading-6`}
-          />
+          <ChevronDownIcon className="inline-block size-8" />
         </div>
       </div>
     </div>
