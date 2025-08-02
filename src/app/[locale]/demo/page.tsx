@@ -137,13 +137,13 @@ export default function DemoPage() {
       </div>
       <div className="ml-2 flex w-full flex-col items-start gap-2">
         <div
-          className={`
-            flex w-[400px] flex-col flex-wrap justify-center gap-8 self-center
-            md:flex-row
-          `}
+          className={`flex flex-col flex-wrap items-start gap-8 self-center md:flex-row`}
         >
-          <ClubAccordion {...values} />
-          <ClubCard {...values} />
+          <ClubAccordion
+            className="block md:block md:max-w-[45%] lg:max-w-[31%]"
+            {...values}
+          />
+          <ClubCard className="block md:block" {...values} />
         </div>
       </div>
     </div>
