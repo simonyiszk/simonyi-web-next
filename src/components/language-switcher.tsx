@@ -6,13 +6,13 @@ import { Button } from "./button"
 
 export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
   return (
-    <div className="m-2 flex flex-col gap-2">
+    <div className="m-2 flex flex-row gap-2 md:flex-col">
       <Button
         asChild
         variant="outline"
         isActive={currentLocale === "hu"}
         className={cn(
-          "bg-white/10 ring-primary-900",
+          "grow bg-white/10 ring-primary-900 md:grow-0",
           currentLocale === "hu" && "ring-4 ring-primary",
         )}
       >
@@ -36,7 +36,7 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
         variant="outline"
         isActive={currentLocale === "en"}
         className={cn(
-          "bg-white/10 ring-primary-900",
+          "grow bg-white/10 ring-primary-900 md:grow-0",
           currentLocale === "en" && "ring-4 ring-primary",
         )}
       >
