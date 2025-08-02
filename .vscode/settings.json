@@ -12,5 +12,6 @@
   },
   "[json][jsonc][jsonl][html][css][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "tailwindCSS.classFunctions": ["cva", "cx"]
 }
