@@ -91,15 +91,15 @@
     },
     {
       "source": "/konf",
-      "destination": "https://simonyi.bme.hu/ly/nqejO"
+      "destination": "https://konferencia.simonyi.bme.hu"
     },
     {
       "source": "/skktv",
-      "destination": "https://skktv.simonyi.bme.hu"
+      "destination": "https://skktv.hu"
     },
     {
       "source": "/verseny",
-      "destination": "https://skktv.simonyi.bme.hu"
+      "destination": "https://skktv.hu"
     }
   ]
 }
