@@ -6,7 +6,7 @@ import { Button } from "./button"
 
 export function Profile({ name, title, profilePicture, socials }: ProfileType) {
   return (
-    <div className="flex w-full max-w-[300px] flex-col items-center gap-4 rounded-2xl bg-darkmode_regular p-4">
+    <div className="flex w-full max-w-[270px] flex-col items-center gap-4 rounded-2xl bg-darkmode_regular p-4">
       <div className="relative h-[200px] w-full max-w-[200px]">
         <Image
           src={profilePicture.url}

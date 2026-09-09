@@ -8,7 +8,7 @@ export function HomePresidency({ presidency }: { presidency: PresidencyType }) {
       <div className="self-center md:self-start">
         <TypographyH1>{presidency.title}</TypographyH1>
       </div>
-      <div className="flex w-full flex-row flex-wrap justify-center gap-8 self-center">
+      <div className="flex w-full flex-row flex-wrap justify-center gap-4 self-center">
         {presidency.profiles.map((profile, index) => (
           <Profile key={index} {...profile} />
         ))}
