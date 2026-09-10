@@ -24,6 +24,11 @@
       "permanent": true
     },
     {
+      "source": "/ntp2025",
+      "destination": "https://drive.google.com/drive/folders/1VxHsrLzCxQDQ12_ybojrdraHmE4Dj-ZE?usp=sharing",
+      "permanent": true
+    },
+    {
       "source": "/szakmaihet2020/:path*",
       "destination": "https://old.simonyi.bme.hu/szakmaihet2020/:path*",
       "permanent": true

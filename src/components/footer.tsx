@@ -25,7 +25,7 @@ export function Footer({ data }: { data: FooterType }) {
         ))}
       </div>
       <div className={`flex flex-col flex-wrap items-center gap-8 md:flex-row`}>
-        <BmeLogos />
+        <BmeLogos addSponsors />
       </div>
       {data.github && (
         <TypographyLink href={data.github.url} title={data.github.title}>
