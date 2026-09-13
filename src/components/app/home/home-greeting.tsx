@@ -49,13 +49,13 @@ export function HomeGreeting({
           </div>
           <div className="flex justify-center">
             <a
-              href="https://skktv.simonyi.bme.hu/?utm_source=simonyi.bme.hu"
-              title="skktv.simonyi.bme.hu"
+              href="https://konferencia.simonyi.bme.hu/"
+              title="konferencia.simonyi.bme.hu"
               target="_blank"
               rel="noreferrer"
             >
               <Button className="w-full cursor-pointer">
-                {t("tanverseny")}
+                {t("simonyikonf")}
               </Button>
             </a>
           </div>
